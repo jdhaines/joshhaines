@@ -12,7 +12,7 @@ const siteMetadata = {
   email: 'Josh@JoshHaines.com',
   github: 'https://github.com/jdhaines',
   twitter: 'https://twitter.com/joshhaines',
-  facebook: 'https://facebook.com',
+  //facebook: 'https://facebook.com',
   youtube: 'https://youtube.com/channel/UCKkGJj7ZyhyzsNsiOBCZ9Jg',
   linkedin: 'https://www.linkedin.com/in/joshuahaines',
   locale: 'en-US',

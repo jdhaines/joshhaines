@@ -1,11 +1,10 @@
 const projectsData = [
   {
-    title: 'A Search Engine',
-    description: `What if you could look up any information in the world? Webpages, images, videos
-    and more. Google has many features to help you find exactly what you're looking
-    for.`,
+    title: "Jenny's Website",
+    description:
+      "Custom website built almost completely by my awesome 9 year old daughter, Jenny.  She even has the code in GitHub.  I set up a pipeline to deploy it using AWS's Amplify service which works great for small websites like this one.",
     imgSrc: '/static/images/google.png',
-    href: 'https://www.google.com',
+    href: 'https://www.jennybao.com',
   },
   {
     title: 'The Time Machine',
