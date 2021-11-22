@@ -1,5 +1,6 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 const colors = require('tailwindcss/colors')
+const { gray } = require('tailwindcss/colors')
 
 module.exports = {
   mode: 'jit',
@@ -20,19 +21,46 @@ module.exports = {
         sans: ['Inter', ...defaultTheme.fontFamily.sans],
       },
       colors: {
-        primary: colors.lime,
-        gray: colors.warmGray,
+        gray: colors.trueGray,
+        jgreen: {
+          100: '#B3E6B7',
+          300: '#A1E6A6',
+          500: '#7BCC80',
+          700: '#6B996E',
+          900: '#28852E',
+        },
+        jblue: {
+          100: '#A3CED0',
+          300: '#92CDD0',
+          500: '#619EA0',
+          700: '#55777B',
+          900: '#206568',
+        },
+        jorange: {
+          100: '#FFE1C7',
+          300: '#FFD6B3',
+          500: '#FFC99A',
+          700: '#BFA186',
+          900: '#A66732',
+        },
+        jred: {
+          100: '#FFC9C7',
+          300: '#FFB5B3',
+          500: '#FF9C9A',
+          700: '#BF8886',
+          900: '#A63532',
+        },
       },
       typography: (theme) => ({
         DEFAULT: {
           css: {
             color: theme('colors.gray.700'),
             a: {
-              color: theme('colors.primary.600'),
+              color: theme('colors.jgreen.600'),
               '&:hover': {
-                color: theme('colors.primary.700'),
+                color: theme('colors.jgreen.700'),
               },
-              code: { color: theme('colors.primary.400') },
+              code: { color: theme('colors.jgreen.400') },
             },
             h1: {
               fontWeight: '700',
@@ -74,7 +102,7 @@ module.exports = {
               paddingBottom: '2px',
               borderRadius: '0.25rem',
             },
-            hr: { borderColor: theme('colors.gray.200') },
+            hr: { borderColor: theme('colors.gray.500') },
             'ol li:before': {
               fontWeight: '600',
               color: theme('colors.gray.500'),
@@ -93,28 +121,28 @@ module.exports = {
           css: {
             color: theme('colors.gray.300'),
             a: {
-              color: theme('colors.primary.500'),
+              color: theme('colors.jblue.500'),
               '&:hover': {
-                color: theme('colors.primary.400'),
+                color: theme('colors.jorange.700'),
               },
-              code: { color: theme('colors.primary.400') },
+              code: { color: theme('colors.jgreen.400') },
             },
             h1: {
               fontWeight: '700',
               letterSpacing: theme('letterSpacing.tight'),
-              color: theme('colors.gray.100'),
+              color: theme('colors.jorange.500'),
             },
             h2: {
               fontWeight: '700',
               letterSpacing: theme('letterSpacing.tight'),
-              color: theme('colors.gray.100'),
+              color: theme('colors.jorange.500'),
             },
             h3: {
               fontWeight: '600',
-              color: theme('colors.gray.100'),
+              color: theme('colors.jorange.700'),
             },
             'h4,h5,h6': {
-              color: theme('colors.gray.100'),
+              color: theme('colors.jorange.700'),
             },
             code: {
               backgroundColor: theme('colors.gray.800'),
@@ -130,7 +158,7 @@ module.exports = {
             'ul li:before': {
               backgroundColor: theme('colors.gray.400'),
             },
-            strong: { color: theme('colors.gray.100') },
+            strong: { color: theme('colors.jorange.700') },
             thead: {
               color: theme('colors.gray.100'),
             },
@@ -140,8 +168,11 @@ module.exports = {
               },
             },
             blockquote: {
-              color: theme('colors.gray.100'),
-              borderLeftColor: theme('colors.gray.700'),
+              color: theme('colors.gray.300'),
+              borderLeftColor: theme('colors.jblue.900'),
+            },
+            'dl, dt, dd': {
+              color: theme('colors.jgreen.700'),
             },
           },
         },
