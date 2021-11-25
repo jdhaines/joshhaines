@@ -1,8 +1,8 @@
 const siteMetadata = {
   title: 'JoshHaines.com',
   author: 'Josh Haines',
-  headerTitle: 'Josh Haines',
-  description: 'Personal Website for Josh Haines',
+  headerTitle: '',
+  description: '',
   language: 'en-us',
   siteUrl: 'https://joshhaines.com',
   siteRepo: 'https://github.com/jdhaines/joshhaines',
