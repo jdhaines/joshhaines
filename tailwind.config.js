@@ -1,6 +1,6 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 const colors = require('tailwindcss/colors')
-const { gray } = require('tailwindcss/colors')
+const { gray, purple } = require('tailwindcss/colors')
 
 module.exports = {
   mode: 'jit',
@@ -21,7 +21,7 @@ module.exports = {
         sans: ['Inter', ...defaultTheme.fontFamily.sans],
       },
       colors: {
-        gray: colors.coolGray,
+        gray: colors.trueGray,
         jgreen: {
           100: '#B3E6B7',
           300: '#A1E6A6',
@@ -30,25 +30,25 @@ module.exports = {
           900: '#28852E',
         },
         jblue: {
-          100: '#A3CED0',
-          300: '#92CDD0',
-          500: '#619EA0',
-          700: '#55777B',
-          900: '#206568',
+          100: '#7AD0F1',
+          300: '#4DC1ED',
+          500: '#25B3E9',
+          700: '#07A6E2',
+          900: '#037CAA',
         },
-        jorange: {
-          100: '#FFE1C7',
-          300: '#FFD6B3',
-          500: '#FFC99A',
-          700: '#BFA186',
-          900: '#A66732',
+        jyellow: {
+          100: '#FFD97B',
+          300: '#FFCB4B',
+          500: '#FFBF1F',
+          700: '#FFB600',
+          900: '#FFB600',
         },
         jred: {
-          100: '#FFC9C7',
-          300: '#FFB5B3',
-          500: '#FF9C9A',
-          700: '#BF8886',
-          900: '#A63532',
+          100: '#FF927B',
+          300: '#FF6A4B',
+          500: '#FF461F',
+          700: '#FF2C00',
+          900: '#FF2C00',
         },
       },
       typography: (theme) => ({
@@ -80,7 +80,7 @@ module.exports = {
               color: theme('colors.gray.900'),
             },
             code: {
-              color: theme('colors.pink.500'),
+              color: theme('colors.jred.500'),
               backgroundColor: theme('colors.gray.100'),
               paddingLeft: '4px',
               paddingRight: '4px',
@@ -121,28 +121,28 @@ module.exports = {
           css: {
             color: theme('colors.gray.300'),
             a: {
-              color: theme('colors.jblue.500'),
+              color: theme('colors.jblue.100'),
               '&:hover': {
-                color: theme('colors.jorange.700'),
+                color: theme('colors.jyellow.100'),
               },
               code: { color: theme('colors.jgreen.400') },
             },
             h1: {
               fontWeight: '700',
               letterSpacing: theme('letterSpacing.tight'),
-              color: theme('colors.jorange.500'),
+              color: theme('colors.jyellow.100'),
             },
             h2: {
               fontWeight: '700',
               letterSpacing: theme('letterSpacing.tight'),
-              color: theme('colors.jorange.500'),
+              color: theme('colors.gray.300'),
             },
             h3: {
               fontWeight: '600',
-              color: theme('colors.jorange.700'),
+              color: theme('colors.gray.300'),
             },
             'h4,h5,h6': {
-              color: theme('colors.jorange.700'),
+              color: theme('colors.jred.100'),
             },
             code: {
               backgroundColor: theme('colors.gray.800'),
@@ -158,7 +158,7 @@ module.exports = {
             'ul li:before': {
               backgroundColor: theme('colors.gray.400'),
             },
-            strong: { color: theme('colors.jorange.700') },
+            strong: { color: theme('colors.jyellow.100') },
             thead: {
               color: theme('colors.gray.100'),
             },

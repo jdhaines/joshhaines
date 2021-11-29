@@ -1,0 +1,228 @@
+---
+title: 'Postgres in Docker Cheatsheet'
+date: '2019-10-18'
+lastmod: '2021-11-29'
+tags: ['Docker', 'Databases']
+draft: false
+summary: >
+  Cheatsheet for interacting with a postgres database inside a docker container
+# layout: PostLayout
+author: ['Josh']
+---
+
+# Containerized DBs
+
+Most of the content below is to help when you are interacting with a postgres container in docker or similar. There are also a lot of normal postgres commands that could be used in a bare-metal installation. If I ever use that, I'll be sure to add it here. Honestly though, I think a container is the right place for postgres more often than not.
+
+## Repairing Database Permissions
+
+Let's just say you saw some permissions were messed up in the hosted area at `/var/www/` and did a bulk update on owners and groups. Let's also just say inside some of those project folders like `/elmov2/src` there is a folder called `prod_db` that contains the bind-mount volume database data from the postgres container... so the actual data for the app. Let's just say that after the permission switch the database isn't working right, and you can't view it in pgadmin. None of this has ever happened, so we'll just pretend it did. After long searching, it turns out the answer is:
+
+Just bring down and up the containers. Upon starting, postgres will go and fix the permissions for you. Turns out the group doesn't matter, but the user needs to be `avahi`. Something like this should work:
+
+```bash
+docker-compose -f docker-compose.yml -f production-docker-compose.yml -p prod_elmo down
+
+docker-compose -f docker-compose.yml -f production-docker-compose.yml -p prod_elmo up -d
+```
+
+## Interacting with Docker, Database(s), and Postgres Containers
+
+::: danger Scary Stuff Ahead
+This stuff seemed super scary, but after just hammering on it for awhile it became easier (like most things). Follow the info below, and talk to [Josh Haines](jdhaines.md) if you have questions or want to discuss.
+:::
+
+### Manually Changing db Value in Postgres
+
+```sql
+-- View Table
+TABLE alembic_version;
+
+-- Select column from table (show rows)
+SELECT version_num FROM alembic_version;
+
+-- Make Update
+UPDATE alembic_version
+SET version_num = 'c10850d0f864';
+
+-- Check your work
+TABLE alembic_version;
+```
+
+### Moving a database back-up from one VM to another
+
+To grab a db export, run the following command which will grab the file locally, re-assign permissions, and send it over ssh to another vm to a known location.
+
+```bash
+# Log in to the vm with the db backup
+ssh uid@exlab-lin02.uscdz.local
+
+# Access the postgres user
+sudo -i -u postgres
+
+cd backups
+
+# rsync to transfer the file
+# --chown to change owner and group
+# -e lets you specify protocol, e.g. ssh
+# ssh to denote
+# source, then destination.
+# helpful link here:
+# <https://www.tecmint.com/rsync-local-remote-file-synchronization-commands/>
+
+# If you are sitting locally at the database file, sending it to another VM.
+sudo rsync --chown=uid:group -avzhe ssh /var/lib/pgsql/backups/backupname.bak uid@exlab-lin01.uscdz.local:var/www/project
+
+# Real example
+sudo rsync --chown=u1019077:sgg-cs-prj-exlab-cpt-eng -avzhe ssh /var/lib/pgsql/backups/elmo-2019-09-27_18\:00.bak u1019077@exlab-lin01.uscdz.local:/var/www/elmov2
+
+# Add an example for grabbing a file remotely.
+```
+
+### Backup a Database
+
+```bash
+# Output a dump from the development database to a file with given name and format
+docker exec -it 56c pg_dump -U postgres development > elmo_1050_test.bak
+
+# If you need to exclude alembic_version table
+docker exec -it 56c pg_dump --exclude-table-data=alembic_version -U postgres development > elmo_1050_test.bak
+```
+
+### Check Alembic Version
+
+```bash
+# Similar to checking tables described below
+# get docker container id 123pid
+docker ps
+
+# Check that rows in the alembic_version table
+docker exec -it 07f psql -U postgres development -c "TABLE alembic_version;"
+```
+
+### Restoring a Database Backup File
+
+These commands will allow you to take a database back-up file (possibly grabbed using the technique [described here](#moving-a-database-back-up-from-one-vm-to-another)) and let you restore it into a database in a docker container.
+
+```bash
+# This command will attempt to show any tables which exist in the db.
+# $(docker-compose ps -q postgres ) -> This is selecting the correct container to execute a command on.  You could instead do docker ps and add characters from the container id like docker exec -it d5d psql...
+# -U postgres -> Run the psql command as this user
+docker exec -it $(docker-compose ps -q postgres ) psql dbname -U postgres -c '\z'
+
+# Restore the database backup from the other VM into this docker database.
+docker exec -i $(docker-compose ps -q postgres ) psql -U username dbname < /path/to/file.bak
+
+# Real Example
+docker exec -i $(docker-compose ps -q postgres ) psql -U postgres production < /var/www/elmov2/elmo-2019-09-27_18\:00.bak
+
+# Running the \z command above again shows all our new tables.
+docker exec -it $(docker-compose ps -q postgres ) psql -U postgres dbname -c '\z'
+
+# Shutdown and restart the container to prove data persistence
+docker-compose down
+
+docker-compose -f docker-compose.yml -f production-docker-compose.yml up -d postgres
+```
+
+### Opening a psql Command Line
+
+```bash
+# get a psql command prompt within the docker container
+docker ps  # get the docker id e.g. d5d......
+
+docker exec -it d5d psql -U postgres  # here postgres is the username
+
+\l  # to see all databases
+\z  # to see all tables in your current database
+\c  # dbname username to change connection to another db.
+    # Can only log out of one into another
+\q  # to quit
+
+```
+
+### Get Existing db back on Alembic Revision Tracking
+
+[Link Here](https://stackoverflow.com/questions/42992256/how-do-you-add-migrate-an-existing-database-with-alembic-flask-migrate-if-you-di)
+
+- Start with `flask db init`, to create the migration repository.
+- Next, you need to trick Flask-Migrate into thinking your database is empty. You can do this by renaming your actual db, and creating a new db with the same name that has no tables in it. In that state, run `flask db migrate`. This will generate a migration that contains the entire schema of your database.
+- Once you have that initial migration, restore your database to the correct state.
+- Run `flask db stamp head` to mark the database as updated.
+- Add the new column to your database model.
+- Run `flask db migrate` again, to generate a second migration. The migration script will only have the new column in it.
+- Run `flask db upgrade` to apply the new migration to your database.
+
+Example Run:
+
+```bash
+# Start with no database
+docker exec -it da1 flask db init
+
+# Create a database
+docker exec -it c9a psql -U postgres postgres -c "CREATE DATABASE development;"
+
+# Migrate as described above (You'll see all the model details)
+docker exec -it ec3 flask db migrate
+
+# Restore the database from a backup, make sure you don't have the
+# alembic_version table present
+docker exec -i c9a psql -U postgres development < /path/to/file.bak
+
+# Tell flask-migrate that you migrated correctly
+docker exec -it ec3 flask db stamp head
+
+# Check that your alembic_version matches the migration script in
+# the migrations folder
+docker exec -it 07f psql -U postgres development -c "TABLE alembic_version;"
+```
+
+### Manually Change an Alembic Version
+
+```bash
+# Check the current alembic version
+docker exec -i 68c psql -U postgres production -c "TABLE alembic_version;"
+
+# Update to the new Version
+docker exec -i 68c psql -U postgres production -c "UPDATE alembic_version SET version_num = 'c10850d0f864';"
+
+# Check the version was updated correctly
+docker exec -i 68c psql -U postgres production -c "TABLE alembic_version;"
+```
+
+### Drop and Create a db
+
+```bash
+# An easy way would be to simply sudo rm -rf the folder which is mapped
+# to the container volume.  Docker will rebuild that folder and recreate
+# the database, but it will be empty.
+
+# Run the docker container to be interacted with
+docker-compose -f docker-compose.yml -f development-docker-compose.yml up -d postgres
+
+# Get the container id
+docker ps
+
+# Check the databases currently active
+docker exec -it c9a psql -U postgres postgres -c '\l'
+
+# drop the database
+# Note: I logged in as user postgres, and database postgres, because I was
+# dropping the development database. # You can log-in to the one you're
+# dropping.  Then I ran the DROP DATABASE sql command from the psql command
+#line.
+
+# Don't forget the ';'
+docker exec -it c9a psql -U postgres postgres -c "DROP DATABASE development;"
+
+# Note the database has been dropped
+docker exec -it c9a psql -U postgres postgres -c '\l'
+
+# Recreate the db so you can restore into it.
+docker exec -it c9a psql -U postgres postgres -c "CREATE DATABASE development;"
+
+# Check that it was recreated
+docker exec -it c9a psql -U postgres postgres -c '\l'
+
+# You are now free to restore into that db as explained above.
+```

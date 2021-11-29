@@ -67,15 +67,15 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                       )}
                       <dl className="text-sm font-medium leading-5 whitespace-nowrap">
                         <dt className="sr-only">Name</dt>
-                        <dd className="text-gray-900 dark:text-jred-500">{author.name}</dd>
-                        <dt className="sr-only">Twitter</dt>
+                        <dd className="text-gray-900 dark:text-jred-100">{author.name}</dd>
+                        <dt className="sr-only">GitHub</dt>
                         <dd>
                           {author.twitter && (
                             <Link
-                              href={author.twitter}
-                              className="text-jred-500 hover:text-jgreen-600 dark:hover:text-jorange-500"
+                              href={author.github}
+                              className="text-jblue-100 hover:text-jyellow-100 dark:hover:text-jorange-500"
                             >
-                              {author.twitter.replace('https://twitter.com/', '@')}
+                              {author.github.replace('https://github.com/', '...github/')}
                             </Link>
                           )}
                         </dd>
@@ -117,7 +117,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                         <h2 className="text-xs tracking-wide text-gray-500 uppercase dark:text-gray-400">
                           Previous Article
                         </h2>
-                        <div className="text-jgreen-500 hover:text-jgreen-600 dark:hover:text-jgreen-400">
+                        <div className="text-jgreen-500 hover:text-jgreen-600 dark:text-jblue-100 dark:hover:text-jyellow-100">
                           <Link href={`/blog/${prev.slug}`}>{prev.title}</Link>
                         </div>
                       </div>
@@ -127,7 +127,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                         <h2 className="text-xs tracking-wide text-gray-500 uppercase dark:text-gray-400">
                           Next Article
                         </h2>
-                        <div className="text-jgreen-500 hover:text-jgreen-600 dark:hover:text-jgreen-400">
+                        <div className="text-jgreen-500 hover:text-jgreen-600 dark:text-jblue-100 dark:hover:text-jyellow-100">
                           <Link href={`/blog/${next.slug}`}>{next.title}</Link>
                         </div>
                       </div>
@@ -138,7 +138,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
               <div className="pt-4 xl:pt-8">
                 <Link
                   href="/blog"
-                  className="text-jgreen-500 hover:text-jgreen-600 dark:hover:text-jgreen-400"
+                  className="text-jgreen-500 hover:text-jgreen-600 dark:text-jblue-100 dark:hover:text-jyellow-100"
                 >
                   &larr; Back to the blog
                 </Link>

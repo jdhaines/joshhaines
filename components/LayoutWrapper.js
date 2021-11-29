@@ -1,7 +1,7 @@
 import siteMetadata from '@/data/siteMetadata'
 import headerNavLinks from '@/data/headerNavLinks'
 import Image from 'next/image'
-import Logo from '@/data/logo.png'
+import Logo from '@/data/logo3.png'
 import Link from './Link'
 import SectionContainer from './SectionContainer'
 import Footer from './Footer'
@@ -16,14 +16,8 @@ const LayoutWrapper = ({ children }) => {
           <div>
             <Link href="/" aria-label="Tailwind CSS Blog">
               <div className="flex items-center justify-between">
-                <div className="mr-3">
-                  <Image
-                    class="bg-white rounded-3xl"
-                    src={Logo}
-                    alt="Josh's Logo"
-                    width={525}
-                    height={212}
-                  />
+                <div className="mr-5">
+                  <Image src={Logo} alt="Josh's Logo" width={506} height={176} />
                 </div>
                 {typeof siteMetadata.headerTitle === 'string' ? (
                   <div className="hidden h-6 text-2xl font-semibold sm:block">
