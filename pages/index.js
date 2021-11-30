@@ -5,7 +5,7 @@ import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import formatDate from '@/lib/utils/formatDate'
 
-import NewsletterForm from '@/components/NewsletterForm'
+// import NewsletterForm from '@/components/NewsletterForm'
 
 const MAX_DISPLAY = 5
 
@@ -19,11 +19,32 @@ export default function Home({ posts }) {
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
+      <div className="flex flex-col items-center my-6 xl:flex-row gap-x-12 xl:mb-12">
+        <div className="pt-6">
+          <h1 className="pb-6 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-300 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+            Hi, I’m Josh Haines
+          </h1>
+          <h2 className="text-lg prose text-gray-600 dark:text-gray-400">
+            Welcome to my personal website. I recently switched my career from Materials Engineering
+            to Software Development. I've built a number of{' '}
+            <Link className="dark:text-jblue-100 dark:hover:text-jyellow-100" href="/projects">
+              projects
+            </Link>{' '}
+            over the years and have written a few{' '}
+            <Link className="dark:text-jblue-100 dark:hover:text-jyellow-100" href="/blog">
+              articles
+            </Link>{' '}
+            about various topics.
+            {' about them. Have a good read!'}
+          </h2>
+        </div>
+      </div>
+      <hr className="border-gray-200 dark:border-gray-700" />
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
         <div className="pt-6 pb-8 space-y-2 md:space-y-5">
-          <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-300 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
-            Articles
-          </h1>
+          <h2 className="text-2xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-300 sm:text-4xl sm:leading-10 md:text-5xl md:leading-14">
+            Latest Articles
+          </h2>
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
             {siteMetadata.description}
           </p>
