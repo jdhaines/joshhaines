@@ -1,6 +1,6 @@
 ---
 name: Josh Haines
-avatar: /static/images/josh_small4.jpg
+avatar: /_static/images/josh_small4.jpg
 occupation: DevSecOps Strategy Lead
 company: Rolls-Royce
 email: Josh@JoshHaines.com

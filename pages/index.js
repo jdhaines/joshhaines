@@ -21,8 +21,8 @@ export default function Home({ posts }) {
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
       <div className="flex flex-col items-center my-6 xl:flex-row gap-x-12 xl:mb-12">
         <div className="pt-6">
-          <h1 className="pb-6 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-300 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
-            Hi, I’m Josh Haines
+          <h1 className="pb-6 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-300 sm:text-4xl sm:leading-10 md:text-4xl md:leading-14">
+            Hi, I'm Josh!
           </h1>
           <h2 className="text-lg prose text-gray-600 dark:text-gray-400">
             Welcome to my personal website. I recently switched my career from Materials Engineering
@@ -42,7 +42,7 @@ export default function Home({ posts }) {
       <hr className="border-gray-200 dark:border-gray-700" />
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
         <div className="pt-6 pb-8 space-y-2 md:space-y-5">
-          <h2 className="text-2xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-300 sm:text-4xl sm:leading-10 md:text-5xl md:leading-14">
+          <h2 className="text-2xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-300 sm:text-4xl sm:leading-10 md:text-4xl md:leading-14">
             Latest Articles
           </h2>
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">

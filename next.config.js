@@ -19,7 +19,7 @@ module.exports = withBundleAnalyzer({
           loader: 'file-loader',
           options: {
             publicPath: '/_next',
-            name: 'static/media/[name].[hash].[ext]',
+            name: '_static/media/[name].[hash].[ext]',
           },
         },
       ],
@@ -33,9 +33,9 @@ module.exports = withBundleAnalyzer({
     if (!dev && !isServer) {
       // Replace React with Preact only in client production build
       Object.assign(config.resolve.alias, {
-        // react: 'preact/compat',
-        // 'react-dom/test-utils': 'preact/test-utils',
-        // 'react-dom': 'preact/compat',
+        react: 'preact/compat',
+        'react-dom/test-utils': 'preact/test-utils',
+        'react-dom': 'preact/compat',
       })
     }
 

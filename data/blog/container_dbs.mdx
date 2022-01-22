@@ -21,9 +21,11 @@ Let's just say you saw some permissions were messed up in the hosted area at `/v
 Just bring down and up the containers. Upon starting, postgres will go and fix the permissions for you. Turns out the group doesn't matter, but the user needs to be `avahi`. Something like this should work:
 
 ```bash
-docker-compose -f docker-compose.yml -f production-docker-compose.yml -p prod_elmo down
+# Bring down the stack & remove old containers
+docker-compose -f docker-compose.yml -f production-docker-compose.yml -p prod_app down --remove-orphans
 
-docker-compose -f docker-compose.yml -f production-docker-compose.yml -p prod_elmo up -d
+# Bring up the new stack with the same base images
+docker-compose -f docker-compose.yml -f production-docker-compose.yml -p prod_app up -d
 ```
 
 ## Interacting with Docker, Database(s), and Postgres Containers
