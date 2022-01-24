@@ -21,17 +21,23 @@ export default function Home({ posts }) {
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
       <div className="flex flex-col items-center my-6 xl:flex-row gap-x-12 xl:mb-12">
         <div className="pt-6">
-          <h1 className="pb-6 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-300 sm:text-4xl sm:leading-10 md:text-4xl md:leading-14">
+          <h1 className="pb-6 text-3xl font-extrabold leading-9 tracking-tight text-gray-700 dark:text-gray-300 sm:text-4xl sm:leading-10 md:text-4xl md:leading-14">
             Hi, I'm Josh!
           </h1>
-          <h2 className="text-lg prose text-gray-600 dark:text-gray-400">
+          <h2 className="text-lg w-3/4 text-gray-600 dark:text-gray-400">
             Welcome to my personal website. I recently switched my career from Materials Engineering
             to Software Development. I've built a number of{' '}
-            <Link className="dark:text-jblue-100 dark:hover:text-jyellow-100" href="/projects">
+            <Link
+              className="dark:text-jblue-100  dark:hover:text-jyellow-100 text-jblue-700 hover:text-jyellow-900"
+              href="/projects"
+            >
               projects
             </Link>{' '}
             over the years and have written a few{' '}
-            <Link className="dark:text-jblue-100 dark:hover:text-jyellow-100" href="/blog">
+            <Link
+              className="dark:text-jblue-100  dark:hover:text-jyellow-100 text-jblue-700 hover:text-jyellow-900"
+              href="/blog"
+            >
               articles
             </Link>{' '}
             about various topics.
@@ -41,13 +47,13 @@ export default function Home({ posts }) {
       </div>
       <hr className="border-gray-200 dark:border-gray-700" />
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
-        <div className="pt-6 pb-8 space-y-2 md:space-y-5">
-          <h2 className="text-2xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-300 sm:text-4xl sm:leading-10 md:text-4xl md:leading-14">
+        <div className="pt-6 pb-6 space-y-2 md:space-y-5">
+          <h2 className="text-2xl font-extrabold leading-9 tracking-tight text-gray-700 dark:text-gray-300 sm:text-4xl sm:leading-10 md:text-4xl md:leading-14">
             Latest Articles
           </h2>
-          <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
+          {/* <p className="text-lg leading-7 text-gray-600 dark:text-gray-400">
             {siteMetadata.description}
-          </p>
+          </p> */}
         </div>
         <ul className="divide-y divide-gray-200 dark:divide-gray-700">
           {!posts.length && 'No posts found.'}
@@ -59,7 +65,7 @@ export default function Home({ posts }) {
                   <div className="space-y-2 xl:grid xl:grid-cols-4 xl:space-y-0 xl:items-baseline">
                     <dl>
                       <dt className="sr-only">Published on</dt>
-                      <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+                      <dd className="text-base font-medium leading-6 text-gray-600 dark:text-gray-400">
                         <time dateTime={date}>{formatDate(date)}</time>
                       </dd>
                     </dl>
@@ -69,7 +75,7 @@ export default function Home({ posts }) {
                           <h2 className="text-2xl font-bold leading-8 tracking-tight">
                             <Link
                               href={`/blog/${slug}`}
-                              className="text-gray-900 dark:text-jyellow-100"
+                              className="text-jred-300 dark:text-jyellow-100"
                             >
                               {title}
                             </Link>
@@ -80,14 +86,14 @@ export default function Home({ posts }) {
                             ))}
                           </div>
                         </div>
-                        <div className="prose text-gray-500 max-w-none dark:text-gray-400">
+                        <div className="prose text-gray-600 max-w-none dark:text-gray-400">
                           {summary}
                         </div>
                       </div>
                       <div className="text-base font-medium leading-6">
                         <Link
                           href={`/blog/${slug}`}
-                          className="text-primary-500 hover:text-primary-600 dark:text-jblue-100 dark:hover:text-jyellow-100"
+                          className="dark:text-jblue-100 text-jblue-700 hover:text-jyellow-900 dark:hover:text-jyellow-100"
                           aria-label={`Read "${title}"`}
                         >
                           Read more &rarr;
@@ -105,7 +111,7 @@ export default function Home({ posts }) {
         <div className="flex justify-end text-base font-medium leading-6">
           <Link
             href="/blog"
-            className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+            className="dark:text-jblue-100 text-jblue-700 hover:text-jyellow-900 dark:hover:text-jyellow-100"
             aria-label="all posts"
           >
             All Posts &rarr;

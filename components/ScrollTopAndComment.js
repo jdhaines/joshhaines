@@ -28,7 +28,7 @@ const ScrollTopAndComment = () => {
         type="button"
         onClick={handleScrollToComment}
         style={{ opacity: show ? 1 : 0 }}
-        className="p-2 text-gray-500 transition-all bg-gray-200 rounded-full dark:text-jred-300 dark:bg-gray-700 dark:hover:text-gray-100 dark:hover:bg-jred-300 hover:bg-gray-300"
+        className="p-2 transition-all rounded-full text-jred-500 bg-gray-300 hover:text-gray-200 hover:bg-jred-500 dark:text-jred-300 dark:bg-gray-700 dark:hover:text-gray-100 dark:hover:bg-jred-300"
       >
         <svg className="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
           <path
@@ -43,7 +43,7 @@ const ScrollTopAndComment = () => {
         type="button"
         onClick={handleScrollTop}
         style={{ opacity: show ? 1 : 0 }}
-        className="p-2 text-gray-500 transition-all bg-gray-200 rounded-full dark:text-jred-300 dark:bg-gray-700 dark:hover:text-gray-100 dark:hover:bg-jred-300 hover:bg-gray-300"
+        className="p-2 transition-all rounded-full text-jred-500 bg-gray-300 hover:text-gray-200 hover:bg-jred-500 dark:text-jred-300 dark:bg-gray-700 dark:hover:text-gray-100 dark:hover:bg-jred-300"
       >
         <svg className="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
           <path

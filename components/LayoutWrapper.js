@@ -11,20 +11,20 @@ const LayoutWrapper = ({ children }) => {
   return (
     <SectionContainer>
       <div className="flex flex-col justify-between h-screen">
-        <header className="flex items-center justify-between py-10">
+        <header className="flex items-center justify-between py-5 px-10">
           <div>
             <Link href="/" aria-label="Tailwind CSS Blog">
-              <div className="flex items-center justify-between">
-                <div className="mr-3 w-8/12 xl:w-6/12">
-                  <Image src="/_static/images/logo3.png" width={2529} height={880} alt="logo" />
-                </div>
-                {typeof siteMetadata.headerTitle === 'string' ? (
+              <div className="flex items-center justify-between mr-3 pr-3 xl:pr-16 xl:mr-16">
+                {/* <div className="mr-3 w-8/12 xl:w-6/12"> */}
+                <Image src="/_static/images/logo3.png" width={2529} height={880} alt="logo" />
+                {/* </div> */}
+                {/* {typeof siteMetadata.headerTitle === 'string' ? (
                   <div className="hidden h-6 text-2xl font-semibold sm:block">
                     {siteMetadata.headerTitle}
                   </div>
                 ) : (
                   siteMetadata.headerTitle
-                )}
+                )} */}
               </div>
             </Link>
           </div>
@@ -44,7 +44,7 @@ const LayoutWrapper = ({ children }) => {
             <MobileNav />
           </div>
         </header>
-        <main className="mb-auto">{children}</main>
+        <main className="px-10">{children}</main>
         <Footer />
       </div>
     </SectionContainer>

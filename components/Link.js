@@ -17,15 +17,7 @@ const CustomLink = ({ href, ...rest }) => {
     return <a href={href} {...rest} />
   }
 
-  return (
-    <a
-      className="dark:text-jblue-100 dark:hover:text-jyellow-100"
-      target="_blank"
-      rel="noopener noreferrer"
-      href={href}
-      {...rest}
-    />
-  )
+  return <a target="_blank" rel="noopener noreferrer" href={href} {...rest} />
 }
 
 export default CustomLink

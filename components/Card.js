@@ -28,7 +28,7 @@ const Card = ({ title, description, imgSrc, date, href }) => (
         <h2 className="text-2xl font-bold leading-8 tracking-tight">
           {href ? (
             <Link
-              className="dark:text-jblue-100 dark:hover:text-jyellow-100"
+              className="dark:text-jblue-100 text-jblue-700 hover:text-jyellow-900 dark:hover:text-jyellow-100"
               href={href}
               aria-label={`Link to ${title}`}
             >
@@ -41,11 +41,11 @@ const Card = ({ title, description, imgSrc, date, href }) => (
         <time className="dark:text-jred-100 text-xs" dateTime={date}>
           {formatDate(date)}
         </time>
-        <p className="my-3 prose text-gray-500 max-w-none dark:text-gray-400">{description}</p>
+        <p className="my-3 prose text-gray-600 max-w-none dark:text-gray-400">{description}</p>
         {href && (
           <Link
             href={href}
-            className="text-base font-medium leading-6 text-primary-500 hover:text-primary-600 dark:text-jblue-100 dark:hover:text-jyellow-100"
+            className="text-base font-medium leading-6 text-gray-500 hover:text-gray-600 dark:text-jblue-100 text-jblue-700 hover:text-jyellow-900 dark:hover:text-jyellow-100"
             aria-label={`Link to ${title}`}
           >
             Learn more &rarr;

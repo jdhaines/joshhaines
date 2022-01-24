@@ -21,7 +21,7 @@ module.exports = {
         sans: ['Inter', ...defaultTheme.fontFamily.sans],
       },
       colors: {
-        gray: colors.trueGray,
+        gray: colors.slate,
         jgreen: {
           100: '#B3E6B7',
           300: '#A1E6A6',
@@ -41,14 +41,14 @@ module.exports = {
           300: '#FFCB4B',
           500: '#FFBF1F',
           700: '#FFB600',
-          900: '#FFB600',
+          900: '#D79901',
         },
         jred: {
           100: '#FF927B',
           300: '#FF6A4B',
           500: '#FF461F',
           700: '#FF2C00',
-          900: '#FF2C00',
+          900: '#D72601',
         },
       },
       typography: (theme) => ({
@@ -56,9 +56,9 @@ module.exports = {
           css: {
             color: theme('colors.gray.700'),
             a: {
-              color: theme('colors.jgreen.600'),
+              color: theme('colors.jblue.700'),
               '&:hover': {
-                color: theme('colors.jgreen.700'),
+                color: theme('colors.jyellow.900'),
               },
               code: { color: theme('colors.jgreen.400') },
             },
