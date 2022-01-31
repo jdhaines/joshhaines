@@ -19,7 +19,10 @@ export default function Footer() {
           <div>{` • `}</div>
           <div>{`© ${new Date().getFullYear()}`}</div>
           <div>{` • `}</div>
-          <Link className="dark:text-gray-500 dark:hover:text-jyellow-100" href="/">
+          <Link
+            className="dark:hover:text-jyellow-100 dark:text-jblue-100 text-jblue-700 hover:text-jyellow-900"
+            href="/"
+          >
             {siteMetadata.title}
           </Link>
         </div>

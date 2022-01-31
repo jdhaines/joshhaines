@@ -41,7 +41,7 @@ export default function Home({ posts }) {
               articles
             </Link>{' '}
             about various topics.
-            {' about them. Have a good read!'}
+            {''}
           </h2>
         </div>
       </div>

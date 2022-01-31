@@ -47,7 +47,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
             </div>
           </header>
           <div
-            className="pb-8 divide-y divide-gray-200 xl:divide-y-0 dark:divide-gray-700 xl:grid xl:grid-cols-4 xl:gap-x-6"
+            className="pb-8 divide-y divide-gray-200 xl:divide-y-0 dark:divide-gray-700 xl:grid xl:grid-cols-4"
             style={{ gridTemplateRows: 'auto 1fr' }}
           >
             <dl className="pt-6 pb-10 xl:pt-11 xl:border-b xl:border-gray-200 xl:dark:border-gray-700">
@@ -59,21 +59,21 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                       {author.avatar && (
                         <Image
                           src={author.avatar}
-                          width="38px"
-                          height="38px"
+                          width="64px"
+                          height="64px"
                           alt="avatar"
-                          className="w-10 h-10 rounded-full"
+                          className="border-2 border-gray-600 rounded-full inline object-cover"
                         />
                       )}
                       <dl className="text-sm font-medium leading-5 whitespace-nowrap">
                         <dt className="sr-only">Name</dt>
-                        <dd className="text-gray-900 dark:text-jred-100">{author.name}</dd>
+                        <dd className="text-jred-900 dark:text-jred-100">{author.name}</dd>
                         <dt className="sr-only">GitHub</dt>
                         <dd>
                           {author.twitter && (
                             <Link
                               href={author.github}
-                              className="text-jblue-100 hover:text-jyellow-100 dark:hover:text-jorange-500"
+                              className="dark:hover:text-jyellow-100 dark:text-jblue-100 text-jblue-700 hover:text-jyellow-900"
                             >
                               {author.github.replace('https://github.com/', '...github/')}
                             </Link>
@@ -88,11 +88,20 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
             <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:pb-0 xl:col-span-3 xl:row-span-2">
               <div className="pt-10 pb-8 prose dark:prose-dark max-w-none">{children}</div>
               <div className="pt-6 pb-6 text-sm text-gray-700 dark:text-gray-300">
-                <Link href={discussUrl(slug)} rel="nofollow">
+                <Link
+                  className="dark:hover:text-jyellow-100 dark:text-jblue-100 text-jblue-700 hover:text-jyellow-900"
+                  href={discussUrl(slug)}
+                  rel="nofollow"
+                >
                   {'Discuss on Twitter'}
                 </Link>
                 {` • `}
-                <Link href={editUrl(fileName)}>{'View on GitHub'}</Link>
+                <Link
+                  className="dark:hover:text-jyellow-100 dark:text-jblue-100 text-jblue-700 hover:text-jyellow-900"
+                  href={editUrl(fileName)}
+                >
+                  {'View on GitHub'}
+                </Link>
               </div>
               <Comments frontMatter={frontMatter} />
             </div>
