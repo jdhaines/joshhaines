@@ -19,6 +19,7 @@ public/sitemap.xml
 *.xml
 # rss feed
 /public/feed.xml 
+.dccache
 
 # misc
 .DS_Store
