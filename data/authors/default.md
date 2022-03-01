@@ -1,6 +1,6 @@
 ---
 name: Josh Haines
-avatar: /_static/images/josh_small4.jpg
+avatar: /static/images/josh_small4.jpg
 occupation: DevSecOps Strategy Lead
 company: Rolls-Royce
 email: Josh@JoshHaines.com
@@ -16,4 +16,4 @@ As a three-time small business owner and recovering serial hobbyist, he loves to
 
 Josh lives with his wife Chris and daughters Jenny and Nora. He holds a BS and MS from Purdue University in Materials Engineering.
 
-<Image alt="ocean" src="/_static/images/family.jpg" width={419} height={627} />
+<Image alt="ocean" src="/static/images/family.jpg" width={419} height={627} />

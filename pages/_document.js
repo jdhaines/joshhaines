@@ -4,12 +4,12 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <link rel="apple-touch-icon" sizes="192x192" href="/_static/favicons/favicon-192.png" />
-          <link rel="icon" type="image/png" sizes="48x48" href="/_static/favicons/favicon-48.png" />
-          <link rel="icon" type="image/png" sizes="32x32" href="/_static/favicons/favicon-32.png" />
-          <link rel="icon" type="image/png" sizes="16x16" href="/_static/favicons/favicon-16.png" />
-          <link rel="manifest" href="/_static/favicons/site.webmanifest" />
-          <link rel="mask-icon" href="/_static/favicons/favicon-192.svg" color="#7BCC80" />
+          <link rel="apple-touch-icon" sizes="192x192" href="/static/favicons/favicon-192.png" />
+          <link rel="icon" type="image/png" sizes="48x48" href="/static/favicons/favicon-48.png" />
+          <link rel="icon" type="image/png" sizes="32x32" href="/static/favicons/favicon-32.png" />
+          <link rel="icon" type="image/png" sizes="16x16" href="/static/favicons/favicon-16.png" />
+          <link rel="manifest" href="/static/favicons/site.webmanifest" />
+          <link rel="mask-icon" href="/static/favicons/favicon-192.svg" color="#7BCC80" />
           <meta name="msapplication-TileColor" content="#FFFFFF" />
           <meta name="theme-color" content="#FFFFFF" />
           <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
