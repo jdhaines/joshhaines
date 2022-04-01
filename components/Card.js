@@ -7,7 +7,7 @@ const Card = ({ title, description, imgSrc, date, href }) => (
     <div className="h-full overflow-hidden border-2 border-gray-600 rounded-md border-opacity-60 dark:border-gray-700">
       {href ? (
         <Link href={href} aria-label={`Link to ${title}`}>
-          <Image
+          <img
             alt={title}
             src={imgSrc}
             className="object-cover object-center lg:h-48 md:h-36"
@@ -16,7 +16,7 @@ const Card = ({ title, description, imgSrc, date, href }) => (
           />
         </Link>
       ) : (
-        <Image
+        <img
           alt={title}
           src={imgSrc}
           className="object-cover object-center lg:h-48 md:h-36"
