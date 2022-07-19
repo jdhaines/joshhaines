@@ -1,0 +1,39 @@
+---
+title: 'Setting the Stage'
+date: '2022-07-18'
+lastmod: '2022-07-18'
+tags: ['tech', 'SF']
+draft: true
+summary: >
+  Part 1: History of the Software Factory
+# layout: PostLayout
+author: ['Josh']
+---
+
+## Intro
+
+I would like to take a couple articles to describe the current team that I work with and how it came to be. It's an interesting story that may have some big implications for how an idea can lead to a start-up and a career change even while working inside a large enterprise. You see, the team I'm on came from an idea that grew from a seed into a real group on an org chart. And it started while I was doing something very different for the company. Let's jump in!
+
+## Backstory
+
+My background is in Materials Engineering. I got my BS from Purdue University in 2003 and started working for Honeywell Aerospace in South Bend, IN. A few years after that I started working (and finished) my MS in Materials Engineering, also from Purdue. During that time I started a small side business called JoshPro where I built websites, fixed computers, and generally learned about computers and tech. This was actually one of many side businesses I've run as a way to learn about a topic rather than to make money. Just as the others, I succeeded in the goal (learning), but never really made any money. Throughout this time I spent my career working in the same field as my degrees, but I also moonlighted as "the IT guy" in all the teams I was on. I created various digital tools to solve problems and make common tasks more efficient. I won many differerent small team awards on efficiency because of these tools. The tools consisted of scripts, Excel tools, Access databases, and other small things that made small changes and benefits mostly local in the team I was working on.
+
+Around 2017 I changed companies to Rolls-Royce. It was closer to where I grew up and I had been an intern in 2006 and was eager to get back. I hired into the Materials Engineering team and continued my career. While there, I continued to find ways to improve our processes with small digital tools. Rolls-Royce was pretty far behind where I expected them to be from a digital tools standpoint. I built a couple flat file web apps using `.json` files as local databases which really impressed a number of different managers and teams members.
+
+> Note: Flat File Web Apps<br/><br/>In normal circumstances, you might find it tempting to laugh at someone solving problems using a flat file web app. In this case, I'm using this to denote a flat set of files that runs and works in a browser with nothing but a normal file share (i.e. shared drive) to make it work. This would consist of simple html files, css files, some javascript, and a database file (often `.json`) that would need to be manually updated. The beauty is in the simplicity. As long as people can access the folder, they can click the `index.html` file and "_use_" the web app as if it's real. You can have nice styling, buttons, tables, sorting, exports, etc. For use cases where you have a lot of reads and few writes, this actually works really well. For enterprise environments with many restrictions, it was like showing people fire for the first time.
+
+Around 2018 it started to become clear that our current team's working practices were holding us back. We used a frustrating combination of a shared mailbox, a shared excel file (which often broke due to versioning) and an access database which few people could use and even fewer could fix ~~if~~ _when_ it broke. We had many different daily tasks we needed to track and the current system led to rework and duplication of effort on a fairly frequent basis. I initially opened an IT ticket for a web app assuming we had a team for that. I was wrong and it got closed almost immediately. I knew I could build the app myself pretty quickly using something like Python and [Flask](https://palletsprojects.com/p/flask/). I carved out some time and got to work.
+
+## Prove the Concept
+
+I had built a few Python apps with both Django and Flask in the past and was relatively comfortable with those frameworks. We had access to Python in our restricted enterprise environment, and I had the libraries I needed to start building a basic Flask app with a sqlite database. The list of requirements were relatively straightforward:
+
+- Open view capability, logged in user from team to edit data
+- Assignment system for daily tasks to a specific user
+- Other associated tables for things like Suppliers, etc.
+- Some basic dashboard charts to show current SLA status on each kind of task
+- Form to allow data to be loaded from a shared mailbox by an admin and a simple way for team members to mark their tasks as complete or reassign them to another team member.
+
+I'm fairly confident a great programmer could have knocked out this app in less than a week. It took me a month or two as I had a day-job and I wasn't great.
+
+## Asking to Experiment
