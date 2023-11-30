@@ -14,6 +14,13 @@ const projectsData = [
     date: '2009-06-22',
     href: 'http://joshpro.com',
   },
+  {
+    title: 'JoshHaines.com',
+    description: `I've rebuilt my own website a number of times.  Most recently I used a Next.js template and then customized it to my liking.  I had a design company on Fivrr design the logo after I provided the colors.  I stole the idea from my previous JoshPro website as I thought the Orange and Blue looked great.  I wanted the logo to have something to do with aerospace as I've always worked in that industry and I think they did a great job.`,
+    imgSrc: '/images/logo3.png',
+    date: '2021-11-15',
+    href: 'https://joshhaines.com',
+  },
 ]
 
 export default projectsData
