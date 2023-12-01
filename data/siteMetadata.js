@@ -5,7 +5,7 @@ const siteMetadata = {
   headerTitle: '',
   description: '',
   language: 'en-us',
-  theme: 'system', // system, dark or light
+  theme: 'dark', // system, dark or light
   siteUrl: 'https://joshhaines.com',
   siteRepo: 'https://github.com/jdhaines/joshhaines',
   siteLogo: '/static/images/logo3.png',
