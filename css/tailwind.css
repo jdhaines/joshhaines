@@ -18,6 +18,17 @@
   @apply no-underline;
 }
 
+.legend {
+  color: #1f2937;
+}
+
+.zoomButton {
+  color: #1f2937;
+  font-size: 11px !important;
+  border: solid 1px #1f2937;
+  padding: 2px;
+}
+
 .csl-entry {
   @apply my-5;
 }
