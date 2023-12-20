@@ -18,12 +18,7 @@ export default function ChartPage() {
     if (error) {
       return [[new Date(), 0]]
     }
-    // return <div>{JSON.stringify(data)}</div>
-    // return data['valueRanges'][0]['values'].pop(0)
-    // return JSON.stringify(
-    //   data[0].data.map((row) => {
-    //     return [row['Date'], row['Weight (lbs)']]
-    //   })
+
     const weightArray: ChartData[] = []
     weightArray.push([
       { type: 'date', label: 'Date' },
