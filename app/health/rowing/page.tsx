@@ -37,10 +37,10 @@ export default function ChartPage() {
   }
 
   return (
-    <div className="mt-4 flex flex-col">
+    <div className="mt-4 flex w-screen flex-col">
       <Chart
         chartType="Calendar"
-        width="100%"
+        width="1000"
         height="400px"
         data={WeightData()}
         options={{

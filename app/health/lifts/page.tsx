@@ -39,7 +39,6 @@ export default function ChartsPage() {
         parseFloat(row['Clean & Jerk']),
       ])
     })
-    console.log('liftArray: ', liftArray)
     return liftArray
   }
 

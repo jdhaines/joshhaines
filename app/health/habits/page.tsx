@@ -67,10 +67,10 @@ export default function ChartPage() {
   }
 
   return (
-    <div className="flex flex-col pt-4">
+    <div className="flex w-screen flex-col pt-4">
       <Chart
         chartType="Calendar"
-        width="100%"
+        width="1000px"
         data={WeightData()['sleepArray']}
         options={{
           legendToggle: false,
@@ -82,7 +82,7 @@ export default function ChartPage() {
       />
       <Chart
         chartType="Calendar"
-        width="100%"
+        width="1000px"
         data={WeightData()['liftingArray']}
         options={{
           colorAxis: {
@@ -95,7 +95,7 @@ export default function ChartPage() {
       />
       <Chart
         chartType="Calendar"
-        width="100%"
+        width="1000px"
         data={WeightData()['lsdArray']}
         options={{
           legendToggle: false,

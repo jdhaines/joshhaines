@@ -42,7 +42,8 @@ export default function ChartPage() {
           displayLegendValues: true,
           displayZoomButtons: true,
           colors: ['#07A6E2'],
-          fill: 15,
+          fill: 0,
+          thickness: 2,
         }}
       />
     </div>
