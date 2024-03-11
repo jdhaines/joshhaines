@@ -71,6 +71,7 @@ export default function ChartPage() {
       <Chart
         chartType="Calendar"
         width="1000px"
+        height="350px"
         data={WeightData()['sleepArray']}
         options={{
           legendToggle: false,
@@ -83,6 +84,7 @@ export default function ChartPage() {
       <Chart
         chartType="Calendar"
         width="1000px"
+        height="350px"
         data={WeightData()['liftingArray']}
         options={{
           colorAxis: {
@@ -96,6 +98,7 @@ export default function ChartPage() {
       <Chart
         chartType="Calendar"
         width="1000px"
+        height="350px"
         data={WeightData()['lsdArray']}
         options={{
           legendToggle: false,
