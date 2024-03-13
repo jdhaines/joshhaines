@@ -2,8 +2,9 @@
 const siteMetadata = {
   title: 'JoshHaines.com',
   author: 'Josh Haines',
-  headerTitle: '',
-  description: '',
+  headerTitle: 'Josh Haines - Personal Website',
+  description:
+    'This website is a personal blog, portfolio, and resume site for Josh Haines, Global DevSecOps Leader at Rolls-Royce Defense.',
   language: 'en-us',
   theme: 'dark', // system, dark or light
   siteUrl: 'https://joshhaines.com',
