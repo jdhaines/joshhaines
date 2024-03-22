@@ -7333,7 +7333,7 @@ __metadata:
     rehype-slug: ^6.0.0
     remark: ^15.0.1
     remark-gfm: ^3.0.1
-    remark-github-blockquote-alert: ^1.1.1
+    remark-github-blockquote-alert: ^1.2.0
     remark-math: ^6.0.0
     tailwindcss: ^3.4.1
     typescript: ^5.4.2
@@ -10635,12 +10635,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"remark-github-blockquote-alert@npm:^1.1.1":
-  version: 1.1.1
-  resolution: "remark-github-blockquote-alert@npm:1.1.1"
+"remark-github-blockquote-alert@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "remark-github-blockquote-alert@npm:1.2.0"
   dependencies:
     unist-util-visit: ^5.0.0
-  checksum: a54993b5e477f888989406e5b72a584c2a64ac500ed5b9f55ba515324b6ac42488d2cb2f32c2d7ea4b9fc035a2f39d504212eee1bc5999d29ec95354762990a1
+  checksum: ccf7dff7de5cc3be520e615a73c1dce2b361332adbfa56e095c533406f7a11eb6f87c38ba9a04dafffa71623ae4db8e0473d246cdabfd75247ecef5dd950c1ab
   languageName: node
   linkType: hard
 

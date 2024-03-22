@@ -109,13 +109,13 @@ blockquote > p::after {
 .markdown-alert .markdown-alert-title svg.octicon {
   margin-right: 8px !important;
   margin-right: var(--base-size-8, 8px) !important;
+  fill: currentColor;
 }
 .markdown-alert.markdown-alert-note {
   border-left-color: var(--borderColor-accent-emphasis, var(--color-accent-emphasis));
 }
 .markdown-alert.markdown-alert-note .markdown-alert-title {
   color: var(--color-accent-fg);
-  fill: var(--color-accent-fg);
   color: var(--fgColor-accent, var(--color-accent-fg));
 }
 .markdown-alert.markdown-alert-tip {
@@ -123,7 +123,6 @@ blockquote > p::after {
 }
 .markdown-alert.markdown-alert-tip .markdown-alert-title {
   color: var(--color-success-fg);
-  fill: var(--color-success-fg);
   color: var(--fgColor-success, var(--color-success-fg));
 }
 .markdown-alert.markdown-alert-important {
@@ -131,7 +130,6 @@ blockquote > p::after {
 }
 .markdown-alert.markdown-alert-important .markdown-alert-title {
   color: var(--color-done-fg);
-  fill: var(--color-done-fg);
   color: var(--fgColor-done, var(--color-done-fg));
 }
 .markdown-alert.markdown-alert-warning {
@@ -139,7 +137,6 @@ blockquote > p::after {
 }
 .markdown-alert.markdown-alert-warning .markdown-alert-title {
   color: var(--color-attention-fg);
-  fill: var(--color-attention-fg);
   color: var(--fgColor-attention, var(--color-attention-fg));
 }
 .markdown-alert.markdown-alert-caution {
@@ -147,6 +144,5 @@ blockquote > p::after {
 }
 .markdown-alert.markdown-alert-caution .markdown-alert-title {
   color: var(--color-danger-fg);
-  fill: var(--color-danger-fg);
   color: var(--fgColor-danger, var(--color-danger-fg));
 }
