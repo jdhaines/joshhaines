@@ -75,6 +75,10 @@ module.exports = () => {
         },
       ],
     },
+    // TODO: remove this object once the types are updated in the markdown rehype/remark ecosystem
+    typescript: {
+      ignoreBuildErrors: true,
+    },
     // async headers() {
     //   return [
     //     {
