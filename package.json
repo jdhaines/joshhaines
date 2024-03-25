@@ -16,7 +16,7 @@
     "@tailwindcss/typography": "^0.5.9",
     "@types/google.visualization": "^0.0.74",
     "apexcharts": "^3.48.0",
-    "autoprefixer": "^10.4.18",
+    "autoprefixer": "^10.4.19",
     "contentlayer": "0.3.4",
     "esbuild": "0.20.2",
     "github-slugger": "^2.0.0",
@@ -26,7 +26,7 @@
     "next-contentlayer": "0.3.4",
     "next-themes": "^0.3.0",
     "pliny": "0.1.7",
-    "postcss": "^8.4.37",
+    "postcss": "^8.4.38",
     "react": "18.2.0",
     "react-apexcharts": "^1.4.1",
     "react-dom": "18.2.0",
@@ -39,7 +39,7 @@
     "rehype-prism-plus": "^2.0.0",
     "rehype-slug": "^6.0.0",
     "remark": "^15.0.1",
-    "remark-gfm": "^3.0.1",
+    "remark-gfm": "^4.0.0",
     "remark-github-blockquote-alert": "^1.2.0",
     "remark-math": "^6.0.0",
     "tailwindcss": "^3.4.1",
@@ -48,8 +48,8 @@
   },
   "devDependencies": {
     "@svgr/webpack": "^8.0.1",
-    "@types/mdx": "^2.0.11",
-    "@types/react": "^18.2.67",
+    "@types/mdx": "^2.0.12",
+    "@types/react": "^18.2.69",
     "@typescript-eslint/eslint-plugin": "^7.3.1",
     "@typescript-eslint/parser": "^7.3.1",
     "cross-env": "^7.0.3",
@@ -61,7 +61,7 @@
     "lint-staged": "^15.2.2",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.12",
-    "typescript": "^5.4.2"
+    "typescript": "^5.4.3"
   },
   "lint-staged": {
     "*.+(js|jsx|ts|tsx)": [
