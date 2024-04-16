@@ -1,6 +1,6 @@
 import { writeFileSync, mkdirSync } from 'fs'
 import path from 'path'
-import GithubSlugger from 'github-slugger'
+import GithubSlugger, { slug } from 'github-slugger'
 import { escape } from 'pliny/utils/htmlEscaper.js'
 import siteMetadata from '../data/siteMetadata.js'
 import tagData from '../app/tag-data.json' assert { type: 'json' }
@@ -35,8 +35,6 @@ const generateRss = (config, posts, page = 'feed.xml') => `
   </rss>
 `
 
-const slugger = new GithubSlugger()
-
 async function generateRSS(config, allBlogs, page = 'feed.xml') {
   const publishPosts = allBlogs.filter((post) => post.draft !== true)
   // RSS for blog post
@@ -47,9 +45,7 @@ async function generateRSS(config, allBlogs, page = 'feed.xml') {
 
   if (publishPosts.length > 0) {
     for (const tag of Object.keys(tagData)) {
-      const filteredPosts = allBlogs.filter((post) =>
-        post.tags.map((t) => slugger.slug(t)).includes(tag)
-      )
+      const filteredPosts = allBlogs.filter((post) => post.tags.map((t) => slug(t)).includes(tag))
       const rss = generateRss(config, filteredPosts, `tags/${tag}/${page}`)
       const rssPath = path.join('public', 'tags', tag)
       mkdirSync(rssPath, { recursive: true })

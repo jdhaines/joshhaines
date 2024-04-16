@@ -1,7 +1,7 @@
 import { defineDocumentType, ComputedFields, makeSource } from 'contentlayer/source-files'
 import { writeFileSync } from 'fs'
 import readingTime from 'reading-time'
-import GithubSlugger from 'github-slugger'
+import { slug } from 'github-slugger'
 import path from 'path'
 // Remark packages
 import remarkGfm from 'remark-gfm'
@@ -25,7 +25,6 @@ import { allCoreContent, sortPosts } from 'pliny/utils/contentlayer.js'
 
 const root = process.cwd()
 const isProduction = process.env.NODE_ENV === 'production'
-const slugger = new GithubSlugger()
 
 const computedFields: ComputedFields = {
   readingTime: { type: 'json', resolve: (doc) => readingTime(doc.body.raw) },
@@ -52,7 +51,7 @@ function createTagCount(allBlogs) {
   allBlogs.forEach((file) => {
     if (file.tags && (!isProduction || file.draft !== true)) {
       file.tags.forEach((tag) => {
-        const formattedTag = slugger.slug(tag)
+        const formattedTag = slug(tag)
         if (formattedTag in tagCount) {
           tagCount[formattedTag] += 1
         } else {
@@ -87,6 +86,7 @@ export const Blog = defineDocumentType(() => ({
     tags: { type: 'list', of: { type: 'string' }, default: [] },
     lastmod: { type: 'date' },
     draft: { type: 'boolean' },
+    pinned: { type: 'boolean', default: false },
     summary: { type: 'string' },
     images: { type: 'json' },
     authors: { type: 'list', of: { type: 'string' } },

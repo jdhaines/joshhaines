@@ -4,4 +4,7 @@
 
 > Based on the repo template by [timlrx](https://GitHub.com/timlrx/tailwind-nextjs-starter-blog)!
 
-I'm also making use of the [GitHub Rehype Plugin for alerts](https://github.com/chrisweb/rehype-github-alerts).
+## Extra Features
+
+- Added the _Pinned_ metadata tag for blog posts that sort them to the top
+- I'm also making use of the [GitHub Rehype Plugin for GitHub style alerts](https://github.com/chrisweb/rehype-github-alerts).

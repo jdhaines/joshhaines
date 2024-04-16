@@ -75,7 +75,9 @@ export default function ListLayoutWithTags({
   const sortedTags = tagKeys.sort((a, b) => tagCounts[b] - tagCounts[a])
 
   const displayPosts = initialDisplayPosts.length > 0 ? initialDisplayPosts : posts
-
+  displayPosts.sort(function (x, y) {
+    return y.pinned - x.pinned
+  })
   return (
     <>
       <div>
