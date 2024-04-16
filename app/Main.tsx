@@ -15,8 +15,8 @@ export default function Home({ posts }) {
             Hi, I'm Josh!
           </h1>
           <h2 className="w-3/4 text-lg text-gray-600 dark:text-gray-400">
-            Welcome to my personal website. I recently switched my career from Materials Engineering
-            to Software Development. I've built a number of{' '}
+            Welcome to my personal website. A few years back I switched my career from Materials
+            Engineering to Software Development. I've built a number of{' '}
             <Link
               className="text-jblue-700  hover:text-jyellow-900 dark:text-jblue-100 dark:hover:text-jyellow-100"
               href="/projects"
@@ -30,7 +30,21 @@ export default function Home({ posts }) {
             >
               articles
             </Link>{' '}
-            about various topics.
+            about various topics. <br />
+            <br />
+            I'm especially proud of my{' '}
+            <Link
+              className="text-jblue-700  hover:text-jyellow-900 dark:text-jblue-100 dark:hover:text-jyellow-100"
+              href="/blog/book-club"
+            >
+              book-club
+            </Link>{' '}
+            where I list the books I've read from most useful to least useful. <br />
+            <br />
+            <em>
+              I'm currently migrating books from another location so this will be growing over the
+              next couple months.
+            </em>
             {''}
           </h2>
         </div>

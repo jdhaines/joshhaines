@@ -1,5 +1,21 @@
 const projectsData = [
   {
+    title: 'AIAA DEIC DevSecOps Committee',
+    description:
+      "I'm leading an industry subcommittee alongside Allan Dianic about how DevSecOps can be used across the aerospace (and related) industries to drive value and improve security and efficiency.",
+    imgSrc: '/static/images/aiaa.png',
+    date: '2023-06-15',
+    href: 'https://github.com/aiaa-deic/devsecops',
+  },
+  {
+    title: 'Rolls-Royce Software Factory',
+    description:
+      'This is an internal start-up I founded within Rolls-Royce Defense.  We build applications, have trained more than 100 citizen developers, and are bringing modern (and agile!) softare development practices to the company in a secure and compliant way.',
+    imgSrc: '/static/images/sf.png',
+    date: '2021-08-15',
+    href: 'https://github.com/rropen',
+  },
+  {
     title: "Jenny's Website",
     description:
       "Custom website built almost completely by my awesome 9 year old daughter, Jenny.  She even has the code in GitHub.  I set up a pipeline to deploy it using AWS's Amplify service which works great for small websites like this one.",

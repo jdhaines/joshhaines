@@ -76,6 +76,9 @@ export default function ListLayout({
   // If initialDisplayPosts exist, display it if no searchValue is specified
   const displayPosts =
     initialDisplayPosts.length > 0 && !searchValue ? initialDisplayPosts : filteredBlogPosts
+  displayPosts.sort(function (x, y) {
+    return y.pinned - x.pinned
+  })
 
   return (
     <>
