@@ -16,7 +16,7 @@ export default function Home({ posts }) {
           </h1>
           <h2 className="w-3/4 text-lg text-gray-600 dark:text-gray-400">
             Welcome to my personal website. A few years back I switched my career from Materials
-            Engineering to Software Development. I've built a number of{' '}
+            Engineering to DevSecOps & Software Engineering. I've built a number of{' '}
             <Link
               className="text-jblue-700  hover:text-jyellow-900 dark:text-jblue-100 dark:hover:text-jyellow-100"
               href="/projects"
