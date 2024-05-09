@@ -35,9 +35,9 @@ export default function Home({ posts }) {
             I'm especially proud of my{' '}
             <Link
               className="text-jblue-700  hover:text-jyellow-900 dark:text-jblue-100 dark:hover:text-jyellow-100"
-              href="/blog/book-club"
+              href="/blog/book-shelf"
             >
-              book-club
+              book-shelf
             </Link>{' '}
             where I list the books I've read from most useful to least useful. <br />
             <br />
