@@ -1,4 +1,4 @@
-![banner](/public/static/images/twitter-card.png)
+![banner](/public/static/images/socialBanner.png)
 
 # JoshHaines.com Website
 
