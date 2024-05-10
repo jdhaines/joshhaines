@@ -7,7 +7,7 @@ const siteMetadata = {
     'This website is a personal blog, portfolio, and resume site for Josh Haines, Global DevSecOps Leader at Rolls-Royce Defense.',
   language: 'en-us',
   theme: 'dark', // system, dark or light
-  siteUrl: 'https://joshhaines.com',
+  siteUrl: 'https://www.joshhaines.com',
   siteRepo: 'https://github.com/jdhaines/joshhaines',
   siteLogo: '/static/images/logo3.png',
   socialBanner: '/static/images/twitter-card.png',
