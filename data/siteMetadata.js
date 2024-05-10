@@ -10,7 +10,7 @@ const siteMetadata = {
   siteUrl: 'https://www.joshhaines.com',
   siteRepo: 'https://github.com/jdhaines/joshhaines',
   siteLogo: '/static/images/logo3.png',
-  socialBanner: '/static/images/twitter-card.png',
+  socialBanner: '/static/images/socialBanner.png',
   // mastodon: 'https://mastodon.social/@mastodonuser',
   discord: 'https://discordapp.com/users/611912877707886612',
   email: 'Josh@JoshHaines.com',
