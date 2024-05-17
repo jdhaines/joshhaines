@@ -1,0 +1,53 @@
+---
+title: 'Team Topologies'
+date: '2022-10-02'
+lastmod: '2024-05-15'
+tags: ['book-shelf', 'leadership', 'teams']
+draft: false
+summary: >
+  Organizing Business and Technology Teams for Fast Flow
+# layout: PostLayout
+authors: ['Josh']
+canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/team-topologies'
+images: ['/static/images/teams.png']
+---
+
+<div className="mx-auto w-1/3">
+  <a href="https://www.amazon.com/Team-Topologies-Organizing-Business-Technology/dp/1942788819">
+    <img
+      alt="book cover image and link to amazon"
+      src="https://m.media-amazon.com/images/I/41lhdBECG5L._SY445_SX342_.jpg"
+    />
+  </a>
+</div>
+
+## Introduction
+
+This was a great short book on how teams can be structured to enable faster delivery at all types of businesses. This was primarily a book directed at tech and software companies, but the lessons will equally apply to Rolls-Royce. It's kind of a tough book to put into a short review as it's mostly wrapped around how there should be 4 types of teams and any teams that don't currently align to these likely need to be reorganized. That's a bold statement, but I think they succeeded in bringing me to their side. I think we should really consider following a few of these lessons as part of Defense 3.0. The two ways I think we can apply the recommendations are around team/group APIs and team/groups as microservices.
+
+## APIs
+
+They talk through working with all business teams as one of the four kinds of agile teams.
+
+1. Stream Aligned — Most teams should be this style. They take organized inputs, do some work, and provide organized outputs.
+1. Enabling Team - These teams will help a stream-aligned team do their jobs better, faster, or more efficiently. They should constantly be trying to work themselves out of existence. When every team knows the lessons from the enabling team... this team disappears.
+1. Platform Team — A team which creates and manages a platform where the rest of the teams work. Eventually, this could be something like an Azure team which holds the knowledge of interacting with Azure while other teams use Azure for their work.
+1. Complicated Subsystem — Deals with an unusual issue where you need a specialized team. Not oriented to transforming inputs into outputs. Usually if you think your team fits here... it doesn't. This should be the least common team type and usually means something isn't organized properly.
+
+Most teams should be stream-aligned. By selecting a few teams to try out this model with, we could write Team APIs. Each team would be responsible for keeping up a document which explains how their team works. They would explain what the inputs need to be (formatted excel form, email, logging something in kanbanize, etc.). They would describe what exactly their team will do with those inputs (actual work scope). Then they would explain what they will provide as output (signed .pdf, zip file to download, updated model in TeamCenter, etc.).
+
+Even teams which traditionally don't see themselves as software teams will be able to gain large insights into their groups by following this method. We did this in the External Labs without realizing it. Elmo clarified group metrics around our daily tasks. It also standardized the tracking of those apps which required the inputs and outputs to be standardized.
+
+I would like to trial this with 1 or 2 teams this year.
+
+## Microservices
+
+Each business team should think of themselves as a microservice for the data they are responsible for. They might initially use an Excel file, but should eventually clean/transform/organized/provide their data in a way where it's accessible to other teams. They would essentially be a microservice for the data in that part of the business. An API document would describe the data available and how to access it. Initially, this could even be a manual email chain... but eventually it could be a small webapp or API. Many of these systems could then roll up into aggregators to make querying easy. Imagine that all the analysis teams will generate a single tracker to track the status of engineering jobs across thermal, aero, stress, etc. Perhaps each group might provide its own method of API for its data that gets aggregated into a larger tracker. That could then be aggregated further into a roll-up app across the engineering organization. All these capabilities start with small teams organizing their data. This is data democratization in practice.
+
+Overall, I enjoyed this book. It's a fairly easy read and provides some great ideas to change the way Rolls-Royce might function in the future. I want to implement and test these ideas out ASAP. I see many engineering teams as stream-aligned while the Software Factory would be an enabling team eventually and mix of a platform team and stream-aligned team as we sit today.
+
+<div className="-mx-2 flex flex-wrap justify-center overflow-hidden xl:-mx-2">
+  <div className="my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-3/4 xl:px-2">
+    ![team topologies](/static/images/teams.png)
+  </div>
+</div>
