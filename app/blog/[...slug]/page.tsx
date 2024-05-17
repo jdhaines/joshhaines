@@ -60,7 +60,6 @@ export async function generateMetadata({
       locale: 'en_US',
       type: 'article',
       publishedTime: publishedAt,
-      publishedDate: publishedAt,
       modifiedTime: modifiedAt,
       url: './',
       images: ogImages,
