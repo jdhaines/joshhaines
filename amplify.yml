@@ -3,7 +3,7 @@ frontend:
   phases:
     preBuild:
       commands:
-        - yarn cache clean && yarn install
+        - yarn install
     build:
       commands:
         - yarn run build
