@@ -39,13 +39,7 @@ export default function Home({ posts }) {
             >
               book-shelf
             </Link>{' '}
-            where I list the books I've read from most useful to least useful. <br />
-            <br />
-            <em>
-              I'm currently migrating books from another location so this will be growing over the
-              next couple months.
-            </em>
-            {''}
+            where I list many of the books I've read from most useful to least useful. <br />
           </h2>
         </div>
       </div>
