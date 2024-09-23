@@ -4773,6 +4773,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"caniuse-lite@npm:^1.0.30001663":
+  version: 1.0.30001663
+  resolution: "caniuse-lite@npm:1.0.30001663"
+  checksum: 489a642feb6826a0fc7cfd7dbc35a3341cc1439eafdf0dae79338cf9033c5d9eddaedacbef7935acaddbb3c226a51097ed53d66dc6d8128cd6938c6763e1bbc4
+  languageName: node
+  linkType: hard
+
 "ccount@npm:^2.0.0":
   version: 2.0.1
   resolution: "ccount@npm:2.0.1"
@@ -8129,6 +8136,7 @@ __metadata:
     "@typescript-eslint/parser": ^8.6.0
     apexcharts: ^3.53.0
     autoprefixer: ^10.4.20
+    caniuse-lite: ^1.0.30001663
     contentlayer: 0.3.4
     cross-env: ^7.0.3
     esbuild: 0.23.1
