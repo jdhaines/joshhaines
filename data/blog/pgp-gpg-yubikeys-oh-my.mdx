@@ -1,0 +1,421 @@
+---
+title: 'PGP, GPG, Yubikeys, Oh My!'
+date: '2024-09-23'
+lastmod: '2024-09-23'
+tags: ['yubikeys', 'encryption', 'pgp', 'security']
+draft: false
+summary: Cheatsheet for interacting with a postgres database inside a docker container
+# layout: PostLayout
+authors: ['Josh']
+canonicalUrl: 'https://www.joshhaines.com/blog/pgp-gpg-yubikeys-oh-my'
+---
+
+## Introduction
+
+<TOCInline toc={props.toc} exclude="Overview" toHeading={3} />
+
+This article is adapted from one I wrote internally for out team to make the
+best use of their yubikeys.  I've expanded it to include more detials around a
+process of properly using Yubikeys to interact and manage PGP keys. This
+article is primarily focused on helping me remember how to perform some of the
+tasks necessary as I don't do them often enough to remember the steps.
+
+> [!NOTE]
+> h/t to Piotr Zacharzewski for his help with some of the GPG
+> sections as well!
+
+## Yubikey Initial Config
+
+This step is optional, but encouraged. Each Yubikey has a number of different applications running on it. Each application is protected by one or more PIN keys. It's a good idea to set up the yubikey manager to allow you to update the pins from the defaults as well as to disable any modes you won't be using. You can find installation instructions for the manager software [here](https://docs.yubico.com/software/yubikey/tools/ykman/Install_ykman.html). Our examples with be using the command line tool `ykman`, but if you are running another operating system just follow those instructions.
+
+```sh
+# See details about your key and see which applications are enabled for which mode
+ykman info
+
+# Check if the PIN for the FIDO application is set
+ykman fido info
+
+# The default fido PIN is 123456
+# Set a new pin for the FIDO application
+ykman fido access change-pin --new-pin xxxxxxxx
+
+# Verify Pin is working to what you just set
+ykman fido access verify-pin --pin xxxxxxxxTech Lesson prep
+
+```
+
+It's also a good idea to disable the OTP application as it isn't likely to be used.
+
+```sh
+# Disable OTP for USB Access
+ykman config usb -d OTP
+
+# Disable OTP for NFC Access
+ykman config nfc -d OTP
+
+# Verify OTP is disabled for both modes
+ykman info
+```
+
+If you have a second Yubikey, you should unplug the first and plug in the second now. Run through the above steps to create the same configuration, except I'd recommend using a different PIN. Store these pins and other associated information in a password manager for the most security and peace of mind.
+
+## Creating SSH Keys
+
+First things first, ensure you've opened your home yubikey and plugged it into your computer. Open
+a terminal and navigate to your ssh directory with `cd $HOME/.ssh`.
+Run the command:
+
+```sh
+ssh-keygen -t ed25519-sk
+```
+
+This will start the process of creating a new set of ssh keys connected to your Yubico Smart Key.
+Type the pin you
+created for the Fido section of your Yubikey in the earlier section.
+If you skipped the earlier section the default PIN
+is `123456`.
+You'll then need to touch your Yubikey, as the
+light should be flashing.
+On the final question, you'll have to pick a path.
+I recommend copying the existing choice
+and modifying the file name to something more meaningful... something like the following:
+
+```txt
+Enter file in which to save the key (/home/josh/.ssh/id_ed25519_sk): /home/josh/.ssh/id_home_yubikey
+```
+
+If you now run `ls $HOME/.ssh` you should see the two new keys.
+The first key is the private key, so keep it safe and
+don't share it with anyone.
+The second key (\*.pub)
+is the public key
+that you'll upload to GitHub in `github.com -> profile photo -> settings -> SSH and GPG keys -> Authentication Keys_`
+
+Paste the contents of your public key into GitHub as a new Authentication Key.
+
+You should now unplug your current Yubikey and plug in the second one that you'll be carrying with you.
+Run through the
+same commands above, except name the key something like `id_mobile_yubikey` or something similar, so you can remember
+it's the mobile key.
+
+## Create an SSH Config File
+
+You'll need to paste the following contents in a new file in the `$HOME/.ssh` folder.
+
+```sh
+Host github.com
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/<home_private_key_file_name>
+  # IdentityFile ~/.ssh/<mobile_private_key_file_name>
+
+  IdentitiesOnly yes
+```
+
+If you are using Linux or **git-bash** on Windows, you can paste the following into your terminal
+
+```sh
+cat <<EOF > $HOME/.ssh/configTest
+Host github.com
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/<home_private_key_file_name>
+  # IdentityFile ~/.ssh/<mobile_private_key_file_name>
+  IdentitiesOnly yes
+EOF
+```
+
+**Make sure to swap your key file name for the tags in the above text**
+
+You can test that everything above has worked by running the following command:
+
+```sh
+ssh -T git@github.com
+```
+
+If things are set up correctly, you'll have to type your passphrase, touch your yubikey, then you'll receive a message
+with your GitHub username showing you've correctly set up your new SSH key pair.
+Great work!
+
+Try it with both keys by plugging in your home key, and commenting out the mobile key line in the `.ssh/config` file.
+Then plug in your mobile key and switch to commenting out the home key file.
+Both keys should function.
+
+## GPG Key Tasks
+
+The steps below are adapted from a few links around the web that lay this out better than I can.
+The first is the guide by [Dr. Doh](https://github.com/drduh/YubiKey-Guide).  The second is a nice
+set of posts by [Chip Senkbeil](https://chipsenkbeil.com/posts/applying-gpg-and-yubikey-part-6-setting-up-yubikeys/)
+
+### GPG Setup Backup
+
+The following commands will backup your current gpg setup to a file that can be used to restore your setup in the future.
+
+```sh
+
+gpg --export --export-options backup --armor > pubkeys_backup.gpg
+gpg --export --armor > pubkeys.gpg
+gpg --export-secret-keys --armor > privkeys.asc
+gpg --export-secret-subkeys --armor > privkeys_sub.asc
+gpg --export-ownertrust > ownerstrust.txt
+
+```
+
+### GPG Setup Restore
+
+The following commands will restore your gpg setup from the backup files created above.
+
+```sh
+gpg --import-options restore --import pubkeys_backup.gpg
+gpg --import pubkeys.gpg
+gpg --import privkeys.asc
+gpg --import privkeys_sub.asc
+gpg --import-ownertrust ownerstrust.txt
+
+```
+
+### Key and Subkey Capabilities & Information
+
+There are 4 types of key capabilities / usages: certify `[C]`, sign `[S]`, encrypt `[E]` and authenticate `[A]`
+
+There are also 2 types of keys: master (or primary) and subkeys. This makes security and management of them easier. Master is used for creating and revoking subkeys and extending trust in general, is locked away and never expires. Subkeys are created for specific purposes and used daily, usually set to expire ( sort of like root CA and signed certs).
+
+The master key by default has `[CS]` - certify and sign. Certify is the highest power. When creating master gpg key for the first time, along with the master key, by default one subkey with `[E]` capability gets created. Further sub keys with capabilities as needed have to be created. Revokation certs can be created having private key AND its password. Subkeys technically are the same as master key. All keys mechanistically are the same and the difference is that subkeys are signed by your master key automatically during creation. This is sort of like certs from root CA.
+
+Our yubikeys have 3 slots for gpg keys. one capability for `[E]`, `[S]` and `[A]` keys and they need the specific key type there. For instance, if you select a key marked as `[S]` for upload it wont be visible to upload to the yubikey slot marked for `[E]`.
+
+### Types of Files in your GPG Setup
+
+1. private key for master key AND each of its subkeys
+1. public key for master key AND each of its subkeys
+1. a list of public keys from sites/friends/etc. (also known as public keyring)
+
+> [!TIP]
+> e.g. if you want to send me an encrypted email you need my public key. You can download from public keyserver like [https://keyserver.ubuntu.com](https://keyserver.ubuntu.com) if you trust one. They will keep accumulating locally.
+
+4. ownerstrust list, i.e. what level of trust you give to each public key:
+
+- unknown (default)
+- undefined
+- never
+- marginal
+- ultimate (only for your own key really)
+
+5. lots of local metadata (signatures, user attributes etc.) This is what `--export-options backup` is for. This enables complete restore of gpg state to another machine.
+
+### Steps to Create, Configure, and Upload GPG to your Yubikey
+
+```sh
+
+# create or import gpg master key. use rsa 4096 bit
+gpg --full-generate-key
+
+# list all your private keys. you can skip format long and keygrip but its useful if you're messing around with keys
+gpg --list-secret-keys --keyid-format=long --with-keygrip
+gpg -K --keyid-format=long --with-keygrip
+
+# list all your public keys (note you may not have private keys for all of those, its ok, thats what asymmetric encryption is for)
+gpg --list-keys --keyid-format=long --with-keygrip
+gpg -k --keyid-format=long --with-keygrip
+
+# ...the fun part. creating keys
+gpg --expert --edit-key <long key ID from step 2>. need private key to generate keys off an existing one
+
+# see below for the options for this interactive mode
+```
+
+> [!NOTE]
+> After the above commands, you have a bunch of options.
+>
+> Type help for details. To generate subkeys, follow:
+>
+> `- addkey -> [select type] -> toggle capabilities if custom -> always go for rsa 4096 -> enter all details pwd, expiry etc.`
+>
+> ALWAYS type `save` at the end
+
+#### Load the Keys Onto the Yubikey
+
+```sh
+
+# plug in the yubikey and if on ubuntu
+sudo apt install yubikey-manager gnupg2 gnupg gnupg-agent scdaemon pcscd
+
+# check yubikey status
+gpg --card-status
+
+# Change gpg pins on the yubi. default PIN is 123456,
+# default admin PIN is 12345678, default reset code is
+# empty. user and admin is all you need to set. I have mine the same.
+# minimum length is 6 for user, 8 for admin
+# first enter old, default pin, press enter, then enter new-pin
+# pin, press enter, new pin again, press enter and wait
+gpg --command-fd=0 --pinentry-mode=loopback --change-pin
+# remove and reinsert yubi
+
+# If you ever screw up the gpg config on the yubikey not to worry. to
+# reset: (it will remove all gpg keys and reset pins to default). Don't worry
+# it wont remove your fido/ssh/opt registrations, just gpg...
+ykman openpgp reset
+
+# By default you have 3 failed retries before all gpg data gets wiped off the
+# yubikey. To change this to 5: (it changes for user pin, admin pin and reset
+# code respectively)
+ykman openpgp access set-retries 5 5 5 -f -a \<your pin here without quotes\>
+
+# Onto the fiddly part. Load the keys onto the yubikey
+gpg --command-fd=0 --pinentry-mode=loopback --edit-key \<your long master privatey key ID>
+
+# Now you wont get any feedback from the commands and the keyboard will appear
+# frozen. Unless it is throwing an error or a message it's working and 
+# give it a few moments. Don't spam enter either as it will accept 
+# the next input (for which there will be no prompt). This is fiddly AF!
+Key 1
+# there should be a \* next to the key you are about to upload)
+
+keytocard
+
+# select slot number to which upload (e.g. 1)
+
+# type your admin PIN
+
+# press enter and WAIT patiently a minute or so -> DO NOT
+# save if you want to keep the key locally for further use.
+# Best to type 'quit'.
+
+```
+
+If you press save at this point it will MOVE the private key (i.e. delete locally) to yubi. Do a backup of the private key before. you can then restore private from backup and move again the same key to another yubi. Or just type quit and exit without saving. It will still have uplodaded the key onto the Yubikey. See [this link ](https://lists.gnupg.org/pipermail/gnupg-users/2016-July/056353.html) for more details.
+
+At this stage if the private keys (listed via `gpg -K`) have any symbol next to them like `#` or `>`, e.g. `ssb>` they are unusable and need reimporting.
+
+Do `gpg --card-status` and you should see the newly uploaded key. Repeat for other capability keys as needed.
+
+```sh
+
+# verify signatures with
+echo "test message string" | gpg --armor --clearsign > signed.txt
+gpg --verify signed.txt
+
+# set yubikey to require magic touch before activating gpg capabilities:
+ykman openpgp keys set-touch sig on
+ykman openpgp keys set-touch enc on
+# NOTE: this might be "ykman openpgp keys set-touch dec on" depending on system
+
+ykman openpgp keys set-touch aut on
+# upload public key of the signing subkey to github, or public of the master key used to create it
+```
+
+Finally, some config and enable signing commits by default on the machine
+
+```sh
+git config --global gpg.program ‘path_to_gpg_executable’
+git config --global user.signingkey <your pubkey ID without quotes>
+git config --global commit.gpgsign true
+```
+
+For command 2 make sure you use the signing subkey ID that is on the yubikey device. List them by gpg --list-secret-keys --keyid-format LONG
+
+Now you only need to have PUBLIC key available locally while private is always on the yubi. So you can be on entirely untrusted machine, put public key there and still login to github and sign commits securely as long as yubikey is plugged in.
+
+Good idea to reboot the machine now.
+
+> [!WARNING]
+> If you are commiting from the command line, it will ask you for USER PIN first, then seemingly stall as it waits for yubikey to be touched (if configured). There will be no prompt on the screen to touch the yubi, just the key physically flashing.  The behavior may be different in different terminals, systems, or IDEs.
+
+## Updating Expired or Expiring Subkeys
+
+After a period of time, your subkeys on the yubikey will
+expire requiring you to extend them or replace them.
+This is detailed partially in the [Dr. Duh](https://github.com/drduh/YubiKey-Guide#updating-keys) article
+referenced above.  I'm including steps here to help make
+things quicker next time I need to make an expiration
+update.
+
+1. Retrieve and unencrypt your master key files from the
+   safe and encrypted location.
+2. Copy the contents of the encrypted folder into a
+   temporary folder locally. (e.g. /tmp/asdf)
+3. Update the subkey expiration dates.  You'll need to
+   pass in an environment variable to ensure gpg works
+   from the keyring from your encypted folder (now
+   copied to a temporary folder).  If you run the
+  commands below without the `GNUPGHOME` variable set,
+  you will likely get an error about the secret key not
+  being available as it isn't inlcluded in our
+  computer's root keyring.
+
+```sh
+# inspect keys in the temporary keyring
+GNUPGHOME=/tmp/gnupg-temp gpg -K --with-subkey-fingerprint --list-options=show-unusable-subkey
+
+# update expiration of the subkeys
+GNUPGHOME=/tmp/gnupg-temp gpg --expert --edit-key <email
+or keyid>
+# use the `key` command to select the subkey to update
+key 1
+
+# set the expiration date
+expire
+1y # or another length of time
+
+# set the other keys using key 1 to deselect and key 2
+# to select the next.  look for the `*` to know which
+# keys are selected
+key 1
+key 2
+
+# save changes
+quit # then y to save
+
+```
+
+4. The public key for the top-level certify key (with the
+   subkeys under it) now includes the updated subkey
+   expiration dates.  We need to export it to a
+   temporary location.
+
+```sh
+# export the updated public key to a local folder
+# note we're using the environment variable to ensure
+# we're using the keyring from the temporary folder
+GNUPGHOME=/tmp/gnupg-temp gpg --armor --export <certify keyid>| sudo tee /home/josh/Documents/publickey_23Sep2024.pub.asc
+
+# import this key to your root keyring to update the
+# details and expiration dates of the subkeys.
+# note we're no longer using the environment variable to
+# target the root keyring
+gpg --import /home/josh/Documents/publickey_23Sep2024.pub.asc
+
+# if everything goes correctly you'll see output similar
+# to this:
+gpg: key 0x<keyid>: "Josh Haines <Josh@JoshHaines.com>" 3 new signatures
+gpg: Total number processed: 1
+gpg:         new signatures: 3
+```
+5. Send the updated public key to the public
+   keyserver(s) of your choice.
+
+```sh
+gpg --send-key <keyid>
+
+# to choose a keyserver, you can pass in the address  I
+# tend to use these three:
+gpg --keyserver https://keyserver.ubuntu.com --send-key <keyid>
+gpg --keyserver hkps://keys.openpgp.org --send-key <keyid>
+
+# I will sometimes upload manually to
+# https://pgp.mit.edu as well.
+```
+
+> [!IMPORTANT]
+> On the recent update, I removed the subkeys on
+> my yubikey by resetting the openpgp app on the
+> yubikey.  I then copied over the updated subkeys back
+> to the yubikey.  This didn't work and the keys still
+> showed the old expiration.  I think it has to do with
+> the root keyring still having the old expiration
+> dates.  Once I imported the updated public key from my
+> temporary folder to my root keyring, the yubikey
+> showed the right dates.  I think this means I don't
+> need to actually change anything on my yubikey... but
+> I need to test that before it's for sure.
