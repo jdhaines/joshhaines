@@ -64,6 +64,9 @@
     "prettier-plugin-tailwindcss": "^0.6.9",
     "typescript": "^5.7.3"
   },
+  "resolutions": {
+    "nanoid": "^3.3.8"
+  },
   "lint-staged": {
     "*.+(js|jsx|ts|tsx)": [
       "eslint --fix"
