@@ -18,23 +18,24 @@ export default function Home({ posts }) {
             Welcome to my personal website. A few years back I switched my career from Materials
             Engineering to DevSecOps & Software Engineering. I've built a number of{' '}
             <Link
-              className="text-jblue-700  hover:text-jyellow-900 dark:text-jblue-100 dark:hover:text-jyellow-100"
+              className="text-jblue-700 hover:text-jyellow-900 dark:text-jblue-100 dark:hover:text-jyellow-100"
               href="/projects"
             >
               projects
             </Link>{' '}
             over the years and have written a few{' '}
             <Link
-              className="text-jblue-700  hover:text-jyellow-900 dark:text-jblue-100 dark:hover:text-jyellow-100"
+              className="text-jblue-700 hover:text-jyellow-900 dark:text-jblue-100 dark:hover:text-jyellow-100"
               href="/blog"
             >
               articles
             </Link>{' '}
-            about various topics. <br />
+            about various topics.
+            <br />
             <br />
             I'm especially proud of my{' '}
             <Link
-              className="text-jblue-700  hover:text-jyellow-900 dark:text-jblue-100 dark:hover:text-jyellow-100"
+              className="text-jblue-700 hover:text-jyellow-900 dark:text-jblue-100 dark:hover:text-jyellow-100"
               href="/blog/book-shelf"
             >
               book-shelf

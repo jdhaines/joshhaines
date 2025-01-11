@@ -15,7 +15,7 @@ canonicalUrl: 'https://www.joshhaines.com/blog/pgp-gpg-yubikeys-oh-my'
 <TOCInline toc={props.toc} exclude="Overview" toHeading={3} />
 
 This article is adapted from one I wrote internally for out team to make the
-best use of their yubikeys.  I've expanded it to include more detials around a
+best use of their yubikeys. I've expanded it to include more detials around a
 process of properly using Yubikeys to interact and manage PGP keys. This
 article is primarily focused on helping me remember how to perform some of the
 tasks necessary as I don't do them often enough to remember the steps.
@@ -144,7 +144,7 @@ Both keys should function.
 ## GPG Key Tasks
 
 The steps below are adapted from a few links around the web that lay this out better than I can.
-The first is the guide by [Dr. Doh](https://github.com/drduh/YubiKey-Guide).  The second is a nice
+The first is the guide by [Dr. Doh](https://github.com/drduh/YubiKey-Guide). The second is a nice
 set of posts by [Chip Senkbeil](https://chipsenkbeil.com/posts/applying-gpg-and-yubikey-part-6-setting-up-yubikeys/)
 
 ### GPG Setup Backup
@@ -266,8 +266,8 @@ ykman openpgp access set-retries 5 5 5 -f -a \<your pin here without quotes\>
 gpg --command-fd=0 --pinentry-mode=loopback --edit-key \<your long master privatey key ID>
 
 # Now you wont get any feedback from the commands and the keyboard will appear
-# frozen. Unless it is throwing an error or a message it's working and 
-# give it a few moments. Don't spam enter either as it will accept 
+# frozen. Unless it is throwing an error or a message it's working and
+# give it a few moments. Don't spam enter either as it will accept
 # the next input (for which there will be no prompt). This is fiddly AF!
 Key 1
 # there should be a \* next to the key you are about to upload)
@@ -320,14 +320,14 @@ Now you only need to have PUBLIC key available locally while private is always o
 Good idea to reboot the machine now.
 
 > [!WARNING]
-> If you are commiting from the command line, it will ask you for USER PIN first, then seemingly stall as it waits for yubikey to be touched (if configured). There will be no prompt on the screen to touch the yubi, just the key physically flashing.  The behavior may be different in different terminals, systems, or IDEs.
+> If you are commiting from the command line, it will ask you for USER PIN first, then seemingly stall as it waits for yubikey to be touched (if configured). There will be no prompt on the screen to touch the yubi, just the key physically flashing. The behavior may be different in different terminals, systems, or IDEs.
 
 ## Updating Expired or Expiring Subkeys
 
 After a period of time, your subkeys on the yubikey will
 expire requiring you to extend them or replace them.
 This is detailed partially in the [Dr. Duh](https://github.com/drduh/YubiKey-Guide#updating-keys) article
-referenced above.  I'm including steps here to help make
+referenced above. I'm including steps here to help make
 things quicker next time I need to make an expiration
 update.
 
@@ -335,14 +335,14 @@ update.
    safe and encrypted location.
 2. Copy the contents of the encrypted folder into a
    temporary folder locally. (e.g. /tmp/asdf)
-3. Update the subkey expiration dates.  You'll need to
+3. Update the subkey expiration dates. You'll need to
    pass in an environment variable to ensure gpg works
    from the keyring from your encypted folder (now
-   copied to a temporary folder).  If you run the
-  commands below without the `GNUPGHOME` variable set,
-  you will likely get an error about the secret key not
-  being available as it isn't inlcluded in our
-  computer's root keyring.
+   copied to a temporary folder). If you run the
+   commands below without the `GNUPGHOME` variable set,
+   you will likely get an error about the secret key not
+   being available as it isn't inlcluded in our
+   computer's root keyring.
 
 ```sh
 # inspect keys in the temporary keyring
@@ -371,7 +371,7 @@ quit # then y to save
 
 4. The public key for the top-level certify key (with the
    subkeys under it) now includes the updated subkey
-   expiration dates.  We need to export it to a
+   expiration dates. We need to export it to a
    temporary location.
 
 ```sh
@@ -392,6 +392,7 @@ gpg: key 0x<keyid>: "Josh Haines <Josh@JoshHaines.com>" 3 new signatures
 gpg: Total number processed: 1
 gpg:         new signatures: 3
 ```
+
 5. Send the updated public key to the public
    keyserver(s) of your choice.
 
@@ -408,20 +409,20 @@ gpg --keyserver hkps://keys.openpgp.org --send-key <keyid>
 ```
 
 6. Copy the files from the temporary folder back into the encrypted folder
-   after deleting the old.  I chose to move the old encrypted files to a a
+   after deleting the old. I chose to move the old encrypted files to a a
    folder named to make it clear they weren't the newest versions... just in
-   case.  Safely eject the encrtyped drive and store it someplace safe until
+   case. Safely eject the encrtyped drive and store it someplace safe until
    you need it next year (or whenever).
 
 > [!IMPORTANT]
 > On the recent update, I removed the subkeys on
 > my yubikey by resetting the openpgp app on the
-> yubikey.  I then copied over the updated subkeys back
-> to the yubikey.  This didn't work and the keys still
-> showed the old expiration.  I think it has to do with
+> yubikey. I then copied over the updated subkeys back
+> to the yubikey. This didn't work and the keys still
+> showed the old expiration. I think it has to do with
 > the root keyring still having the old expiration
-> dates.  Once I imported the updated public key from my
+> dates. Once I imported the updated public key from my
 > temporary folder to my root keyring, the yubikey
-> showed the right dates.  I think this means I don't
+> showed the right dates. I think this means I don't
 > need to actually change anything on my yubikey... but
 > I need to test that before it's for sure.
