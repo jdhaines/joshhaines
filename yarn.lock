@@ -2998,12 +2998,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/bundle-analyzer@npm:15.2.4":
-  version: 15.2.4
-  resolution: "@next/bundle-analyzer@npm:15.2.4"
+"@next/bundle-analyzer@npm:^15.3.0":
+  version: 15.3.0
+  resolution: "@next/bundle-analyzer@npm:15.3.0"
   dependencies:
     webpack-bundle-analyzer: 4.10.1
-  checksum: bb99fb49b16dc1921f9e44a109b13926f483cdb72a6dd59c199518286fb0af67cf23901ecabfb5416fafa79d96024a885f4683ebd4054ad77d7fc50d469ad44d
+  checksum: 0a2e305d0f445ad5aefa411f3c6668f9b2e4b8857e37837ded410c79acde399581176a9d33151104c95d9c15bb94ecb1dc9e397816f87024ca62577fb9bb9c82
   languageName: node
   linkType: hard
 
@@ -8740,7 +8740,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "joshhaines.com@workspace:."
   dependencies:
-    "@next/bundle-analyzer": 15.2.4
+    "@next/bundle-analyzer": ^15.3.0
     "@svgr/webpack": ^8.1.0
     "@tailwindcss/forms": ^0.5.10
     "@tailwindcss/postcss": ^4.0.17
