@@ -3,10 +3,12 @@ frontend:
   phases:
     preBuild:
       commands:
-        - yarn install
+        - curl -fsSL https://bun.sh/install | bash -
+        - source /root/.bashrc
+        - bun install
     build:
       commands:
-        - yarn run build
+        - bun run build
   artifacts:
     baseDirectory: .next
     files:
