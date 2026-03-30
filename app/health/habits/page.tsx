@@ -1,6 +1,6 @@
 'use client'
 
-import { useMemo } from 'react'
+import React, { useMemo, useState } from 'react'
 import CalendarHeatmap from 'react-calendar-heatmap'
 import 'react-calendar-heatmap/dist/styles.css'
 import useGoogleSheets from 'use-google-sheets'
@@ -20,6 +20,8 @@ type HeatmapValue = {
 }
 
 export default function HabitsPage() {
+  const [active, setActive] = useState<HeatmapValue | null>(null)
+
   const { data, loading, error } = useGoogleSheets({
     apiKey: process.env.NEXT_PUBLIC_GOOGLE_API_KEY || '',
     sheetId: process.env.NEXT_PUBLIC_GOOGLE_SHEET_ID || '',
@@ -99,7 +101,9 @@ export default function HabitsPage() {
   }
 
   return (
-    <div className="px-4 pt-4">
+    <div className="min-h-screen px-4 pt-4"
+      onClick={() => setActive(null)}
+    >
       <div className="mb-8 mt-2 flex items-center gap-4">
         <h1 className="text-4xl font-light tracking-tight text-zinc-700 dark:text-zinc-200">Activity Tracker</h1>
         <div className="rounded-md border border-cyan-500/40 bg-slate-950/70 px-3 py-1 text-sm text-zinc-300 shadow-[0_0_0_1px_rgba(8,145,178,0.08)] mt-2">
@@ -112,7 +116,8 @@ export default function HabitsPage() {
         <div className="habit-side">
           <div className="habit-year text-zinc-700 dark:text-zinc-200">{yearLabel}</div>
         </div>
-        <div className="habit-card">
+        <div className="habit-card"
+        >
           <div className="habit-days">
             <span>S</span>
             <span>M</span>
@@ -143,12 +148,17 @@ export default function HabitsPage() {
                 const monthStart = value.date.getDate() === 1
                 const classes = monthStart ? 'month-start' : ''
 
-                return (
-                  <g key={value.key} className={classes}>
-                    {element}
+                return React.cloneElement(element, {
+                  key: value.key,
+                  className: `${element.props.className ?? ''} ${classes}`.trim(),
+                  onClick: (e: React.MouseEvent<SVGRectElement>) => {
+                    e.stopPropagation()
+                    setActive(value)
+                  },
+                  children: (
                     <title>{`${formatDate(value.date)}\n\n${value.note}`}</title>
-                  </g>
-                )
+                  ),
+                })
               }}
             />
           </div>
@@ -163,6 +173,17 @@ export default function HabitsPage() {
               <span className="legend-box legend-goal" />
             </div>
           </div>
+          {active && (
+            <div className="habit-tooltip">
+              <div className="habit-tooltip-date">
+                {formatDate(active.date)}
+              </div>
+
+              <div className="habit-tooltip-note">
+                {active.note}
+              </div>
+            </div>
+          )}
         </div>
       </div>
 
@@ -357,6 +378,38 @@ export default function HabitsPage() {
             padding: 16px 14px 12px;
           }
         }
+
+        .habit-tooltip {
+          position: absolute;
+          left: 50%;
+          bottom: 12px;
+          transform: translateX(-50%);
+          max-width: 260px;
+
+          background: rgba(10, 18, 32, 0.95);
+          border: 1px solid rgba(148, 163, 184, 0.35);
+          border-radius: 8px;
+
+          padding: 10px 12px;
+          font-size: 13px;
+          color: #e5e7eb;
+
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+          backdrop-filter: blur(6px);
+
+          z-index: 10;
+        }
+
+        .habit-tooltip-date {
+          font-weight: 600;
+          margin-bottom: 6px;
+          color: #f9fafb;
+        }
+
+        .habit-tooltip-note {
+          color: #d1d5db;
+          line-height: 1.4;
+        }
       `}</style>
     </div>
   )
@@ -391,6 +444,7 @@ function formatDate(date: Date) {
     year: 'numeric',
   }).format(date)
 }
+
 
 function startOfWeekSunday(date: Date) {
   const d = new Date(date)
