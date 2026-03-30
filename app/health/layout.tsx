@@ -33,7 +33,7 @@ export default function Health({ children }: { children: ReactNode }) {
             <select
               id="current-tab"
               name="current-tab"
-              className="border-jblue-300 text-jred-300 focus:border-jblue-500 focus:ring-jblue-500 block w-full rounded-md py-2 pr-10 pl-3 text-base focus:outline-hidden sm:text-sm"
+              className="dark:bg-gray-700 bg-gray-100 border-jblue-300 text-jred-300 focus:border-jblue-500 focus:ring-jblue-500 block w-full rounded-md py-2 pr-10 pl-3 text-base focus:outline-hidden sm:text-sm"
               onChange={(e) => router.push(e.target.value)}
               defaultValue={fullpath ?? tabs[0].href}
             >
