@@ -13,7 +13,7 @@ export default function Health({ children }: { children: ReactNode }) {
   const tabs = [
     { name: 'Weight', href: '/health/weight' },
     { name: 'Habits', href: '/health/habits' },
-    { name: 'Rowing', href: '/health/rowing' },
+    // { name: 'Rowing', href: '/health/rowing' },
     { name: 'Lifts', href: '/health/lifts' },
     // { name: 'Tests', href: '/health/tests' },
   ]
@@ -24,7 +24,6 @@ export default function Health({ children }: { children: ReactNode }) {
   return (
     <>
       <div className="border-jblue-700 border-b pb-5 sm:pb-0">
-        <h3 className="text-base leading-6 font-semibold text-gray-500">options</h3>
         <div className="mt-3 sm:mt-4">
           {/* Small Screen */}
           <div className="sm:hidden">
