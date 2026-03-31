@@ -15,15 +15,15 @@ export default function Home({ posts }) {
             Hi, I'm Josh!
           </h1>
           <h2 className="w-3/4 text-lg text-gray-600 dark:text-gray-400">
-            Welcome to my personal website. A few years back I switched my career from Materials
-            Engineering to DevSecOps & Software Engineering. I've built a number of{' '}
+            Welcome to my personal website. I'm a DevSecOps, Software Engineering, and
+            Digital & IT Executive. I enjoy sharing knowledge and writing on interesting topics. I've built a number of{' '}
             <Link
               className="text-jblue-700 hover:text-jyellow-900 dark:text-jblue-100 dark:hover:text-jyellow-100"
               href="/projects"
             >
               projects
             </Link>{' '}
-            over the years and have written a few{' '}
+            over the years and have written some{' '}
             <Link
               className="text-jblue-700 hover:text-jyellow-900 dark:text-jblue-100 dark:hover:text-jyellow-100"
               href="/blog"
