@@ -174,7 +174,7 @@ export default function ChartPage() {
           showSymbol: false,
           symbol: 'circle',
           symbolSize: 6,
-          smooth: false,
+          smooth: true,
           connectNulls: false,
           lineStyle: {
             width: 2,
