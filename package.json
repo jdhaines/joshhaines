@@ -20,6 +20,8 @@
     "apexcharts": "^5.10.4",
     "caniuse-lite": "^1.0.30001781",
     "contentlayer2": "0.5.8",
+    "echarts": "^6.0.0",
+    "echarts-for-react": "^3.0.6",
     "esbuild": "0.27.4",
     "github-slugger": "^2.0.0",
     "gray-matter": "^4.0.3",
