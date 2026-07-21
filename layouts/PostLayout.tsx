@@ -45,7 +45,7 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
                 <div>
                   <dt className="sr-only">Published on</dt>
                   <dd className="text-base leading-6 font-medium text-gray-500 dark:text-gray-400">
-                    <time dateTime={dateAddDays(date, 1)}>
+                    <time>
                       {new Date(dateAddDays(date, 1)).toLocaleDateString(
                         siteMetadata.locale,
                         postDateTemplate
@@ -98,14 +98,14 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
             <div className="divide-y divide-gray-200 xl:col-span-3 xl:row-span-2 xl:pb-0 dark:divide-gray-700">
               <div className="prose dark:prose-invert max-w-none pt-10 pb-8">{children}</div>
               <div className="pt-6 pb-6 text-sm text-gray-700 dark:text-gray-300">
-                <Link
-                  className="text-jblue-700 hover:text-jyellow-900 dark:text-jblue-100 dark:hover:text-jyellow-100"
-                  href={discussUrl(path)}
-                  rel="nofollow"
-                >
-                  Discuss on Twitter
-                </Link>
-                {` • `}
+                {/* <Link */}
+                {/*   className="text-jblue-700 hover:text-jyellow-900 dark:text-jblue-100 dark:hover:text-jyellow-100" */}
+                {/*   href={discussUrl(path)} */}
+                {/*   rel="nofollow" */}
+                {/* > */}
+                {/*   Discuss on Twitter */}
+                {/* </Link> */}
+                {/* {` • `} */}
                 <Link
                   className="text-jblue-700 hover:text-jyellow-900 dark:text-jblue-100 dark:hover:text-jyellow-100"
                   href={editUrl(filePath)}

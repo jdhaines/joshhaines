@@ -14,7 +14,7 @@ const siteMetadata = {
   discord: 'https://discordapp.com/users/611912877707886612',
   email: 'Josh@JoshHaines.com',
   github: 'https://github.com/jdhaines',
-  twitter: 'https://twitter.com/joshhaines',
+  x: 'https://x.com/joshhaines',
   // facebook: 'https://facebook.com',
   // youtube: 'https://youtube.com',
   linkedin: 'https://www.linkedin.com/in/joshuahaines',

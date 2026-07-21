@@ -3,8 +3,15 @@ import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import { formatDate } from 'pliny/utils/formatDate'
 import NewsletterForm from 'pliny/ui/NewsletterForm'
+import { dateAddDays } from 'scripts/dateAddDays'
 
 const MAX_DISPLAY = 5
+
+const postDateTemplate: Intl.DateTimeFormatOptions = {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+}
 
 export default function Home({ posts }) {
   return (
@@ -64,7 +71,12 @@ export default function Home({ posts }) {
                     <dl>
                       <dt className="sr-only">Published on</dt>
                       <dd className="text-base leading-6 font-medium text-gray-500 dark:text-gray-400">
-                        <time dateTime={date}>{formatDate(date, siteMetadata.locale)}</time>
+                        <time>
+                          {new Date(dateAddDays(date, 1)).toLocaleDateString(
+                            siteMetadata.locale,
+                            postDateTemplate
+                          )}
+                        </time>
                       </dd>
                     </dl>
                     <div className="space-y-5 xl:col-span-3">
