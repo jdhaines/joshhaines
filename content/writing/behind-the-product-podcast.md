@@ -1,0 +1,54 @@
+---
+title: 'Behind the Product Podcast'
+description: >
+  I was recently a guest on the Behind the Product podcast. We discussed my career, digital transformation, and the Rolls-Royce Software Factory.
+publishedAt: 2024-05-17
+updatedAt: 2024-05-17
+tags: ['me', 'podcast', 'digital transformation', 'software factory']
+featured: true
+draft: false
+image: '/static/images/podcast.png'
+canonicalUrl: 'https://www.joshhaines.com/blog/behind-the-product-podcast'
+---
+
+One of our key software partners, [SEP](https://www.sep.com/), recently invited me to be a guest on their podcast, [Behind the Product](https://sep.com/podcast/josh-haines-digital/). I had a great time discussing my career, digital transformation, and the Rolls-Royce Software Factory. You can listen to the episode at the link above, in the embedded player(s) below, or on your favorite podcast platform ([Apple](https://podcasts.apple.com/us/podcast/josh-haines-finding-success-with-digital-transformation/id1523096153?i=1000641411288), [Spotify](https://open.spotify.com/episode/0obXrEAwmG1V78g7XL0rmx), or [Google](https://podcasts.google.com/feed/aHR0cHM6Ly9mZWVkcy5jYXN0ZWQudXMvNjIvQmVoaW5kLVRoZS1Qcm9kdWN0LWE2ZjE4Zjk2L2ZlZWQ/episode/ZGQ1MzFhYzktZDI1NS00ZTYzLWE4NWMtODliNDM0NjQ5ZmU1?sa=X&ved=0CAUQkfYCahcKEwjYuLuOptiDAxUAAAAAHQAAAAAQBA&hl=en))
+
+<div class="my-24 flex flex-col items-center gap-y-12">
+  <iframe
+    allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
+    frameborder="0"
+    height="175"
+    style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;border-color:#B2B2B2;border-style:solid;border-width:1px;"
+    sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
+    src="https://embed.podcasts.apple.com/us/podcast/josh-haines-finding-success-with-digital-transformation/id1523096153?i=1000641411288"
+  ></iframe>
+  <iframe
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+    frameborder="0"
+    height="152"
+    style="border-radius:12px;width:100%;max-width:660px;"
+    src="https://open.spotify.com/embed/episode/0obXrEAwmG1V78g7XL0rmx?utm_source=generator"
+    allowfullscreen
+    loading="lazy"
+  ></iframe>
+</div>
+
+## Highlights
+
+I've put together a few highlights with timestamps below in case it's helpful:
+
+- 5:10 - Hobbies, [Ikigai](https://www.shiatsusociety.org/finding-business-purpose-and-fulfillment-applying-the-ikigai-framework) Framework, Early days
+- 6:15 - Software Factory Origin Story
+- 15:07 - Citizen Developer Model
+- 16:27 - New Approval Process
+- 18:15 - Software Factory's Pull vs. Push model / _Learn to Fly_
+- 22:42 - Software Factory's _Be A Copilot_ model
+- 25:40 - Catalyst Platform
+- 27:55 - Organizational Influence
+- 31:28 - [Managing Bureaucracy](/blog/book-shelf/delicate-art-of-bureaucracy)
+- 39:18 - Advice for others
+  - 39:18 - hold the vision
+  - 39:39 - _doin`_ culture
+  - 40:38 - [value flywheel](/blog/book-shelf/value-flywheel-effect)
+  - 41:08 - making mistakes
+- 43:20 - Scaling & Future Plans

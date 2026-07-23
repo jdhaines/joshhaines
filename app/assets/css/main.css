@@ -39,3 +39,110 @@
   --font-serif: 'IBM Plex Serif', ui-serif, serif;
   --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
 }
+
+/*
+ * Editorial surface overrides layered on top of Nuxt UI's default neutral-based
+ * surfaces (see @nuxt/ui's --ui-bg-* tokens), per the brand direction of warm
+ * off-white light surfaces and deep blue-black dark surfaces.
+ */
+.light,
+:root {
+  --ui-bg: #faf7f2;
+  --ui-bg-muted: #f3eee4;
+  --ui-bg-elevated: #ffffff;
+  --ui-bg-accented: #ece5d8;
+}
+
+.dark {
+  --ui-bg: #060b14;
+  --ui-bg-muted: #0b1420;
+  --ui-bg-elevated: #101c2c;
+  --ui-bg-accented: #17273c;
+}
+
+/*
+ * GitHub-style `> [!NOTE]` blockquote alerts, rendered by
+ * remark-github-blockquote-alert (see nuxt.config.ts). Colors match GitHub's
+ * standard alert palette (carried over from the legacy site's
+ * remark-github-blockquote-alert/alert.css), keyed off the app's `.light`/
+ * `.dark` color-mode classes instead of `prefers-color-scheme` so alerts
+ * follow the manual color mode toggle.
+ */
+.light {
+  --color-border-default: #d0d7de;
+  --color-accent-fg: #0969da;
+  --color-accent-emphasis: #0969da;
+  --color-danger-fg: #d1242f;
+  --color-danger-emphasis: #cf222e;
+  --color-attention-fg: #9a6700;
+  --color-attention-emphasis: #9a6700;
+  --color-done-fg: #8250df;
+  --color-done-emphasis: #8250df;
+  --color-success-fg: #1a7f37;
+  --color-success-emphasis: #1f883d;
+}
+
+.dark {
+  --color-border-default: #30363d;
+  --color-accent-fg: #58a6ff;
+  --color-accent-emphasis: #1f6feb;
+  --color-danger-fg: #f85149;
+  --color-danger-emphasis: #da3633;
+  --color-attention-fg: #d29922;
+  --color-attention-emphasis: #9e6a03;
+  --color-done-fg: #a371f7;
+  --color-done-emphasis: #8957e5;
+  --color-success-fg: #3fb950;
+  --color-success-emphasis: #238636;
+}
+
+.markdown-alert {
+  border-left: 0.25em solid var(--color-border-default);
+  color: inherit;
+  margin-bottom: 16px;
+  padding: 0.5rem 1em;
+}
+.markdown-alert > :last-child {
+  margin-bottom: 0 !important;
+}
+.markdown-alert .markdown-alert-title {
+  align-items: center;
+  display: flex;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+}
+.markdown-alert .markdown-alert-title svg.octicon {
+  margin-right: 8px !important;
+  fill: currentColor;
+}
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-accent-emphasis);
+}
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-accent-fg);
+}
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-success-emphasis);
+}
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-success-fg);
+}
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-done-emphasis);
+}
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-done-fg);
+}
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-attention-emphasis);
+}
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-attention-fg);
+}
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-danger-emphasis);
+}
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-danger-fg);
+}

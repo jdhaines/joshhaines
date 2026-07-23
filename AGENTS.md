@@ -39,24 +39,26 @@ bun run build
 
 Use Bun. Do not create another package-manager lockfile.
 
-Architecture rules
-Use Nuxt 4 and Vue 3 conventions.
-Use TypeScript and <script setup lang="ts">.
-Prefer Nuxt UI components.
-Keep branding in shared theme configuration and tokens.
-Keep content in typed Nuxt Content collections.
-Preserve public URLs, canonical metadata, and social-sharing behavior.
-Support SSR, light mode, dark mode, and accessible keyboard interaction.
-Do not add React or Next.js code.
-Completion
+## Architecture rules
+
+- Use Nuxt 4 and Vue 3 conventions.
+- Use TypeScript and `<script setup lang="ts">`.
+- Prefer Nuxt UI components.
+- Keep branding in shared theme configuration and tokens.
+- Keep content in typed Nuxt Content collections.
+- Preserve public URLs, canonical metadata, and social-sharing behavior.
+- Support SSR, light mode, dark mode, and accessible keyboard interaction.
+- Do not add React or Next.js code.
+
+## Completion
 
 A change is complete only after applicable lint, typecheck, test, and build
 commands have been run—or after clearly reporting why one could not be run.
 
 Summarize:
 
-what changed
-important design decisions
-validation performed
-unresolved issues or migration risks
+- what changed
+- important design decisions
+- validation performed
+- unresolved issues or migration risks
 
