@@ -4,6 +4,7 @@ const links = [
   { label: 'Writing', to: '/writing' },
   { label: 'Talks', to: '/talks' },
   { label: 'Podcasts', to: '/podcasts' },
+  { label: 'Books', to: '/books' },
   { label: 'About', to: '/about' },
 ]
 </script>

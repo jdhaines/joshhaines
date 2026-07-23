@@ -2,6 +2,7 @@
 defineProps<{
   src: string
   alt?: string
+  portrait?: boolean
 }>()
 </script>
 
@@ -9,9 +10,9 @@ defineProps<{
   <NuxtImg
     :src="src"
     :alt="alt"
-    class="aspect-video w-full rounded-lg object-cover"
-    width="320"
-    height="180"
+    :class="[portrait ? 'aspect-[2/3] object-contain' : 'aspect-video object-cover', 'w-full rounded-lg']"
+    :width="portrait ? 200 : 320"
+    :height="portrait ? 300 : 180"
     sizes="288px"
   />
 </template>

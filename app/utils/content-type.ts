@@ -8,10 +8,11 @@ type ContentType = NonNullable<PostsCollectionItem['contentType']>
  * pages, and the article header (Writing = primary/blue, Talks = orange,
  * Podcasts = a third distinct color).
  */
-const CONTENT_TYPE_BADGES: Record<ContentType, { label: string, color: 'primary' | 'warning' | 'success' }> = {
+const CONTENT_TYPE_BADGES: Record<ContentType, { label: string, color: 'primary' | 'warning' | 'success' | 'secondary' }> = {
   article: { label: 'Article', color: 'primary' },
   talk: { label: 'Talk', color: 'warning' },
   podcast: { label: 'Podcast', color: 'success' },
+  bookReview: { label: 'Book Review', color: 'secondary' },
 }
 
 export function getContentTypeBadge(contentType?: ContentType) {

@@ -55,5 +55,9 @@
   },
   "trustedDependencies": [
     "unrs-resolver"
-  ]
+  ],
+  "overrides": {
+    "@unhead/vue": "^3.2.3",
+    "unhead": "^3.2.3"
+  }
 }

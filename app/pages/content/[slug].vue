@@ -126,6 +126,7 @@ useHead({
             v-if="page.image"
             :src="page.image"
             :alt="page.imageAlt ?? page.title"
+            :portrait="page.contentType === 'bookReview'"
           />
 
           <RelatedList

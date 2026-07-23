@@ -42,6 +42,13 @@ function formatDate(date?: Date | string) {
     </h1>
 
     <p
+      v-if="page.bookAuthor"
+      class="mb-2 font-mono text-sm text-muted"
+    >
+      by {{ page.bookAuthor }}
+    </p>
+
+    <p
       v-if="page.description"
       class="mb-8 max-w-prose text-lg text-muted"
     >

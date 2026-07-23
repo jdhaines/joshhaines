@@ -28,9 +28,13 @@ export default defineContentConfig({
         draft: z.boolean().default(false),
         canonicalUrl: z.string().optional(),
         // Drives category badges/colors and which filtered listing page
-        // (/writing, /talks, /podcasts) an entry shows up on. Add new values
-        // here as new content types are introduced.
-        contentType: z.enum(['article', 'talk', 'podcast']).default('article'),
+        // (/writing, /talks, /podcasts, /books) an entry shows up on. Add
+        // new values here as new content types are introduced.
+        contentType: z.enum(['article', 'talk', 'podcast', 'bookReview']).default('article'),
+        // Author of the book being reviewed (only meaningful when
+        // contentType is `bookReview`; distinct from the `author` field
+        // below, which is the reviewer/site author).
+        bookAuthor: z.string().optional(),
         // Slug of an entry in the `authors` collection.
         author: z.string().default('josh'),
         // Manual override for the "X min read"/"X min listen" badge.

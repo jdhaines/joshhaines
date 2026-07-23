@@ -34,6 +34,15 @@ const { data: latestPodcasts } = await useAsyncData('home-latest-podcasts', () =
     .all()
 })
 
+const { data: latestBooks } = await useAsyncData('home-latest-books', () => {
+  return queryCollection('posts')
+    .where('draft', '=', false)
+    .where('contentType', '=', 'bookReview')
+    .order('publishedAt', 'DESC')
+    .limit(3)
+    .all()
+})
+
 const latestPostPath = computed(() => latestAnyPost.value?.[0]?.path)
 
 const requestUrl = useRequestURL()
@@ -132,6 +141,33 @@ useHead({
         <UBlogPosts>
           <UBlogPost
             v-for="post in latestPodcasts"
+            :key="post.path"
+            :to="post.path"
+            :title="post.title"
+            :description="post.description"
+            :date="post.publishedAt"
+            :badge="getContentTypeBadge(post.contentType)"
+          />
+        </UBlogPosts>
+      </section>
+
+      <section v-if="latestBooks?.length">
+        <div class="mb-6 flex items-center justify-between">
+          <h2 class="text-xl font-semibold">
+            Book Reviews
+          </h2>
+          <UButton
+            to="/books"
+            variant="link"
+            trailing-icon="i-lucide-arrow-right"
+          >
+            View all reviews
+          </UButton>
+        </div>
+
+        <UBlogPosts>
+          <UBlogPost
+            v-for="post in latestBooks"
             :key="post.path"
             :to="post.path"
             :title="post.title"
