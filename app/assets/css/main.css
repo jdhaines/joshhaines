@@ -1,0 +1,41 @@
+/* app/assets/css/main.css */
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+@theme static {
+  /*
+   * Brand colors carried forward from the legacy site
+   * (github.com/jdhaines/joshhaines/blob/main/tailwind.config.js), which only
+   * defined a handful of stops (100/300/500/700/900). The full 50-950 scales
+   * below were derived from those anchors by preserving hue/saturation and
+   * interpolating lightness to match Tailwind's standard scale shape. Treat
+   * exact intermediate stops as approximations, not literal legacy values.
+   */
+  --color-jblue-50: #f1fafe;
+  --color-jblue-100: #dff4fc;
+  --color-jblue-200: #bae7f8;
+  --color-jblue-300: #87d5f3;
+  --color-jblue-400: #58c5ee;
+  --color-jblue-500: #25b3e9;
+  --color-jblue-600: #159dd0;
+  --color-jblue-700: #1181ab;
+  --color-jblue-800: #0e698b;
+  --color-jblue-900: #0b546f;
+  --color-jblue-950: #073445;
+
+  --color-jred-50: #fff2f0;
+  --color-jred-100: #ffe2db;
+  --color-jred-200: #ffc0b2;
+  --color-jred-300: #ff917a;
+  --color-jred-400: #ff6747;
+  --color-jred-500: #ff390f;
+  --color-jred-600: #e62800;
+  --color-jred-700: #bd2100;
+  --color-jred-800: #991b00;
+  --color-jred-900: #7a1500;
+  --color-jred-950: #4c0d00;
+
+  --font-sans: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-serif: 'IBM Plex Serif', ui-serif, serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+}
