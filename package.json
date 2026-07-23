@@ -17,7 +17,7 @@
     "@tailwindcss/postcss": "^4.3.2",
     "@tailwindcss/typography": "^0.5.20",
     "@types/google.visualization": "^0.0.74",
-    "apexcharts": "^5.16.0",
+    "apexcharts": "^6.3.0",
     "caniuse-lite": "^1.0.30001805",
     "contentlayer2": "0.5.8",
     "echarts": "^6.1.0",
@@ -69,7 +69,7 @@
     "lint-staged": "^17.0.8",
     "prettier": "^3.9.5",
     "prettier-plugin-tailwindcss": "^0.8.1",
-    "typescript": "5.9.3",
+    "typescript": "7.0.2",
     "wrangler": "^4.111.0"
   },
   "resolutions": {
