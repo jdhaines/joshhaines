@@ -9,6 +9,9 @@ featured: false
 draft: false
 image: '/static/images/chemistryTitle.jpg'
 canonicalUrl: 'https://www.joshhaines.com/blog/techpoint'
+contentType: talk
+author: josh
+relatedWriting: ['submarines-keynote']
 ---
 Innovation is one of those concepts that everyone wants and almost nobody can define. You can't command innovation. You can only create the conditions where it becomes possible. That realization became the foundation of this article and keynote speech.
 

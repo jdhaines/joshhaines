@@ -1,0 +1,145 @@
+<script setup lang="ts">
+import type { PostsCollectionItem } from '@nuxt/content'
+import type { ContentSurroundLink } from '@nuxt/ui'
+import { getRuntimeLabel } from '~/utils/reading-time'
+
+const route = useRoute()
+
+const { data: page } = await useAsyncData(`content-${route.path}`, () => {
+  return queryCollection('posts').path(route.path).first()
+})
+
+if (!page.value) {
+  throw createError({ statusCode: 404, statusMessage: 'Article not found', fatal: true })
+}
+
+const { data: author } = await useAsyncData(`content-author-${page.value.author}`, () => {
+  return queryCollection('authors').path(`/authors/${page.value!.author}`).first()
+})
+
+// All published posts, ordered by date, so we can compute prev/next
+// neighbors and tag-overlap "On This Topic" suggestions in-memory. The
+// collection is small enough that this is simpler and more flexible than
+// `queryCollectionItemSurroundings` (which doesn't support custom ordering).
+const { data: allPosts } = await useAsyncData('content-all', () => {
+  return queryCollection('posts')
+    .where('draft', '=', false)
+    .order('publishedAt', 'DESC')
+    .all()
+})
+
+const runtimeLabel = computed(() => getRuntimeLabel(page.value!))
+
+const currentIndex = computed(() => allPosts.value?.findIndex(post => post.path === page.value!.path) ?? -1)
+
+const surround = computed(() => {
+  const posts = allPosts.value
+  if (!posts || currentIndex.value === -1) return []
+
+  const next = currentIndex.value > 0 ? posts[currentIndex.value - 1] : undefined
+  const prev = currentIndex.value < posts.length - 1 ? posts[currentIndex.value + 1] : undefined
+
+  return [
+    prev ? { path: prev.path, title: prev.title, description: prev.description } : undefined,
+    next ? { path: next.path, title: next.title, description: next.description } : undefined,
+  ] as (ContentSurroundLink | undefined)[]
+})
+
+const onThisTopic = computed<PostsCollectionItem[]>(() => {
+  const posts = allPosts.value
+  const tags = page.value?.tags
+  if (!posts || !tags?.length) return []
+
+  return posts
+    .filter(post => post.path !== page.value!.path)
+    .map(post => ({ post, score: post.tags?.filter(tag => tags.includes(tag)).length ?? 0 }))
+    .filter(({ score }) => score > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 3)
+    .map(({ post }) => post)
+})
+
+const { data: relatedWriting } = await useAsyncData(`content-related-${page.value.path}`, () => {
+  const slugs = page.value?.relatedWriting ?? []
+  if (!slugs.length) return Promise.resolve([])
+
+  return Promise.all(
+    slugs.map(slug => queryCollection('posts').path(`/content/${slug}`).first()),
+  ).then(results => results.filter((post): post is PostsCollectionItem => !!post))
+})
+
+const requestUrl = useRequestURL()
+const canonicalUrl = page.value.canonicalUrl ?? new URL(route.path, requestUrl.origin).toString()
+
+useSeoMeta({
+  title: () => page.value?.title,
+  description: () => page.value?.description,
+  ogTitle: () => page.value?.title,
+  ogDescription: () => page.value?.description,
+  ogImage: () => page.value?.image ? new URL(page.value.image, requestUrl.origin).toString() : undefined,
+  ogUrl: canonicalUrl,
+  ogType: 'article',
+  articlePublishedTime: () => page.value?.publishedAt?.toString(),
+  articleModifiedTime: () => page.value?.updatedAt?.toString(),
+  twitterCard: 'summary_large_image',
+})
+
+useHead({
+  link: [{ rel: 'canonical', href: canonicalUrl }],
+})
+</script>
+
+<template>
+  <UContainer
+    v-if="page"
+    class="py-12"
+  >
+    <div class="grid grid-cols-1 gap-12 lg:grid-cols-[minmax(0,1fr)_18rem]">
+      <article class="min-w-0">
+        <ArticleHeader
+          :page="page"
+          :author="author"
+          :runtime-label="runtimeLabel"
+        />
+
+        <ContentRenderer
+          :value="page"
+          class="article-body prose dark:prose-invert mt-8 max-w-none"
+        />
+
+        <UContentSurround
+          v-if="surround.some(Boolean)"
+          :surround="(surround as ContentSurroundLink[])"
+          class="mt-12"
+        />
+      </article>
+
+      <aside class="hidden lg:block">
+        <div class="sticky top-24 flex flex-col gap-8">
+          <UContentToc
+            v-if="page.body?.toc?.links?.length"
+            :links="page.body.toc.links"
+            title="On this page"
+          />
+
+          <ArticleHeroThumb
+            v-if="page.image"
+            :src="page.image"
+            :alt="page.imageAlt ?? page.title"
+          />
+
+          <RelatedList
+            title="On This Topic"
+            :posts="onThisTopic"
+          />
+
+          <RelatedList
+            title="You Might Also Like"
+            :posts="relatedWriting ?? []"
+          />
+        </div>
+      </aside>
+    </div>
+  </UContainer>
+</template>
+

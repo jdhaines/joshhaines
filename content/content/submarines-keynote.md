@@ -9,6 +9,9 @@ featured: false
 draft: false
 image: '/static/images/subsTalk.png'
 canonicalUrl: 'https://www.joshhaines.com/blog/submarines-keynote'
+contentType: talk
+author: josh
+relatedWriting: ['techpoint']
 ---
 
 ## Introduction

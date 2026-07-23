@@ -146,3 +146,38 @@
 .markdown-alert.markdown-alert-caution .markdown-alert-title {
   color: var(--color-danger-fg);
 }
+
+/*
+ * Wide breakout layout for the article body (app/pages/writing/[slug].vue).
+ * `.article-body` is a CSS grid with a narrow ~740px reading column; direct
+ * children default into that column, while images, code blocks, and
+ * blockquotes (the common "wide media" cases) opt into a ~1100px breakout
+ * without needing special MDC syntax in the markdown source.
+ */
+.article-body {
+  display: grid;
+  grid-template-columns:
+    1fr
+    min(740px, 100%)
+    1fr;
+}
+.article-body > :not(.breakout) {
+  grid-column: 2;
+}
+.article-body > img,
+.article-body > .breakout,
+.article-body > pre,
+.article-body > blockquote {
+  grid-column: 2;
+  width: 100%;
+}
+@media (min-width: 1024px) {
+  .article-body > img,
+  .article-body > .breakout,
+  .article-body > pre,
+  .article-body > blockquote {
+    grid-column: 1 / 4;
+    justify-self: center;
+    width: min(1100px, 100%);
+  }
+}

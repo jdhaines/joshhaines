@@ -2,6 +2,8 @@
 const links = [
   { label: 'Home', to: '/' },
   { label: 'Writing', to: '/writing' },
+  { label: 'Talks', to: '/talks' },
+  { label: 'Podcasts', to: '/podcasts' },
   { label: 'About', to: '/about' },
 ]
 </script>

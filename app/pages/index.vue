@@ -1,13 +1,40 @@
 <script setup lang="ts">
-const { data: latestPosts } = await useAsyncData('home-latest-writing', () => {
-  return queryCollection('writing')
+const { data: latestPosts } = await useAsyncData('home-latest-posts', () => {
+  return queryCollection('posts')
     .where('draft', '=', false)
+    .where('contentType', '=', 'article')
     .order('publishedAt', 'DESC')
     .limit(3)
     .all()
 })
 
-const latestPostPath = computed(() => latestPosts.value?.[0]?.path)
+const { data: latestAnyPost } = await useAsyncData('home-latest-any-post', () => {
+  return queryCollection('posts')
+    .where('draft', '=', false)
+    .order('publishedAt', 'DESC')
+    .limit(1)
+    .all()
+})
+
+const { data: latestTalks } = await useAsyncData('home-latest-talks', () => {
+  return queryCollection('posts')
+    .where('draft', '=', false)
+    .where('contentType', '=', 'talk')
+    .order('publishedAt', 'DESC')
+    .limit(3)
+    .all()
+})
+
+const { data: latestPodcasts } = await useAsyncData('home-latest-podcasts', () => {
+  return queryCollection('posts')
+    .where('draft', '=', false)
+    .where('contentType', '=', 'podcast')
+    .order('publishedAt', 'DESC')
+    .limit(3)
+    .all()
+})
+
+const latestPostPath = computed(() => latestAnyPost.value?.[0]?.path)
 
 const requestUrl = useRequestURL()
 const canonicalUrl = new URL('/', requestUrl.origin).toString()
@@ -37,7 +64,7 @@ useHead({
       <section>
         <div class="mb-6 flex items-center justify-between">
           <h2 class="text-xl font-semibold">
-            Latest from the writing
+            Latest Writing
           </h2>
           <UButton
             to="/writing"
@@ -56,7 +83,61 @@ useHead({
             :title="post.title"
             :description="post.description"
             :date="post.publishedAt"
-            :badge="post.tags?.[0]"
+            :badge="getContentTypeBadge(post.contentType)"
+          />
+        </UBlogPosts>
+      </section>
+
+      <section v-if="latestTalks?.length">
+        <div class="mb-6 flex items-center justify-between">
+          <h2 class="text-xl font-semibold">
+            Talks
+          </h2>
+          <UButton
+            to="/talks"
+            variant="link"
+            trailing-icon="i-lucide-arrow-right"
+          >
+            View all talks
+          </UButton>
+        </div>
+
+        <UBlogPosts>
+          <UBlogPost
+            v-for="post in latestTalks"
+            :key="post.path"
+            :to="post.path"
+            :title="post.title"
+            :description="post.description"
+            :date="post.publishedAt"
+            :badge="getContentTypeBadge(post.contentType)"
+          />
+        </UBlogPosts>
+      </section>
+
+      <section v-if="latestPodcasts?.length">
+        <div class="mb-6 flex items-center justify-between">
+          <h2 class="text-xl font-semibold">
+            Podcasts
+          </h2>
+          <UButton
+            to="/podcasts"
+            variant="link"
+            trailing-icon="i-lucide-arrow-right"
+          >
+            View all episodes
+          </UButton>
+        </div>
+
+        <UBlogPosts>
+          <UBlogPost
+            v-for="post in latestPodcasts"
+            :key="post.path"
+            :to="post.path"
+            :title="post.title"
+            :description="post.description"
+            :date="post.publishedAt"
+            :badge="getContentTypeBadge(post.contentType)"
           />
         </UBlogPosts>
       </section>

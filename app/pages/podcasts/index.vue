@@ -1,19 +1,19 @@
 <script setup lang="ts">
-const { data: posts } = await useAsyncData('writing-index', () => {
+const { data: posts } = await useAsyncData('podcasts-index', () => {
   return queryCollection('posts')
     .where('draft', '=', false)
-    .where('contentType', '=', 'article')
+    .where('contentType', '=', 'podcast')
     .order('publishedAt', 'DESC')
     .all()
 })
 
 const requestUrl = useRequestURL()
-const canonicalUrl = new URL('/writing', requestUrl.origin).toString()
+const canonicalUrl = new URL('/podcasts', requestUrl.origin).toString()
 
 useSeoMeta({
-  title: 'Writing',
-  description: 'Articles from Josh Haines.',
-  ogTitle: 'Writing',
+  title: 'Podcasts',
+  description: 'Podcast episodes and appearances from Josh Haines.',
+  ogTitle: 'Podcasts',
   ogUrl: canonicalUrl,
   ogType: 'website',
 })
@@ -26,7 +26,7 @@ useHead({
 <template>
   <UContainer class="py-12">
     <h1 class="mb-8 text-3xl font-bold">
-      Writing
+      Podcasts
     </h1>
 
     <UBlogPosts>

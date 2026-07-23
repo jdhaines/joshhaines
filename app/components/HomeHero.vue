@@ -27,7 +27,7 @@ orientation="vertical"
         Read Latest Post
       </UButton>
       <UButton
-to="/writing/behind-the-product-podcast" icon="i-lucide-headphones" variant="outline" color="neutral"
+to="/content/behind-the-product-podcast" icon="i-lucide-headphones" variant="outline" color="neutral"
         size="lg">
         Listen to the Podcast
       </UButton>

@@ -8,6 +8,8 @@ tags: ['yubikeys', 'encryption', 'pgp', 'security']
 featured: false
 draft: false
 canonicalUrl: 'https://www.joshhaines.com/blog/pgp-gpg-yubikeys-oh-my'
+contentType: article
+author: josh
 ---
 ## Introduction
 
