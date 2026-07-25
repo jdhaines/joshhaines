@@ -22,9 +22,18 @@ export default defineContentConfig({
         updatedAt: z.date().optional(),
         image: z.string().optional(),
         imageAlt: z.string().optional(),
+        // Overrides the Open Graph / social-share preview image when it
+        // should differ from the on-page hero `image` -- e.g. book reviews
+        // show the real book cover as `image`, but keep a purpose-made
+        // 1200x630-ish social card (`socialImage`) for link previews on
+        // LinkedIn, X, etc. Falls back to `image` when not set.
+        socialImage: z.string().optional(),
         topics: z.array(z.string()).default([]),
         tags: z.array(z.string()).default([]),
         featured: z.boolean().default(false),
+        // Curates the homepage "Start Here" section -- a small, editorially
+        // chosen set of foundational entry points, independent of recency.
+        startHere: z.boolean().default(false),
         draft: z.boolean().default(false),
         canonicalUrl: z.string().optional(),
         // Drives category badges/colors and which filtered listing page

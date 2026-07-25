@@ -1,13 +1,4 @@
 <script setup lang="ts">
-const { data: latestPosts } = await useAsyncData('home-latest-posts', () => {
-  return queryCollection('posts')
-    .where('draft', '=', false)
-    .where('contentType', '=', 'article')
-    .order('publishedAt', 'DESC')
-    .limit(3)
-    .all()
-})
-
 const { data: latestAnyPost } = await useAsyncData('home-latest-any-post', () => {
   return queryCollection('posts')
     .where('draft', '=', false)
@@ -16,31 +7,70 @@ const { data: latestAnyPost } = await useAsyncData('home-latest-any-post', () =>
     .all()
 })
 
-const { data: latestTalks } = await useAsyncData('home-latest-talks', () => {
+const { data: featuredPosts } = await useAsyncData('home-featured', () => {
   return queryCollection('posts')
     .where('draft', '=', false)
-    .where('contentType', '=', 'talk')
+    .where('featured', '=', true)
     .order('publishedAt', 'DESC')
+    .limit(1)
+    .all()
+})
+
+const featuredPost = computed(() => featuredPosts.value?.[0])
+
+const { data: latestMixedPosts } = await useAsyncData('home-latest-mixed', () => {
+  return queryCollection('posts')
+    .where('draft', '=', false)
+    .order('publishedAt', 'DESC')
+    .limit(6)
+    .all()
+})
+
+// Mixed "Latest" feed shouldn't repeat whatever is already the big Featured
+// item above it.
+const latestPosts = computed(() => {
+  return (latestMixedPosts.value ?? [])
+    .filter(post => post.path !== featuredPost.value?.path)
+    .slice(0, 4)
+})
+
+const { data: startHerePosts } = await useAsyncData('home-start-here', () => {
+  return queryCollection('posts')
+    .where('draft', '=', false)
+    .where('startHere', '=', true)
+    .order('publishedAt', 'ASC')
     .limit(3)
     .all()
 })
 
-const { data: latestPodcasts } = await useAsyncData('home-latest-podcasts', () => {
-  return queryCollection('posts')
-    .where('draft', '=', false)
-    .where('contentType', '=', 'podcast')
-    .order('publishedAt', 'DESC')
-    .limit(3)
-    .all()
-})
-
-const { data: latestBooks } = await useAsyncData('home-latest-books', () => {
+const { data: bookshelfPosts } = await useAsyncData('home-bookshelf', () => {
   return queryCollection('posts')
     .where('draft', '=', false)
     .where('contentType', '=', 'bookReview')
     .order('publishedAt', 'DESC')
-    .limit(3)
+    .limit(6)
     .all()
+})
+
+const { data: mediaFeaturePosts } = await useAsyncData('home-media-feature', () => {
+  return queryCollection('posts')
+    .where('draft', '=', false)
+    .where('contentType', 'IN', ['talk', 'podcast'])
+    .order('publishedAt', 'DESC')
+    .limit(4)
+    .all()
+})
+
+// Prefer a podcast for the media feature (the Featured section above is
+// already a talk in the current lineup); fall back to the newest talk if no
+// podcast is available, always skipping whatever's already Featured.
+const mediaFeaturePost = computed(() => {
+  const candidates = (mediaFeaturePosts.value ?? []).filter(post => post.path !== featuredPost.value?.path)
+  return candidates.find(post => post.contentType === 'podcast') ?? candidates[0]
+})
+
+const { data: josh } = await useAsyncData('home-author-josh', () => {
+  return queryCollection('authors').path('/authors/josh').first()
 })
 
 const latestPostPath = computed(() => latestAnyPost.value?.[0]?.path)
@@ -67,116 +97,20 @@ useHead({
   <div>
     <HomeHero :latest-post-path="latestPostPath" />
 
-    <UContainer class="space-y-16 pb-16">
-      <SectionCards />
+    <UContainer class="space-y-16 pb-20">
+      <HomeExplore />
 
-      <section>
-        <div class="mb-6 flex items-center justify-between">
-          <h2 class="text-xl font-semibold">
-            Latest Writing
-          </h2>
-          <UButton
-            to="/writing"
-            variant="link"
-            trailing-icon="i-lucide-arrow-right"
-          >
-            View all articles
-          </UButton>
-        </div>
+      <HomeFeatured v-if="featuredPost" :post="featuredPost" />
 
-        <UBlogPosts>
-          <UBlogPost
-            v-for="post in latestPosts"
-            :key="post.path"
-            :to="post.path"
-            :title="post.title"
-            :description="post.description"
-            :date="post.publishedAt"
-            :badge="getContentTypeBadge(post.contentType)"
-          />
-        </UBlogPosts>
-      </section>
+      <HomeLatest v-if="latestPosts.length" :posts="latestPosts" />
 
-      <section v-if="latestTalks?.length">
-        <div class="mb-6 flex items-center justify-between">
-          <h2 class="text-xl font-semibold">
-            Talks
-          </h2>
-          <UButton
-            to="/talks"
-            variant="link"
-            trailing-icon="i-lucide-arrow-right"
-          >
-            View all talks
-          </UButton>
-        </div>
+      <HomeStartHere v-if="startHerePosts?.length" :posts="startHerePosts" />
 
-        <UBlogPosts>
-          <UBlogPost
-            v-for="post in latestTalks"
-            :key="post.path"
-            :to="post.path"
-            :title="post.title"
-            :description="post.description"
-            :date="post.publishedAt"
-            :badge="getContentTypeBadge(post.contentType)"
-          />
-        </UBlogPosts>
-      </section>
+      <HomeBookshelf v-if="bookshelfPosts?.length" :posts="bookshelfPosts" />
 
-      <section v-if="latestPodcasts?.length">
-        <div class="mb-6 flex items-center justify-between">
-          <h2 class="text-xl font-semibold">
-            Podcasts
-          </h2>
-          <UButton
-            to="/podcasts"
-            variant="link"
-            trailing-icon="i-lucide-arrow-right"
-          >
-            View all episodes
-          </UButton>
-        </div>
+      <HomeMediaFeature v-if="mediaFeaturePost" :post="mediaFeaturePost" />
 
-        <UBlogPosts>
-          <UBlogPost
-            v-for="post in latestPodcasts"
-            :key="post.path"
-            :to="post.path"
-            :title="post.title"
-            :description="post.description"
-            :date="post.publishedAt"
-            :badge="getContentTypeBadge(post.contentType)"
-          />
-        </UBlogPosts>
-      </section>
-
-      <section v-if="latestBooks?.length">
-        <div class="mb-6 flex items-center justify-between">
-          <h2 class="text-xl font-semibold">
-            Book Reviews
-          </h2>
-          <UButton
-            to="/books"
-            variant="link"
-            trailing-icon="i-lucide-arrow-right"
-          >
-            View all reviews
-          </UButton>
-        </div>
-
-        <UBlogPosts>
-          <UBlogPost
-            v-for="post in latestBooks"
-            :key="post.path"
-            :to="post.path"
-            :title="post.title"
-            :description="post.description"
-            :date="post.publishedAt"
-            :badge="getContentTypeBadge(post.contentType)"
-          />
-        </UBlogPosts>
-      </section>
+      <HomeClosingCta :author="josh" />
     </UContainer>
   </div>
 </template>

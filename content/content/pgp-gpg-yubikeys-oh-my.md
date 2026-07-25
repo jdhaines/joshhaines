@@ -6,6 +6,7 @@ publishedAt: 2024-09-23
 updatedAt: 2024-09-23
 tags: ['yubikeys', 'encryption', 'pgp', 'security']
 featured: false
+startHere: true
 draft: false
 canonicalUrl: 'https://www.joshhaines.com/blog/pgp-gpg-yubikeys-oh-my'
 contentType: article
@@ -28,7 +29,7 @@ tasks necessary as I don't do them often enough to remember the steps.
 
 This step is optional, but encouraged. Each Yubikey has a number of different applications running on it. Each application is protected by one or more PIN keys. It's a good idea to set up the yubikey manager to allow you to update the pins from the defaults as well as to disable any modes you won't be using. You can find installation instructions for the manager software [here](https://docs.yubico.com/software/yubikey/tools/ykman/Install_ykman.html). Our examples with be using the command line tool `ykman`, but if you are running another operating system just follow those instructions.
 
-```sh
+```bash
 # See details about your key and see which applications are enabled for which mode
 ykman info
 
@@ -46,7 +47,7 @@ ykman fido access verify-pin --pin xxxxxxxxTech Lesson prep
 
 It's also a good idea to disable the OTP application as it isn't likely to be used.
 
-```sh
+```bash
 # Disable OTP for USB Access
 ykman config usb -d OTP
 
@@ -65,7 +66,7 @@ First things first, ensure you've opened your home yubikey and plugged it into y
 a terminal and navigate to your ssh directory with `cd $HOME/.ssh`.
 Run the command:
 
-```sh
+```bash
 ssh-keygen -t ed25519-sk
 ```
 
@@ -102,7 +103,7 @@ it's the mobile key.
 
 You'll need to paste the following contents in a new file in the `$HOME/.ssh` folder.
 
-```sh
+```bash
 Host github.com
   HostName github.com
   User git
@@ -114,7 +115,7 @@ Host github.com
 
 If you are using Linux or **git-bash** on Windows, you can paste the following into your terminal
 
-```sh
+```bash
 cat <<EOF > $HOME/.ssh/configTest
 Host github.com
   HostName github.com
@@ -129,7 +130,7 @@ EOF
 
 You can test that everything above has worked by running the following command:
 
-```sh
+```bash
 ssh -T git@github.com
 ```
 
@@ -151,7 +152,7 @@ set of posts by [Chip Senkbeil](https://chipsenkbeil.com/posts/applying-gpg-and-
 
 The following commands will backup your current gpg setup to a file that can be used to restore your setup in the future.
 
-```sh
+```bash
 
 gpg --export --export-options backup --armor > pubkeys_backup.gpg
 gpg --export --armor > pubkeys.gpg
@@ -165,7 +166,7 @@ gpg --export-ownertrust > ownerstrust.txt
 
 The following commands will restore your gpg setup from the backup files created above.
 
-```sh
+```bash
 gpg --import-options restore --import pubkeys_backup.gpg
 gpg --import pubkeys.gpg
 gpg --import privkeys.asc
@@ -205,7 +206,7 @@ Our yubikeys have 3 slots for gpg keys. one capability for `[E]`, `[S]` and `[A]
 
 ### Steps to Create, Configure, and Upload GPG to your Yubikey
 
-```sh
+```bash
 
 # create or import gpg master key. use rsa 4096 bit
 gpg --full-generate-key
@@ -235,7 +236,7 @@ gpg --expert --edit-key <long key ID from step 2>. need private key to generate 
 
 #### Load the Keys Onto the Yubikey
 
-```sh
+```bash
 
 # plug in the yubikey and if on ubuntu
 sudo apt install yubikey-manager gnupg2 gnupg gnupg-agent scdaemon pcscd
@@ -290,7 +291,7 @@ At this stage if the private keys (listed via `gpg -K`) have any symbol next to 
 
 Do `gpg --card-status` and you should see the newly uploaded key. Repeat for other capability keys as needed.
 
-```sh
+```bash
 
 # verify signatures with
 echo "test message string" | gpg --armor --clearsign > signed.txt
@@ -307,7 +308,7 @@ ykman openpgp keys set-touch aut on
 
 Finally, some config and enable signing commits by default on the machine
 
-```sh
+```bash
 git config --global gpg.program 'path_to_gpg_executable'
 git config --global user.signingkey <your pubkey ID without quotes>
 git config --global commit.gpgsign true
@@ -344,7 +345,7 @@ update.
    being available as it isn't inlcluded in our
    computer's root keyring.
 
-```sh
+```bash
 # inspect keys in the temporary keyring
 GNUPGHOME=/tmp/gnupg-temp gpg -K --with-subkey-fingerprint --list-options=show-unusable-subkey
 
@@ -374,7 +375,7 @@ quit # then y to save
    expiration dates. We need to export it to a
    temporary location.
 
-```sh
+```bash
 # export the updated public key to a local folder
 # note we're using the environment variable to ensure
 # we're using the keyring from the temporary folder
@@ -396,7 +397,7 @@ gpg:         new signatures: 3
 5. Send the updated public key to the public
    keyserver(s) of your choice.
 
-```sh
+```bash
 gpg --send-key <keyid>
 
 # to choose a keyserver, you can pass in the address  I

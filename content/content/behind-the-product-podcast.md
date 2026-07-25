@@ -5,7 +5,8 @@ description: >
 publishedAt: 2024-05-17
 updatedAt: 2024-05-17
 tags: ['me', 'podcast', 'digital transformation', 'software factory']
-featured: true
+featured: false
+startHere: true
 draft: false
 image: '/static/images/podcast.png'
 canonicalUrl: 'https://www.joshhaines.com/blog/behind-the-product-podcast'

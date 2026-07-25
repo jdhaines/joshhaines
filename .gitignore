@@ -87,6 +87,8 @@ dist
 
 # AWS Amplify Hosting build output (nitro `aws-amplify` preset)
 .amplify-hosting
+amplify-deploy.zip
+amplify-static-deploy.zip
 
 # Gatsby files
 .cache/

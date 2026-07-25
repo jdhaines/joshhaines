@@ -4,6 +4,8 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
+    "build:amplify": "rm -rf .amplify-hosting amplify-deploy.zip && NITRO_PRESET=aws-amplify nuxt build && cd .amplify-hosting && zip -rq ../amplify-deploy.zip . -x '*.map' && cd ..",
+    "build:amplify:static": "rm -rf .output amplify-static-deploy.zip && nuxt generate && cd .output/public && zip -rq ../../amplify-static-deploy.zip . && cd ../..",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",

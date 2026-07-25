@@ -5,7 +5,8 @@ description: >
 publishedAt: 2016-07-24
 updatedAt: 2016-07-24
 tags: ['me', 'tech talk', 'innovation', 'psychological safety', 'learning', 'leadership', 'crossing boundaries']
-featured: false
+featured: true
+startHere: true
 draft: false
 image: '/static/images/chemistryTitle.jpg'
 canonicalUrl: 'https://www.joshhaines.com/blog/techpoint'

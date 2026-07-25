@@ -7,8 +7,9 @@ updatedAt: 2024-05-09
 tags: ['book-shelf', 'productivity', 'software', 'architecture']
 featured: false
 draft: false
-image: '/static/images/cleanArch.jpg'
+image: '/static/images/clean-architecture-cover.jpg'
 imageAlt: 'Clean Architecture book cover'
+socialImage: '/static/images/cleanArch.jpg'
 canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/clean-architecture'
 contentType: bookReview
 bookAuthor: 'Robert C. Martin'

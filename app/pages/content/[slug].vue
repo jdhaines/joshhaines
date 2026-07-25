@@ -76,7 +76,10 @@ useSeoMeta({
   description: () => page.value?.description,
   ogTitle: () => page.value?.title,
   ogDescription: () => page.value?.description,
-  ogImage: () => page.value?.image ? new URL(page.value.image, requestUrl.origin).toString() : undefined,
+  ogImage: () => {
+    const socialImage = page.value?.socialImage ?? page.value?.image
+    return socialImage ? new URL(socialImage, requestUrl.origin).toString() : undefined
+  },
   ogUrl: canonicalUrl,
   ogType: 'article',
   articlePublishedTime: () => page.value?.publishedAt?.toString(),

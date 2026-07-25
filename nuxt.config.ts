@@ -19,6 +19,20 @@ export default defineNuxtConfig({
   content: {
     build: {
       markdown: {
+        highlight: {
+          theme: {
+            // Catppuccin themes for Shiki-highlighted code blocks -- Frappé
+            // (warmer, lower-contrast) for light mode, Macchiato for dark
+            // mode. `light` (not just `default`) must be set because Nuxt
+            // UI's own @nuxtjs/mdc defaults inject a `light` key that takes
+            // over once the page hydrates and `<html>` gets the `light`
+            // color-mode class -- `default` alone is only the pre-hydration/
+            // SSR fallback. See https://content.nuxt.com/docs/getting-started/configuration#highlight.
+            default: 'one-light',
+            light: 'one-light',
+            dark: 'catppuccin-macchiato',
+          },
+        },
         // Renders GitHub-style `> [!NOTE]` blockquote alerts, matching the
         // legacy site's authoring style. Colors come from
         // app/assets/css/main.css (.markdown-alert rules). Keyed by the
@@ -59,4 +73,12 @@ export default defineNuxtConfig({
   },
   devtools: { enabled: true },
   compatibilityDate: '2024-04-03',
+  nitro: {
+    prerender: {
+      // A few migrated posts link to legacy `/blog/book-shelf/*` reviews
+      // that haven't been brought over yet. Don't fail the whole static
+      // build over known-future content links.
+      failOnError: false,
+    },
+  },
 })

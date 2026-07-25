@@ -7,8 +7,9 @@ updatedAt: 2024-05-16
 tags: ['book-shelf', 'productivity', 'devops']
 featured: false
 draft: false
-image: '/static/images/accelerate.jpg'
+image: '/static/images/accelerate-cover.jpg'
 imageAlt: 'Accelerate book cover'
+socialImage: '/static/images/accelerate.jpg'
 canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/accelerate'
 contentType: bookReview
 bookAuthor: 'Nicole Forsgren, Jez Humble, Gene Kim'

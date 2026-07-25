@@ -14,14 +14,14 @@ const links = [
     <template #title>
       <NuxtLink
         to="/"
-        class="flex items-center gap-2 font-serif text-lg font-semibold"
+        class="flex items-center gap-2 font-serif text-xl font-semibold"
       >
         <img
           src="~/assets/images/logo.svg"
           alt="Josh Haines logo"
-          class="h-6 w-auto"
+          class="h-8 w-auto"
         >
-        <span>JoshHaines<span class="text-primary">.com</span></span>
+        <span><span class="text-secondary">Josh</span> <span class="text-primary">Haines</span></span>
       </NuxtLink>
     </template>
 
@@ -29,6 +29,10 @@ const links = [
 
     <template #right>
       <UColorModeButton />
+    </template>
+
+    <template #body>
+      <UNavigationMenu :items="links" orientation="vertical" class="-mx-2.5" />
     </template>
   </UHeader>
 </template>

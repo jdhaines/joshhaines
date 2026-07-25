@@ -4,6 +4,10 @@ applyTo: "content/**/*.md"
 
 # Content editing instructions
 
+See `DEVELOPER.md` for the full frontmatter reference (fields, required/optional,
+`contentType` values, homepage section curation flags like `featured` and
+`startHere`). Consult it before adding or changing frontmatter on any post.
+
 - Preserve Josh's conversational and direct voice.
 - Do not rewrite sections solely to make them sound more polished or corporate.
 - Correct obvious grammar and structural problems while retaining personality.

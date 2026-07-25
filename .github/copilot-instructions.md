@@ -146,6 +146,12 @@ Shared editorial metadata will likely include:
 Do not invent required metadata fields without checking existing content and
 migration requirements.
 
+See `DEVELOPER.md` for the authoritative, up-to-date frontmatter reference
+(required/optional fields, `contentType` values, and homepage curation flags
+like `featured`/`startHere`). Update `DEVELOPER.md` in the same change
+whenever a collection schema in `content.config.ts`, a `contentType` value,
+or a homepage section component (`app/components/Home*.vue`) changes.
+
 ## Editorial content
 
 - Preserve Josh's conversational, direct writing voice.

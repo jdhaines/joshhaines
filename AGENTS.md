@@ -21,6 +21,20 @@ Before editing:
 4. Inspect `app/app.config.ts` and the main CSS entry.
 5. Inspect existing content schemas and representative Markdown files.
 6. Check current scripts before choosing validation commands.
+7. Read `DEVELOPER.md` for the content-type/frontmatter/homepage-section
+   reference before touching `content.config.ts`, `content/**`, or any
+   `app/components/Home*.vue` homepage section component.
+
+## Keeping `DEVELOPER.md` current
+
+`DEVELOPER.md` is the frontmatter and homepage-section reference for this
+repo. Update it in the same change whenever you:
+
+- add, remove, or change a field in any collection schema in
+  `content.config.ts`
+- add a new `contentType` value or change its badge color/label
+- add, remove, or change a homepage section component
+  (`app/components/Home*.vue`) or its selection query in `app/pages/index.vue`
 
 ## Commands
 

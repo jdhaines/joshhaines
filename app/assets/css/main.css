@@ -51,6 +51,14 @@
   --ui-bg-muted: #f3eee4;
   --ui-bg-elevated: #ffffff;
   --ui-bg-accented: #ece5d8;
+  /*
+   * Nuxt UI's default `warning` shade (used for the "Talk" content-type
+   * badge) is too light for good text contrast against the cream `--ui-bg`
+   * background. Step just one shade darker (600, not 800) in light mode --
+   * yellow's hue shifts toward orange/brown as it gets much darker, so 800
+   * reads as brown rather than yellow.
+   */
+  --ui-warning: var(--ui-color-warning-600);
 }
 
 .dark {
