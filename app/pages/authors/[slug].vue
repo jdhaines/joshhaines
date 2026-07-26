@@ -17,8 +17,7 @@ const { data: posts } = await useAsyncData(`author-posts-${route.path}`, () => {
     .all()
 })
 
-const requestUrl = useRequestURL()
-const canonicalUrl = new URL(route.path, requestUrl.origin).toString()
+const canonicalUrl = new URL(route.path, useSiteUrl()).toString()
 
 useSeoMeta({
   title: () => author.value?.name,

@@ -75,8 +75,7 @@ const { data: josh } = await useAsyncData('home-author-josh', () => {
 
 const latestPostPath = computed(() => latestAnyPost.value?.[0]?.path)
 
-const requestUrl = useRequestURL()
-const canonicalUrl = new URL('/', requestUrl.origin).toString()
+const canonicalUrl = new URL('/', useSiteUrl()).toString()
 
 useSeoMeta({
   title: 'Josh Haines',

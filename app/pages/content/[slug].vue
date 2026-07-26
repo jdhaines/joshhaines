@@ -79,11 +79,15 @@ const { data: relatedWriting } = await useAsyncData(`content-related-${page.valu
   ).then(results => results.filter((post): post is PostsCollectionItem => !!post))
 })
 
-const requestUrl = useRequestURL()
-const canonicalUrl = page.value.canonicalUrl ?? new URL(route.path, requestUrl.origin).toString()
+// Resolved once, eagerly, during setup while the Nuxt app context is still
+// active -- calling useSiteUrl() (and therefore useRuntimeConfig()) lazily
+// from inside the computed getter below fails during static prerendering,
+// where the getter can re-run outside of an active Nuxt app instance.
+const siteUrl = useSiteUrl()
+const canonicalUrl = page.value.canonicalUrl ?? new URL(route.path, siteUrl).toString()
 const socialImageUrl = computed(() => {
   const socialImage = page.value?.socialImage ?? page.value?.image
-  return socialImage ? new URL(socialImage, requestUrl.origin).toString() : undefined
+  return socialImage ? new URL(socialImage, siteUrl).toString() : undefined
 })
 
 useSeoMeta({

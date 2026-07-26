@@ -7,8 +7,7 @@ const { data: posts } = await useAsyncData('talks-index', () => {
     .all()
 })
 
-const requestUrl = useRequestURL()
-const canonicalUrl = new URL('/talks', requestUrl.origin).toString()
+const canonicalUrl = new URL('/talks', useSiteUrl()).toString()
 
 useSeoMeta({
   title: 'Talks',

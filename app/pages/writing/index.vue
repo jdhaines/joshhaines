@@ -7,8 +7,7 @@ const { data: posts } = await useAsyncData('writing-index', () => {
     .all()
 })
 
-const requestUrl = useRequestURL()
-const canonicalUrl = new URL('/writing', requestUrl.origin).toString()
+const canonicalUrl = new URL('/writing', useSiteUrl()).toString()
 
 useSeoMeta({
   title: 'Writing',

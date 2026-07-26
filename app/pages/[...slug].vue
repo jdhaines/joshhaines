@@ -9,8 +9,7 @@ if (!page.value) {
   throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
 }
 
-const requestUrl = useRequestURL()
-const canonicalUrl = new URL(route.path, requestUrl.origin).toString()
+const canonicalUrl = new URL(route.path, useSiteUrl()).toString()
 
 useSeoMeta({
   title: () => page.value?.title,

@@ -24,8 +24,7 @@ function toggleSortDirection() {
   sortDirection.value = sortDirection.value === 'asc' ? 'desc' : 'asc'
 }
 
-const requestUrl = useRequestURL()
-const canonicalUrl = new URL('/books', requestUrl.origin).toString()
+const canonicalUrl = new URL('/books', useSiteUrl()).toString()
 const description = 'Every book I\u2019ve read and reviewed, ranked from most useful to least useful.'
 
 useSeoMeta({
