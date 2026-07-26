@@ -14,6 +14,7 @@ useSeoMeta({
   title: 'Writing',
   description: 'Articles from Josh Haines.',
   ogTitle: 'Writing',
+  ogDescription: 'Articles from Josh Haines.',
   ogUrl: canonicalUrl,
   ogType: 'website',
 })

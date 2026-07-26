@@ -83,6 +83,8 @@ useSeoMeta({
   description:
     'Leadership, software and platform engineering, innovation, book reviews, and career material from Josh Haines.',
   ogTitle: 'Josh Haines',
+  ogDescription:
+    'Leadership, software and platform engineering, innovation, book reviews, and career material from Josh Haines.',
   ogUrl: canonicalUrl,
   ogType: 'website',
   twitterCard: 'summary_large_image',

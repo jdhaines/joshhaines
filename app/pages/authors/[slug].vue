@@ -24,6 +24,7 @@ useSeoMeta({
   title: () => author.value?.name,
   description: () => author.value?.occupation,
   ogTitle: () => author.value?.name,
+  ogDescription: () => author.value?.occupation,
   ogUrl: canonicalUrl,
   ogType: 'profile',
 })

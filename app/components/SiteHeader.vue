@@ -28,6 +28,7 @@ const links = [
     <UNavigationMenu :items="links" />
 
     <template #right>
+      <UContentSearchButton tooltip />
       <UColorModeButton />
     </template>
 

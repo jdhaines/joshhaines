@@ -18,7 +18,7 @@ useSeoMeta({
   ogTitle: () => page.value?.title,
   ogDescription: () => page.value?.description,
   ogUrl: canonicalUrl,
-  ogType: 'article',
+  ogType: 'website',
   twitterCard: 'summary_large_image',
 })
 

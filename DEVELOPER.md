@@ -22,6 +22,11 @@ Static pages (home, about, etc.) live in a separate `content` collection at
 the content root (`content/*.md`) and author profiles live in a separate
 `authors` collection (`content/authors/**`).
 
+All pages without a specific social image use the branded
+`/static/images/josh-haines-social.png` card. This covers home, listing,
+static, author, and image-less post pages automatically; do not add a
+`socialImage` solely to reproduce that default.
+
 ## `posts` frontmatter reference
 
 Applies to every file in `content/content/*.md`.
@@ -32,8 +37,9 @@ Applies to every file in `content/content/*.md`.
 | `description` | string | **Yes** | -- | Used for card excerpts, `<meta description>`, and OG description. |
 | `publishedAt` | date (`YYYY-MM-DD`) | **Yes** | -- | Drives all "latest"/ordering queries and the byline date. |
 | `updatedAt` | date | No | -- | Shown as "Updated \<date\>" in the article header when present. |
-| `image` | string (path) | No | -- | Hero/thumbnail image, e.g. `/static/images/foo.jpg`. Also used for OG image and homepage card art. Omit for text-only posts (e.g. the PGP article). |
+| `image` | string (path) | No | -- | Hero/thumbnail image, e.g. `/static/images/foo.jpg`. Used for homepage card art and as the social image only when `socialImage` is absent. Omit for text-only posts (e.g. the PGP article). |
 | `imageAlt` | string | No | -- | Alt text for `image`. Provide this whenever `image` is set. |
+| `socialImage` | string (path) | No | -- | Overrides the social-sharing preview image for LinkedIn, X, etc. Use this for the existing 600×314 AI-generated cards when the on-page `image` is a book cover. If omitted, falls back to `image`, then the site-wide Josh Haines card. |
 | `topics` | string[] | No | `[]` | Reserved for future topic taxonomy. Not currently populated or rendered anywhere -- prefer `tags` today. |
 | `tags` | string[] | No | `[]` | Rendered as badges on the article page and drives the tag-overlap "On This Topic" related list. |
 | `featured` | boolean | No | `false` | Marks the single post shown in the homepage **Featured** section. See [Homepage sections](#homepage-sections--how-content-is-selected) below -- only set this on **one** post at a time. |

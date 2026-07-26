@@ -5,6 +5,10 @@ import tailwindcss from '@tailwindcss/vite'
 const remarkGithubAlertPath = fileURLToPath(new URL('./mdc-remark-github-alert.ts', import.meta.url))
 
 export default defineNuxtConfig({
+  colorMode: {
+    preference: 'dark',
+    fallback: 'dark',
+  },
   modules: [
     '@nuxt/content',
     '@nuxt/image',
@@ -68,6 +72,12 @@ export default defineNuxtConfig({
         { name: 'msapplication-TileColor', content: '#ffffff' },
         { name: 'theme-color', media: '(prefers-color-scheme: light)', content: '#faf7f2' },
         { name: 'theme-color', media: '(prefers-color-scheme: dark)', content: '#060b14' },
+        { property: 'og:site_name', content: 'Josh Haines' },
+        { property: 'og:image', content: 'https://www.joshhaines.com/static/images/josh-haines-social.png' },
+        { property: 'og:image:width', content: '1200' },
+        { property: 'og:image:height', content: '630' },
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:creator', content: '@joshhaines' },
       ],
     },
   },

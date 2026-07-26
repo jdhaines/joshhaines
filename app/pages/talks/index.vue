@@ -14,6 +14,7 @@ useSeoMeta({
   title: 'Talks',
   description: 'Conference talks and keynotes from Josh Haines.',
   ogTitle: 'Talks',
+  ogDescription: 'Conference talks and keynotes from Josh Haines.',
   ogUrl: canonicalUrl,
   ogType: 'website',
 })

@@ -81,21 +81,23 @@ const { data: relatedWriting } = await useAsyncData(`content-related-${page.valu
 
 const requestUrl = useRequestURL()
 const canonicalUrl = page.value.canonicalUrl ?? new URL(route.path, requestUrl.origin).toString()
+const socialImageUrl = computed(() => {
+  const socialImage = page.value?.socialImage ?? page.value?.image
+  return socialImage ? new URL(socialImage, requestUrl.origin).toString() : undefined
+})
 
 useSeoMeta({
   title: () => page.value?.title,
   description: () => page.value?.description,
   ogTitle: () => page.value?.title,
   ogDescription: () => page.value?.description,
-  ogImage: () => {
-    const socialImage = page.value?.socialImage ?? page.value?.image
-    return socialImage ? new URL(socialImage, requestUrl.origin).toString() : undefined
-  },
+  ogImage: socialImageUrl,
   ogUrl: canonicalUrl,
   ogType: 'article',
-  articlePublishedTime: () => page.value?.publishedAt?.toString(),
-  articleModifiedTime: () => page.value?.updatedAt?.toString(),
+  articlePublishedTime: () => page.value?.publishedAt ? new Date(page.value.publishedAt).toISOString() : undefined,
+  articleModifiedTime: () => page.value?.updatedAt ? new Date(page.value.updatedAt).toISOString() : undefined,
   twitterCard: 'summary_large_image',
+  twitterImage: socialImageUrl,
 })
 
 useHead({
@@ -158,4 +160,3 @@ useHead({
     </div>
   </UContainer>
 </template>
-

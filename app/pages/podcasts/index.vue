@@ -14,6 +14,7 @@ useSeoMeta({
   title: 'Podcasts',
   description: 'Podcast episodes and appearances from Josh Haines.',
   ogTitle: 'Podcasts',
+  ogDescription: 'Podcast episodes and appearances from Josh Haines.',
   ogUrl: canonicalUrl,
   ogType: 'website',
 })
