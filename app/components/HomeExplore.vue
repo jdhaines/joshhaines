@@ -6,18 +6,11 @@
 // throughout the site.
 const categories = [
   {
-    label: 'Writing',
-    description: 'Essays and ideas',
-    icon: 'i-lucide-file-text',
-    to: '/writing',
-    color: 'text-primary',
-  },
-  {
-    label: 'Talks',
-    description: 'Keynotes and slides',
-    icon: 'i-lucide-presentation',
-    to: '/talks',
-    color: 'text-warning',
+    label: 'Books',
+    description: 'Reviews and reading lists',
+    icon: 'i-lucide-book-open',
+    to: '/books',
+    color: 'text-secondary',
   },
   {
     label: 'Podcasts',
@@ -27,11 +20,18 @@ const categories = [
     color: 'text-success',
   },
   {
-    label: 'Books',
-    description: 'Reviews and reading lists',
-    icon: 'i-lucide-book-open',
-    to: '/books',
-    color: 'text-secondary',
+    label: 'Talks',
+    description: 'Keynotes and slides',
+    icon: 'i-lucide-presentation',
+    to: '/talks',
+    color: 'text-warning',
+  },
+  {
+    label: 'Writing',
+    description: 'Essays and ideas',
+    icon: 'i-lucide-file-text',
+    to: '/writing',
+    color: 'text-primary',
   },
 ]
 </script>

@@ -56,6 +56,20 @@ export default defineContentConfig({
         relatedWriting: z.array(z.string()).max(3).default([]),
       }),
     }),
+    // The Book Shelf's ranked order ("most useful" -> "least useful") and its
+    // separate, unranked "honorable mentions" list. Deliberately just an
+    // ordered array of `posts` slugs -- reordering the shelf is a one-line
+    // move in this single file, never a renumbering pass across every book
+    // review's frontmatter. See app/utils/book-shelf.ts for how this gets
+    // combined with the actual `bookReview` posts at render time.
+    bookShelf: defineCollection({
+      type: 'data',
+      source: 'book-shelf.yml',
+      schema: z.object({
+        order: z.array(z.string()),
+        honorableMentions: z.array(z.string()).default([]),
+      }),
+    }),
     // Author profiles referenced by `writing` posts' `author` field.
     authors: defineCollection({
       type: 'page',

@@ -1,0 +1,97 @@
+# The Book Shelf's ranked order, most useful -> least useful. Each entry is
+# the slug of a `bookReview` post in `content/content/`. To reorder the
+# shelf, just move a line -- never touch the review files themselves. To add
+# a new review, write the `.md` review as usual, then insert its slug here
+# wherever it should rank (or append it and reorder later).
+#
+# This is the full historical ranking carried over from the old site's
+# book-shelf.md, seeded ahead of migrating all 80+ individual reviews.
+# Slugs with no matching post yet are skipped (not an error) until their
+# review is migrated -- see app/utils/book-shelf.ts.
+order:
+  - seat-at-the-table
+  - ask-your-developer
+  - delicate-art-of-bureaucracy
+  - fearless-organization
+  - multipliers
+  - dare-to-lead
+  - phoenix-project
+  - working-backwards
+  - unicorn-project
+  - sooner-safer-happier
+  - project-to-product
+  - no-rules-rules
+  - art-of-business-value
+  - deep-work
+  - hyperfocus
+  - nonviolent-communication
+  - right-kind-of-wrong
+  - fear-of-missing-out
+  - wiring-the-winning-organization
+  - build
+  - strong-ground
+  - building-a-storybrand
+  - radical-candor
+  - essentialism
+  - turn-the-ship-around
+  - quit
+  - measure-what-matters
+  - culture-code
+  - escaping-the-build-trap
+  - war-peace-it
+  - team-topologies
+  - devops-handbook
+  - so-good-they-cant-ignore-you
+  - made-to-stick
+  - value-flywheel-effect
+  - making-work-visible
+  - accelerate
+  - xlr8
+  - traction
+  - linchpin
+  - upstream
+  - thinking-fast-and-slow
+  - world-without-email
+  - daring-greatly
+  - indistractable
+  - reset
+  - high-growth-handbook
+  - first-break-all-the-rules
+  - hard-thing-about-hard-things
+  - supercommunicators
+  - software-architect-elevator
+  - icarus-deception
+  - change
+  - switch
+  - range
+  - nudge
+  - clean-code
+  - clean-architecture
+  - clean-coder
+  - sharks-in-the-moat
+  - decision-quality
+  - tribes
+  - zero-to-one
+  - think-again
+  - only-the-paranoid-survive
+  - make-space-to-lead
+  - understanding-software
+  - talking-to-strangers
+  - fiefdom-syndrome
+  - devops-for-the-modern-enterprise
+  - servant
+  - dip
+  - mindset
+  - how-to-have-impossible-conversations
+  - finite-and-infinite-games
+  - container-security
+  - lean-startup
+  - startup-way
+  - innovators-dilemma
+  - your-next-five-moves
+  - digital-mindset
+# Unranked books outside the main "most useful" ordering -- shown separately,
+# alphabetically, on the Book Shelf page.
+honorableMentions:
+  - anxious-generation
+  - breath

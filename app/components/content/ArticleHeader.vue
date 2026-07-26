@@ -5,6 +5,7 @@ const props = defineProps<{
   page: PostsCollectionItem
   author?: AuthorsCollectionItem | null
   runtimeLabel: string
+  bookShelfRank?: number
 }>()
 
 const contentTypeBadge = computed(() => getContentTypeBadge(props.page.contentType))
@@ -46,6 +47,22 @@ function formatDate(date?: Date | string) {
       class="mb-2 font-mono text-sm text-muted"
     >
       by {{ page.bookAuthor }}
+    </p>
+
+    <p
+      v-if="bookShelfRank"
+      class="mb-2 text-sm text-secondary"
+    >
+      <NuxtLink
+        to="/books"
+        class="inline-flex items-center gap-1 hover:opacity-80"
+      >
+        <UIcon
+          name="i-lucide-arrow-left"
+          class="size-3.5"
+        />
+        #{{ bookShelfRank }} in Josh's Book Shelf
+      </NuxtLink>
     </p>
 
     <p

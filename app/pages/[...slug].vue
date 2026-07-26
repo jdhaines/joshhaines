@@ -28,8 +28,13 @@ useHead({
 </script>
 
 <template>
-  <ContentRenderer
+  <UContainer
     v-if="page"
-    :value="page"
-  />
+    class="py-12"
+  >
+    <ContentRenderer
+      :value="page"
+      class="prose dark:prose-invert mx-auto max-w-3xl"
+    />
+  </UContainer>
 </template>

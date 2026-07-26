@@ -17,6 +17,17 @@ const { data: author } = await useAsyncData(`content-author-${page.value.author}
   return queryCollection('authors').path(`/authors/${page.value!.author}`).first()
 })
 
+const { data: bookShelf } = await useAsyncData('content-book-shelf', () => {
+  return queryCollection('bookShelf').first()
+})
+
+const bookShelfRank = computed(() => {
+  if (page.value?.contentType !== 'bookReview') return undefined
+  const slug = page.value.path.split('/').pop()
+  const index = bookShelf.value?.order.indexOf(slug ?? '') ?? -1
+  return index === -1 ? undefined : index + 1
+})
+
 // All published posts, ordered by date, so we can compute prev/next
 // neighbors and tag-overlap "On This Topic" suggestions in-memory. The
 // collection is small enough that this is simpler and more flexible than
@@ -103,6 +114,7 @@ useHead({
           :page="page"
           :author="author"
           :runtime-label="runtimeLabel"
+          :book-shelf-rank="bookShelfRank"
         />
 
         <ContentRenderer

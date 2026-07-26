@@ -9,9 +9,6 @@ defineProps<{
 orientation="vertical"
     :ui="{ container: 'text-left items-start', title: 'text-left', description: 'text-left max-w-2xl' }">
     <template #title>
-      <p class="mb-3 text-sm font-semibold tracking-wide text-primary uppercase">
-        Hi, I'm Josh Haines
-      </p>
       <span class="block">Engineering Better Systems.</span>
       <span class="block">Building Stronger Teams.</span>
     </template>
