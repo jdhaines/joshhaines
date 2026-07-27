@@ -22,6 +22,7 @@ export default defineAppConfig({
       // https://ui.nuxt.com/docs/typography/code.
       codeIcon: {
         sh: 'i-vscode-icons-file-type-shell',
+        bash: 'i-vscode-icons-file-type-shell',
         txt: 'i-vscode-icons-file-type-text',
       },
     },

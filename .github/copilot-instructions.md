@@ -227,6 +227,7 @@ package.json, normally in this order:
 bun run lint
 bun run typecheck
 bun run test
+bun run test:e2e
 bun run build
 ```
 
@@ -238,6 +239,25 @@ If a command fails:
 - Determine whether it was caused by the change.
 - Fix failures caused by the change.
 - Do not hide failures by weakening checks or deleting tests.
+
+## Playwright smoke tests
+
+`e2e/smoke.spec.ts` is a smoke suite, not full e2e coverage -- keep it
+lightweight: one check per key page, a couple of spot checks on known
+articles/content, and a brief happy-path check for major features. Don't
+aim for exhaustive coverage of every state or edge case.
+
+Add or extend a smoke test in the same change whenever you:
+
+- add a new top-level page or route
+- ship a new major feature, or materially change how an existing one behaves
+- fix a bug that could plausibly regress silently -- add a guard test next
+  to the fix (see the existing `/_ipx/` and canonical-URL-not-`localhost`
+  checks for the pattern to follow)
+
+`bun run test:e2e` builds the site with `nuxt generate` and runs Playwright
+against that static output, matching what actually gets deployed -- prefer
+it over testing against `nuxt dev`/`nuxt preview`.
 
 ## Working style
 
