@@ -109,6 +109,18 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   compatibilityDate: '2024-04-03',
   nitro: {
+    // Pin the Nitro preset explicitly. Without this, Nitro auto-detects the
+    // `cloudflare_module` preset from the `WORKERS_CI` env var that
+    // Cloudflare's build environment sets automatically -- even though we
+    // run `nuxt generate` for a plain static export. That auto-detected
+    // preset makes @nuxt/content think it should switch to a Cloudflare D1
+    // database mid-build, which breaks content parsing entirely (every
+    // markdown file gets "ignored" with an "Unknown file extension .ts"
+    // error) since no D1 binding exists during the static build. Forcing
+    // `static` keeps content on its normal bundled-SQLite-dump storage
+    // (see https://content.nuxt.com/docs/advanced/database) regardless of
+    // which CI/hosting environment the build happens to run in.
+    preset: 'static',
     prerender: {
       // A few migrated posts link to legacy `/blog/book-shelf/*` reviews
       // that haven't been brought over yet. Don't fail the whole static
