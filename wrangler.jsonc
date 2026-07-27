@@ -1,0 +1,14 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  // Update to Cloudflare's exact Worker name shown in the dashboard for this
+  // project before the first deploy -- if this doesn't match, `wrangler
+  // deploy` will create a brand new Worker instead of updating the one
+  // already connected via Git.
+  "name": "joshhainesnext",
+  "compatibility_date": "2026-07-27",
+  "assets": {
+    "directory": "./.output/public",
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash"
+  }
+}

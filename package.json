@@ -14,7 +14,9 @@
     "typecheck": "nuxt typecheck",
     "test": "vitest run",
     "test:e2e": "bun run generate && playwright test",
-    "test:e2e:install": "playwright install --with-deps chromium"
+    "test:e2e:install": "playwright install --with-deps chromium",
+    "cf:dev": "bun run generate && wrangler dev",
+    "cf:deploy": "bun run generate && wrangler deploy"
   },
   "dependencies": {
     "@nuxt/content": "^3.15.0",
@@ -60,7 +62,8 @@
     "happy-dom": "^20.11.1",
     "serve": "^14.2.6",
     "vitest": "^4.1.10",
-    "vue-tsc": "^3.3.8"
+    "vue-tsc": "^3.3.8",
+    "wrangler": "^4.114.0"
   },
   "trustedDependencies": [
     "unrs-resolver"
