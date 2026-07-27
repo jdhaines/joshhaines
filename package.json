@@ -58,7 +58,7 @@
     "@playwright/test": "^1.62.0",
     "@tailwindcss/vite": "^4.3.3",
     "@types/mdast": "^4.0.4",
-    "eslint": "^10.7.0",
+    "eslint": "^10.8.0",
     "happy-dom": "^20.11.1",
     "serve": "^14.2.6",
     "vitest": "^4.1.10",
