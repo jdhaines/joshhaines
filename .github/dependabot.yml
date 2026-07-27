@@ -1,0 +1,19 @@
+version: 2
+updates:
+  # Bun-managed npm dependencies (package.json / bun.lock).
+  - package-ecosystem: "bun"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+    groups:
+      dev-dependencies:
+        dependency-type: "development"
+      production-dependencies:
+        dependency-type: "production"
+
+  # Keep GitHub Actions in .github/workflows up to date too.
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
