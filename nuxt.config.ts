@@ -2,11 +2,11 @@
 import { fileURLToPath } from 'node:url'
 import tailwindcss from '@tailwindcss/vite'
 
-const remarkGithubAlertPath = fileURLToPath(new URL('./mdc-remark-github-alert.ts', import.meta.url))
+const remarkGithubAlertPath = fileURLToPath(new URL('./mdc-remark-github-alert.mjs', import.meta.url))
 
 // The site is currently deployed to the norahaines.com staging domain ahead
 // of cutting over to joshhaines.com. Override at build time with
-// `NUXT_PUBLIC_SITE_URL` (e.g. in the Amplify build environment) once the
+// `NUXT_PUBLIC_SITE_URL` (e.g. in the Cloudflare build environment) once the
 // production domain is ready -- this value is baked into the static build,
 // so it must be set at `nuxt generate` time, not just at runtime.
 const siteUrl = process.env.NUXT_PUBLIC_SITE_URL ?? 'https://www.norahaines.com'

@@ -90,11 +90,6 @@ out
 dist
 .output
 
-# AWS Amplify Hosting build output (nitro `aws-amplify` preset)
-.amplify-hosting
-amplify-deploy.zip
-amplify-static-deploy.zip
-
 # Gatsby files
 .cache/
 # Comment in the public line in if your project uses Gatsby and not Next.js
