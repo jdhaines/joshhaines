@@ -10,6 +10,11 @@ const props = defineProps<{
 // collection.
 const [heroPost, ...restPosts] = props.posts
 
+// This slot is rendered at a wide 16:9 aspect ratio. A portrait book cover
+// (`image`) looks badly cropped there, so prefer the wide `socialImage` art
+// when present -- same fallback used for the OG/social preview image.
+const heroImage = computed(() => heroPost?.socialImage ?? heroPost?.image)
+
 function formatDate(date?: Date | string) {
   if (!date) return undefined
   return new Date(date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })
@@ -23,8 +28,8 @@ function formatDate(date?: Date | string) {
     <div class="grid gap-8 lg:grid-cols-2 lg:gap-10">
       <NuxtLink :to="heroPost.path" class="group block">
         <NuxtImg
-          v-if="heroPost.image"
-          :src="heroPost.image"
+          v-if="heroImage"
+          :src="heroImage"
           :alt="heroPost.imageAlt ?? heroPost.title"
           class="mb-4 aspect-video w-full rounded-lg object-cover transition-opacity group-hover:opacity-90"
           width="560"

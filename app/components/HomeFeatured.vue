@@ -8,6 +8,11 @@ const props = defineProps<{
 const badge = computed(() => getContentTypeBadge(props.post.contentType))
 const runtimeLabel = computed(() => getRuntimeLabel(props.post))
 
+// This slot is rendered at a wide 16:9 aspect ratio. A portrait book cover
+// (`image`) looks badly cropped there, so prefer the wide `socialImage` art
+// when present -- same fallback used for the OG/social preview image.
+const heroImage = computed(() => props.post.socialImage ?? props.post.image)
+
 function formatDate(date?: Date | string) {
   if (!date) return undefined
   return new Date(date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })
@@ -23,8 +28,8 @@ function formatDate(date?: Date | string) {
       class="group grid gap-6 lg:grid-cols-2 lg:items-center lg:gap-10"
     >
       <NuxtImg
-        v-if="post.image"
-        :src="post.image"
+        v-if="heroImage"
+        :src="heroImage"
         :alt="post.imageAlt ?? post.title"
         class="aspect-video w-full rounded-lg object-cover transition-opacity group-hover:opacity-90"
         width="640"
