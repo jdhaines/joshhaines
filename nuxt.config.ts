@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { fileURLToPath } from 'node:url'
+import { readdirSync, readFileSync } from 'node:fs'
 import tailwindcss from '@tailwindcss/vite'
 
 const remarkGithubAlertPath = fileURLToPath(new URL('./mdc-remark-github-alert.mjs', import.meta.url))
@@ -10,6 +11,38 @@ const remarkGithubAlertPath = fileURLToPath(new URL('./mdc-remark-github-alert.m
 // production domain is ready -- this value is baked into the static build,
 // so it must be set at `nuxt generate` time, not just at runtime.
 const siteUrl = process.env.NUXT_PUBLIC_SITE_URL ?? 'https://www.norahaines.com'
+
+// Nitro's static-site crawler only prerenders a page if it discovers a link
+// to it somewhere in the already-generated HTML. The legacy `/blog/*`,
+// `/blog/book-shelf/*`, and `/writing/*` redirect pages (see
+// `server/middleware/*-redirects.ts`) are never linked from anywhere in the
+// new site, so most of them were silently never generated -- only the
+// handful that happened to be cross-referenced from another migrated post's
+// body text got a redirect page at all. Explicitly listing every legacy URL
+// here forces Nitro to visit (and thus generate a real redirect page for)
+// every one, regardless of internal linking. Both `/blog/<slug>` and
+// `/writing/<slug>` are generated for non-book-review posts since the
+// legacy site used both schemes at different points and it's cheap/harmless
+// to redirect from both.
+function legacyContentRoutes() {
+  const contentDir = fileURLToPath(new URL('./content/content', import.meta.url))
+  const routes: string[] = []
+
+  for (const file of readdirSync(contentDir)) {
+    if (!file.endsWith('.md')) continue
+    const slug = file.slice(0, -'.md'.length)
+    const isBookReview = /contentType:\s*bookReview/.test(readFileSync(`${contentDir}/${file}`, 'utf-8'))
+
+    if (isBookReview) {
+      routes.push(`/blog/book-shelf/${slug}`)
+    }
+    else {
+      routes.push(`/blog/${slug}`, `/writing/${slug}`)
+    }
+  }
+
+  return routes
+}
 
 export default defineNuxtConfig({
   runtimeConfig: {
@@ -133,6 +166,7 @@ export default defineNuxtConfig({
       // that haven't been brought over yet. Don't fail the whole static
       // build over known-future content links.
       failOnError: false,
+      routes: legacyContentRoutes(),
     },
   },
 })
