@@ -131,6 +131,15 @@ test.describe('content article', () => {
     await expect(page).toHaveTitle(/.+/)
     await expect(page.locator('h1').first()).toBeVisible()
   })
+
+  test('the comments section renders with a submission form (Turnstile is configured)', async ({ page }) => {
+    await page.goto('/content/accelerate')
+
+    await expect(page.getByRole('heading', { name: 'Comments' })).toBeVisible()
+    // A Turnstile site key is configured by default (see nuxt.config.ts),
+    // so the submission form should render.
+    await expect(page.getByRole('button', { name: 'Post comment' })).toBeVisible()
+  })
 })
 
 test.describe('color mode', () => {

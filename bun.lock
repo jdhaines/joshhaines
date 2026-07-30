@@ -38,6 +38,7 @@
         "vue-router": "^5.2.0",
       },
       "devDependencies": {
+        "@cloudflare/workers-types": "^5.20260730.1",
         "@iconify-json/lucide": "^1.2.120",
         "@iconify-json/vscode-icons": "^1.2.67",
         "@nuxt/eslint": "^1.16.0",
@@ -141,6 +142,8 @@
     "@cloudflare/workerd-linux-arm64": ["@cloudflare/workerd-linux-arm64@1.20260722.1", "", { "os": "linux", "cpu": "arm64" }, "sha512-BOSB55SMNdy+DA5uj2WirgiNanpHGis5PVvXH1wSfvjRKr4JGgWK+EZzxz0RFUo6QjjQQC/NimEzNZ7va7jmKg=="],
 
     "@cloudflare/workerd-windows-64": ["@cloudflare/workerd-windows-64@1.20260722.1", "", { "os": "win32", "cpu": "x64" }, "sha512-sYM8YgUpKnRz2xjvdJLX1Ojzoi4MlA4gk8WTTExhGydjYB2UTs5NIbv0ZmpKgMoK9io3ixgmiW56ZnTbcWOdiA=="],
+
+    "@cloudflare/workers-types": ["@cloudflare/workers-types@5.20260730.1", "", {}, "sha512-3e1cBXcPTwXBk2ur0CfxZKQKL6X7vUZlOn1R7VYU0zZVJcSKFcq1AoOZM+ps0LuL0uTAxdcLg+qwXrBXVu+UuQ=="],
 
     "@colordx/core": ["@colordx/core@5.5.0", "", {}, "sha512-3PxTH8itZzltK0U9jTwVVnjLXvnDYuq3m+QXsHkENxWiPRh4WaoLcs1SQjqgZ55kS+QyirpH5BVwzP2gMVG6EQ=="],
 

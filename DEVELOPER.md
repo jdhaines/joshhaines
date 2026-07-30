@@ -140,3 +140,97 @@ than the page/components themselves.
   excluded from every homepage section and listing page, but still builds at
   its URL (so you can preview it directly if needed -- consider also removing
   it from `relatedWriting` elsewhere until it's ready).
+
+## Comments (Cloudflare Worker + D1 + Turnstile)
+
+Every content page (`app/pages/content/[slug].vue`) renders a
+`CommentsSection.vue` component that talks to a small same-origin API at
+`/api/comments`, implemented in `workers/comments-api.ts` and deployed
+alongside the static site via `wrangler.jsonc`'s `main` + `assets.
+run_worker_first: ["/api/*"]`. Every other route is still served directly
+from the static asset bundle -- the Worker script only ever runs for
+`/api/*` requests.
+
+This was chosen over a hosted comment SaaS (e.g. Hyvor Talk) or a
+GitHub-account-based system (e.g. giscus) specifically to avoid requiring
+commenters to have any account, to keep the data self-hosted, and because
+the site already deploys to Cloudflare via Wrangler -- Turnstile (CAPTCHA)
+and D1 (database) are free, first-party Cloudflare products that slot in
+with no extra hosting.
+
+Comments are **not free-form public** by default: every submission starts
+as `pending` and only becomes visible once manually approved (see
+"Moderating comments" below). Abuse prevention is intentionally simple
+("rudimentary" per the brief, not a full spam-detection system) — honeypot
+field, a Turnstile CAPTCHA token, basic length/keyword/link-count checks,
+and a per-IP-hash rate limit. See `workers/comments-api.ts` for the exact
+rules.
+
+### One-time setup
+
+1. **Create the D1 database** (requires `wrangler login` first) — **done**;
+   `joshhaines-comments` already exists and `wrangler.jsonc`'s
+   `d1_databases[0].database_id` is set. Only needed again if the database
+   is ever recreated:
+   ```sh
+   npx wrangler login
+   npx wrangler d1 create joshhaines-comments
+   ```
+
+2. **Apply the schema** — **done** (applied with `--remote` against the
+   live database). Re-run this any time `workers/schema.sql` changes:
+   ```sh
+   npx wrangler d1 execute joshhaines-comments --remote --file=workers/schema.sql
+   ```
+   (Drop `--remote` to also/instead apply it to the local dev database used
+   by `wrangler dev`.)
+
+3. **Turnstile widget** — **done**; the site key is already the default in
+   `nuxt.config.ts`'s `runtimeConfig.public.turnstileSiteKey`
+   (`0x4AAAAAAEB96elhI9z99BdG`), so no build-time env var is required
+   unless the widget is ever recreated (in which case override with
+   `NUXT_PUBLIC_TURNSTILE_SITE_KEY`).
+
+4. **Set the Worker secrets** (never committed, never in `wrangler.jsonc`)
+   — **still needed**:
+   ```sh
+   npx wrangler secret put TURNSTILE_SECRET
+   npx wrangler secret put COMMENTS_ADMIN_TOKEN   # any long random string you generate yourself
+   ```
+
+5. **Deploy**: `bun run cf:deploy` (runs `nuxt generate` then
+   `wrangler deploy`, which uploads both the static assets and the Worker
+   script in one step).
+
+### Moderating comments
+
+**Easiest: the Cloudflare dashboard.** Workers & Pages → D1 →
+`joshhaines-comments` → **Tables** tab to browse/edit rows directly, or
+the **Console** tab to run raw SQL, e.g.:
+
+```sql
+UPDATE comments SET status = 'approved' WHERE id = 1;
+```
+
+**Alternative: scriptable via `curl`**, using the `COMMENTS_ADMIN_TOKEN`
+secret from step 6 above:
+
+```sh
+# List everything awaiting review
+curl -s https://<your-domain>/api/comments/pending \
+  -H "Authorization: Bearer <COMMENTS_ADMIN_TOKEN>" | jq
+
+# Approve (or reject) one by id
+curl -s https://<your-domain>/api/comments/moderate \
+  -H "Authorization: Bearer <COMMENTS_ADMIN_TOKEN>" \
+  -H "Content-Type: application/json" \
+  -d '{"id": 1, "action": "approve"}'
+```
+
+### Local development
+
+`nuxt dev` alone can't serve `/api/comments` (it has no Worker/D1 runtime).
+To test the full flow locally, run the site against the built output with
+`wrangler dev` instead: `bun run cf:dev` (runs `nuxt generate` then
+`wrangler dev`, which serves the static assets and the Worker together,
+using D1's local SQLite-backed dev database unless you pass `--remote`).

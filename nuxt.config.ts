@@ -15,6 +15,13 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       siteUrl,
+      // Cloudflare Turnstile site key -- public by design (it's meant to be
+      // embedded in the page); the matching secret lives only in the
+      // Worker, via `wrangler secret put TURNSTILE_SECRET`. Override with
+      // `NUXT_PUBLIC_TURNSTILE_SITE_KEY` at build time if the widget is
+      // ever recreated. See DEVELOPER.md's "Comments" section for the
+      // full setup.
+      turnstileSiteKey: process.env.NUXT_PUBLIC_TURNSTILE_SITE_KEY ?? '0x4AAAAAAEB-DwiZPqoOmPiE',
     },
   },
   colorMode: {

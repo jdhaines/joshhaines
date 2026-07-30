@@ -149,6 +149,8 @@ useHead({
           :surround="(surround as ContentSurroundLink[])"
           class="mt-12"
         />
+
+        <CommentsSection :path="page.path" />
       </article>
 
       <aside class="hidden lg:block">

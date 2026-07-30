@@ -6,9 +6,25 @@
   // already connected via Git.
   "name": "joshhainesnext",
   "compatibility_date": "2026-07-27",
+  // Small Worker script that only handles the /api/comments endpoints
+  // (see workers/comments-api.ts) -- `run_worker_first` scopes it to just
+  // those routes, so every other request is still served directly from
+  // the static asset bundle without invoking this script at all.
+  "main": "workers/comments-api.ts",
   "assets": {
     "directory": "./.output/public",
+    "binding": "ASSETS",
     "not_found_handling": "404-page",
-    "html_handling": "auto-trailing-slash"
-  }
+    "html_handling": "auto-trailing-slash",
+    "run_worker_first": ["/api/*"]
+  },
+  // Update "database_id" with the ID printed by `wrangler d1 create` (see
+  // DEVELOPER.md's "Comments" section for the full one-time setup).
+  "d1_databases": [
+    {
+      "binding": "COMMENTS_DB",
+      "database_name": "joshhaines-comments",
+      "database_id": "cd70e5a8-16d6-4a0b-987e-c30b1565804e"
+    }
+  ]
 }
