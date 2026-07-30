@@ -59,7 +59,7 @@ Applies to every file in `content/content/*.md`.
 | `article` | Article | `primary` (blue) | `/writing` |
 | `talk` | Talk | `warning` (orange) | `/talks` |
 | `podcast` | Podcast | `success` (green) | `/podcasts` |
-| `bookReview` | Book Review | `secondary` (red/orange) | `/books` |
+| `bookReview` | Book | `secondary` (red/orange) | `/books` |
 
 Colors are defined in `app/utils/content-type.ts` (`getContentTypeBadge`).
 Add new content types there and to the `contentType` enum in

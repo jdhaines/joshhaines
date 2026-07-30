@@ -12,7 +12,7 @@ const CONTENT_TYPE_BADGES: Record<ContentType, { label: string, color: 'primary'
   article: { label: 'Article', color: 'primary' },
   talk: { label: 'Talk', color: 'warning' },
   podcast: { label: 'Podcast', color: 'success' },
-  bookReview: { label: 'Book Review', color: 'secondary' },
+  bookReview: { label: 'Book', color: 'secondary' },
 }
 
 export function getContentTypeBadge(contentType?: ContentType) {

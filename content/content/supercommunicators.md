@@ -1,0 +1,55 @@
+---
+title: 'Supercommunicators'
+description: >
+  How to Unlock the Secret Language of Connection.
+publishedAt: 2024-06-03
+updatedAt: 2024-06-06
+tags: ['book-shelf', 'communication', 'teams', 'psychological safety']
+featured: false
+draft: false
+image: '/static/images/supercommunicators-cover.jpg'
+imageAlt: 'Supercommunicators book cover'
+socialImage: '/static/images/communication.jpg'
+canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/supercommunicators'
+contentType: bookReview
+bookAuthor: 'Charles Duhigg'
+author: josh
+---
+
+This was a book I randomly saw on Audible and decided to give it a try. I remember the cover was really interesting and the advertisement blurb made it sound pretty great. The author begins by discussing how certain people are _supercommunicators_. These people tend to be able to connect with others in a way that is both deep and meaningful. They can make people feel heard and understood. They can make people feel like they are the most important person in the room. The author then goes on to discuss how these supercommunicators are able to do this across three main core ideas.
+
+## 1. Three Types of Conversations
+
+The first core idea is where he discusses how there are really three types of conversations that tend to happen within a larger conversation:
+
+- The **_What's This Really About?_** Conversation: These are primarily practical conversations that are making decisions and getting things done.
+- The **_How Do We Feel?_** Conversation: These are conversations about emotions and feelings.
+- The **_Who Are We?_** Conversation: These are conversations about identity and values and are generally social in nature.
+
+## 2. Learning Conversations
+
+The author discusses how our primary purpose in most conversations is to have _Learning Conversations_. These are conversations where we try to show people our perspectives and, in turn, learn how they see the world.
+
+## 3. Meaningful Conversations
+
+Finally, he explains that we can all learn to be supercommunicators by having the capability to remake mundane questions into deep questions. Some examples:
+
+- Instead of asking "Where do you work?" ask "What's the best part of your job?"
+- Starting a question with "Did it make you happy when..." or "How do you feel about...?"
+- Having courage to ask a very deep question. It can feel a bit revealing or sharing when we ask a deep question... lean in to this feeling. Generally, people are happy to have been asked a deep question even if it feels strange to do the asking.
+
+![super communication](/static/images/communication.jpg)
+
+## Interesting Parts
+
+1. This book discussed a common topic: Presenting with Stories is more persuasive than facts. The author explained that when low charisma people were asked to present a topic using a story, it put them on equal footing with more charismatic people from a persuasion and knowledge retention standpoint. This was super interesting to me as I've always been a fan of storytelling in presentations.
+
+2. The author discusses how to "_get deep fast_" with someone by asking them questions that probe their emotions. If you can get someone talking about their emotions, the conversation can become meaningful very quickly and you can leave the superficial chatting far behind. As an example, don't ask "Where do you live?" but instead ask "What's your favorite thing about where you live?" This is a subtle but powerful concept and one I want to try and practice.
+
+3. Interestingly, the book discusses a communication method called "_Looping_" where you repeat back to someone what they said to you. This is a way to show that you are listening and that you understand. I had first heard about this from a therapist who specialized in a style of couples therapy called [Imago](https://imagorelationships.org/) developed by [Harville Hendrix](https://www.amazon.com/Getting-Love-You-Want-Couples-ebook/dp/B07CG4ZLBR). It was interesting to see it in a book about communication. I think both books probably developed the idea from the same research.
+
+![super communication](/static/images/communication2.jpg)
+
+## Overall
+
+Overall I liked the book. The first two thirds of the book were really solid. During the _third conversation_ part about identities it started to feel a bit preachy and less useful. He spent a huge amount of time on the Netflix journey of having hard conversations about diversity, race, inclusion, and other identity topics. It seemed like he explained them well, but it felt like he lost the thread a bit on what the book was supposed to be about. It's possible that I'm just noticing my own bias about the topic and that it was actually a great section. I'll have to think about it more.

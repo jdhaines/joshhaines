@@ -1,0 +1,31 @@
+---
+title: 'The Value Flywheel Effect'
+description: >
+  Power the Future and Accelerate Your Organization to the Modern Cloud.
+publishedAt: 2023-08-03
+updatedAt: 2024-03-12
+tags: ['book-shelf', 'value']
+featured: false
+draft: false
+image: '/static/images/value-flywheel-effect-cover.jpg'
+imageAlt: 'The Value Flywheel Effect book cover'
+socialImage: '/static/images/flywheel.jpg'
+canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/value-flywheel-effect'
+contentType: bookReview
+bookAuthor: 'David Anderson'
+author: josh
+---
+
+This was a strange book, but I weirdly enjoyed it. Imagine watching a super hyped-up TV commercial for a niche piece of technology where the advertiser won't shut up about how it'll change your life. Meanwhile, a friend beside you keeps suggesting two genuinely useful tools for better business decisions. That's this book in a nutshell.
+
+The hyped-up gadget? Serverless cloud services. The actually useful tools? Wardley Mapping and the Value Flywheel Effect.
+
+Honestly, I don't get the author's serverless obsession. Maybe they own stock in a serverless company? Or get a kickback for every serverless API call ever made? Whatever it is, it's a bit distracting from some otherwise solid content.
+
+Wardley Mapping was a surprise. I figured it'd be another dull way to visualize the same old stuff, but it's actually a pretty innovative way to map out situations, projects, processes, anything really. It's opened up a lot of new insights for us! There are some cool websites and tools out there dedicated to it, and it seems to be catching on fast. Our team is already using Wardley Mapping to unlock all sorts of new ideas.
+
+![value flywheel image](/static/images/flywheel.jpg)
+
+The Value Flywheel Effect, on the other hand, is basically Amazon's concept of virtuous cycles with a fancy new name. It's about racking up small wins, building momentum, and making sure you're moving in the right direction. Basically, it's agile practices with a fresh coat of paint, but hey, it works!
+
+Overall, the book's worth checking out. But here's the real deal: Brush up on the Agile Manifesto and watch a few [YouTube tutorials](https://www.youtube.com/watch?v=ya9UPuZ3-1c) on Wardley Mapping. You'll save yourself some time and money, I promise.
