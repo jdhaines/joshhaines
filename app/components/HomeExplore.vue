@@ -37,12 +37,10 @@ const categories = [
 </script>
 
 <template>
-  <nav aria-label="Explore content categories">
-    <p class="mb-4 text-xs font-semibold tracking-wide text-muted uppercase">
-      Explore
-    </p>
+  <nav aria-labelledby="home-explore-heading">
+    <HomeSectionEyebrow id="home-explore-heading" label="Explore" />
 
-    <div class="grid grid-cols-2 gap-x-6 gap-y-6 border-y border-default py-6 sm:grid-cols-4">
+    <div class="grid grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-4">
       <NuxtLink
         v-for="category in categories"
         :key="category.to"

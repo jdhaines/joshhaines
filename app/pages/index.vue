@@ -96,18 +96,16 @@ useHead({
 
 <template>
   <div>
-    <HomeHero :latest-post-path="latestPostPath" />
+    <HomeHero :latest-post-path="latestPostPath" :featured-post="featuredPost" />
 
-    <UContainer class="space-y-16 pb-20">
+    <UContainer class="space-y-24 pb-20">
       <HomeExplore />
-
-      <HomeFeatured v-if="featuredPost" :post="featuredPost" />
-
-      <HomeLatest v-if="latestPosts.length" :posts="latestPosts" />
 
       <HomeStartHere v-if="startHerePosts?.length" :posts="startHerePosts" />
 
       <HomeBookshelf v-if="bookshelfPosts?.length" :posts="bookshelfPosts" />
+
+      <HomeLatest v-if="latestPosts.length" :posts="latestPosts" />
 
       <HomeMediaFeature v-if="mediaFeaturePost" :post="mediaFeaturePost" />
 

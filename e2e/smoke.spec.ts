@@ -41,9 +41,28 @@ test.describe('navigation', () => {
     }
   })
 
-  test('unknown routes render the 404 page', async ({ page }) => {
+  test('unknown routes render the custom 404 page', async ({ page }) => {
     const response = await page.goto('/this-page-does-not-exist')
     expect(response?.status()).toBe(404)
+
+    // Guard against silently falling back to Nuxt's generic default error
+    // page instead of our custom-styled one (app/error.vue).
+    await expect(page.getByRole('heading', { name: 'This page wandered off.' })).toBeVisible()
+  })
+
+  test('legacy one-off redirects (server/utils/legacy-redirects.ts) still resolve', async ({ page }) => {
+    // Guard against a renamed/removed old short link silently 404ing --
+    // see server/utils/legacy-redirects.ts for how to add new entries.
+    // These are static-generated meta-refresh redirect pages (not a real
+    // HTTP 301 once served as static files), so wait for the follow-up
+    // navigation rather than asserting on the first response's URL.
+    await page.goto('/subs')
+    await page.waitForURL('**/content/submarines-keynote')
+    expect(new URL(page.url()).pathname).toBe('/content/submarines-keynote')
+
+    await page.goto('/techpoint')
+    await page.waitForURL('**/content/chemistry-of-innovation')
+    expect(new URL(page.url()).pathname).toBe('/content/chemistry-of-innovation')
   })
 })
 

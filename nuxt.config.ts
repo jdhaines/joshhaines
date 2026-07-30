@@ -2,6 +2,7 @@
 import { fileURLToPath } from 'node:url'
 import { readdirSync, readFileSync } from 'node:fs'
 import tailwindcss from '@tailwindcss/vite'
+import { legacyRedirects } from './server/utils/legacy-redirects'
 
 const remarkGithubAlertPath = fileURLToPath(new URL('./mdc-remark-github-alert.mjs', import.meta.url))
 
@@ -166,7 +167,7 @@ export default defineNuxtConfig({
       // that haven't been brought over yet. Don't fail the whole static
       // build over known-future content links.
       failOnError: false,
-      routes: legacyContentRoutes(),
+      routes: [...legacyContentRoutes(), ...Object.keys(legacyRedirects)],
     },
   },
 })

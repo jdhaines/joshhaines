@@ -90,6 +90,27 @@ schema -- only Nuxt Content's built-in `page` type fields (`title`,
 `app/pages/[...slug].vue` or the specific static page component if one
 exists) rather than the article layout.
 
+## Redirects
+
+Legacy/old URLs are handled by small Nitro server middleware in
+`server/middleware/*-redirects.ts`:
+
+- **Pattern-based legacy URL schemes** (`/blog/:slug`, `/blog/book-shelf/:slug`,
+  `/writing/:slug` -> `/content/:slug`) each get their own middleware file
+  since they need regex matching on a path segment.
+- **One-off literal redirects** (an old short link, or a post's old slug
+  after a rename) go in `server/utils/legacy-redirects.ts` -- just add a
+  `'<old path>': '<new path>'` entry to the exported `legacyRedirects` map.
+  `server/middleware/legacy-redirects.ts` serves them, and `nuxt.config.ts`
+  automatically adds every key to `nitro.prerender.routes` so Nitro's
+  static-site crawler actually generates a real redirect page for each one
+  at build time (uncrawled/unlinked routes otherwise silently produce no
+  page in the static export, even though they'd work in `nuxt dev`). A new
+  entry in that one map is the only change needed.
+- When renaming a post's slug (its content filename), add its old slug as a
+  `legacyRedirects` entry pointing at `/content/<new-slug>`, and check the
+  file for any `relatedWriting` references elsewhere that need the new slug.
+
 ## Body content features
 
 Available inside any post's markdown body:
@@ -113,13 +134,16 @@ one per `contentType`. To change what shows up on the homepage, edit
 frontmatter (`featured`, `startHere`, `contentType`, `publishedAt`) rather
 than the page/components themselves.
 
+Section order on the page: Hero (with Featured) → Explore → Start Here →
+From the Bookshelf → Latest → Listen/Speaking → Why I write about this.
+
 | Section (component) | Query | How to control it |
 | --- | --- | --- |
+| **Hero / Featured** (`HomeHero.vue`) | `featured = true`, newest first, limit 1 | The hero's left column (title/description/buttons) is static. Its right column shows the single `featured: true` post (social image, badge, title, excerpt, date, link) -- set `featured: true` on **exactly one** post to feature it. If multiple posts have `featured: true`, only the newest (by `publishedAt`) is shown. There's no separate lower-page "Featured" section anymore; it lives in the hero. |
 | **Explore** (`HomeExplore.vue`) | None -- static nav strip | Hardcoded list of the 4 content categories (Writing/Talks/Podcasts/Books). Edit the component directly to add/remove/reorder categories. |
-| **Featured** (`HomeFeatured.vue`) | `featured = true`, newest first, limit 1 | Set `featured: true` on **exactly one** post to feature it prominently. If multiple posts have `featured: true`, only the newest (by `publishedAt`) is shown. |
-| **Latest** (`HomeLatest.vue`) | All non-draft posts, newest first, limit 6, then the Featured post is filtered out and the list is capped to 4 | Automatic -- just publish posts with `draft: false`. The newest becomes the large left-hand item; the rest are compact rows. No frontmatter flag needed. |
 | **Start Here** (`HomeStartHere.vue`) | `startHere = true`, limit 3 | Set `startHere: true` on up to 3 posts you consider the best entry points to your work. Order is oldest-first (`publishedAt ASC`) so you can control ordering by adjusting dates if needed, or just pick 3 -- order matters less than the curated set itself. |
 | **From the Bookshelf** (`HomeBookshelf.vue`) | `contentType = 'bookReview'`, newest first, limit 6 | Automatic once you publish book reviews (`contentType: bookReview`). Displays cover art (`image`) + `bookAuthor`. No manual curation flag. |
+| **Latest** (`HomeLatest.vue`) | All non-draft posts, newest first, limit 6, then the Featured post is filtered out and the list is capped to 4 | Automatic -- just publish posts with `draft: false`. The newest becomes the large left-hand item; the rest are compact rows. No frontmatter flag needed. |
 | **Listen / Speaking** (`HomeMediaFeature.vue`) | `contentType IN ('talk', 'podcast')`, newest first, limit 4, Featured post excluded, prefers a `podcast` if one is available else falls back to the newest `talk` | Automatic. If you want a specific talk/podcast to show here instead of the newest, that generally means marking a *different* post as `featured` so this section's "newest excluding Featured" pick shifts, or adjusting `publishedAt`. There's currently no dedicated override flag for this section. |
 | **Why I write about this** (`HomeClosingCta.vue`) | Queries the `josh` author profile only | Static content in the component + the `authors/josh.md` file (avatar, bio blurb). Not post-driven. |
 

@@ -6,7 +6,7 @@ publishedAt: 2024-09-23
 updatedAt: 2024-09-23
 tags: ['yubikeys', 'encryption', 'pgp', 'security']
 featured: false
-startHere: true
+startHere: false
 draft: false
 canonicalUrl: 'https://www.joshhaines.com/blog/pgp-gpg-yubikeys-oh-my'
 contentType: article

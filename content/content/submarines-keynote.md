@@ -6,12 +6,13 @@ publishedAt: 2025-02-04
 updatedAt: 2025-02-04
 tags: ['me', 'tech talk', 'psychological safety', 'leadership', 'innovation']
 featured: false
+startHere: true
 draft: false
 image: '/static/images/subsTalk.png'
 canonicalUrl: 'https://www.joshhaines.com/blog/submarines-keynote'
 contentType: talk
 author: josh
-relatedWriting: ['techpoint']
+relatedWriting: ['chemistry-of-innovation']
 ---
 
 ## Introduction
