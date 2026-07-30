@@ -39,6 +39,7 @@
     "@tiptap/suggestion": "^3.29.0",
     "@tiptap/vue-3": "^3.29.0",
     "better-sqlite3": "^13.0.1",
+    "image-size": "^2.0.2",
     "minimark": "^0.2.0",
     "nuxt": "^4.5.0",
     "reading-time": "^1.5.0",

@@ -65,6 +65,33 @@ test.describe('SEO metadata', () => {
     const ogImage = await page.locator('meta[property="og:image"]').getAttribute('content')
     expect(ogImage).toMatch(/^https:\/\/.+\.png$/)
   })
+
+  test('a book review\'s declared og:image dimensions match its actual image, and it has an author', async ({ page }) => {
+    // Regression guard: og:image:width/height previously always inherited
+    // the site-wide default banner's dimensions (1200x600) even when a
+    // page overrode og:image with its own (differently-sized) socialImage.
+    // Crawlers like LinkedIn's Post Inspector distrust a declared image
+    // whose dimensions don't match the fetched file and silently fall
+    // back to something else -- so these must stay in sync per-page.
+    // Also guards that an author is always present, since LinkedIn
+    // flagged "No author found" when neither `author` nor `article:author`
+    // was emitted at all.
+    await page.goto('/content/high-growth-handbook')
+
+    const ogImage = await page.locator('meta[property="og:image"]').getAttribute('content')
+    expect(ogImage).toContain('highGrowth.jpg')
+
+    const declaredWidth = await page.locator('meta[property="og:image:width"]').getAttribute('content')
+    const declaredHeight = await page.locator('meta[property="og:image:height"]').getAttribute('content')
+    expect(declaredWidth).toBe('600')
+    expect(declaredHeight).toBe('314')
+
+    const author = await page.locator('meta[name="author"]').getAttribute('content')
+    expect(author).toBeTruthy()
+
+    const articleAuthor = await page.locator('meta[property="article:author"]').getAttribute('content')
+    expect(articleAuthor).toMatch(/^https:\/\//)
+  })
 })
 
 test.describe('book shelf', () => {

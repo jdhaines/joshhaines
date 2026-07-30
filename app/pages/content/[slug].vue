@@ -2,6 +2,7 @@
 import type { PostsCollectionItem } from '@nuxt/content'
 import type { ContentSurroundLink } from '@nuxt/ui'
 import { getRuntimeLabel } from '~/utils/reading-time'
+import { getImageDimensions } from '~/utils/social-image'
 
 const route = useRoute()
 
@@ -85,21 +86,36 @@ const { data: relatedWriting } = await useAsyncData(`content-related-${page.valu
 // where the getter can re-run outside of an active Nuxt app instance.
 const siteUrl = useSiteUrl()
 const canonicalUrl = page.value.canonicalUrl ?? new URL(route.path, siteUrl).toString()
+const socialImagePath = computed(() => page.value?.socialImage ?? page.value?.image)
 const socialImageUrl = computed(() => {
-  const socialImage = page.value?.socialImage ?? page.value?.image
+  const socialImage = socialImagePath.value
   return socialImage ? new URL(socialImage, siteUrl).toString() : undefined
+})
+
+// The site-wide default `og:image:width`/`og:image:height` set in
+// `nuxt.config.ts` only match the site's default banner image -- every
+// page here overrides `og:image` with its own `socialImage`, which is a
+// different size, so the dimensions must be looked up per-image rather
+// than inheriting the global (wrong) values.
+const { data: socialImageDimensions } = await useAsyncData(`content-image-size-${route.path}`, () => {
+  const imagePath = socialImagePath.value
+  return imagePath ? getImageDimensions(imagePath) : Promise.resolve(undefined)
 })
 
 useSeoMeta({
   title: () => page.value?.title,
   description: () => page.value?.description,
+  author: () => author.value?.name,
   ogTitle: () => page.value?.title,
   ogDescription: () => page.value?.description,
   ogImage: socialImageUrl,
+  ogImageWidth: () => socialImageDimensions.value?.width,
+  ogImageHeight: () => socialImageDimensions.value?.height,
   ogUrl: canonicalUrl,
   ogType: 'article',
   articlePublishedTime: () => page.value?.publishedAt ? new Date(page.value.publishedAt).toISOString() : undefined,
   articleModifiedTime: () => page.value?.updatedAt ? new Date(page.value.updatedAt).toISOString() : undefined,
+  articleAuthor: () => author.value?.linkedin ? [author.value.linkedin] : undefined,
   twitterCard: 'summary_large_image',
   twitterImage: socialImageUrl,
 })
