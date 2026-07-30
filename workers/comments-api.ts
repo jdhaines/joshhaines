@@ -33,6 +33,7 @@ interface CommentRow {
   path: string
   author_name: string
   author_url: string | null
+  author_email: string | null
   body: string
   created_at: string
 }
@@ -44,11 +45,15 @@ const JSON_HEADERS = { 'content-type': 'application/json; charset=utf-8' }
 // a low-traffic personal site, not a high-value spam target.
 const MAX_NAME_LENGTH = 60
 const MAX_URL_LENGTH = 200
+const MAX_EMAIL_LENGTH = 254 // RFC 5321 max mailbox length
 const MAX_BODY_LENGTH = 2000
 const MAX_LINKS_IN_BODY = 2
 const RATE_LIMIT_WINDOW_MINUTES = 10
 const RATE_LIMIT_MAX_SUBMISSIONS = 3
 const SPAM_KEYWORD_PATTERN = /\b(viagra|cialis|casino|crypto\s*airdrop|seo\s*backlink|forex\s*signal)\b/i
+// Deliberately simple shape check (not a full RFC 5322 validator) -- good
+// enough to catch typos/garbage without rejecting legitimate addresses.
+const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 function jsonResponse(body: unknown, status = 200) {
   return new Response(JSON.stringify(body), { status, headers: JSON_HEADERS })
@@ -81,7 +86,7 @@ async function listApprovedComments(request: Request, env: Env) {
   if (!path) return jsonResponse({ error: 'Missing "path" query parameter' }, 400)
 
   const { results } = await env.COMMENTS_DB.prepare(
-    `SELECT id, path, author_name, author_url, body, created_at FROM comments
+    `SELECT id, path, author_name, author_url, author_email, body, created_at FROM comments
      WHERE path = ?1 AND status = 'approved'
      ORDER BY created_at ASC`,
   ).bind(path).all<CommentRow>()
@@ -94,6 +99,7 @@ async function submitComment(request: Request, env: Env) {
     path?: string
     name?: string
     authorUrl?: string
+    authorEmail?: string
     body?: string
     turnstileToken?: string
     website?: string // honeypot: real users never fill this in
@@ -111,6 +117,7 @@ async function submitComment(request: Request, env: Env) {
   const body = payload.body?.trim()
   const turnstileToken = payload.turnstileToken
   let authorUrl = payload.authorUrl?.trim() || null
+  const authorEmail = payload.authorEmail?.trim() || null
 
   // Honeypot: a hidden field real commenters never see or fill in. Bots
   // that blindly fill every form field trip this silently -- return a
@@ -137,6 +144,14 @@ async function submitComment(request: Request, env: Env) {
     }
     catch {
       return jsonResponse({ error: 'Link must be a valid URL' }, 400)
+    }
+  }
+  if (authorEmail) {
+    if (authorEmail.length > MAX_EMAIL_LENGTH) {
+      return jsonResponse({ error: `Email must be ${MAX_EMAIL_LENGTH} characters or fewer` }, 400)
+    }
+    if (!EMAIL_PATTERN.test(authorEmail)) {
+      return jsonResponse({ error: 'Email must be a valid email address' }, 400)
     }
   }
   if (body.length === 0 || body.length > MAX_BODY_LENGTH) {
@@ -168,8 +183,8 @@ async function submitComment(request: Request, env: Env) {
   }
 
   await env.COMMENTS_DB.prepare(
-    `INSERT INTO comments (path, author_name, author_url, body, status, ip_hash) VALUES (?1, ?2, ?3, ?4, 'pending', ?5)`,
-  ).bind(path, name, authorUrl, body, ipHash).run()
+    `INSERT INTO comments (path, author_name, author_url, author_email, body, status, ip_hash) VALUES (?1, ?2, ?3, ?4, ?5, 'pending', ?6)`,
+  ).bind(path, name, authorUrl, authorEmail, body, ipHash).run()
 
   return jsonResponse({ ok: true, message: 'Comment submitted for review' }, 201)
 }
@@ -178,7 +193,7 @@ async function listPendingComments(request: Request, env: Env) {
   if (!requireAdmin(request, env)) return jsonResponse({ error: 'Unauthorized' }, 401)
 
   const { results } = await env.COMMENTS_DB.prepare(
-    `SELECT id, path, author_name, author_url, body, created_at FROM comments
+    `SELECT id, path, author_name, author_url, author_email, body, created_at FROM comments
      WHERE status = 'pending' ORDER BY created_at ASC`,
   ).all<CommentRow>()
 

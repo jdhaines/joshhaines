@@ -188,8 +188,8 @@ rules.
    retroactively add columns to an already-created table -- D1's SQLite
    version doesn't support `ALTER TABLE ... ADD COLUMN IF NOT EXISTS`, so
    any future column additions need a one-off `ALTER TABLE comments ADD
-   COLUMN ...` run by hand against the live database (the `author_url`
-   column was added this way).
+   COLUMN ...` run by hand against the live database (the `author_url` and
+   `author_email` columns were added this way).
 
 3. **Turnstile widget** — **done**; the site key is already the default in
    `nuxt.config.ts`'s `runtimeConfig.public.turnstileSiteKey`

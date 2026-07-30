@@ -19,6 +19,7 @@ interface CommentItem {
   id: number
   author_name: string
   author_url: string | null
+  author_email: string | null
   body: string
   created_at: string
 }
@@ -40,6 +41,7 @@ const { data: comments, refresh: refreshComments } = await useAsyncData(
 
 const name = ref('')
 const authorUrl = ref('')
+const authorEmail = ref('')
 const body = ref('')
 const website = ref('') // honeypot -- must stay empty, never shown to real users
 const turnstileToken = ref('')
@@ -80,6 +82,10 @@ async function submitComment() {
     errorMessage.value = 'Please fill in your name and a comment.'
     return
   }
+  if (authorEmail.value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(authorEmail.value.trim())) {
+    errorMessage.value = 'Please enter a valid email address.'
+    return
+  }
   if (!turnstileToken.value) {
     errorMessage.value = 'Please complete the CAPTCHA challenge.'
     return
@@ -94,6 +100,7 @@ async function submitComment() {
         path: props.path,
         name: name.value.trim(),
         authorUrl: authorUrl.value.trim(),
+        authorEmail: authorEmail.value.trim(),
         body: body.value.trim(),
         turnstileToken: turnstileToken.value,
         website: website.value,
@@ -102,6 +109,7 @@ async function submitComment() {
     status.value = 'success'
     name.value = ''
     authorUrl.value = ''
+    authorEmail.value = ''
     body.value = ''
     await refreshComments()
   }
@@ -153,6 +161,10 @@ async function submitComment() {
               class="text-primary hover:underline"
             >{{ comment.author_name }}</a>
             <template v-else>{{ comment.author_name }}</template>
+            <span
+              v-if="comment.author_email"
+              class="font-normal text-muted"
+            > ({{ comment.author_email }})</span>
           </span>
           <time
             class="text-sm text-muted"
@@ -214,6 +226,21 @@ async function submitComment() {
           maxlength="200"
           autocomplete="url"
           placeholder="https://linkedin.com/in/you"
+          class="w-full"
+        />
+      </UFormField>
+
+      <UFormField
+        label="Email"
+        hint="optional, shown next to your name"
+      >
+        <UInput
+          v-model="authorEmail"
+          name="authorEmail"
+          type="email"
+          maxlength="254"
+          autocomplete="email"
+          placeholder="you@example.com"
           class="w-full"
         />
       </UFormField>

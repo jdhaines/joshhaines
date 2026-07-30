@@ -139,6 +139,8 @@ test.describe('content article', () => {
     // A Turnstile site key is configured by default (see nuxt.config.ts),
     // so the submission form should render.
     await expect(page.getByRole('button', { name: 'Post comment' })).toBeVisible()
+    // Optional email field (shown as "Name (email)" once approved).
+    await expect(page.getByPlaceholder('you@example.com')).toBeVisible()
   })
 })
 

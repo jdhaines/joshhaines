@@ -11,6 +11,9 @@ CREATE TABLE IF NOT EXISTS comments (
   -- etc.), shown alongside their name. Never validated beyond length/shape
   -- -- it's just a courtesy link, not a verified identity.
   author_url TEXT,
+  -- Optional email, shown alongside the name as "Name (email)" when
+  -- present. Never used for verification or notifications, just display.
+  author_email TEXT,
   body TEXT NOT NULL,
   -- pending: awaiting moderation, approved: publicly visible, rejected: hidden.
   status TEXT NOT NULL DEFAULT 'pending',
