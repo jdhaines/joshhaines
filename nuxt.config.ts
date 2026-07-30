@@ -6,12 +6,15 @@ import { legacyRedirects } from './server/utils/legacy-redirects'
 
 const remarkGithubAlertPath = fileURLToPath(new URL('./mdc-remark-github-alert.mjs', import.meta.url))
 
-// The site is currently deployed to the norahaines.com staging domain ahead
-// of cutting over to joshhaines.com. Override at build time with
-// `NUXT_PUBLIC_SITE_URL` (e.g. in the Cloudflare build environment) once the
-// production domain is ready -- this value is baked into the static build,
-// so it must be set at `nuxt generate` time, not just at runtime.
-const siteUrl = process.env.NUXT_PUBLIC_SITE_URL ?? 'https://www.norahaines.com'
+// The site is now live at joshhaines.com. `NUXT_PUBLIC_SITE_URL` is set in
+// the Cloudflare Pages build environment variables and should always take
+// precedence -- this value is baked into the static build, so it must be
+// set at `nuxt generate` time, not just at runtime. The fallback below
+// exists only so local `nuxt generate`/`nuxt dev` runs (without the env var)
+// still produce a real, resolvable domain in absolute URLs (og:image,
+// twitter:image, etc.) instead of a broken/decommissioned one -- it must
+// NOT be relied on for production builds.
+const siteUrl = process.env.NUXT_PUBLIC_SITE_URL ?? 'https://www.joshhaines.com'
 
 // Nitro's static-site crawler only prerenders a page if it discovers a link
 // to it somewhere in the already-generated HTML. The legacy `/blog/*`,
