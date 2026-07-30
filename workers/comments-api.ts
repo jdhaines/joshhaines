@@ -161,7 +161,7 @@ function escapeHtml(value: string) {
 // Best-effort only -- a failed notification email should never block or
 // fail the comment submission itself (the comment is already saved as
 // "pending" regardless). Errors are logged, not thrown.
-async function notifyModerator(env: Env, comment: { id: number, path: string, name: string, body: string }) {
+async function notifyModerator(env: Env, comment: { id: number, path: string, name: string, authorUrl: string | null, authorEmail: string | null, body: string }) {
   if (!env.COMMENT_NOTIFY_EMAIL) return
 
   const preview = comment.body.length > 280 ? `${comment.body.slice(0, 280)}…` : comment.body
@@ -172,12 +172,28 @@ async function notifyModerator(env: Env, comment: { id: number, path: string, na
       buildModerationLink(env, comment.id, 'reject'),
     ])
 
+    const textDetails = [
+      `Name: ${comment.name}`,
+      `Email: ${comment.authorEmail ?? '(none provided)'}`,
+      `Website: ${comment.authorUrl ?? '(none provided)'}`,
+      `Page: ${comment.path}`,
+    ].join('\n')
+
+    const htmlDetails = `<ul>
+  <li><strong>Name:</strong> ${escapeHtml(comment.name)}</li>
+  <li><strong>Email:</strong> ${comment.authorEmail ? escapeHtml(comment.authorEmail) : '<em>(none provided)</em>'}</li>
+  <li><strong>Website:</strong> ${comment.authorUrl ? `<a href="${escapeHtml(comment.authorUrl)}">${escapeHtml(comment.authorUrl)}</a>` : '<em>(none provided)</em>'}</li>
+  <li><strong>Page:</strong> <code>${escapeHtml(comment.path)}</code></li>
+</ul>`
+
     await env.EMAIL.send({
       to: env.COMMENT_NOTIFY_EMAIL,
       from: { email: 'comments@joshhaines.com', name: 'JoshHaines.com Comments' },
       subject: `New comment awaiting review on ${comment.path}`,
-      text: `${comment.name} left a comment on ${comment.path}, awaiting moderation:\n\n${comment.body}\n\nApprove: ${approveLink}\nDeny: ${denyLink}`,
-      html: `<p><strong>${escapeHtml(comment.name)}</strong> left a comment on <code>${escapeHtml(comment.path)}</code>, awaiting moderation:</p>
+      text: `New comment awaiting moderation:\n\n${textDetails}\n\nMessage:\n${comment.body}\n\nApprove: ${approveLink}\nDeny: ${denyLink}`,
+      html: `<p>New comment awaiting moderation:</p>
+${htmlDetails}
+<p><strong>Message:</strong></p>
 <blockquote>${escapeHtml(preview)}</blockquote>
 <p>
   <a href="${approveLink}" style="display:inline-block;padding:0.5rem 1rem;background:#2563eb;color:#fff;text-decoration:none;border-radius:0.375rem;">Approve</a>
@@ -299,7 +315,7 @@ async function submitComment(request: Request, env: Env) {
 
   const insertedId = inserted.meta.last_row_id
   if (insertedId) {
-    await notifyModerator(env, { id: insertedId, path, name, body })
+    await notifyModerator(env, { id: insertedId, path, name, authorUrl, authorEmail, body })
   }
 
   return jsonResponse({ ok: true, message: 'Comment submitted for review' }, 201)
@@ -394,7 +410,12 @@ async function showModerationConfirmation(request: Request, env: Env) {
   return moderationPage(
     `${actionLabel} comment?`,
     `<h1>${actionLabel} this comment?</h1>
-<p><strong>${escapeHtml(comment.author_name)}</strong> on <code>${escapeHtml(comment.path)}</code>:</p>
+<ul>
+  <li><strong>Name:</strong> ${escapeHtml(comment.author_name)}</li>
+  <li><strong>Email:</strong> ${comment.author_email ? escapeHtml(comment.author_email) : '<em>(none provided)</em>'}</li>
+  <li><strong>Website:</strong> ${comment.author_url ? `<a href="${escapeHtml(comment.author_url)}">${escapeHtml(comment.author_url)}</a>` : '<em>(none provided)</em>'}</li>
+  <li><strong>Page:</strong> <code>${escapeHtml(comment.path)}</code></li>
+</ul>
 <blockquote>${escapeHtml(comment.body)}</blockquote>
 <form method="post" action="/api/comments/moderate-link" class="${action === 'reject' ? 'deny' : ''}">
   <input type="hidden" name="id" value="${comment.id}">
