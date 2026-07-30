@@ -32,6 +32,7 @@ interface CommentRow {
   id: number
   path: string
   author_name: string
+  author_url: string | null
   body: string
   created_at: string
 }
@@ -42,6 +43,7 @@ const JSON_HEADERS = { 'content-type': 'application/json; charset=utf-8' }
 // brief) rather than pulling in a full spam-detection dependency -- this is
 // a low-traffic personal site, not a high-value spam target.
 const MAX_NAME_LENGTH = 60
+const MAX_URL_LENGTH = 200
 const MAX_BODY_LENGTH = 2000
 const MAX_LINKS_IN_BODY = 2
 const RATE_LIMIT_WINDOW_MINUTES = 10
@@ -79,7 +81,7 @@ async function listApprovedComments(request: Request, env: Env) {
   if (!path) return jsonResponse({ error: 'Missing "path" query parameter' }, 400)
 
   const { results } = await env.COMMENTS_DB.prepare(
-    `SELECT id, path, author_name, body, created_at FROM comments
+    `SELECT id, path, author_name, author_url, body, created_at FROM comments
      WHERE path = ?1 AND status = 'approved'
      ORDER BY created_at ASC`,
   ).bind(path).all<CommentRow>()
@@ -91,6 +93,7 @@ async function submitComment(request: Request, env: Env) {
   let payload: {
     path?: string
     name?: string
+    authorUrl?: string
     body?: string
     turnstileToken?: string
     website?: string // honeypot: real users never fill this in
@@ -107,6 +110,7 @@ async function submitComment(request: Request, env: Env) {
   const name = payload.name?.trim()
   const body = payload.body?.trim()
   const turnstileToken = payload.turnstileToken
+  let authorUrl = payload.authorUrl?.trim() || null
 
   // Honeypot: a hidden field real commenters never see or fill in. Bots
   // that blindly fill every form field trip this silently -- return a
@@ -120,6 +124,20 @@ async function submitComment(request: Request, env: Env) {
   }
   if (name.length > MAX_NAME_LENGTH) {
     return jsonResponse({ error: `Name must be ${MAX_NAME_LENGTH} characters or fewer` }, 400)
+  }
+  if (authorUrl) {
+    // A bare domain like "linkedin.com/in/me" is a common thing to type --
+    // treat it as https by default rather than rejecting it.
+    if (!/^https?:\/\//i.test(authorUrl)) authorUrl = `https://${authorUrl}`
+    if (authorUrl.length > MAX_URL_LENGTH) {
+      return jsonResponse({ error: `Link must be ${MAX_URL_LENGTH} characters or fewer` }, 400)
+    }
+    try {
+      new URL(authorUrl)
+    }
+    catch {
+      return jsonResponse({ error: 'Link must be a valid URL' }, 400)
+    }
   }
   if (body.length === 0 || body.length > MAX_BODY_LENGTH) {
     return jsonResponse({ error: `Comment must be 1-${MAX_BODY_LENGTH} characters` }, 400)
@@ -150,8 +168,8 @@ async function submitComment(request: Request, env: Env) {
   }
 
   await env.COMMENTS_DB.prepare(
-    `INSERT INTO comments (path, author_name, body, status, ip_hash) VALUES (?1, ?2, ?3, 'pending', ?4)`,
-  ).bind(path, name, body, ipHash).run()
+    `INSERT INTO comments (path, author_name, author_url, body, status, ip_hash) VALUES (?1, ?2, ?3, ?4, 'pending', ?5)`,
+  ).bind(path, name, authorUrl, body, ipHash).run()
 
   return jsonResponse({ ok: true, message: 'Comment submitted for review' }, 201)
 }
@@ -160,7 +178,7 @@ async function listPendingComments(request: Request, env: Env) {
   if (!requireAdmin(request, env)) return jsonResponse({ error: 'Unauthorized' }, 401)
 
   const { results } = await env.COMMENTS_DB.prepare(
-    `SELECT id, path, author_name, body, created_at FROM comments
+    `SELECT id, path, author_name, author_url, body, created_at FROM comments
      WHERE status = 'pending' ORDER BY created_at ASC`,
   ).all<CommentRow>()
 

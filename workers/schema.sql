@@ -7,6 +7,10 @@ CREATE TABLE IF NOT EXISTS comments (
   -- The content page this comment belongs to, e.g. "/content/high-growth-handbook".
   path TEXT NOT NULL,
   author_name TEXT NOT NULL,
+  -- Optional link to the commenter's site/profile (LinkedIn, personal site,
+  -- etc.), shown alongside their name. Never validated beyond length/shape
+  -- -- it's just a courtesy link, not a verified identity.
+  author_url TEXT,
   body TEXT NOT NULL,
   -- pending: awaiting moderation, approved: publicly visible, rejected: hidden.
   status TEXT NOT NULL DEFAULT 'pending',

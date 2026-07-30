@@ -183,7 +183,13 @@ rules.
    npx wrangler d1 execute joshhaines-comments --remote --file=workers/schema.sql
    ```
    (Drop `--remote` to also/instead apply it to the local dev database used
-   by `wrangler dev`.)
+   by `wrangler dev`.) Note: `workers/schema.sql` uses `CREATE TABLE IF NOT
+   EXISTS`, so it's safe to re-run on an existing database, but it won't
+   retroactively add columns to an already-created table -- D1's SQLite
+   version doesn't support `ALTER TABLE ... ADD COLUMN IF NOT EXISTS`, so
+   any future column additions need a one-off `ALTER TABLE comments ADD
+   COLUMN ...` run by hand against the live database (the `author_url`
+   column was added this way).
 
 3. **Turnstile widget** — **done**; the site key is already the default in
    `nuxt.config.ts`'s `runtimeConfig.public.turnstileSiteKey`

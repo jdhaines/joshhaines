@@ -59,6 +59,13 @@
    * reads as brown rather than yellow.
    */
   --ui-warning: var(--ui-color-warning-600);
+  /*
+   * Same contrast issue as --ui-warning above: Nuxt UI's default `success`
+   * shade (used for the comment-submission confirmation alert) is too light
+   * against the cream `--ui-bg` background in light mode. Step one shade
+   * darker.
+   */
+  --ui-success: var(--ui-color-success-600);
 }
 
 .dark {

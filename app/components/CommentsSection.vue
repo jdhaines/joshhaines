@@ -18,6 +18,7 @@ const turnstileSiteKey = config.public.turnstileSiteKey
 interface CommentItem {
   id: number
   author_name: string
+  author_url: string | null
   body: string
   created_at: string
 }
@@ -25,10 +26,20 @@ interface CommentItem {
 const { data: comments, refresh: refreshComments } = await useAsyncData(
   `comments-${props.path}`,
   () => $fetch<{ comments: CommentItem[] }>('/api/comments', { query: { path: props.path } }).then(res => res.comments),
-  { default: () => [] },
+  {
+    default: () => [],
+    // This page is statically generated, so a normal (server-side)
+    // useAsyncData call would run once at build time and bake that
+    // snapshot into the prerendered payload -- newly approved comments
+    // would never show up until some other client-side refresh
+    // (e.g. submitting a new comment) happened to refetch. Comments are
+    // inherently dynamic, so always fetch them fresh on the client instead.
+    server: false,
+  },
 )
 
 const name = ref('')
+const authorUrl = ref('')
 const body = ref('')
 const website = ref('') // honeypot -- must stay empty, never shown to real users
 const turnstileToken = ref('')
@@ -82,6 +93,7 @@ async function submitComment() {
       body: {
         path: props.path,
         name: name.value.trim(),
+        authorUrl: authorUrl.value.trim(),
         body: body.value.trim(),
         turnstileToken: turnstileToken.value,
         website: website.value,
@@ -89,13 +101,23 @@ async function submitComment() {
     })
     status.value = 'success'
     name.value = ''
+    authorUrl.value = ''
     body.value = ''
-    turnstileToken.value = ''
     await refreshComments()
   }
   catch (error) {
     status.value = 'error'
     errorMessage.value = (error as { data?: { error?: string } })?.data?.error ?? 'Something went wrong submitting your comment.'
+  }
+  finally {
+    // Turnstile tokens are single-use -- whether the submit succeeded or
+    // failed, the token we just sent is now spent. Reset the widget so a
+    // retry (or a second comment) gets a fresh token instead of silently
+    // being rejected as "timeout-or-duplicate" by Cloudflare.
+    turnstileToken.value = ''
+    if (turnstileWidgetId.value) {
+      (window as unknown as { turnstile?: { reset: (id: string) => void } }).turnstile?.reset(turnstileWidgetId.value)
+    }
   }
 }
 </script>
@@ -122,7 +144,16 @@ async function submitComment() {
         class="rounded-lg border border-default p-4"
       >
         <div class="flex items-baseline justify-between gap-4">
-          <span class="font-medium">{{ comment.author_name }}</span>
+          <span class="font-medium">
+            <a
+              v-if="comment.author_url"
+              :href="comment.author_url"
+              target="_blank"
+              rel="noopener noreferrer nofollow ugc"
+              class="text-primary hover:underline"
+            >{{ comment.author_name }}</a>
+            <template v-else>{{ comment.author_name }}</template>
+          </span>
           <time
             class="text-sm text-muted"
             :datetime="comment.created_at"
@@ -169,6 +200,21 @@ async function submitComment() {
           maxlength="60"
           autocomplete="name"
           placeholder="Your name"
+        />
+      </UFormField>
+
+      <UFormField
+        label="Website or profile link"
+        hint="optional"
+      >
+        <UInput
+          v-model="authorUrl"
+          name="authorUrl"
+          type="url"
+          maxlength="200"
+          autocomplete="url"
+          placeholder="https://linkedin.com/in/you"
+          class="w-full"
         />
       </UFormField>
 
