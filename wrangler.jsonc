@@ -6,6 +6,15 @@
   // already connected via Git.
   "name": "joshhainesnext",
   "compatibility_date": "2026-07-27",
+  // Recipient for moderation-notification emails, and the site origin used
+  // to build absolute one-click moderation links in that email (see
+  // workers/comments-api.ts). Neither is a secret -- fine to keep in source
+  // control. The signing key for those links (COMMENT_MODERATION_SECRET) is
+  // a real secret -- see DEVELOPER.md's "Comments" section.
+  "vars": {
+    "COMMENT_NOTIFY_EMAIL": "Josh@JoshHaines.com",
+    "COMMENT_SITE_ORIGIN": "https://joshhaines.com"
+  },
   // Small Worker script that only handles the /api/comments endpoints
   // (see workers/comments-api.ts) -- `run_worker_first` scopes it to just
   // those routes, so every other request is still served directly from
@@ -25,6 +34,16 @@
       "binding": "COMMENTS_DB",
       "database_name": "joshhaines-comments",
       "database_id": "cd70e5a8-16d6-4a0b-987e-c30b1565804e"
+    }
+  ],
+  // Sends a moderation-notification email whenever a new comment is
+  // submitted for review (see workers/comments-api.ts). Requires
+  // joshhaines.com to be onboarded to Cloudflare Email Sending -- see
+  // DEVELOPER.md's "Comments" section.
+  "send_email": [
+    {
+      "name": "EMAIL",
+      "allowed_sender_addresses": ["comments@joshhaines.com"]
     }
   ]
 }

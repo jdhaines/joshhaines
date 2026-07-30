@@ -201,16 +201,41 @@ rules.
    — **still needed**:
    ```sh
    npx wrangler secret put TURNSTILE_SECRET
-   npx wrangler secret put COMMENTS_ADMIN_TOKEN   # any long random string you generate yourself
+   npx wrangler secret put COMMENTS_ADMIN_TOKEN     # any long random string you generate yourself
+   npx wrangler secret put COMMENT_MODERATION_SECRET # any long random string you generate yourself; signs one-click moderation links (see below)
    ```
 
-5. **Deploy**: `bun run cf:deploy` (runs `nuxt generate` then
+5. **Onboard `joshhaines.com` to Cloudflare Email Sending** (one-time,
+   needed for the moderation-notification email described below):
+   ```sh
+   npx wrangler email sending enable joshhaines.com
+   ```
+   (Or via the Dashboard: Email → Email Sending.) `wrangler.jsonc`'s
+   `send_email` binding restricts the Worker to sending from
+   `comments@joshhaines.com` -- no separate mailbox is needed, it's just a
+   `from` address on the domain.
+
+6. **Deploy**: `bun run cf:deploy` (runs `nuxt generate` then
    `wrangler deploy`, which uploads both the static assets and the Worker
    script in one step).
 
 ### Moderating comments
 
-**Easiest: the Cloudflare dashboard.** Workers & Pages → D1 →
+**Easiest: use the links in the notification email.** Every new comment triggers
+an email (to `COMMENT_NOTIFY_EMAIL` in `wrangler.jsonc`, sent via
+Cloudflare Email Service from `workers/comments-api.ts`'s
+`notifyModerator`) with **Approve** / **Deny** links. Each link opens a
+small confirmation page and requires one click on a button there before
+anything is written to D1 -- the link itself only shows a preview; the
+actual approve/reject only happens when that page's form is submitted
+(POST). This two-step design is deliberate: email clients and chat-app
+link previews often prefetch links with a GET request, and if the GET
+itself performed the moderation action, a comment could get silently
+approved or denied before a human ever saw the email. Links are signed
+(HMAC with `COMMENT_MODERATION_SECRET`) per comment id + action, so a
+forwarded or leaked link can't be used to moderate a different comment.
+
+**Alternative: the Cloudflare dashboard.** Workers & Pages → D1 →
 `joshhaines-comments` → **Tables** tab to browse/edit rows directly, or
 the **Console** tab to run raw SQL, e.g.:
 
@@ -219,7 +244,7 @@ UPDATE comments SET status = 'approved' WHERE id = 1;
 ```
 
 **Alternative: scriptable via `curl`**, using the `COMMENTS_ADMIN_TOKEN`
-secret from step 6 above:
+secret from step 4 above:
 
 ```sh
 # List everything awaiting review
