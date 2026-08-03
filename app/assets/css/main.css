@@ -2,6 +2,18 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
 
+/*
+ * Tailwind v4's automatic content detection scans Vite's module graph, so
+ * it only sees utility classes used in .vue/.ts/.js files -- raw Markdown
+ * body content (content/content/*.md) is loaded through @nuxt/content's own
+ * pipeline and never enters that graph, so any Tailwind class used *only*
+ * inside a post's markdown (e.g. one-off image-grid styling) would
+ * otherwise be silently dropped from the generated CSS. This explicitly
+ * adds the content directory as a source so classes authored directly in
+ * article bodies are still detected and generated.
+ */
+@source "../../../content";
+
 @theme static {
   /*
    * Brand colors carried forward from the legacy site

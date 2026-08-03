@@ -119,6 +119,12 @@ useSeoMeta({
   articleAuthor: () => author.value?.linkedin ? [author.value.linkedin] : undefined,
   twitterCard: 'summary_large_image',
   twitterImage: socialImageUrl,
+  // Draft posts are deliberately still built and reachable at their real
+  // URL (so a direct link can be privately shared), but must stay out of
+  // search results/social crawlers -- they're already excluded from every
+  // listing page, so this is the only thing keeping them from surfacing if
+  // ever discovered externally.
+  robots: () => page.value?.draft ? 'noindex, nofollow' : undefined,
 })
 
 // Article structured data for search engines/link previews. `Article` is
