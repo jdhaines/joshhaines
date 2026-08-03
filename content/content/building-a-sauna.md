@@ -2,8 +2,8 @@
 title: 'Building a Sauna'
 description: >
   In this article I go through all the steps, details, costs, and lessons learned
-    from building my sauna. I also include photos of the journey and process as
-    well as the final product.
+  from building my sauna. I also include photos of the journey and process as
+  well as the final product.
 publishedAt: 2026-08-03
 updatedAt: 2026-08-03
 tags: ['sauna', 'construction', 'health']
