@@ -50,20 +50,20 @@
     "vue-router": "^5.2.0"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^5.20260730.1",
-    "@iconify-json/lucide": "^1.2.120",
+    "@cloudflare/workers-types": "^5.20260731.1",
+    "@iconify-json/lucide": "^1.2.121",
     "@iconify-json/vscode-icons": "^1.2.67",
     "@nuxt/eslint": "^1.16.0",
-    "@nuxt/test-utils": "^4.0.3",
-    "@playwright/test": "^1.62.0",
+    "@nuxt/test-utils": "^4.1.0",
+    "@playwright/test": "^1.62.1",
     "@tailwindcss/vite": "^4.3.3",
     "@types/mdast": "^4.0.4",
     "eslint": "^10.8.0",
     "happy-dom": "^20.11.1",
     "serve": "^14.2.6",
     "vitest": "^4.1.10",
-    "vue-tsc": "^3.3.8",
-    "wrangler": "^4.114.0"
+    "vue-tsc": "^3.3.9",
+    "wrangler": "^4.117.0"
   },
   "trustedDependencies": [
     "unrs-resolver"
