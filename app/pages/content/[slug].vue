@@ -109,6 +109,7 @@ useSeoMeta({
   ogTitle: () => page.value?.title,
   ogDescription: () => page.value?.description,
   ogImage: socialImageUrl,
+  ogImageAlt: () => page.value?.imageAlt ?? page.value?.title,
   ogImageWidth: () => socialImageDimensions.value?.width,
   ogImageHeight: () => socialImageDimensions.value?.height,
   ogUrl: canonicalUrl,
@@ -120,8 +121,47 @@ useSeoMeta({
   twitterImage: socialImageUrl,
 })
 
+// Article structured data for search engines/link previews. `Article` is
+// used as a single generic type across all contentType values (article,
+// talk, podcast, bookReview) rather than a bespoke schema per type -- the
+// site is small enough that the added complexity of e.g. `Review` (for
+// book reviews) or `PodcastEpisode` isn't justified yet.
+const articleSchema = computed(() => {
+  if (!page.value) return undefined
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: page.value.title,
+    description: page.value.description,
+    image: socialImageUrl.value,
+    datePublished: page.value.publishedAt ? new Date(page.value.publishedAt).toISOString() : undefined,
+    dateModified: page.value.updatedAt ? new Date(page.value.updatedAt).toISOString() : (page.value.publishedAt ? new Date(page.value.publishedAt).toISOString() : undefined),
+    mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl },
+    author: {
+      '@type': 'Person',
+      name: author.value?.name ?? 'Josh Haines',
+      url: author.value?.linkedin,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Josh Haines',
+      logo: {
+        '@type': 'ImageObject',
+        url: `${siteUrl}/favicons/android-chrome-512x512.png`,
+      },
+    },
+  }
+})
+
 useHead({
   link: [{ rel: 'canonical', href: canonicalUrl }],
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: () => articleSchema.value ? JSON.stringify(articleSchema.value) : undefined,
+    },
+  ],
 })
 </script>
 

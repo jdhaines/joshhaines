@@ -1,0 +1,9 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Same paper-plane mark as app/assets/images/logo.svg, scaled and
+       centered into a square canvas to match the existing PNG favicons
+       (public/favicons/favicon-32x32.png, apple-touch-icon.png). -->
+  <g transform="translate(46, 152.45) scale(0.8317)">
+    <path d="M234.2 195.6L504.3 0L323.6 84L234.2 195.6Z" fill="#FF461F" />
+    <path d="M191.2 154.2L224.4 91.1001L161.7 248.1L171.1 241.3L324.1 81.7L338.3 58.8L0 73L39.7 89.9001L238.4 81.2L71.5 103.4L191.2 154.2Z" fill="#25B5E9" />
+  </g>
+</svg>

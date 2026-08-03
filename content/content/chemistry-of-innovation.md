@@ -1,7 +1,7 @@
 ---
 title: 'The Chemistry of Innovation'
 description: >
-  I was asked to give a keynote speech at the TechPoint Community Connect event July 2026. The post below contains an expanded readable version of what I discussed including some graphics and the actual slide-deck embedded. If you missed the talk, this post is a great way to catch up on what was discussed.
+  The post below contains a readable version of what I discussed in the TechPoint Community Connect event including some graphics and the actual slide-deck embedded. If you missed the talk, this post is a great way to catch up on what was discussed.
 publishedAt: 2016-07-24
 updatedAt: 2016-07-24
 tags: ['me', 'tech talk', 'innovation', 'psychological safety', 'learning', 'leadership', 'crossing boundaries']

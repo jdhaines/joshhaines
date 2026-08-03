@@ -126,7 +126,15 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
+      // WCAG/SEO requirement -- without this, validators (and screen
+      // readers) can't determine the page's language.
+      htmlAttrs: {
+        lang: 'en',
+      },
       link: [
+        // Vector favicon first so browsers that support it (most modern
+        // ones) prefer it over the raster fallbacks below.
+        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
         { rel: 'apple-touch-icon', sizes: '76x76', href: '/favicons/apple-touch-icon.png' },
         { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicons/favicon-32x32.png' },
         { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicons/favicon-16x16.png' },
@@ -144,9 +152,43 @@ export default defineNuxtConfig({
         { property: 'og:image', content: `${siteUrl}/static/images/josh-haines-social.png` },
         { property: 'og:image:width', content: '1200' },
         { property: 'og:image:height', content: '600' },
+        // Default alt text for the site-wide banner image (name + logo on
+        // a dark background). Article pages override this with their own
+        // og:image:alt in app/pages/content/[slug].vue.
+        { property: 'og:image:alt', content: 'Josh Haines logo: a paper plane mark above the name "Josh Haines"' },
         { name: 'twitter:card', content: 'summary_large_image' },
+        // twitter:site identifies the site/brand's account; twitter:creator
+        // (below) identifies the content author's account. They're
+        // intentionally different tags and can hold different handles.
+        { name: 'twitter:site', content: '@jdhaines' },
         { name: 'twitter:creator', content: '@joshhaines' },
         { name: 'twitter:image', content: `${siteUrl}/static/images/josh-haines-social.png` },
+      ],
+      script: [
+        {
+          type: 'application/ld+json',
+          innerHTML: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebSite',
+            name: 'Josh Haines',
+            url: `${siteUrl}/`,
+            description: 'Leadership, software and platform engineering, innovation, book reviews, and speaking from Josh Haines.',
+          }),
+        },
+        {
+          type: 'application/ld+json',
+          innerHTML: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Person',
+            name: 'Josh Haines',
+            url: `${siteUrl}/about`,
+            sameAs: [
+              'https://x.com/joshhaines',
+              'https://www.linkedin.com/in/JoshuaHaines',
+              'https://github.com/jdhaines',
+            ],
+          }),
+        },
       ],
     },
   },

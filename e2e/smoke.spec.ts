@@ -67,21 +67,28 @@ test.describe('navigation', () => {
 })
 
 test.describe('SEO metadata', () => {
-  test('homepage has a real canonical/OG URL, not a build-time localhost artifact', async ({ page }) => {
+  test('homepage has a real canonical/OG URL, not a build-time localhost or stale-domain artifact', async ({ page }) => {
     await page.goto('/')
 
     // Regression guard: canonical/og:url must reflect the deployed site
     // origin. This previously leaked the build machine's `localhost`
     // because it was derived from useRequestURL() during static
-    // prerendering instead of a fixed runtime-config site URL.
+    // prerendering instead of a fixed runtime-config site URL. It also
+    // previously leaked the old `norahaines.com` staging domain (which has
+    // since gone offline entirely) when `NUXT_PUBLIC_SITE_URL` wasn't set
+    // in the production build environment -- every absolute URL (canonical,
+    // og:url, og:image, twitter:image) must resolve to the real domain.
     const canonicalHref = await page.locator('link[rel="canonical"]').getAttribute('href')
     expect(canonicalHref).not.toContain('localhost')
+    expect(canonicalHref).not.toContain('norahaines.com')
     expect(canonicalHref).toMatch(/^https:\/\//)
 
     const ogUrl = await page.locator('meta[property="og:url"]').getAttribute('content')
     expect(ogUrl).not.toContain('localhost')
+    expect(ogUrl).not.toContain('norahaines.com')
 
     const ogImage = await page.locator('meta[property="og:image"]').getAttribute('content')
+    expect(ogImage).not.toContain('norahaines.com')
     expect(ogImage).toMatch(/^https:\/\/.+\.png$/)
   })
 
@@ -99,6 +106,7 @@ test.describe('SEO metadata', () => {
 
     const ogImage = await page.locator('meta[property="og:image"]').getAttribute('content')
     expect(ogImage).toContain('highGrowth.jpg')
+    expect(ogImage).not.toContain('norahaines.com')
 
     const declaredWidth = await page.locator('meta[property="og:image:width"]').getAttribute('content')
     const declaredHeight = await page.locator('meta[property="og:image:height"]').getAttribute('content')

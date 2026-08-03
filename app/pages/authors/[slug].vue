@@ -28,8 +28,27 @@ useSeoMeta({
   ogType: 'profile',
 })
 
+const personSchema = computed(() => {
+  if (!author.value) return undefined
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: author.value.name,
+    description: author.value.occupation,
+    url: canonicalUrl,
+    sameAs: author.value.linkedin ? [author.value.linkedin] : undefined,
+  }
+})
+
 useHead({
   link: [{ rel: 'canonical', href: canonicalUrl }],
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: () => personSchema.value ? JSON.stringify(personSchema.value) : undefined,
+    },
+  ],
 })
 </script>
 
