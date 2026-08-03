@@ -1,3 +1,5 @@
+import { readdirSync, readFileSync } from 'node:fs'
+import { fileURLToPath } from 'node:url'
 import { expect, test } from '@playwright/test'
 
 /**
@@ -168,6 +170,30 @@ test.describe('content article', () => {
     await expect(page.getByRole('button', { name: 'Post comment' })).toBeVisible()
     // Optional email field (shown as "Name (email)" once approved).
     await expect(page.getByPlaceholder('you@example.com')).toBeVisible()
+  })
+
+  test('a draft post still builds as a reachable "ghost" page, but is noindexed and unlinked from the homepage', async ({ page }) => {
+    // Find whichever post currently has `draft: true` rather than hardcoding
+    // a slug -- which post (if any) is a draft changes as content is
+    // written/published, and this test only cares about the mechanism (see
+    // draftContentRoutes() in nuxt.config.ts), not a specific article.
+    const contentDir = fileURLToPath(new URL('../content/content', import.meta.url))
+    const draftSlug = readdirSync(contentDir)
+      .filter(file => file.endsWith('.md'))
+      .find(file => /^draft:\s*true\s*$/m.test(readFileSync(`${contentDir}/${file}`, 'utf-8')))
+      ?.slice(0, -'.md'.length)
+
+    test.skip(!draftSlug, 'No draft post currently exists to test against.')
+
+    // It must still be a real, working page so a direct link can be
+    // privately shared, but must not be indexable or discoverable from any
+    // listing.
+    const response = await page.goto(`/content/${draftSlug}`)
+    expect(response?.status()).toBe(200)
+    await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex, nofollow')
+
+    await page.goto('/')
+    await expect(page.locator(`a[href="/content/${draftSlug}"]`)).toHaveCount(0)
   })
 })
 

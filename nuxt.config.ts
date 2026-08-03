@@ -48,6 +48,27 @@ function legacyContentRoutes() {
   return routes
 }
 
+// `draft: true` posts are intentionally excluded from every listing page
+// (home, books, writing, talks, podcasts, search) so they have zero public
+// surface area -- but the post's own `/content/<slug>` page should still be
+// a real, working "ghost" page you can privately share a direct link to.
+// Since nothing links to it, Nitro's crawler would otherwise never
+// discover and prerender it (leaving it a dead 404 even though the legacy
+// `/blog/*`/`/writing/*` redirect stubs above still point at it). Listing
+// draft posts' `/content/<slug>` routes here explicitly is the fix.
+function draftContentRoutes() {
+  const contentDir = fileURLToPath(new URL('./content/content', import.meta.url))
+  const routes: string[] = []
+
+  for (const file of readdirSync(contentDir)) {
+    if (!file.endsWith('.md')) continue
+    const isDraft = /^draft:\s*true\s*$/m.test(readFileSync(`${contentDir}/${file}`, 'utf-8'))
+    if (isDraft) routes.push(`/content/${file.slice(0, -'.md'.length)}`)
+  }
+
+  return routes
+}
+
 export default defineNuxtConfig({
   runtimeConfig: {
     public: {
@@ -212,7 +233,7 @@ export default defineNuxtConfig({
       // that haven't been brought over yet. Don't fail the whole static
       // build over known-future content links.
       failOnError: false,
-      routes: [...legacyContentRoutes(), ...Object.keys(legacyRedirects)],
+      routes: [...legacyContentRoutes(), ...draftContentRoutes(), ...Object.keys(legacyRedirects)],
     },
   },
 })
