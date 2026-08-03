@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/zero-to-one-cover.jpg'
 imageAlt: 'Zero to One book cover'
 socialImage: '/static/images/theFuture.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/zero-to-one'
 contentType: bookReview
 bookAuthor: 'Peter Thiel, Blake Masters'
 author: josh

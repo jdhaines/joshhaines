@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/anxious-generation-cover.jpg'
 imageAlt: 'Anxious Generation book cover'
 socialImage: '/static/images/anxious.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/anxious-generation'
 contentType: bookReview
 bookAuthor: 'Jonathan Haidt'
 author: josh

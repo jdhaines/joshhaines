@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/lean-startup-cover.jpg'
 imageAlt: 'The Lean Startup book cover'
 socialImage: '/static/images/thinTree.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/lean-startup'
 contentType: bookReview
 bookAuthor: 'Eric Ries'
 author: josh

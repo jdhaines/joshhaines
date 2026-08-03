@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/reset-cover.jpg'
 imageAlt: 'Reset book cover'
 socialImage: '/static/images/reset.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/reset'
 contentType: bookReview
 bookAuthor: 'Dan Heath'
 author: josh

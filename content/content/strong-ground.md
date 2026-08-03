@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/strong-ground-cover.jpg'
 imageAlt: 'Strong Ground book cover'
 socialImage: '/static/images/ground.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/strong-ground'
 contentType: bookReview
 bookAuthor: 'Brené Brown'
 author: josh

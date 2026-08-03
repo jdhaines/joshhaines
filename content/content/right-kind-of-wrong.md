@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/right-kind-of-wrong-cover.jpg'
 imageAlt: 'Right Kind of Wrong book cover'
 socialImage: '/static/images/eraser.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/right-kind-of-wrong'
 contentType: bookReview
 bookAuthor: 'Amy C. Edmondson'
 author: josh

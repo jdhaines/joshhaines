@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/talking-to-strangers-cover.jpg'
 imageAlt: 'Talking to Strangers book cover'
 socialImage: '/static/images/strangers.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/talking-to-strangers'
 contentType: bookReview
 bookAuthor: 'Malcolm Gladwell'
 author: josh

@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/nudge-cover.jpg'
 imageAlt: 'Nudge book cover'
 socialImage: '/static/images/nudge.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/nudge'
 contentType: bookReview
 bookAuthor: 'Richard H. Thaler, Cass R. Sunstein'
 author: josh

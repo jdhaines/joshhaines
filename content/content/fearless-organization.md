@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/fearless-organization-cover.jpg'
 imageAlt: 'The Fearless Organization book cover'
 socialImage: '/static/images/safety.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/fearless-organization'
 contentType: bookReview
 bookAuthor: 'Amy C. Edmondson'
 author: josh

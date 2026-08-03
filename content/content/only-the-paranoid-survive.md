@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/only-the-paranoid-survive-cover.jpg'
 imageAlt: 'Only the Paranoid Survive book cover'
 socialImage: '/static/images/inflection.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/only-the-paranoid-survive'
 contentType: bookReview
 bookAuthor: 'Andrew S. Grove'
 author: josh

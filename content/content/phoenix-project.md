@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/phoenix-project-cover.jpg'
 imageAlt: 'The Phoenix Project book cover'
 socialImage: '/static/images/autoParts.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/phoenix-project'
 contentType: bookReview
 bookAuthor: 'Gene Kim, Kevin Behr, George Spafford'
 author: josh

@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/finite-and-infinite-games-cover.jpg'
 imageAlt: 'Finite and Infinite Games book cover'
 socialImage: '/static/images/infiniteGames.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/finite-and-infinite-games'
 contentType: bookReview
 bookAuthor: 'James P. Carse'
 author: josh

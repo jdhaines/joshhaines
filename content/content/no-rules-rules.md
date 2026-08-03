@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/no-rules-rules-cover.jpg'
 imageAlt: 'No Rules Rules book cover'
 socialImage: '/static/images/netflix1.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/no-rules-rules'
 contentType: bookReview
 bookAuthor: 'Reed Hastings, Erin Meyer'
 author: josh

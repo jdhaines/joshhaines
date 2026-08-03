@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/multipliers-cover.jpg'
 imageAlt: 'Multipliers book cover'
 socialImage: '/static/images/lighthouse.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/multipliers'
 contentType: bookReview
 bookAuthor: 'Liz Wiseman'
 author: josh

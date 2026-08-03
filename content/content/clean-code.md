@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/clean-code-cover.jpg'
 imageAlt: 'Clean Code book cover'
 socialImage: '/static/images/tools.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/clean-code'
 contentType: bookReview
 bookAuthor: 'Robert C. Martin'
 author: josh

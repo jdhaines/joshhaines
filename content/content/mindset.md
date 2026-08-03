@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/mindset-cover.jpg'
 imageAlt: 'Mindset book cover'
 socialImage: '/static/images/longBook.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/mindset'
 contentType: bookReview
 bookAuthor: 'Carol S. Dweck'
 author: josh

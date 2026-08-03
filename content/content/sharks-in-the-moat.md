@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/sharks-in-the-moat-cover.jpg'
 imageAlt: 'Sharks in the Moat book cover'
 socialImage: '/static/images/sharks.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/sharks-in-the-moat'
 contentType: bookReview
 bookAuthor: 'Phil Martin'
 author: josh

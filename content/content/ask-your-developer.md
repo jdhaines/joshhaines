@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/ask-your-developer-cover.jpg'
 imageAlt: 'Ask Your Developer book cover'
 socialImage: '/static/images/paths.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/ask-your-developer'
 contentType: bookReview
 bookAuthor: 'Jeff Lawson'
 author: josh

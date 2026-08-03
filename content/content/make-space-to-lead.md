@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/make-space-to-lead-cover.jpg'
 imageAlt: 'Make Space to Lead book cover'
 socialImage: '/static/images/lead.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/make-space-to-lead'
 contentType: bookReview
 bookAuthor: 'Tutti Taygerly'
 author: josh

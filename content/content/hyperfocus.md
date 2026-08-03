@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/hyperfocus-cover.jpg'
 imageAlt: 'Hyperfocus book cover'
 socialImage: '/static/images/focus.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/hyperfocus'
 contentType: bookReview
 bookAuthor: 'Chris Bailey'
 author: josh

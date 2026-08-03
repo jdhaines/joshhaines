@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/building-a-storybrand-cover.jpg'
 imageAlt: 'Building a Storybrand book cover'
 socialImage: '/static/images/marketing.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/building-a-storybrand'
 contentType: bookReview
 bookAuthor: 'Donald Miller'
 author: josh

@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/team-topologies-cover.jpg'
 imageAlt: 'Team Topologies book cover'
 socialImage: '/static/images/teams.png'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/team-topologies'
 contentType: bookReview
 bookAuthor: 'Matthew Skelton, Manuel Pais'
 author: josh

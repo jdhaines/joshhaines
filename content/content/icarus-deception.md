@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/icarus-deception-cover.jpg'
 imageAlt: 'The Icarus Deception book cover'
 socialImage: '/static/images/icarus.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/icarus-deception'
 contentType: bookReview
 bookAuthor: 'Seth Godin'
 author: josh

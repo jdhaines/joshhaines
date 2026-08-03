@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/made-to-stick-cover.jpg'
 imageAlt: 'Made to Stick book cover'
 socialImage: '/static/images/glue.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/made-to-stick'
 contentType: bookReview
 bookAuthor: 'Chip Heath, Dan Heath'
 author: josh

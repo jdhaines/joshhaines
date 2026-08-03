@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/escaping-the-build-trap-cover.jpg'
 imageAlt: 'Escaping the Build Trap book cover'
 socialImage: '/static/images/trap.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/escaping-the-build-trap'
 contentType: bookReview
 bookAuthor: 'Melissa Perri'
 author: josh

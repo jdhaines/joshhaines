@@ -9,7 +9,6 @@ featured: true
 startHere: true
 draft: false
 image: '/static/images/chemistryTitle.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/techpoint'
 contentType: talk
 author: josh
 relatedWriting: ['submarines-keynote']

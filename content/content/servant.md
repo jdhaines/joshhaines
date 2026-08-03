@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/servant-cover.jpg'
 imageAlt: 'The Servant book cover'
 socialImage: '/static/images/servant.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/servant'
 contentType: bookReview
 bookAuthor: 'James C. Hunter'
 author: josh

@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/change-cover.jpg'
 imageAlt: 'Change book cover'
 socialImage: '/static/images/tree.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/change'
 contentType: bookReview
 bookAuthor: 'John P. Kotter'
 author: josh

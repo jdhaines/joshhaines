@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/art-of-business-value-cover.jpg'
 imageAlt: 'The Art of Business Value book cover'
 socialImage: '/static/images/value.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/art-of-business-value'
 contentType: bookReview
 bookAuthor: 'Mark Schwartz'
 author: josh

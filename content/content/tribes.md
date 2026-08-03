@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/tribes-cover.jpg'
 imageAlt: 'Tribes book cover'
 socialImage: '/static/images/refusal.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/tribes'
 contentType: bookReview
 bookAuthor: 'Seth Godin'
 author: josh

@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/devops-for-the-modern-enterprise-cover.jpg'
 imageAlt: 'DevOps for the Modern Enterprise book cover'
 socialImage: '/static/images/modernEnterprise.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/devops-for-the-modern-enterprise'
 contentType: bookReview
 bookAuthor: 'Mirco Hering'
 author: josh

@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/dip-cover.jpg'
 imageAlt: 'The Dip book cover'
 socialImage: '/static/images/dip.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/dip'
 contentType: bookReview
 bookAuthor: 'Seth Godin'
 author: josh

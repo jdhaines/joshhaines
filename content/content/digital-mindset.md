@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/digital-mindset-cover.jpg'
 imageAlt: 'The Digital Mindset book cover'
 socialImage: '/static/images/digitalMindset.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/digital-mindset'
 contentType: bookReview
 bookAuthor: 'Paul Leonardi, Tsedal Neeley'
 author: josh

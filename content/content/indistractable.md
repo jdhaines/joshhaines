@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/indistractable-cover.jpg'
 imageAlt: 'Indistractable book cover'
 socialImage: '/static/images/distraction.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/indistractable'
 contentType: bookReview
 bookAuthor: 'Nir Eyal'
 author: josh

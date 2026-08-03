@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/daring-greatly-cover.jpg'
 imageAlt: 'Daring Greatly book cover'
 socialImage: '/static/images/daring.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/daring-greatly'
 contentType: bookReview
 bookAuthor: 'Brené Brown'
 author: josh

@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/so-good-they-cant-ignore-you-cover.jpg'
 imageAlt: "So Good They Can't Ignore You book cover"
 socialImage: '/static/images/careerHobby.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/so-good-they-cant-ignore-you'
 contentType: bookReview
 bookAuthor: 'Cal Newport'
 author: josh

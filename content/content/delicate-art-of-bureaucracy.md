@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/delicate-art-of-bureaucracy-cover.jpg'
 imageAlt: 'The Delicate Art of Bureaucracy book cover'
 socialImage: '/static/images/bureaucracy.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/delicate-art-of-bureaucracy'
 contentType: bookReview
 bookAuthor: 'Mark Schwartz'
 author: josh

@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/sooner-safer-happier-cover.jpg'
 imageAlt: 'Sooner Safer Happier book cover'
 socialImage: '/static/images/sooner.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/sooner-safer-happier'
 contentType: bookReview
 bookAuthor: 'Jonathan Smart'
 author: josh

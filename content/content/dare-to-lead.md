@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/dare-to-lead-cover.jpg'
 imageAlt: 'Dare to Lead book cover'
 socialImage: '/static/images/dareToLead.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/dare-to-lead'
 contentType: bookReview
 bookAuthor: 'Brené Brown'
 author: josh

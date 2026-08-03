@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/breath-cover.jpg'
 imageAlt: 'Breath book cover'
 socialImage: '/static/images/breath.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/breath'
 contentType: bookReview
 bookAuthor: 'James Nestor'
 author: josh

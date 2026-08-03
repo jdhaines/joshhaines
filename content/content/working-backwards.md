@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/working-backwards-cover.jpg'
 imageAlt: 'Working Backwards book cover'
 socialImage: '/static/images/backwards.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/working-backwards'
 contentType: bookReview
 bookAuthor: 'Colin Bryar, Bill Carr'
 author: josh

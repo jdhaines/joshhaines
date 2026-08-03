@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/startup-way-cover.jpg'
 imageAlt: 'The Startup Way book cover'
 socialImage: '/static/images/startup.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/startup-way'
 contentType: bookReview
 bookAuthor: 'Eric Ries'
 author: josh

@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/measure-what-matters-cover.jpg'
 imageAlt: 'Measure What Matters book cover'
 socialImage: '/static/images/scales.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/measure-what-matters'
 contentType: bookReview
 bookAuthor: 'John Doerr'
 author: josh

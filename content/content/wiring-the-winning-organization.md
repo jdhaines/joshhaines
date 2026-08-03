@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/wiring-the-winning-organization-cover.jpg'
 imageAlt: 'Wiring the Winning Organization book cover'
 socialImage: '/static/images/wiring.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/wiring-the-winning-organization'
 contentType: bookReview
 bookAuthor: 'Gene Kim, Steven Spear'
 author: josh

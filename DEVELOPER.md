@@ -45,7 +45,7 @@ Applies to every file in `content/content/*.md`.
 | `featured` | boolean | No | `false` | Marks the single post shown in the homepage **Featured** section. See [Homepage sections](#homepage-sections--how-content-is-selected) below -- only set this on **one** post at a time. |
 | `startHere` | boolean | No | `false` | Curates the homepage **Start Here** section (up to 3 posts). Independent of recency/featured status. |
 | `draft` | boolean | No | `false` | Draft posts are excluded from every listing/query across the site (they still build, but aren't linked or queryable). |
-| `canonicalUrl` | string (URL) | No | current page URL | Overrides the canonical `<link>` tag -- set this when migrating a post that had a different URL on the legacy site. |
+| `canonicalUrl` | string (URL) | No | current page URL | Overrides the canonical `<link>` tag -- set this when migrating a post that had a different URL on the legacy site (not really used anymore as ommitting it defaults to the proper link). |
 | `contentType` | enum | No | `'article'` | One of `article`, `talk`, `podcast`, `bookReview`. Drives the badge label/color and which listing page (`/writing`, `/talks`, `/podcasts`, `/books`) the post appears on. |
 | `bookAuthor` | string | Only for `bookReview` | -- | The book's author (distinct from `author`, the reviewer). Rendered under the title on book review pages and under the cover in the Bookshelf shelf. |
 | `author` | string (slug) | No | `'josh'` | Must match a slug in `content/authors/**` (e.g. `josh` for `content/authors/josh.md`). |
@@ -124,6 +124,57 @@ Available inside any post's markdown body:
   light/dark color mode. Currently hardcoded to the TechPoint keynote's Figma
   file in `app/components/content/FigmaEmbed.vue` -- update the `src` there
   (or extend it with a prop) before reusing for a different talk's deck.
+- **Image grid rows**: plain HTML/Tailwind (no custom component) for laying
+  out several photos side by side. Upload your photos with `bun run
+  photos:upload` (see "Photos (Cloudflare R2)" below) -- it prints URLs
+  hosted on `img.joshhaines.com` plus this exact snippet, pre-filled. Don't
+  hotlink Google Photos' `lh3.googleusercontent.com` links directly; they're
+  session-scoped and can expire or 429. Copy one of the 2/3/4-wide blocks,
+  then add/remove `<img>` tags and swap in your URLs and alt text. For 6
+  photos, stack two 3-wide rows or a 4-wide + a 2-wide row -- just paste
+  multiple blocks back to back.
+
+  ```html
+  <!-- 2-wide -->
+  <div class="my-8 grid grid-cols-2 gap-3 sm:gap-4">
+    <img src="https://lh3.googleusercontent.com/REPLACE-ME-1" alt="Describe this photo" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+    <img src="https://lh3.googleusercontent.com/REPLACE-ME-2" alt="Describe this photo" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+  </div>
+
+  <!-- 3-wide -->
+  <div class="my-8 grid grid-cols-3 gap-3 sm:gap-4">
+    <img src="https://lh3.googleusercontent.com/REPLACE-ME-1" alt="Describe this photo" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+    <img src="https://lh3.googleusercontent.com/REPLACE-ME-2" alt="Describe this photo" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+    <img src="https://lh3.googleusercontent.com/REPLACE-ME-3" alt="Describe this photo" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+  </div>
+
+  <!-- 4-wide -->
+  <div class="my-8 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
+    <img src="https://lh3.googleusercontent.com/REPLACE-ME-1" alt="Describe this photo" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+    <img src="https://lh3.googleusercontent.com/REPLACE-ME-2" alt="Describe this photo" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+    <img src="https://lh3.googleusercontent.com/REPLACE-ME-3" alt="Describe this photo" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+    <img src="https://lh3.googleusercontent.com/REPLACE-ME-4" alt="Describe this photo" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+  </div>
+  ```
+
+  Notes:
+  - `bg-elevated` gives each image a soft neutral backdrop (visible as
+    letterboxing while an image loads, or around non-square photos) and
+    `shadow-md` gives it gentle depth -- both already match the look used
+    elsewhere on the site (e.g. book covers on the homepage), and both
+    automatically adapt to light/dark mode.
+  - `aspect-square` + `object-cover` keeps every photo in a row the same
+    height, even if your source photos are mixed portrait/landscape; drop
+    `aspect-square` (and `object-cover` becomes unnecessary) if you'd rather
+    each image keep its own natural aspect ratio.
+  - The grid defaults to the article's normal ~740px reading column width.
+    For a wider photo row, add `breakout` to the wrapping `<div>`'s class
+    list (e.g. `class="my-8 grid grid-cols-4 gap-4 breakout"`) to use the
+    same ~1100px breakout width as standalone images/code blocks (see the
+    `.article-body` rules in `app/assets/css/main.css`).
+  - The 4-wide row above collapses to 2 columns below the `sm` breakpoint so
+    it stays readable on phones; adjust the responsive class if you want
+    different behavior.
 
 ## Homepage sections & how content is selected
 
@@ -289,3 +340,39 @@ To test the full flow locally, run the site against the built output with
 `wrangler dev` instead: `bun run cf:dev` (runs `nuxt generate` then
 `wrangler dev`, which serves the static assets and the Worker together,
 using D1's local SQLite-backed dev database unless you pass `--remote`).
+
+## Photos (Cloudflare R2)
+
+Article photos (e.g. a trip or build log with many pictures) are hosted in
+the `img-joshhaines` R2 bucket, served publicly and permanently at
+`https://img.joshhaines.com/<key>` (an R2 bucket custom domain -- zero
+egress fees, cached at Cloudflare's edge). Don't hotlink Google Photos'
+`lh3.googleusercontent.com` URLs for article images -- they're
+session/auth-scoped, can expire or get rate-limited (429), and aren't meant
+for permanent embedding.
+
+`scripts/upload-photos.mjs` resizes/compresses a local folder of photos and
+uploads them to that bucket in one step:
+
+```sh
+bun run photos:upload <local-folder> <article-slug>
+# example:
+bun run photos:upload ~/Pictures/lake-trip lake-trip
+```
+
+This resizes each photo to a max width of 2400px (never upscales), converts
+it to `.webp` at quality 82, uploads it to
+`img.joshhaines.com/<article-slug>/<filename>.webp` via `wrangler r2 object
+put --remote` (reuses your existing `wrangler login` session -- no separate
+R2 API token needed), then prints the final URLs plus a ready-to-paste
+markdown grid snippet (see "Image grid rows" above) chunked into 4/3/2-wide
+rows. Just drop the snippet into the article and fill in real alt text.
+
+Requires `sharp` (already a devDependency) and to be logged in via
+`wrangler login`/`npx wrangler whoami`.
+
+One-time setup this bucket already has, for reference if a new bucket is
+ever needed: `wrangler r2 bucket create <name>`, then `wrangler r2 bucket
+domain add <name> --domain=<subdomain> --zone-id=<zone-id>` (find the zone
+ID via the Cloudflare dashboard or `GET /zones?name=joshhaines.com`). R2
+must be enabled once on the account first (Cloudflare dashboard -> R2).

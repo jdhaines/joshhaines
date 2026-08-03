@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/range-cover.jpg'
 imageAlt: 'Range book cover'
 socialImage: '/static/images/range1.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/range'
 contentType: bookReview
 bookAuthor: 'David Epstein'
 author: josh

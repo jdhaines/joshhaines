@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/world-without-email-cover.jpg'
 imageAlt: 'A World Without Email book cover'
 socialImage: '/static/images/hivemind.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/world-without-email'
 contentType: bookReview
 bookAuthor: 'Cal Newport'
 author: josh

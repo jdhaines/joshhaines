@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/culture-code-cover.jpg'
 imageAlt: 'The Culture Code book cover'
 socialImage: '/static/images/rocket.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/culture-code'
 contentType: bookReview
 bookAuthor: 'Daniel Coyle'
 author: josh

@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/essentialism-cover.jpg'
 imageAlt: 'Essentialism book cover'
 socialImage: '/static/images/chair.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/essentialism'
 contentType: bookReview
 bookAuthor: 'Greg McKeown'
 author: josh

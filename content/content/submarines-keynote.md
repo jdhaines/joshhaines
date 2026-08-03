@@ -9,7 +9,6 @@ featured: false
 startHere: true
 draft: false
 image: '/static/images/subsTalk.png'
-canonicalUrl: 'https://www.joshhaines.com/blog/submarines-keynote'
 contentType: talk
 author: josh
 relatedWriting: ['chemistry-of-innovation']

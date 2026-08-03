@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/container-security-cover.jpg'
 imageAlt: 'Container Security book cover'
 socialImage: '/static/images/container.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/container-security'
 contentType: bookReview
 bookAuthor: 'Liz Rice'
 author: josh

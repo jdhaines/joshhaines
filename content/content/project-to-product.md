@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/project-to-product-cover.jpg'
 imageAlt: 'Project to Product book cover'
 socialImage: '/static/images/flow.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/project-to-product'
 contentType: bookReview
 bookAuthor: 'Mik Kersten'
 author: josh

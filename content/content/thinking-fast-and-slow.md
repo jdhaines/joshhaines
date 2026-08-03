@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/thinking-fast-and-slow-cover.jpg'
 imageAlt: 'Thinking Fast and Slow book cover'
 socialImage: '/static/images/thinking.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/thinking-fast-and-slow'
 contentType: bookReview
 bookAuthor: 'Daniel Kahneman'
 author: josh

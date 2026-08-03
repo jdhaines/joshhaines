@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/making-work-visible-cover.jpg'
 imageAlt: 'Making Work Visible book cover'
 socialImage: '/static/images/visibleWork.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/making-work-visible'
 contentType: bookReview
 bookAuthor: 'Dominica DeGrandis'
 author: josh

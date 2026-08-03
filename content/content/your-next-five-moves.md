@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/your-next-five-moves-cover.jpg'
 imageAlt: 'Your Next Five Moves book cover'
 socialImage: '/static/images/badChess.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/your-next-five-moves'
 contentType: bookReview
 bookAuthor: 'Patrick Bet-David'
 author: josh

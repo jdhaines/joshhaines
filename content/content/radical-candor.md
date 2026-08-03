@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/radical-candor-cover.jpg'
 imageAlt: 'Radical Candor book cover'
 socialImage: '/static/images/candor.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/radical-candor'
 contentType: bookReview
 bookAuthor: 'Kim Scott'
 author: josh

@@ -8,12 +8,10 @@ tags: ['yubikeys', 'encryption', 'pgp', 'security']
 featured: false
 startHere: false
 draft: false
-canonicalUrl: 'https://www.joshhaines.com/blog/pgp-gpg-yubikeys-oh-my'
 contentType: article
 author: josh
 ---
 ## Introduction
-
 
 This article is adapted from one I wrote internally for out team to make the
 best use of their yubikeys. I've expanded it to include more detials around a

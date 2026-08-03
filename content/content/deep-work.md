@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/deep-work-cover.jpg'
 imageAlt: 'Deep Work book cover'
 socialImage: '/static/images/deepWork.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/deep-work'
 contentType: bookReview
 bookAuthor: 'Cal Newport'
 author: josh

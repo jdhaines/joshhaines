@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/unicorn-project-cover.jpg'
 imageAlt: 'The Unicorn Project book cover'
 socialImage: '/static/images/horn.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/unicorn-project'
 contentType: bookReview
 bookAuthor: 'Gene Kim'
 author: josh

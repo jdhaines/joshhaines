@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/first-break-all-the-rules-cover.jpg'
 imageAlt: 'First, Break All the Rules book cover'
 socialImage: '/static/images/keys.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/first-break-all-the-rules'
 contentType: bookReview
 bookAuthor: 'Marcus Buckingham, Curt Coffman'
 author: josh

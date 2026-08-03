@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/seat-at-the-table-cover.jpg'
 imageAlt: 'A Seat at the Table book cover'
 socialImage: '/static/images/chairs.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/seat-at-the-table'
 contentType: bookReview
 bookAuthor: 'Mark Schwartz'
 author: josh

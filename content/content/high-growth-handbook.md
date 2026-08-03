@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/high-growth-handbook-cover.jpg'
 imageAlt: 'High Growth Handbook book cover'
 socialImage: '/static/images/highGrowth.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/high-growth-handbook'
 contentType: bookReview
 bookAuthor: 'Elad Gil'
 author: josh

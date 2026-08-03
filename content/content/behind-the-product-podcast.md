@@ -9,7 +9,6 @@ featured: false
 startHere: true
 draft: false
 image: '/static/images/podcast.png'
-canonicalUrl: 'https://www.joshhaines.com/blog/behind-the-product-podcast'
 contentType: podcast
 author: josh
 runtime: '45 min listen'

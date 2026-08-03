@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/upstream-cover.jpg'
 imageAlt: 'Upstream book cover'
 socialImage: '/static/images/river.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/upstream'
 contentType: bookReview
 bookAuthor: 'Dan Heath'
 author: josh

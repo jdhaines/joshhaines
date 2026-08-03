@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/hard-thing-about-hard-things-cover.jpg'
 imageAlt: 'The Hard Thing About Hard Things book cover'
 socialImage: '/static/images/hardThings.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/hard-thing-about-hard-things'
 contentType: bookReview
 bookAuthor: 'Ben Horowitz'
 author: josh

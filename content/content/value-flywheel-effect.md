@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/value-flywheel-effect-cover.jpg'
 imageAlt: 'The Value Flywheel Effect book cover'
 socialImage: '/static/images/flywheel.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/value-flywheel-effect'
 contentType: bookReview
 bookAuthor: 'David Anderson'
 author: josh

@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/xlr8-cover.jpg'
 imageAlt: 'XLR8 book cover'
 socialImage: '/static/images/xlr8.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/xlr8'
 contentType: bookReview
 bookAuthor: 'John P. Kotter'
 author: josh

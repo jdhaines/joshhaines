@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/decision-quality-cover.jpg'
 imageAlt: 'Decision Quality book cover'
 socialImage: '/static/images/decision.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/decision-quality'
 contentType: bookReview
 bookAuthor: 'Carl Spetzler, Hannah Winter, Jennifer Meyer'
 author: josh

@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/switch-cover.jpg'
 imageAlt: 'Switch book cover'
 socialImage: '/static/images/switch.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/switch'
 contentType: bookReview
 bookAuthor: 'Chip Heath, Dan Heath'
 author: josh

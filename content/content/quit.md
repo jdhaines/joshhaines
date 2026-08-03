@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/quit-cover.jpg'
 imageAlt: 'Quit book cover'
 socialImage: '/static/images/monkey.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/quit'
 contentType: bookReview
 bookAuthor: 'Annie Duke'
 author: josh

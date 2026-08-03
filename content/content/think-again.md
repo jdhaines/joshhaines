@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/think-again-cover.jpg'
 imageAlt: 'Think Again book cover'
 socialImage: '/static/images/thinkAgain.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/think-again'
 contentType: bookReview
 bookAuthor: 'Adam Grant'
 author: josh

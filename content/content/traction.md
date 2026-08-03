@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/traction-cover.jpg'
 imageAlt: 'Traction book cover'
 socialImage: '/static/images/traction.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/traction'
 contentType: bookReview
 bookAuthor: 'Gino Wickman'
 author: josh

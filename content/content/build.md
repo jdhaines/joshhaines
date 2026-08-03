@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/build-cover.jpg'
 imageAlt: 'Build book cover'
 socialImage: '/static/images/build.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/build'
 contentType: bookReview
 bookAuthor: 'Tony Fadell'
 author: josh

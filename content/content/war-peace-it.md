@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/war-peace-it-cover.jpg'
 imageAlt: 'War and Peace and IT book cover'
 socialImage: '/static/images/battle.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/war-peace-it'
 contentType: bookReview
 bookAuthor: 'Mark Schwartz'
 author: josh

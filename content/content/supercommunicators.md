@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/supercommunicators-cover.jpg'
 imageAlt: 'Supercommunicators book cover'
 socialImage: '/static/images/communication.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/supercommunicators'
 contentType: bookReview
 bookAuthor: 'Charles Duhigg'
 author: josh

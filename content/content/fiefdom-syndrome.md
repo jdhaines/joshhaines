@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/fiefdom-syndrome-cover.jpg'
 imageAlt: 'The Fiefdom Syndrome book cover'
 socialImage: '/static/images/fiefdom.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/fiefdom-syndrome'
 contentType: bookReview
 bookAuthor: 'Robert Herbold'
 author: josh

@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/linchpin-cover.jpg'
 imageAlt: 'Linchpin book cover'
 socialImage: '/static/images/linchpin.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/linchpin'
 contentType: bookReview
 bookAuthor: 'Seth Godin'
 author: josh

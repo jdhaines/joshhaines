@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/nonviolent-communication-cover.jpg'
 imageAlt: 'Nonviolent Communication book cover'
 socialImage: '/static/images/calmSunset.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/nonviolent-communication'
 contentType: bookReview
 bookAuthor: 'Marshall B. Rosenberg'
 author: josh

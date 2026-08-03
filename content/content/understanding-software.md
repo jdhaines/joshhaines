@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/understanding-software-cover.jpg'
 imageAlt: 'Understanding Software book cover'
 socialImage: '/static/images/understanding.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/understanding-software'
 contentType: bookReview
 bookAuthor: 'Max Kanat-Alexander'
 author: josh

@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/fear-of-missing-out-cover.jpg'
 imageAlt: 'Fear of Missing Out book cover'
 socialImage: '/static/images/brokenPhone.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/fear-of-missing-out'
 contentType: bookReview
 bookAuthor: 'Patrick J. McGinnis'
 author: josh

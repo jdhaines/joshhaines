@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/software-architect-elevator-cover.jpg'
 imageAlt: 'Software Architect Elevator book cover'
 socialImage: '/static/images/elevator.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/software-architect-elevator'
 contentType: bookReview
 bookAuthor: 'Gregor Hohpe'
 author: josh

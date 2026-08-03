@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/innovators-dilemma-cover.jpg'
 imageAlt: "The Innovator's Dilemma book cover"
 socialImage: '/static/images/innovation.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/innovators-dilemma'
 contentType: bookReview
 bookAuthor: 'Clayton M. Christensen'
 author: josh

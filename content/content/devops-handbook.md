@@ -10,7 +10,6 @@ draft: false
 image: '/static/images/devops-handbook-cover.jpg'
 imageAlt: 'The DevOps Handbook book cover'
 socialImage: '/static/images/book.jpg'
-canonicalUrl: 'https://www.joshhaines.com/blog/book-shelf/devops-handbook'
 contentType: bookReview
 bookAuthor: 'Gene Kim, Jez Humble, Patrick Debois, John Willis'
 author: josh
