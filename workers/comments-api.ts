@@ -164,7 +164,7 @@ function escapeHtml(value: string) {
 async function notifyModerator(env: Env, comment: { id: number, path: string, name: string, authorUrl: string | null, authorEmail: string | null, body: string }) {
   if (!env.COMMENT_NOTIFY_EMAIL) return
 
-  const preview = comment.body.length > 280 ? `${comment.body.slice(0, 280)}…` : comment.body
+  const preview = comment.body.length > 280 ? `${comment.body.slice(0, 280)}... ` : comment.body
 
   try {
     const [approveLink, denyLink] = await Promise.all([

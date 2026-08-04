@@ -1,7 +1,7 @@
 # JoshHaines.com (Nuxt rebuild)
 
-A rebuild of [JoshHaines.com](https://joshhaines.com) — an editorial
-publication and personal content library — on Nuxt 4, Nuxt Content, Nuxt UI,
+A rebuild of [JoshHaines.com](https://joshhaines.com) - an editorial
+publication and personal content library - on Nuxt 4, Nuxt Content, Nuxt UI,
 Tailwind CSS 4, and Bun.
 
 See `AGENTS.md` and `.github/copilot-instructions.md` for project

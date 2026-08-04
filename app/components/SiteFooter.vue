@@ -8,9 +8,10 @@ const links = [
 ]
 
 const socialLinks = [
-  { icon: 'i-simple-icons-x', to: 'https://x.com/joshhaines', label: 'X' },
   { icon: 'i-simple-icons-linkedin', to: 'https://www.linkedin.com/in/JoshuaHaines', label: 'LinkedIn' },
   { icon: 'i-simple-icons-github', to: 'https://github.com/jdhaines', label: 'GitHub' },
+  { icon: 'i-simple-icons-discord', to: 'https://discord.com/users/611912877707886612', label: 'Discord' },
+  { icon: 'i-lucide-mail', to: 'mailto:Josh@JoshHaines.com', label: 'Email' },
 ]
 
 const year = new Date().getFullYear()

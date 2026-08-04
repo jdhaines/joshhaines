@@ -90,7 +90,7 @@ that real output, matching what actually gets deployed).
 ## Completion
 
 A change is complete only after applicable lint, typecheck, test, e2e, and
-build commands have been run—or after clearly reporting why one could not
+build commands have been run-or after clearly reporting why one could not
 be run.
 
 Summarize:

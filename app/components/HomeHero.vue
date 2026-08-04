@@ -23,8 +23,8 @@ function formatDate(date?: Date | string) {
   <UPageHero orientation="horizontal"
     :ui="{ container: 'lg:grid-cols-5', wrapper: 'lg:col-span-3', description: 'max-w-xl' }">
     <template #title>
-      <span class="block">Engineering Better Systems.</span>
       <span class="block">Building Stronger Teams.</span>
+      <span class="block">Engineering Better Systems.</span>
     </template>
 
     <template #description>

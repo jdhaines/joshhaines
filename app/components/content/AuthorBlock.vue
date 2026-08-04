@@ -7,10 +7,10 @@ const props = defineProps<{
 
 const socialLinks = computed(() => {
   return [
-    props.author.x && { icon: 'i-simple-icons-x', to: props.author.x, label: 'X' },
     props.author.linkedin && { icon: 'i-simple-icons-linkedin', to: props.author.linkedin, label: 'LinkedIn' },
     props.author.github && { icon: 'i-simple-icons-github', to: props.author.github, label: 'GitHub' },
     props.author.discord && { icon: 'i-simple-icons-discord', to: props.author.discord, label: 'Discord' },
+    props.author.email && { icon: 'i-lucide-mail', to: `mailto:${props.author.email}`, label: 'Email' },
   ].filter(Boolean) as { icon: string, to: string, label: string }[]
 })
 </script>

@@ -129,7 +129,7 @@ export default defineNuxtConfig({
         // app/assets/css/main.css (.markdown-alert rules). Keyed by the
         // wrapper's path (not the package name) because Nuxt's codegen does
         // a default import from the key, and this package only has a named
-        // export — see mdc-remark-github-alert.ts.
+        // export - see mdc-remark-github-alert.ts.
         remarkPlugins: {
           [remarkGithubAlertPath]: {},
         },

@@ -80,7 +80,6 @@ export default defineContentConfig({
         occupation: z.string().optional(),
         company: z.string().optional(),
         email: z.string().optional(),
-        x: z.string().optional(),
         linkedin: z.string().optional(),
         github: z.string().optional(),
         discord: z.string().optional(),

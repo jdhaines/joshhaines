@@ -76,8 +76,7 @@ field (matched by filename slug, e.g. `content/authors/josh.md` → `josh`).
 | `avatar` | string (path) | **Yes** | Avatar image path. |
 | `occupation` | string | No | Shown next to name on the article header/author block. |
 | `company` | string | No | Shown as ", \<company\>" after occupation. |
-| `email` | string | No | Not currently rendered in a template; kept for reference/future use. |
-| `x` | string (URL) | No | Renders an X/Twitter icon link in the author block/footer-style social lists. |
+| `email` | string | No | Renders a mailto: email icon link. |
 | `linkedin` | string (URL) | No | Renders a LinkedIn icon link. |
 | `github` | string (URL) | No | Renders a GitHub icon link. |
 | `discord` | string (URL) | No | Renders a Discord icon link. |
@@ -236,14 +235,14 @@ with no extra hosting.
 Comments are **not free-form public** by default: every submission starts
 as `pending` and only becomes visible once manually approved (see
 "Moderating comments" below). Abuse prevention is intentionally simple
-("rudimentary" per the brief, not a full spam-detection system) — honeypot
+("rudimentary" per the brief, not a full spam-detection system) - honeypot
 field, a Turnstile CAPTCHA token, basic length/keyword/link-count checks,
 and a per-IP-hash rate limit. See `workers/comments-api.ts` for the exact
 rules.
 
 ### One-time setup
 
-1. **Create the D1 database** (requires `wrangler login` first) — **done**;
+1. **Create the D1 database** (requires `wrangler login` first) - **done**;
    `joshhaines-comments` already exists and `wrangler.jsonc`'s
    `d1_databases[0].database_id` is set. Only needed again if the database
    is ever recreated:
@@ -252,7 +251,7 @@ rules.
    npx wrangler d1 create joshhaines-comments
    ```
 
-2. **Apply the schema** — **done** (applied with `--remote` against the
+2. **Apply the schema** - **done** (applied with `--remote` against the
    live database). Re-run this any time `workers/schema.sql` changes:
    ```sh
    npx wrangler d1 execute joshhaines-comments --remote --file=workers/schema.sql
@@ -266,14 +265,14 @@ rules.
    COLUMN ...` run by hand against the live database (the `author_url` and
    `author_email` columns were added this way).
 
-3. **Turnstile widget** — **done**; the site key is already the default in
+3. **Turnstile widget** - **done**; the site key is already the default in
    `nuxt.config.ts`'s `runtimeConfig.public.turnstileSiteKey`
    (`0x4AAAAAAEB96elhI9z99BdG`), so no build-time env var is required
    unless the widget is ever recreated (in which case override with
    `NUXT_PUBLIC_TURNSTILE_SITE_KEY`).
 
 4. **Set the Worker secrets** (never committed, never in `wrangler.jsonc`)
-   — **still needed**:
+   - **still needed**:
    ```sh
    npx wrangler secret put TURNSTILE_SECRET
    npx wrangler secret put COMMENTS_ADMIN_TOKEN     # any long random string you generate yourself
