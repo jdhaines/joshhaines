@@ -18,7 +18,7 @@ type SearchResults = Awaited<ReturnType<typeof search>>
 const { open } = useContentSearch()
 
 const links = [
-  { label: 'Books', description: 'Josh's rank-ordered Book Shelf', icon: 'i-lucide-book-open', to: '/books' },
+  { label: 'Books', description: "Josh's rank-ordered Book Shelf", icon: 'i-lucide-book-open', to: '/books' },
   { label: 'Podcasts', description: 'Conversations and interviews', icon: 'i-lucide-headphones', to: '/podcasts' },
   { label: 'Talks', description: 'Keynotes and slides', icon: 'i-lucide-presentation', to: '/talks' },
   { label: 'Writing', description: 'Essays and ideas', icon: 'i-lucide-file-text', to: '/writing' },
@@ -76,13 +76,7 @@ async function searchPublishedPosts(query: string, options?: SearchOptions): Pro
 </script>
 
 <template>
-  <UContentSearch
-    :links="links"
-    :search="searchPublishedPosts"
-    :search-status="status"
-    title="Search JoshHaines.com"
+  <UContentSearch :links="links" :search="searchPublishedPosts" :search-status="status" title="Search JoshHaines.com"
     description="Find articles, talks, podcasts, and book reviews."
-    placeholder="Search articles, talks, podcasts, and books..."
-    :color-mode="false"
-  />
+    placeholder="Search articles, talks, podcasts, and books..." :color-mode="false" />
 </template>
