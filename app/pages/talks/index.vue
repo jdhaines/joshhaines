@@ -36,6 +36,7 @@ useHead({
         :description="post.description"
         :date="post.publishedAt"
         :badge="getContentTypeBadge(post.contentType)"
+        :image="getPostCardImage(post)"
       />
     </UBlogPosts>
   </UContainer>

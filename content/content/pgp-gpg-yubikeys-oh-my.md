@@ -5,6 +5,7 @@ description: >
 publishedAt: 2024-09-23
 updatedAt: 2024-09-23
 tags: ['yubikeys', 'encryption', 'pgp', 'security']
+image: '/static/images/yubikey.jpg'
 featured: false
 startHere: false
 draft: false
