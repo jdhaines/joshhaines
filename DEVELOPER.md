@@ -175,6 +175,23 @@ Available inside any post's markdown body:
     it stays readable on phones; adjust the responsive class if you want
     different behavior.
 
+- **Linking a name/topic to search results**: mentioning a person, book
+  author, or topic in body prose? Link it straight to the site's search
+  results with a plain markdown link to `/search?q=<url-encoded query>` --
+  no custom component needed. Example: linking a book author's name to
+  their book reviews (and anything else that mentions them):
+
+  ```markdown
+  [Brené Brown](/search?q=Bren%C3%A9%20Brown)
+  ```
+
+  `/search` (`app/pages/search.vue`) is a real page, not a modal, so the URL
+  is shareable/bookmarkable. It reuses the exact same client-side full-text
+  search and "book author mentioned" boost that power the header search
+  (`app/composables/usePublishedPosts.ts`), so results are consistent
+  between the two and there's nothing extra to index or maintain. The page
+  is `noindex` (not meant to rank in search engines) but still followable.
+
 ## Homepage sections & how content is selected
 
 `app/pages/index.vue` queries the `posts` collection and passes the results

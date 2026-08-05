@@ -1,10 +1,5 @@
 <script setup lang="ts">
-const { data: publishedPosts } = await useAsyncData('site-search-published-posts', () => {
-  return queryCollection('posts')
-    .where('draft', '=', false)
-    .select('path', 'title', 'bookAuthor', 'contentType')
-    .all()
-})
+const { data: publishedPosts } = usePublishedPosts()
 
 const publishedPaths = computed(() => new Set(publishedPosts.value?.map(post => post.path) ?? []))
 
@@ -23,6 +18,7 @@ const links = [
   { label: 'Talks', description: 'Keynotes and slides', icon: 'i-lucide-presentation', to: '/talks' },
   { label: 'Writing', description: 'Essays and ideas', icon: 'i-lucide-file-text', to: '/writing' },
   { label: 'About', description: 'About Josh Haines', icon: 'i-lucide-user', to: '/about' },
+  { label: 'Full search page', description: 'Browse results on a dedicated, shareable page', icon: 'i-lucide-external-link', to: '/search' },
 ]
 
 watch(open, async (isOpen) => {
@@ -40,14 +36,8 @@ async function searchPublishedPosts(query: string, options?: SearchOptions): Pro
     limit: limit * 3,
   })
 
-  const normalizedTerms = query.trim().toLowerCase().split(/\s+/).filter(Boolean)
   const authorResults = (publishedPosts.value ?? [])
-    .filter((post) => {
-      const author = post.bookAuthor?.toLowerCase()
-      return post.contentType === 'bookReview'
-        && author
-        && normalizedTerms.every(term => author.includes(term))
-    })
+    .filter(post => matchesBookAuthor(post, query))
     .map(post => ({
       collection: 'posts',
       id: post.path,

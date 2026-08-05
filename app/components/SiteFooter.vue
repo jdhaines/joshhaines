@@ -5,6 +5,7 @@ const links = [
   { label: 'Talks', to: '/talks' },
   { label: 'Writing', to: '/writing' },
   { label: 'About', to: '/about' },
+  { label: 'Search', to: '/search' },
 ]
 
 const socialLinks = [

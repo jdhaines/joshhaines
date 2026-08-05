@@ -73,8 +73,12 @@ function formatDate(date?: Date | string) {
               >
                 {{ getContentTypeBadge(post.contentType).label }}
               </UBadge>
-              <p class="font-medium text-balance group-hover:text-primary">
+              <p class="text-lg font-semibold text-balance group-hover:text-primary">
                 {{ post.title }}
+                <span v-if="post.bookAuthor" class="font-normal text-muted">({{ post.bookAuthor }})</span>
+              </p>
+              <p class="mt-1 line-clamp-2 text-sm text-muted">
+                {{ post.description }}
               </p>
             </div>
             <time

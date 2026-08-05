@@ -131,159 +131,72 @@ async function submitComment() {
 </script>
 
 <template>
-  <section
-    class="mt-16 border-t border-default pt-8"
-    aria-labelledby="comments-heading"
-  >
-    <h2
-      id="comments-heading"
-      class="font-serif text-2xl font-semibold"
-    >
+  <section class="mt-16 border-t border-default pt-8" aria-labelledby="comments-heading">
+    <h2 id="comments-heading" class="font-serif text-2xl font-semibold">
       Comments
     </h2>
 
-    <ul
-      v-if="comments.length"
-      class="mt-6 flex flex-col gap-6"
-    >
-      <li
-        v-for="comment in comments"
-        :key="comment.id"
-        class="rounded-lg border border-default p-4"
-      >
+    <ul v-if="comments.length" class="mt-6 flex flex-col gap-6">
+      <li v-for="comment in comments" :key="comment.id" class="rounded-lg border border-default p-4">
         <div class="flex items-baseline justify-between gap-4">
           <span class="font-medium">
-            <a
-              v-if="comment.author_url"
-              :href="comment.author_url"
-              target="_blank"
-              rel="noopener noreferrer nofollow ugc"
-              class="text-primary hover:underline"
-            >{{ comment.author_name }}</a>
+            <a v-if="comment.author_url" :href="comment.author_url" target="_blank"
+              rel="noopener noreferrer nofollow ugc" class="text-primary hover:underline">{{ comment.author_name }}</a>
             <template v-else>{{ comment.author_name }}</template>
-            <span
-              v-if="comment.author_email"
-              class="font-normal text-muted"
-            > ({{ comment.author_email }})</span>
+            <span v-if="comment.author_email" class="font-normal text-muted"> ({{ comment.author_email }})</span>
           </span>
-          <time
-            class="text-sm text-muted"
-            :datetime="comment.created_at"
-          >{{ new Date(comment.created_at).toLocaleDateString() }}</time>
+          <time class="text-sm text-muted" :datetime="comment.created_at">{{ new
+            Date(comment.created_at).toLocaleDateString()
+          }}</time>
         </div>
         <p class="mt-2 whitespace-pre-wrap text-muted">
           {{ comment.body }}
         </p>
       </li>
     </ul>
-    <p
-      v-else
-      class="mt-4 text-muted"
-    >
-      No comments yet -- be the first to share your thoughts.
+    <p v-else class="mt-4 text-muted">
+      No comments yet. Be the first to share your thoughts!
     </p>
 
-    <form
-      v-if="turnstileSiteKey"
-      class="mt-8 flex flex-col gap-4"
-      @submit.prevent="submitComment"
-    >
+    <form v-if="turnstileSiteKey" class="mt-8 flex flex-col gap-4" @submit.prevent="submitComment">
       <h3 class="text-lg font-medium">
         Leave a comment
       </h3>
 
-      <UAlert
-        v-if="status === 'success'"
-        color="success"
-        variant="subtle"
-        title="Thanks! Your comment was submitted and will appear once it's reviewed."
-      />
-      <UAlert
-        v-if="status === 'error'"
-        color="error"
-        variant="subtle"
-        :title="errorMessage"
-      />
+      <UAlert v-if="status === 'success'" color="success" variant="subtle"
+        title="Thanks! Your comment was submitted and will appear once it's reviewed." />
+      <UAlert v-if="status === 'error'" color="error" variant="subtle" :title="errorMessage" />
 
       <UFormField label="Name">
-        <UInput
-          v-model="name"
-          name="name"
-          maxlength="60"
-          autocomplete="name"
-          placeholder="Your name"
-        />
+        <UInput v-model="name" name="name" maxlength="60" autocomplete="name" placeholder="Your name" />
       </UFormField>
 
-      <UFormField
-        label="Website or profile link"
-        hint="optional"
-      >
-        <UInput
-          v-model="authorUrl"
-          name="authorUrl"
-          type="url"
-          maxlength="200"
-          autocomplete="url"
-          placeholder="https://linkedin.com/in/you"
-          class="w-full"
-        />
+      <UFormField label="Website or profile link" hint="optional">
+        <UInput v-model="authorUrl" name="authorUrl" type="url" maxlength="200" autocomplete="url"
+          placeholder="https://linkedin.com/in/you" class="w-full" />
       </UFormField>
 
-      <UFormField
-        label="Email"
-        hint="optional, shown next to your name"
-      >
-        <UInput
-          v-model="authorEmail"
-          name="authorEmail"
-          type="email"
-          maxlength="254"
-          autocomplete="email"
-          placeholder="you@example.com"
-          class="w-full"
-        />
+      <UFormField label="Email" hint="optional, shown next to your name">
+        <UInput v-model="authorEmail" name="authorEmail" type="email" maxlength="254" autocomplete="email"
+          placeholder="you@example.com" class="w-full" />
       </UFormField>
 
       <!-- Honeypot: hidden from real users via CSS, not `type="hidden"`, so
            it's still present in the DOM/tab order for bots that naively
            fill every input, but invisible and unreachable for people. -->
-      <div
-        class="absolute -left-[9999px]"
-        aria-hidden="true"
-      >
+      <div class="absolute -left-[9999px]" aria-hidden="true">
         <label for="comment-website">Website</label>
-        <input
-          id="comment-website"
-          v-model="website"
-          name="website"
-          type="text"
-          tabindex="-1"
-          autocomplete="off"
-        >
+        <input id="comment-website" v-model="website" name="website" type="text" tabindex="-1" autocomplete="off">
       </div>
 
       <UFormField label="Comment">
-        <UTextarea
-          v-model="body"
-          name="body"
-          :rows="4"
-          maxlength="2000"
-          placeholder="Share your thoughts..."
-          class="w-full"
-        />
+        <UTextarea v-model="body" name="body" :rows="4" maxlength="2000" placeholder="Share your thoughts..."
+          class="w-full" />
       </UFormField>
 
-      <div
-        ref="turnstileContainer"
-        class="cf-turnstile"
-      />
+      <div ref="turnstileContainer" class="cf-turnstile" />
 
-      <UButton
-        type="submit"
-        :loading="status === 'submitting'"
-        class="self-start"
-      >
+      <UButton type="submit" :loading="status === 'submitting'" class="self-start">
         Post comment
       </UButton>
     </form>
