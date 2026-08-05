@@ -15,7 +15,7 @@ bookAuthor: 'John Doerr'
 author: josh
 ---
 
-In this book, John Doerr talks about OKRs (Objectives and Key Results). Although the initial idea for them came from Andy Grove who worked for Intel in the 70s, John Doerr is credited with turning it into a huge movement and sharing them with many growing tech companies. He speaks about meetings with companies like Google and teaches them how OKRs can help them drive forward in a more cohesive way.
+In this book, [John Doerr](/search?q=John+Doerr) talks about OKRs (Objectives and Key Results). Although the initial idea for them came from Andy Grove who worked for Intel in the 70s, John Doerr is credited with turning it into a huge movement and sharing them with many growing tech companies. He speaks about meetings with companies like Google and teaches them how OKRs can help them drive forward in a more cohesive way.
 
 The book lays out the issues with other frameworks and why OKRs can help businesses achieve success more reliably. Our team had started to use OKRs before reading this book, but it never made sense how it would help us. After reading this book (and a couple others on strategy), we've been able to implement OKRs in a serious way and are using them to achieve our strategic goals.
 

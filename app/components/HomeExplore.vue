@@ -6,32 +6,32 @@
 // throughout the site.
 const categories = [
   {
-    label: 'Books',
-    description: 'Reviews and reading lists',
-    icon: 'i-lucide-book-open',
-    to: '/books',
-    color: 'text-secondary',
+    label: "Books",
+    description: "Reviews and reading lists",
+    icon: "i-lucide-book-open",
+    to: "/books",
+    color: "text-secondary",
   },
   {
-    label: 'Podcasts',
-    description: 'Conversations and interviews',
-    icon: 'i-lucide-headphones',
-    to: '/podcasts',
-    color: 'text-success',
+    label: "Podcasts",
+    description: "Conversations and interviews",
+    icon: "i-lucide-headphones",
+    to: "/podcasts",
+    color: "text-success",
   },
   {
-    label: 'Talks',
-    description: 'Keynotes and slides',
-    icon: 'i-lucide-presentation',
-    to: '/talks',
-    color: 'text-warning',
+    label: "Talks",
+    description: "Keynotes and slides",
+    icon: "i-lucide-presentation",
+    to: "/talks",
+    color: "text-warning",
   },
   {
-    label: 'Writing',
-    description: 'Essays and ideas',
-    icon: 'i-lucide-file-text',
-    to: '/writing',
-    color: 'text-primary',
+    label: "Writing",
+    description: "Essays and ideas",
+    icon: "i-lucide-file-text",
+    to: "/writing",
+    color: "text-primary",
   },
 ]
 </script>
@@ -49,7 +49,10 @@ const categories = [
       >
         <UIcon
           :name="category.icon"
-          :class="[category.color, 'size-5 shrink-0 transition-transform group-hover:translate-x-0.5']"
+          :class="[
+            category.color,
+            'size-5 shrink-0 transition-transform group-hover:translate-x-0.5',
+          ]"
         />
         <span>
           <span class="block font-serif text-base font-semibold text-highlighted">

@@ -19,7 +19,7 @@ I grabbed this book on a whim, and it ended up being one of the best books I've 
 
 > Weave a story where your customer is the hero, and you are the guide.
 
-In this book, Donald Miller lays out a simple and easy framework to clarify your message. He uses the story of the hero's journey to explain how to communicate your message in a way that resonates with your customers. None of this is groundbreaking, but I had never heard the distinction that your customer should be the hero rather than your product being the hero. This felt like a game changer.
+In this book, [Donald Miller](/search?q=Donald+Miller) lays out a simple and easy framework to clarify your message. He uses the story of the hero's journey to explain how to communicate your message in a way that resonates with your customers. None of this is groundbreaking, but I had never heard the distinction that your customer should be the hero rather than your product being the hero. This felt like a game changer.
 
 ## The SB7 Framework
 

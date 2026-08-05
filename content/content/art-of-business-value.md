@@ -15,7 +15,7 @@ bookAuthor: 'Mark Schwartz'
 author: josh
 ---
 
-I regret delaying reading this book, assuming it wouldn't offer much insight for myself or our Software Factory team. That was a mistake! As you know from our book list, I'm a big fan of Mark Schwartz, and this short book deserves a similarly high ranking to his others.
+I regret delaying reading this book, assuming it wouldn't offer much insight for myself or our Software Factory team. That was a mistake! As you know from our book list, I'm a big fan of [Mark Schwartz](/search?q=Mark+Schwartz), and this short book deserves a similarly high ranking to his others.
 
 The book has a straightforward structure: it dedicates most of its pages to explaining the flaws in common perspectives on business value, then offers a better explanation in the remaining space.
 

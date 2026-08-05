@@ -17,6 +17,6 @@ author: josh
 
 This was a good overview type book for people not as technical or close to this _modern software_ space. It has great high-level concepts and information about the modern IT enterprise. If you read his other book near the top of our list ([A Seat at the Table](/content/seat-at-the-table)), you'll have gained most of the value from this book.
 
-If, like me, you just like Mark Schwartz and his writing, then feel free to go through this one as well.
+If, like me, you just like [Mark Schwartz](/search?q=Mark+Schwartz) and his writing, then feel free to go through this one as well.
 
 ![battle against computers](/static/images/battle.jpg)

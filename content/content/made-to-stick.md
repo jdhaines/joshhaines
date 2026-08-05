@@ -17,7 +17,7 @@ author: josh
 
 ## Introduction
 
-I finished this book recently and wanted to put together a [book shelf](/books) review for it. Overall, I really enjoyed this book. Chip & Dan Heath wrote it together because they each have backgrounds working with ideas and concepts which are _sticky_. Dan Heath also wrote [Upstream](/content/upstream) which was another great book with a true _mind-virus_ as the core concept.
+I finished this book recently and wanted to put together a [book shelf](/books) review for it. Overall, I really enjoyed this book. Chip & [Dan Heath](/search?q=Dan+Heath) wrote it together because they each have backgrounds working with ideas and concepts which are _sticky_. Dan Heath also wrote [Upstream](/content/upstream) which was another great book with a true _mind-virus_ as the core concept.
 
 ## Ideas and Concepts that are Sticky
 

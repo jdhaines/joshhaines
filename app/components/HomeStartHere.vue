@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { PostsCollectionItem } from '@nuxt/content'
+import type { PostsCollectionItem } from "@nuxt/content"
 
 defineProps<{
   posts: PostsCollectionItem[]
@@ -17,7 +17,7 @@ defineProps<{
       <li v-for="(post, index) in posts" :key="post.path">
         <NuxtLink :to="post.path" class="group block">
           <span class="mb-2 block font-mono text-sm text-muted">
-            {{ String(index + 1).padStart(2, '0') }}
+            {{ String(index + 1).padStart(2, "0") }}
           </span>
           <UBadge
             variant="subtle"
@@ -27,7 +27,9 @@ defineProps<{
           >
             {{ getContentTypeBadge(post.contentType).label }}
           </UBadge>
-          <h3 class="font-serif text-lg font-semibold text-balance group-hover:text-primary">
+          <h3
+            class="font-serif text-lg font-semibold text-balance group-hover:text-primary"
+          >
             {{ post.title }}
           </h3>
           <p class="mt-1 line-clamp-2 text-sm text-muted">

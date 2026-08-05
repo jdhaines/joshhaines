@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { PublishedPostSummary } from '~/composables/usePublishedPosts'
+import type { PublishedPostSummary } from "~/composables/usePublishedPosts"
 
 // Lets any piece of body content link a name/topic straight to matching
 // results, e.g. mentioning a book's author in a review body:
@@ -10,12 +10,14 @@ import type { PublishedPostSummary } from '~/composables/usePublishedPosts'
 const route = useRoute()
 const router = useRouter()
 
-const queryText = ref(String(route.query.q ?? ''))
+const queryText = ref(String(route.query.q ?? ""))
 
 const { data: publishedPosts } = usePublishedPosts()
-const publishedByPath = computed(() => new Map((publishedPosts.value ?? []).map(post => [post.path, post])))
+const publishedByPath = computed(
+  () => new Map((publishedPosts.value ?? []).map((post) => [post.path, post]))
+)
 
-const { status, search, init } = useSearchCollection('posts', {
+const { status, search, init } = useSearchCollection("posts", {
   immediate: false,
 })
 
@@ -31,12 +33,14 @@ async function runSearch(query: string) {
   }
 
   hasSearched.value = true
-  if (status.value === 'idle') {
+  if (status.value === "idle") {
     await init()
   }
 
   const fullTextResults = await search(trimmed, { limit: 60 })
-  const authorMatches = (publishedPosts.value ?? []).filter(post => matchesBookAuthor(post, trimmed))
+  const authorMatches = (publishedPosts.value ?? []).filter((post) =>
+    matchesBookAuthor(post, trimmed)
+  )
 
   const orderedPaths: string[] = []
   const seenPaths = new Set<string>()
@@ -48,15 +52,21 @@ async function runSearch(query: string) {
   }
 
   for (const post of authorMatches) addPath(post.path)
-  for (const result of fullTextResults) addPath(result.id.split('#')[0] ?? result.id)
+  for (const result of fullTextResults) addPath(result.id.split("#")[0] ?? result.id)
 
-  results.value = orderedPaths.map(path => publishedByPath.value.get(path)!).filter(Boolean)
+  results.value = orderedPaths
+    .map((path) => publishedByPath.value.get(path)!)
+    .filter(Boolean)
 }
 
-watch(() => route.query.q, (q) => {
-  queryText.value = String(q ?? '')
-  runSearch(queryText.value)
-}, { immediate: true })
+watch(
+  () => route.query.q,
+  (q) => {
+    queryText.value = String(q ?? "")
+    runSearch(queryText.value)
+  },
+  { immediate: true }
+)
 
 function onSubmit() {
   router.replace({ query: { ...route.query, q: queryText.value || undefined } })
@@ -66,27 +76,29 @@ function onSubmit() {
 // their own pages, but should still be followable so link-shared search
 // URLs work.
 useSeoMeta({
-  title: () => queryText.value ? `Search: ${queryText.value}` : 'Search',
-  robots: 'noindex, follow',
+  title: () => (queryText.value ? `Search: ${queryText.value}` : "Search"),
+  robots: "noindex, follow",
 })
 </script>
 
 <template>
   <UContainer class="py-12">
-    <h1 class="mb-8 text-3xl font-bold">
-      Search
-    </h1>
+    <h1 class="mb-8 text-3xl font-bold">Search</h1>
 
     <form class="mb-10 flex gap-3" @submit.prevent="onSubmit">
-      <UInput v-model="queryText" icon="i-lucide-search" size="lg"
-        placeholder="Search articles, talks, podcasts, and books..." class="flex-1" />
-      <UButton type="submit" size="lg">
-        Search
-      </UButton>
+      <UInput
+        v-model="queryText"
+        icon="i-lucide-search"
+        size="lg"
+        placeholder="Search articles, talks, podcasts, and books..."
+        class="flex-1"
+      />
+      <UButton type="submit" size="lg"> Search </UButton>
     </form>
 
     <p v-if="!hasSearched" class="text-muted">
-      Enter a search term above to see matching articles, talks, podcasts, book reviews, or other content.
+      Enter a search term above to see matching articles, talks, podcasts, book reviews,
+      or other content.
     </p>
     <p v-else-if="status === 'loading' && !results.length" class="text-muted">
       Searching...
@@ -96,9 +108,15 @@ useSeoMeta({
     </p>
 
     <UBlogPosts v-else>
-      <UBlogPost v-for="post in results" :key="post.path" :to="post.path"
-        :title="post.bookAuthor ? `${post.title} (${post.bookAuthor})` : post.title" :description="post.description"
-        :date="post.publishedAt" :badge="getContentTypeBadge(post.contentType)" />
+      <UBlogPost
+        v-for="post in results"
+        :key="post.path"
+        :to="post.path"
+        :title="post.bookAuthor ? `${post.title} (${post.bookAuthor})` : post.title"
+        :description="post.description"
+        :date="post.publishedAt"
+        :badge="getContentTypeBadge(post.contentType)"
+      />
     </UBlogPosts>
   </UContainer>
 </template>

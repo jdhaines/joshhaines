@@ -1,4 +1,4 @@
-import { defineConfig, devices } from '@playwright/test'
+import { defineConfig, devices } from "@playwright/test"
 
 const PORT = 4173
 const baseURL = `http://localhost:${PORT}`
@@ -12,14 +12,14 @@ const baseURL = `http://localhost:${PORT}`
  * no Nitro server behind them).
  */
 export default defineConfig({
-  testDir: './e2e',
+  testDir: "./e2e",
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 1 : 0,
-  reporter: process.env.CI ? [['github'], ['html', { open: 'never' }]] : 'list',
+  reporter: process.env.CI ? [["github"], ["html", { open: "never" }]] : "list",
   use: {
     baseURL,
-    trace: 'on-first-retry',
+    trace: "on-first-retry",
   },
   webServer: {
     command: `bunx serve -l ${PORT} .output/public`,
@@ -27,7 +27,5 @@ export default defineConfig({
     reuseExistingServer: !process.env.CI,
     timeout: 30_000,
   },
-  projects: [
-    { name: 'chromium', use: { ...devices['Desktop Chrome'] } },
-  ],
+  projects: [{ name: "chromium", use: { ...devices["Desktop Chrome"] } }],
 })

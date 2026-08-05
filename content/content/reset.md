@@ -17,7 +17,7 @@ author: josh
 
 ## Introduction
 
-Reset is the 4th book by Dan Heath I've read & reviewed after:
+Reset is the 4th book by [Dan Heath](/search?q=Dan+Heath) I've read & reviewed after:
 
 - [Upstream](/content/upstream) - Dan Heath
 - [Made to Stick](/content/made-to-stick) - Chip & Dan Heath
@@ -33,7 +33,7 @@ Reset often discusses the concept of _leverage_ and _leverage points_. His key p
 
 This was a strange one. It's a strange phrasing and it took some time after hearing this section of the book to finally clicked for me. People hear problems and then create goals. Often these goals or metrics don't truly get after the heart of the original need.
 
-Said another way, they don't deliver whatever the core business value is. Ever since reading [The Art of Business Value](/content/art-of-business-value) by Mark Schwartz I think about this more easily than I used to. By understanding _What am I trying to deliver that will actually make the difference?_ the **Goal of the Goal** becomes more clear. I like this phrasing and concept.
+Said another way, they don't deliver whatever the core business value is. Ever since reading [The Art of Business Value](/content/art-of-business-value) by [Mark Schwartz](/search?q=Mark+Schwartz) I think about this more easily than I used to. By understanding _What am I trying to deliver that will actually make the difference?_ the **Goal of the Goal** becomes more clear. I like this phrasing and concept.
 
 ## Miracle Question
 

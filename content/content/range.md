@@ -15,7 +15,7 @@ bookAuthor: 'David Epstein'
 author: josh
 ---
 
-In his thought-provoking book "Range," David Epstein challenges the deeply ingrained belief that early specialization is the key to success. Through a blend of compelling stories and scientific research, he argues that it's the generalists (those with a broad range of experiences and interests) who often excel in complex and unpredictable fields.
+In his thought-provoking book "Range," [David Epstein](/search?q=David+Epstein) challenges the deeply ingrained belief that early specialization is the key to success. Through a blend of compelling stories and scientific research, he argues that it's the generalists (those with a broad range of experiences and interests) who often excel in complex and unpredictable fields.
 
 Epstein dives into the lives of remarkable individuals like Roger Federer. Unlike Tiger Woods, a classic prodigy, Federer dabbled in various sports as a child before focusing on tennis later. Epstein posits that this diverse background gave Federer a unique problem-solving toolkit, boosting his adaptability and creativity on the court.
 

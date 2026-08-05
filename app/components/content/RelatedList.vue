@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { PostsCollectionItem } from '@nuxt/content'
+import type { PostsCollectionItem } from "@nuxt/content"
 
 defineProps<{
   title: string
@@ -8,7 +8,11 @@ defineProps<{
 
 function formatDate(date?: Date | string) {
   if (!date) return undefined
-  return new Date(date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })
+  return new Date(date).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  })
 }
 </script>
 
@@ -18,10 +22,7 @@ function formatDate(date?: Date | string) {
       {{ title }}
     </h2>
     <ul class="flex flex-col gap-3">
-      <li
-        v-for="post in posts"
-        :key="post.path"
-      >
+      <li v-for="post in posts" :key="post.path">
         <NuxtLink
           :to="post.path"
           class="group block rounded-lg border border-default p-3 transition-colors hover:border-primary"
@@ -29,10 +30,7 @@ function formatDate(date?: Date | string) {
           <p class="line-clamp-2 text-sm font-medium group-hover:text-primary">
             {{ post.title }}
           </p>
-          <p
-            v-if="post.publishedAt"
-            class="mt-1 text-xs text-muted"
-          >
+          <p v-if="post.publishedAt" class="mt-1 text-xs text-muted">
             {{ formatDate(post.publishedAt) }}
           </p>
         </NuxtLink>

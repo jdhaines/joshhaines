@@ -4,11 +4,14 @@
   "type": "module",
   "scripts": {
     "postinstall": "nuxt prepare",
+    "prepare": "husky",
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "typecheck": "nuxt typecheck",
     "test": "vitest run",
     "test:e2e": "bun run generate && playwright test",
@@ -60,7 +63,11 @@
     "@tailwindcss/vite": "^4.3.3",
     "@types/mdast": "^4.0.4",
     "eslint": "^10.8.0",
+    "eslint-config-prettier": "^10.1.8",
     "happy-dom": "^20.11.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.3.0",
+    "prettier": "^3.9.6",
     "serve": "^14.2.6",
     "sharp": "^0.35.3",
     "vitest": "^4.1.10",
@@ -73,5 +80,14 @@
   "overrides": {
     "@unhead/vue": "^3.2.3",
     "unhead": "^3.2.3"
+  },
+  "lint-staged": {
+    "*.{js,ts,mjs,cjs,vue}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,yml,yaml,css}": [
+      "prettier --write"
+    ]
   }
 }

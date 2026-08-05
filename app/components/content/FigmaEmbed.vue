@@ -4,11 +4,11 @@
 // mirroring the legacy site's next-themes-based FigmaEmbed component.
 const colorMode = useColorMode()
 
-const theme = computed(() => (colorMode.value === 'dark' ? 'dark' : 'light'))
+const theme = computed(() => (colorMode.value === "dark" ? "dark" : "light"))
 
 const src = computed(
   () =>
-    `https://embed.figma.com/slides/jahZYSSGvIcVakkqcfdzNx/TechPoint-Keynote--Public-?node-id=1-42&embed-host=share&theme=${theme.value}`,
+    `https://embed.figma.com/slides/jahZYSSGvIcVakkqcfdzNx/TechPoint-Keynote--Public-?node-id=1-42&embed-host=share&theme=${theme.value}`
 )
 </script>
 

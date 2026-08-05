@@ -56,7 +56,7 @@ interface CommentRow {
   created_at: string
 }
 
-const JSON_HEADERS = { 'content-type': 'application/json; charset=utf-8' }
+const JSON_HEADERS = { "content-type": "application/json; charset=utf-8" }
 
 // Keeps the abuse checks below intentionally simple ("rudimentary" per the
 // brief) rather than pulling in a full spam-detection dependency -- this is
@@ -68,7 +68,8 @@ const MAX_BODY_LENGTH = 2000
 const MAX_LINKS_IN_BODY = 2
 const RATE_LIMIT_WINDOW_MINUTES = 10
 const RATE_LIMIT_MAX_SUBMISSIONS = 3
-const SPAM_KEYWORD_PATTERN = /\b(viagra|cialis|casino|crypto\s*airdrop|seo\s*backlink|forex\s*signal)\b/i
+const SPAM_KEYWORD_PATTERN =
+  /\b(viagra|cialis|casino|crypto\s*airdrop|seo\s*backlink|forex\s*signal)\b/i
 // Deliberately simple shape check (not a full RFC 5322 validator) -- good
 // enough to catch typos/garbage without rejecting legitimate addresses.
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -78,28 +79,47 @@ function jsonResponse(body: unknown, status = 200) {
 }
 
 function htmlResponse(body: string, status = 200) {
-  return new Response(body, { status, headers: { 'content-type': 'text/html; charset=utf-8' } })
+  return new Response(body, {
+    status,
+    headers: { "content-type": "text/html; charset=utf-8" },
+  })
 }
 
-type ModerationAction = 'approve' | 'reject'
+type ModerationAction = "approve" | "reject"
 
 // HMAC-SHA256 over "<id>:<action>" -- ties a signature to one specific
 // comment and action, so a leaked/forwarded link can't be replayed against
 // a different comment. Not timing-safe-compared, which is an acceptable
 // tradeoff here: the worst case of a successful forgery is a spam comment
 // getting approved on a low-traffic personal site, not an account takeover.
-async function signModerationAction(secret: string, id: number, action: ModerationAction) {
-  const key = await crypto.subtle.importKey('raw', new TextEncoder().encode(secret), { name: 'HMAC', hash: 'SHA-256' }, false, ['sign'])
-  const signature = await crypto.subtle.sign('HMAC', key, new TextEncoder().encode(`${id}:${action}`))
-  return Array.from(new Uint8Array(signature)).map(b => b.toString(16).padStart(2, '0')).join('')
+async function signModerationAction(
+  secret: string,
+  id: number,
+  action: ModerationAction
+) {
+  const key = await crypto.subtle.importKey(
+    "raw",
+    new TextEncoder().encode(secret),
+    { name: "HMAC", hash: "SHA-256" },
+    false,
+    ["sign"]
+  )
+  const signature = await crypto.subtle.sign(
+    "HMAC",
+    key,
+    new TextEncoder().encode(`${id}:${action}`)
+  )
+  return Array.from(new Uint8Array(signature))
+    .map((b) => b.toString(16).padStart(2, "0"))
+    .join("")
 }
 
 async function buildModerationLink(env: Env, id: number, action: ModerationAction) {
   const sig = await signModerationAction(env.COMMENT_MODERATION_SECRET, id, action)
-  const url = new URL('/api/comments/moderate-link', env.COMMENT_SITE_ORIGIN)
-  url.searchParams.set('id', String(id))
-  url.searchParams.set('action', action)
-  url.searchParams.set('sig', sig)
+  const url = new URL("/api/comments/moderate-link", env.COMMENT_SITE_ORIGIN)
+  url.searchParams.set("id", String(id))
+  url.searchParams.set("action", action)
+  url.searchParams.set("sig", sig)
   return url.toString()
 }
 
@@ -123,72 +143,92 @@ function moderationPage(title: string, bodyHtml: string, status = 200) {
 ${bodyHtml}
 </body>
 </html>`,
-    status,
+    status
   )
 }
 
 async function hashIp(ip: string) {
-  const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(ip))
-  return Array.from(new Uint8Array(digest)).map(b => b.toString(16).padStart(2, '0')).join('')
+  const digest = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(ip))
+  return Array.from(new Uint8Array(digest))
+    .map((b) => b.toString(16).padStart(2, "0"))
+    .join("")
 }
 
 async function verifyTurnstile(token: string, secretKey: string, remoteIp: string) {
-  const body = new URLSearchParams({ secret: secretKey, response: token, remoteip: remoteIp })
-  const response = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
-    method: 'POST',
-    headers: { 'content-type': 'application/x-www-form-urlencoded' },
-    body,
+  const body = new URLSearchParams({
+    secret: secretKey,
+    response: token,
+    remoteip: remoteIp,
   })
-  const result = await response.json() as { success: boolean }
+  const response = await fetch(
+    "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+    {
+      method: "POST",
+      headers: { "content-type": "application/x-www-form-urlencoded" },
+      body,
+    }
+  )
+  const result = (await response.json()) as { success: boolean }
   return result.success === true
 }
 
 function requireAdmin(request: Request, env: Env) {
-  const auth = request.headers.get('authorization') ?? ''
-  const token = auth.startsWith('Bearer ') ? auth.slice('Bearer '.length) : ''
+  const auth = request.headers.get("authorization") ?? ""
+  const token = auth.startsWith("Bearer ") ? auth.slice("Bearer ".length) : ""
   return token.length > 0 && token === env.COMMENTS_ADMIN_TOKEN
 }
 
 function escapeHtml(value: string) {
   return value
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#39;')
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;")
 }
 
 // Best-effort only -- a failed notification email should never block or
 // fail the comment submission itself (the comment is already saved as
 // "pending" regardless). Errors are logged, not thrown.
-async function notifyModerator(env: Env, comment: { id: number, path: string, name: string, authorUrl: string | null, authorEmail: string | null, body: string }) {
+async function notifyModerator(
+  env: Env,
+  comment: {
+    id: number
+    path: string
+    name: string
+    authorUrl: string | null
+    authorEmail: string | null
+    body: string
+  }
+) {
   if (!env.COMMENT_NOTIFY_EMAIL) return
 
-  const preview = comment.body.length > 280 ? `${comment.body.slice(0, 280)}... ` : comment.body
+  const preview =
+    comment.body.length > 280 ? `${comment.body.slice(0, 280)}... ` : comment.body
 
   try {
     const [approveLink, denyLink] = await Promise.all([
-      buildModerationLink(env, comment.id, 'approve'),
-      buildModerationLink(env, comment.id, 'reject'),
+      buildModerationLink(env, comment.id, "approve"),
+      buildModerationLink(env, comment.id, "reject"),
     ])
 
     const textDetails = [
       `Name: ${comment.name}`,
-      `Email: ${comment.authorEmail ?? '(none provided)'}`,
-      `Website: ${comment.authorUrl ?? '(none provided)'}`,
+      `Email: ${comment.authorEmail ?? "(none provided)"}`,
+      `Website: ${comment.authorUrl ?? "(none provided)"}`,
       `Page: ${comment.path}`,
-    ].join('\n')
+    ].join("\n")
 
     const htmlDetails = `<ul>
   <li><strong>Name:</strong> ${escapeHtml(comment.name)}</li>
-  <li><strong>Email:</strong> ${comment.authorEmail ? escapeHtml(comment.authorEmail) : '<em>(none provided)</em>'}</li>
-  <li><strong>Website:</strong> ${comment.authorUrl ? `<a href="${escapeHtml(comment.authorUrl)}">${escapeHtml(comment.authorUrl)}</a>` : '<em>(none provided)</em>'}</li>
+  <li><strong>Email:</strong> ${comment.authorEmail ? escapeHtml(comment.authorEmail) : "<em>(none provided)</em>"}</li>
+  <li><strong>Website:</strong> ${comment.authorUrl ? `<a href="${escapeHtml(comment.authorUrl)}">${escapeHtml(comment.authorUrl)}</a>` : "<em>(none provided)</em>"}</li>
   <li><strong>Page:</strong> <code>${escapeHtml(comment.path)}</code></li>
 </ul>`
 
     await env.EMAIL.send({
       to: env.COMMENT_NOTIFY_EMAIL,
-      from: { email: 'comments@joshhaines.com', name: 'JoshHaines.com Comments' },
+      from: { email: "comments@joshhaines.com", name: "JoshHaines.com Comments" },
       subject: `New comment awaiting review on ${comment.path}`,
       text: `New comment awaiting moderation:\n\n${textDetails}\n\nMessage:\n${comment.body}\n\nApprove: ${approveLink}\nDeny: ${denyLink}`,
       html: `<p>New comment awaiting moderation:</p>
@@ -202,21 +242,22 @@ ${htmlDetails}
 </p>
 <p>Each link opens a one-click confirmation page -- nothing is approved or rejected until you click the button there.</p>`,
     })
-  }
-  catch (error) {
-    console.error('Failed to send comment moderation notification email', error)
+  } catch (error) {
+    console.error("Failed to send comment moderation notification email", error)
   }
 }
 
 async function listApprovedComments(request: Request, env: Env) {
-  const path = new URL(request.url).searchParams.get('path')
+  const path = new URL(request.url).searchParams.get("path")
   if (!path) return jsonResponse({ error: 'Missing "path" query parameter' }, 400)
 
   const { results } = await env.COMMENTS_DB.prepare(
     `SELECT id, path, author_name, author_url, author_email, body, created_at FROM comments
      WHERE path = ?1 AND status = 'approved'
-     ORDER BY created_at ASC`,
-  ).bind(path).all<CommentRow>()
+     ORDER BY created_at ASC`
+  )
+    .bind(path)
+    .all<CommentRow>()
 
   return jsonResponse({ comments: results ?? [] })
 }
@@ -234,9 +275,8 @@ async function submitComment(request: Request, env: Env) {
 
   try {
     payload = await request.json()
-  }
-  catch {
-    return jsonResponse({ error: 'Invalid JSON body' }, 400)
+  } catch {
+    return jsonResponse({ error: "Invalid JSON body" }, 400)
   }
 
   const path = payload.path?.trim()
@@ -254,101 +294,131 @@ async function submitComment(request: Request, env: Env) {
   }
 
   if (!path || !name || !body || !turnstileToken) {
-    return jsonResponse({ error: 'Missing required field' }, 400)
+    return jsonResponse({ error: "Missing required field" }, 400)
   }
   if (name.length > MAX_NAME_LENGTH) {
-    return jsonResponse({ error: `Name must be ${MAX_NAME_LENGTH} characters or fewer` }, 400)
+    return jsonResponse(
+      { error: `Name must be ${MAX_NAME_LENGTH} characters or fewer` },
+      400
+    )
   }
   if (authorUrl) {
     // A bare domain like "linkedin.com/in/me" is a common thing to type --
     // treat it as https by default rather than rejecting it.
     if (!/^https?:\/\//i.test(authorUrl)) authorUrl = `https://${authorUrl}`
     if (authorUrl.length > MAX_URL_LENGTH) {
-      return jsonResponse({ error: `Link must be ${MAX_URL_LENGTH} characters or fewer` }, 400)
+      return jsonResponse(
+        { error: `Link must be ${MAX_URL_LENGTH} characters or fewer` },
+        400
+      )
     }
     try {
       new URL(authorUrl)
-    }
-    catch {
-      return jsonResponse({ error: 'Link must be a valid URL' }, 400)
+    } catch {
+      return jsonResponse({ error: "Link must be a valid URL" }, 400)
     }
   }
   if (authorEmail) {
     if (authorEmail.length > MAX_EMAIL_LENGTH) {
-      return jsonResponse({ error: `Email must be ${MAX_EMAIL_LENGTH} characters or fewer` }, 400)
+      return jsonResponse(
+        { error: `Email must be ${MAX_EMAIL_LENGTH} characters or fewer` },
+        400
+      )
     }
     if (!EMAIL_PATTERN.test(authorEmail)) {
-      return jsonResponse({ error: 'Email must be a valid email address' }, 400)
+      return jsonResponse({ error: "Email must be a valid email address" }, 400)
     }
   }
   if (body.length === 0 || body.length > MAX_BODY_LENGTH) {
-    return jsonResponse({ error: `Comment must be 1-${MAX_BODY_LENGTH} characters` }, 400)
+    return jsonResponse(
+      { error: `Comment must be 1-${MAX_BODY_LENGTH} characters` },
+      400
+    )
   }
   if (SPAM_KEYWORD_PATTERN.test(body) || SPAM_KEYWORD_PATTERN.test(name)) {
-    return jsonResponse({ error: 'Comment rejected' }, 400)
+    return jsonResponse({ error: "Comment rejected" }, 400)
   }
   const linkCount = (body.match(/https?:\/\//gi) ?? []).length
   if (linkCount > MAX_LINKS_IN_BODY) {
-    return jsonResponse({ error: 'Comment rejected' }, 400)
+    return jsonResponse({ error: "Comment rejected" }, 400)
   }
 
-  const remoteIp = request.headers.get('cf-connecting-ip') ?? '0.0.0.0'
+  const remoteIp = request.headers.get("cf-connecting-ip") ?? "0.0.0.0"
 
-  const turnstileOk = await verifyTurnstile(turnstileToken, env.TURNSTILE_SECRET, remoteIp)
+  const turnstileOk = await verifyTurnstile(
+    turnstileToken,
+    env.TURNSTILE_SECRET,
+    remoteIp
+  )
   if (!turnstileOk) {
-    return jsonResponse({ error: 'CAPTCHA verification failed' }, 400)
+    return jsonResponse({ error: "CAPTCHA verification failed" }, 400)
   }
 
   const ipHash = await hashIp(remoteIp)
   const { results: recent } = await env.COMMENTS_DB.prepare(
     `SELECT COUNT(*) as count FROM comments
-     WHERE ip_hash = ?1 AND created_at > datetime('now', ?2)`,
-  ).bind(ipHash, `-${RATE_LIMIT_WINDOW_MINUTES} minutes`).all<{ count: number }>()
+     WHERE ip_hash = ?1 AND created_at > datetime('now', ?2)`
+  )
+    .bind(ipHash, `-${RATE_LIMIT_WINDOW_MINUTES} minutes`)
+    .all<{ count: number }>()
 
   if ((recent?.[0]?.count ?? 0) >= RATE_LIMIT_MAX_SUBMISSIONS) {
-    return jsonResponse({ error: 'Too many comments submitted recently, please try again later' }, 429)
+    return jsonResponse(
+      { error: "Too many comments submitted recently, please try again later" },
+      429
+    )
   }
 
   const inserted = await env.COMMENTS_DB.prepare(
-    `INSERT INTO comments (path, author_name, author_url, author_email, body, status, ip_hash) VALUES (?1, ?2, ?3, ?4, ?5, 'pending', ?6)`,
-  ).bind(path, name, authorUrl, authorEmail, body, ipHash).run()
+    `INSERT INTO comments (path, author_name, author_url, author_email, body, status, ip_hash) VALUES (?1, ?2, ?3, ?4, ?5, 'pending', ?6)`
+  )
+    .bind(path, name, authorUrl, authorEmail, body, ipHash)
+    .run()
 
   const insertedId = inserted.meta.last_row_id
   if (insertedId) {
-    await notifyModerator(env, { id: insertedId, path, name, authorUrl, authorEmail, body })
+    await notifyModerator(env, {
+      id: insertedId,
+      path,
+      name,
+      authorUrl,
+      authorEmail,
+      body,
+    })
   }
 
-  return jsonResponse({ ok: true, message: 'Comment submitted for review' }, 201)
+  return jsonResponse({ ok: true, message: "Comment submitted for review" }, 201)
 }
 
 async function listPendingComments(request: Request, env: Env) {
-  if (!requireAdmin(request, env)) return jsonResponse({ error: 'Unauthorized' }, 401)
+  if (!requireAdmin(request, env)) return jsonResponse({ error: "Unauthorized" }, 401)
 
   const { results } = await env.COMMENTS_DB.prepare(
     `SELECT id, path, author_name, author_url, author_email, body, created_at FROM comments
-     WHERE status = 'pending' ORDER BY created_at ASC`,
+     WHERE status = 'pending' ORDER BY created_at ASC`
   ).all<CommentRow>()
 
   return jsonResponse({ comments: results ?? [] })
 }
 
 async function moderateComment(request: Request, env: Env) {
-  if (!requireAdmin(request, env)) return jsonResponse({ error: 'Unauthorized' }, 401)
+  if (!requireAdmin(request, env)) return jsonResponse({ error: "Unauthorized" }, 401)
 
-  let payload: { id?: number, action?: 'approve' | 'reject' }
+  let payload: { id?: number; action?: "approve" | "reject" }
   try {
     payload = await request.json()
-  }
-  catch {
-    return jsonResponse({ error: 'Invalid JSON body' }, 400)
+  } catch {
+    return jsonResponse({ error: "Invalid JSON body" }, 400)
   }
 
-  if (!payload.id || (payload.action !== 'approve' && payload.action !== 'reject')) {
+  if (!payload.id || (payload.action !== "approve" && payload.action !== "reject")) {
     return jsonResponse({ error: 'Expected { id, action: "approve" | "reject" }' }, 400)
   }
 
-  const status = payload.action === 'approve' ? 'approved' : 'rejected'
-  await env.COMMENTS_DB.prepare('UPDATE comments SET status = ?1 WHERE id = ?2').bind(status, payload.id).run()
+  const status = payload.action === "approve" ? "approved" : "rejected"
+  await env.COMMENTS_DB.prepare("UPDATE comments SET status = ?1 WHERE id = ?2")
+    .bind(status, payload.id)
+    .run()
 
   return jsonResponse({ ok: true })
 }
@@ -359,28 +429,55 @@ async function moderateComment(request: Request, env: Env) {
 // with (never both).
 async function loadModerationLinkTarget(
   env: Env,
-  params: URLSearchParams,
-): Promise<{ error: Response } | { comment: CommentRow & { status: string }, action: ModerationAction }> {
-  const idParam = params.get('id')
-  const action = params.get('action')
-  const sig = params.get('sig')
+  params: URLSearchParams
+): Promise<
+  | { error: Response }
+  | { comment: CommentRow & { status: string }; action: ModerationAction }
+> {
+  const idParam = params.get("id")
+  const action = params.get("action")
+  const sig = params.get("sig")
   const id = idParam ? Number(idParam) : Number.NaN
 
-  if (!Number.isInteger(id) || (action !== 'approve' && action !== 'reject') || !sig) {
-    return { error: moderationPage('Invalid link', '<h1>Invalid link</h1><p>This moderation link is malformed.</p>', 400) }
+  if (!Number.isInteger(id) || (action !== "approve" && action !== "reject") || !sig) {
+    return {
+      error: moderationPage(
+        "Invalid link",
+        "<h1>Invalid link</h1><p>This moderation link is malformed.</p>",
+        400
+      ),
+    }
   }
 
-  const expectedSig = await signModerationAction(env.COMMENT_MODERATION_SECRET, id, action)
+  const expectedSig = await signModerationAction(
+    env.COMMENT_MODERATION_SECRET,
+    id,
+    action
+  )
   if (sig !== expectedSig) {
-    return { error: moderationPage('Invalid link', '<h1>Invalid link</h1><p>This moderation link failed verification -- it may have been altered.</p>', 403) }
+    return {
+      error: moderationPage(
+        "Invalid link",
+        "<h1>Invalid link</h1><p>This moderation link failed verification -- it may have been altered.</p>",
+        403
+      ),
+    }
   }
 
   const comment = await env.COMMENTS_DB.prepare(
-    'SELECT id, path, author_name, author_url, author_email, body, status, created_at FROM comments WHERE id = ?1',
-  ).bind(id).first<CommentRow & { status: string }>()
+    "SELECT id, path, author_name, author_url, author_email, body, status, created_at FROM comments WHERE id = ?1"
+  )
+    .bind(id)
+    .first<CommentRow & { status: string }>()
 
   if (!comment) {
-    return { error: moderationPage('Comment not found', '<h1>Comment not found</h1><p>It may have already been deleted.</p>', 404) }
+    return {
+      error: moderationPage(
+        "Comment not found",
+        "<h1>Comment not found</h1><p>It may have already been deleted.</p>",
+        404
+      ),
+    }
   }
 
   return { comment, action } as const
@@ -395,15 +492,15 @@ async function loadModerationLinkTarget(
 async function showModerationConfirmation(request: Request, env: Env) {
   const { searchParams } = new URL(request.url)
   const target = await loadModerationLinkTarget(env, searchParams)
-  if ('error' in target) return target.error
+  if ("error" in target) return target.error
 
   const { comment, action } = target
-  const actionLabel = action === 'approve' ? 'Approve' : 'Deny'
+  const actionLabel = action === "approve" ? "Approve" : "Deny"
 
-  if (comment.status !== 'pending') {
+  if (comment.status !== "pending") {
     return moderationPage(
-      'Already moderated',
-      `<h1>Already moderated</h1><p>This comment from <strong>${escapeHtml(comment.author_name)}</strong> on <code>${escapeHtml(comment.path)}</code> was already marked <strong>${escapeHtml(comment.status)}</strong>. No action needed.</p>`,
+      "Already moderated",
+      `<h1>Already moderated</h1><p>This comment from <strong>${escapeHtml(comment.author_name)}</strong> on <code>${escapeHtml(comment.path)}</code> was already marked <strong>${escapeHtml(comment.status)}</strong>. No action needed.</p>`
     )
   }
 
@@ -412,18 +509,18 @@ async function showModerationConfirmation(request: Request, env: Env) {
     `<h1>${actionLabel} this comment?</h1>
 <ul>
   <li><strong>Name:</strong> ${escapeHtml(comment.author_name)}</li>
-  <li><strong>Email:</strong> ${comment.author_email ? escapeHtml(comment.author_email) : '<em>(none provided)</em>'}</li>
-  <li><strong>Website:</strong> ${comment.author_url ? `<a href="${escapeHtml(comment.author_url)}">${escapeHtml(comment.author_url)}</a>` : '<em>(none provided)</em>'}</li>
+  <li><strong>Email:</strong> ${comment.author_email ? escapeHtml(comment.author_email) : "<em>(none provided)</em>"}</li>
+  <li><strong>Website:</strong> ${comment.author_url ? `<a href="${escapeHtml(comment.author_url)}">${escapeHtml(comment.author_url)}</a>` : "<em>(none provided)</em>"}</li>
   <li><strong>Page:</strong> <code>${escapeHtml(comment.path)}</code></li>
 </ul>
 <blockquote>${escapeHtml(comment.body)}</blockquote>
-<form method="post" action="/api/comments/moderate-link" class="${action === 'reject' ? 'deny' : ''}">
+<form method="post" action="/api/comments/moderate-link" class="${action === "reject" ? "deny" : ""}">
   <input type="hidden" name="id" value="${comment.id}">
   <input type="hidden" name="action" value="${action}">
-  <input type="hidden" name="sig" value="${escapeHtml(searchParams.get('sig') ?? '')}">
+  <input type="hidden" name="sig" value="${escapeHtml(searchParams.get("sig") ?? "")}">
   <button type="submit">${actionLabel}</button>
 </form>
-<script>document.querySelector('form').submit()</script>`,
+<script>document.querySelector('form').submit()</script>`
   )
 }
 
@@ -433,28 +530,30 @@ async function applyModerationLink(request: Request, env: Env) {
   const formData = await request.formData()
   const params = new URLSearchParams()
   for (const [key, value] of formData.entries()) {
-    if (typeof value === 'string') params.set(key, value)
+    if (typeof value === "string") params.set(key, value)
   }
 
   const target = await loadModerationLinkTarget(env, params)
-  if ('error' in target) return target.error
+  if ("error" in target) return target.error
 
   const { comment, action } = target
-  const actionLabel = action === 'approve' ? 'approved' : 'denied'
+  const actionLabel = action === "approve" ? "approved" : "denied"
 
-  if (comment.status !== 'pending') {
+  if (comment.status !== "pending") {
     return moderationPage(
-      'Already moderated',
-      `<h1>Already moderated</h1><p>This comment was already marked <strong>${escapeHtml(comment.status)}</strong>. No action needed.</p>`,
+      "Already moderated",
+      `<h1>Already moderated</h1><p>This comment was already marked <strong>${escapeHtml(comment.status)}</strong>. No action needed.</p>`
     )
   }
 
-  const status = action === 'approve' ? 'approved' : 'rejected'
-  await env.COMMENTS_DB.prepare('UPDATE comments SET status = ?1 WHERE id = ?2').bind(status, comment.id).run()
+  const status = action === "approve" ? "approved" : "rejected"
+  await env.COMMENTS_DB.prepare("UPDATE comments SET status = ?1 WHERE id = ?2")
+    .bind(status, comment.id)
+    .run()
 
   return moderationPage(
-    'Done',
-    `<h1>Comment ${actionLabel}</h1><p>The comment from <strong>${escapeHtml(comment.author_name)}</strong> on <code>${escapeHtml(comment.path)}</code> has been ${actionLabel}.</p>`,
+    "Done",
+    `<h1>Comment ${actionLabel}</h1><p>The comment from <strong>${escapeHtml(comment.author_name)}</strong> on <code>${escapeHtml(comment.path)}</code> has been ${actionLabel}.</p>`
   )
 }
 
@@ -462,22 +561,22 @@ export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     const { pathname } = new URL(request.url)
 
-    if (pathname === '/api/comments' && request.method === 'GET') {
+    if (pathname === "/api/comments" && request.method === "GET") {
       return listApprovedComments(request, env)
     }
-    if (pathname === '/api/comments' && request.method === 'POST') {
+    if (pathname === "/api/comments" && request.method === "POST") {
       return submitComment(request, env)
     }
-    if (pathname === '/api/comments/pending' && request.method === 'GET') {
+    if (pathname === "/api/comments/pending" && request.method === "GET") {
       return listPendingComments(request, env)
     }
-    if (pathname === '/api/comments/moderate' && request.method === 'POST') {
+    if (pathname === "/api/comments/moderate" && request.method === "POST") {
       return moderateComment(request, env)
     }
-    if (pathname === '/api/comments/moderate-link' && request.method === 'GET') {
+    if (pathname === "/api/comments/moderate-link" && request.method === "GET") {
       return showModerationConfirmation(request, env)
     }
-    if (pathname === '/api/comments/moderate-link' && request.method === 'POST') {
+    if (pathname === "/api/comments/moderate-link" && request.method === "POST") {
       return applyModerationLink(request, env)
     }
 

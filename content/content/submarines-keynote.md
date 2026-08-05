@@ -32,9 +32,9 @@ The talk was broken down into five main sections outlined below. Each section ha
 
 Psychological Safety was the first topic because it is, in my mind, the single most important aspect of a high-performing team. Without it, you can't have trust, and without trust, you can't have a high-performing team. It's the foundation of everything else we'll talk about today. I discussed this topic by referencing three books as I often do. These books are:
 
-1. [Culture Code](/blog/book-shelf/culture-code) by _Daniel Coyle_: This book really taught and convinced me of the importance of psychological safety and how it's the foundation of a high-performing team.
-2. [The Fearless Organization](/blog/book-shelf/fearless-organization) by _Amy Edmondson_: This book is a deep dive into how to implement psychological safety in your team or organization. I've implemented many of the practices in this book and have seen great results.
-3. [The Right Kind of Wrong](/blog/book-shelf/right-kind-of-wrong) by _Amy Edmondson_: This book acts as a manual for teams and leaders to understand the key role of failure in an organization and how to do it in the right way to learn, grow, and deliver at pace.
+1. [Culture Code](/content/culture-code) by _Daniel Coyle_: This book really taught and convinced me of the importance of psychological safety and how it's the foundation of a high-performing team.
+2. [The Fearless Organization](/content/fearless-organization) by _Amy Edmondson_: This book is a deep dive into how to implement psychological safety in your team or organization. I've implemented many of the practices in this book and have seen great results.
+3. [The Right Kind of Wrong](/content/right-kind-of-wrong) by _Amy Edmondson_: This book acts as a manual for teams and leaders to understand the key role of failure in an organization and how to do it in the right way to learn, grow, and deliver at pace.
 
 ## 02 - Bureaucracy
 
@@ -42,7 +42,7 @@ Psychological Safety was the first topic because it is, in my mind, the single m
   <img src="/static/images/stamp2.png" class="w-1/4" alt="bureaucracy stamp" />
 </div>
 
-Bureaucracy was the second topic because it's the single biggest killer of innovation in an organization. It's the enemy of agility and speed. I discussed similar things here as I did in my [podcast](/writing/behind-the-product-podcast) and in my [Calvium interview](/blog/calvium-interview). I referenced the book [The Delicate Art of Bureaucracy](/blog/book-shelf/delicate-art-of-bureaucracy) by Mark Schwartz which is seminal on this topic. We talked about methods to work through the bureaucracy, why it exists, and some _outside-the-box_ ways to deal with it.
+Bureaucracy was the second topic because it's the single biggest killer of innovation in an organization. It's the enemy of agility and speed. I discussed similar things here as I did in my [podcast](/content/behind-the-product-podcast) and in my [Calvium interview](/content/calvium-interview). I referenced the book [The Delicate Art of Bureaucracy](/content/delicate-art-of-bureaucracy) by [Mark Schwartz](/search?q=Mark+Schwartz) which is seminal on this topic. We talked about methods to work through the bureaucracy, why it exists, and some _outside-the-box_ ways to deal with it.
 
 ## 03 - Special Unicorn
 
@@ -54,7 +54,7 @@ The third topic was all about how it is common in a company to feel like our pro
 
 Projects and technologies which are well established within organizations like the [Cloud Native Computing Foundation](https://www.cncf.io/) and [The Linux Foundation](https://www.linuxfoundation.org/) are solid candidates. It would also be a good idea to pick topics that someone can learn by watching YouTube videos, attending bootcamps, or with health communities and documentation. If we are heading in a special _company specific_ direction, it's likely the wrong choice.
 
-I referenced the book [The Phoenix Project](/blog/book-shelf/phoenix-project) and [The Unicorn Project](/blog/book-shelf/unicorn-project) by Gene Kim which are great books on this topic. I also referenced the book [Accelerate](/blog/book-shelf/accelerate) by Nicole Forsgren, Jez Humble, and Gene Kim which really set a strong direction on DevOps as a process for achieving higher software delivery performance.
+I referenced the book [The Phoenix Project](/content/phoenix-project) and [The Unicorn Project](/content/unicorn-project) by [Gene Kim](/search?q=Gene+Kim) which are great books on this topic. I also referenced the book [Accelerate](/content/accelerate) by [Nicole Forsgren](/search?q=Nicole+Forsgren), [Jez Humble](/search?q=Jez+Humble), and Gene Kim which really set a strong direction on DevOps as a process for achieving higher software delivery performance.
 
 ## 04 - Sacred Cows
 

@@ -1,8 +1,8 @@
-import type { PostsCollectionItem } from '@nuxt/content'
+import type { PostsCollectionItem } from "@nuxt/content"
 
 export type PublishedPostSummary = Pick<
   PostsCollectionItem,
-  'path' | 'title' | 'description' | 'publishedAt' | 'contentType' | 'bookAuthor'
+  "path" | "title" | "description" | "publishedAt" | "contentType" | "bookAuthor"
 >
 
 /**
@@ -15,10 +15,17 @@ export type PublishedPostSummary = Pick<
  * ghost posts that the FTS index doesn't know to skip on its own.
  */
 export function usePublishedPosts() {
-  return useAsyncData('published-posts-summary', () => {
-    return queryCollection('posts')
-      .where('draft', '=', false)
-      .select('path', 'title', 'description', 'publishedAt', 'contentType', 'bookAuthor')
+  return useAsyncData("published-posts-summary", () => {
+    return queryCollection("posts")
+      .where("draft", "=", false)
+      .select(
+        "path",
+        "title",
+        "description",
+        "publishedAt",
+        "contentType",
+        "bookAuthor"
+      )
       .all()
   })
 }
@@ -29,7 +36,7 @@ export function usePublishedPosts() {
  * still find a book with `bookAuthor: "Brené Brown"`.
  */
 function foldAccents(value: string) {
-  return value.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+  return value.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
 }
 
 /**
@@ -38,9 +45,14 @@ function foldAccents(value: string) {
  * when its review body doesn't happen to repeat the author's full name
  * verbatim (full-text search alone can miss that).
  */
-export function matchesBookAuthor(post: Pick<PublishedPostSummary, 'contentType' | 'bookAuthor'>, query: string) {
-  const author = post.bookAuthor ? foldAccents(post.bookAuthor.toLowerCase()) : undefined
-  if (post.contentType !== 'bookReview' || !author) return false
+export function matchesBookAuthor(
+  post: Pick<PublishedPostSummary, "contentType" | "bookAuthor">,
+  query: string
+) {
+  const author = post.bookAuthor
+    ? foldAccents(post.bookAuthor.toLowerCase())
+    : undefined
+  if (post.contentType !== "bookReview" || !author) return false
   const terms = foldAccents(query.trim().toLowerCase()).split(/\s+/).filter(Boolean)
-  return terms.length > 0 && terms.every(term => author.includes(term))
+  return terms.length > 0 && terms.every((term) => author.includes(term))
 }

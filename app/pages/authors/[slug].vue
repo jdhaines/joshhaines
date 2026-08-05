@@ -2,18 +2,18 @@
 const route = useRoute()
 
 const { data: author } = await useAsyncData(`author-${route.path}`, () => {
-  return queryCollection('authors').path(route.path).first()
+  return queryCollection("authors").path(route.path).first()
 })
 
 if (!author.value) {
-  throw createError({ statusCode: 404, statusMessage: 'Author not found', fatal: true })
+  throw createError({ statusCode: 404, statusMessage: "Author not found", fatal: true })
 }
 
 const { data: posts } = await useAsyncData(`author-posts-${route.path}`, () => {
-  return queryCollection('posts')
-    .where('draft', '=', false)
-    .where('author', '=', route.params.slug as string)
-    .order('publishedAt', 'DESC')
+  return queryCollection("posts")
+    .where("draft", "=", false)
+    .where("author", "=", route.params.slug as string)
+    .order("publishedAt", "DESC")
     .all()
 })
 
@@ -25,15 +25,15 @@ useSeoMeta({
   ogTitle: () => author.value?.name,
   ogDescription: () => author.value?.occupation,
   ogUrl: canonicalUrl,
-  ogType: 'profile',
+  ogType: "profile",
 })
 
 const personSchema = computed(() => {
   if (!author.value) return undefined
 
   return {
-    '@context': 'https://schema.org',
-    '@type': 'Person',
+    "@context": "https://schema.org",
+    "@type": "Person",
     name: author.value.name,
     description: author.value.occupation,
     url: canonicalUrl,
@@ -42,28 +42,23 @@ const personSchema = computed(() => {
 })
 
 useHead({
-  link: [{ rel: 'canonical', href: canonicalUrl }],
+  link: [{ rel: "canonical", href: canonicalUrl }],
   script: [
     {
-      type: 'application/ld+json',
-      innerHTML: () => personSchema.value ? JSON.stringify(personSchema.value) : undefined,
+      type: "application/ld+json",
+      innerHTML: () =>
+        personSchema.value ? JSON.stringify(personSchema.value) : undefined,
     },
   ],
 })
 </script>
 
 <template>
-  <UContainer
-    v-if="author"
-    class="py-12"
-  >
+  <UContainer v-if="author" class="py-12">
     <div class="mx-auto max-w-3xl">
       <AuthorBlock :author="author" />
 
-      <UBlogPosts
-        v-if="posts?.length"
-        class="mt-12"
-      >
+      <UBlogPosts v-if="posts?.length" class="mt-12">
         <UBlogPost
           v-for="post in posts"
           :key="post.path"

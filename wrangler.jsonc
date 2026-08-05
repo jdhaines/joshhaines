@@ -13,7 +13,7 @@
   // a real secret -- see DEVELOPER.md's "Comments" section.
   "vars": {
     "COMMENT_NOTIFY_EMAIL": "Josh@JoshHaines.com",
-    "COMMENT_SITE_ORIGIN": "https://joshhaines.com"
+    "COMMENT_SITE_ORIGIN": "https://joshhaines.com",
   },
   // Small Worker script that only handles the /api/comments endpoints
   // (see workers/comments-api.ts) -- `run_worker_first` scopes it to just
@@ -25,7 +25,7 @@
     "binding": "ASSETS",
     "not_found_handling": "404-page",
     "html_handling": "auto-trailing-slash",
-    "run_worker_first": ["/api/*"]
+    "run_worker_first": ["/api/*"],
   },
   // Update "database_id" with the ID printed by `wrangler d1 create` (see
   // DEVELOPER.md's "Comments" section for the full one-time setup).
@@ -33,8 +33,8 @@
     {
       "binding": "COMMENTS_DB",
       "database_name": "joshhaines-comments",
-      "database_id": "cd70e5a8-16d6-4a0b-987e-c30b1565804e"
-    }
+      "database_id": "cd70e5a8-16d6-4a0b-987e-c30b1565804e",
+    },
   ],
   // Sends a moderation-notification email whenever a new comment is
   // submitted for review (see workers/comments-api.ts). Requires
@@ -43,7 +43,7 @@
   "send_email": [
     {
       "name": "EMAIL",
-      "allowed_sender_addresses": ["comments@joshhaines.com"]
-    }
-  ]
+      "allowed_sender_addresses": ["comments@joshhaines.com"],
+    },
+  ],
 }

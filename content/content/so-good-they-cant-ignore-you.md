@@ -17,7 +17,7 @@ author: josh
 
 ## Introduction
 
-This is the [second](/content/deep-work) book by Cal Newport that I've read. The advertisements and cover of this book had tempted me for awhile, and I grabbed it on an impulse one day.
+This is the [second](/content/deep-work) book by [Cal Newport](/search?q=Cal+Newport) that I've read. The advertisements and cover of this book had tempted me for awhile, and I grabbed it on an impulse one day.
 
 > [!NOTE]
 > I typically spend about 2.5-3 hours on the lawn mower each week through the summer. During those times I make a lot of audiobook progress, and sometimes I finish a book in the middle of a mowing session.

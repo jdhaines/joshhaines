@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { PostsCollectionItem } from '@nuxt/content'
+import type { PostsCollectionItem } from "@nuxt/content"
 
 defineProps<{
   posts: PostsCollectionItem[]
@@ -10,22 +10,14 @@ defineProps<{
   <section v-if="posts.length" aria-labelledby="home-bookshelf-heading">
     <HomeSectionEyebrow id="home-bookshelf-heading" label="From the Bookshelf">
       <template #action>
-        <UButton
-          to="/books"
-          variant="link"
-          trailing-icon="i-lucide-arrow-right"
-        >
+        <UButton to="/books" variant="link" trailing-icon="i-lucide-arrow-right">
           Browse all reviews
         </UButton>
       </template>
     </HomeSectionEyebrow>
 
     <ul class="flex gap-6 overflow-x-auto pb-2">
-      <li
-        v-for="post in posts"
-        :key="post.path"
-        class="w-32 shrink-0 sm:w-40"
-      >
+      <li v-for="post in posts" :key="post.path" class="w-32 shrink-0 sm:w-40">
         <NuxtLink :to="post.path" class="group block">
           <div
             v-if="post.image"

@@ -17,7 +17,7 @@ author: josh
 
 ## Introduction
 
-I have had this book recommended to me many times over the last couple of years. It generally tends to rank high on book lists, reviews, and recommendation algorithms. I finally had a gap in my planned books so picked it up. This book was unusual in the amount of vulgarity it had, unexpected rap quotes to kick off chapters, and various other little strange things. Perhaps this would have been normal if I had learned more about the author Ben Horowitz before reading.
+I have had this book recommended to me many times over the last couple of years. It generally tends to rank high on book lists, reviews, and recommendation algorithms. I finally had a gap in my planned books so picked it up. This book was unusual in the amount of vulgarity it had, unexpected rap quotes to kick off chapters, and various other little strange things. Perhaps this would have been normal if I had learned more about the author [Ben Horowitz](/search?q=Ben+Horowitz) before reading.
 
 ## Memorable Ideas
 

@@ -1,18 +1,26 @@
 <script setup lang="ts">
 const links = [
-  { label: 'Books', to: '/books' },
-  { label: 'Podcasts', to: '/podcasts' },
-  { label: 'Talks', to: '/talks' },
-  { label: 'Writing', to: '/writing' },
-  { label: 'About', to: '/about' },
-  { label: 'Search', to: '/search' },
+  { label: "Books", to: "/books" },
+  { label: "Podcasts", to: "/podcasts" },
+  { label: "Talks", to: "/talks" },
+  { label: "Writing", to: "/writing" },
+  { label: "About", to: "/about" },
+  { label: "Search", to: "/search" },
 ]
 
 const socialLinks = [
-  { icon: 'i-simple-icons-linkedin', to: 'https://www.linkedin.com/in/JoshuaHaines', label: 'LinkedIn' },
-  { icon: 'i-simple-icons-github', to: 'https://github.com/jdhaines', label: 'GitHub' },
-  { icon: 'i-simple-icons-discord', to: 'https://discord.com/users/611912877707886612', label: 'Discord' },
-  { icon: 'i-lucide-mail', to: 'mailto:Josh@JoshHaines.com', label: 'Email' },
+  {
+    icon: "i-simple-icons-linkedin",
+    to: "https://www.linkedin.com/in/JoshuaHaines",
+    label: "LinkedIn",
+  },
+  { icon: "i-simple-icons-github", to: "https://github.com/jdhaines", label: "GitHub" },
+  {
+    icon: "i-simple-icons-discord",
+    to: "https://discord.com/users/611912877707886612",
+    label: "Discord",
+  },
+  { icon: "i-lucide-mail", to: "mailto:Josh@JoshHaines.com", label: "Email" },
 ]
 
 const year = new Date().getFullYear()
@@ -26,19 +34,18 @@ const year = new Date().getFullYear()
           Let's build something worth writing about.
         </h2>
         <p class="mt-2 text-muted">
-          Get in touch if you'd like to talk engineering leadership, platform transformation, or the next post.
+          Get in touch if you'd like to talk engineering leadership, platform
+          transformation, or the next post.
         </p>
       </div>
 
-      <UButton
-        to="mailto:Josh@JoshHaines.com"
-        color="primary"
-        size="lg"
-      >
+      <UButton to="mailto:Josh@JoshHaines.com" color="primary" size="lg">
         Say hello
       </UButton>
 
-      <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-muted">
+      <div
+        class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-muted"
+      >
         <NuxtLink
           v-for="link in links"
           :key="link.to"
@@ -64,9 +71,7 @@ const year = new Date().getFullYear()
         />
       </div>
 
-      <p class="text-xs text-muted">
-        © {{ year }} Josh Haines. All rights reserved.
-      </p>
+      <p class="text-xs text-muted">© {{ year }} Josh Haines. All rights reserved.</p>
     </UContainer>
   </footer>
 </template>

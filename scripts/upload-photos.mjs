@@ -12,22 +12,30 @@
  *   bun run photos:upload ~/Pictures/lake-trip lake-trip
  *   -> uploads to img.joshhaines.com/lake-trip/<filename>.webp
  */
-import { execFileSync } from 'node:child_process'
-import { mkdtempSync, readdirSync, rmSync } from 'node:fs'
-import { tmpdir } from 'node:os'
-import { basename, extname, join } from 'node:path'
-import sharp from 'sharp'
+import { execFileSync } from "node:child_process"
+import { mkdtempSync, readdirSync, rmSync } from "node:fs"
+import { tmpdir } from "node:os"
+import { basename, extname, join } from "node:path"
+import sharp from "sharp"
 
-const BUCKET = 'img-joshhaines'
-const PUBLIC_HOST = 'https://img.joshhaines.com'
+const BUCKET = "img-joshhaines"
+const PUBLIC_HOST = "https://img.joshhaines.com"
 const MAX_WIDTH = 2400
 const WEBP_QUALITY = 82
-const SUPPORTED_EXTENSIONS = new Set(['.jpg', '.jpeg', '.png', '.webp', '.avif', '.tiff', '.tif'])
+const SUPPORTED_EXTENSIONS = new Set([
+  ".jpg",
+  ".jpeg",
+  ".png",
+  ".webp",
+  ".avif",
+  ".tiff",
+  ".tif",
+])
 
 const [, , inputDir, slug] = process.argv
 
 if (!inputDir || !slug) {
-  console.error('Usage: bun run photos:upload <local-folder> <article-slug>')
+  console.error("Usage: bun run photos:upload <local-folder> <article-slug>")
   process.exit(1)
 }
 
@@ -40,7 +48,7 @@ if (files.length === 0) {
   process.exit(1)
 }
 
-const workDir = mkdtempSync(join(tmpdir(), 'photo-upload-'))
+const workDir = mkdtempSync(join(tmpdir(), "photo-upload-"))
 const urls = []
 
 try {
@@ -56,12 +64,22 @@ try {
       .webp({ quality: WEBP_QUALITY })
       .toFile(outputPath)
 
-    execFileSync('npx', [
-      'wrangler', 'r2', 'object', 'put', `${BUCKET}/${key}`,
-      '--file', outputPath,
-      '--content-type', 'image/webp',
-      '--remote',
-    ], { stdio: 'inherit' })
+    execFileSync(
+      "npx",
+      [
+        "wrangler",
+        "r2",
+        "object",
+        "put",
+        `${BUCKET}/${key}`,
+        "--file",
+        outputPath,
+        "--content-type",
+        "image/webp",
+        "--remote",
+      ],
+      { stdio: "inherit" }
+    )
 
     urls.push(`${PUBLIC_HOST}/${key}`)
   }
@@ -69,10 +87,10 @@ try {
   rmSync(workDir, { recursive: true, force: true })
 }
 
-console.log('\nUploaded URLs:')
+console.log("\nUploaded URLs:")
 for (const url of urls) console.log(url)
 
-console.log('\nMarkdown grid snippet (edit alt text before pasting):\n')
+console.log("\nMarkdown grid snippet (edit alt text before pasting):\n")
 console.log(buildGridMarkdown(urls))
 
 /**
@@ -88,15 +106,19 @@ function buildGridMarkdown(imageUrls) {
     remaining = remaining.slice(width)
   }
 
-  return rows.map((row) => renderRow(row)).join('\n\n')
+  return rows.map((row) => renderRow(row)).join("\n\n")
 }
 
 function renderRow(row) {
-  const colsClass = row.length === 4
-    ? 'grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4'
-    : `grid-cols-${row.length} gap-3 sm:gap-4`
+  const colsClass =
+    row.length === 4
+      ? "grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4"
+      : `grid-cols-${row.length} gap-3 sm:gap-4`
   const imgs = row
-    .map((url) => `  <img src="${url}" alt="Describe this photo" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />`)
-    .join('\n')
+    .map(
+      (url) =>
+        `  <img src="${url}" alt="Describe this photo" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />`
+    )
+    .join("\n")
   return `<div class="my-8 grid ${colsClass}">\n${imgs}\n</div>`
 }

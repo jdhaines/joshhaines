@@ -15,7 +15,7 @@ bookAuthor: 'Jonathan Haidt'
 author: josh
 ---
 
-I have read a number of books by Jonathan Haidt in the past and have really enjoyed them. This book is no different. Jonathan has been warning parents and educators about the dangers of less play and more screen time for children for some time. In this book he is finally able to make the case with causal rather than just correlational data. I found this book easy to read, insightful, and powerful. If you have children under age 18, this book is valuable and a must read.
+I have read a number of books by [Jonathan Haidt](/search?q=Jonathan+Haidt) in the past and have really enjoyed them. This book is no different. Jonathan has been warning parents and educators about the dangers of less play and more screen time for children for some time. In this book he is finally able to make the case with causal rather than just correlational data. I found this book easy to read, insightful, and powerful. If you have children under age 18, this book is valuable and a must read.
 
 I specifically enjoyed the fact that he has separate chapters for boys and girls to describe how social media and a _device based childhood_ affects them differently. It was super useful to see that there are negative affects to both, but that the effects are sometimes very different.
 

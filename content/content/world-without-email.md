@@ -17,7 +17,7 @@ author: josh
 
 ## Introduction
 
-This is the third book that I've read by Cal Newport. The previous two were [Deep Work](/content/deep-work) and [So Good They Can't Ignore You](/content/so-good-they-cant-ignore-you). Just as with those books, Cal does a great job of taking obvious and non-obvious areas of work and expanding on them in a way that can help you be better at whatever you do.
+This is the third book that I've read by [Cal Newport](/search?q=Cal+Newport). The previous two were [Deep Work](/content/deep-work) and [So Good They Can't Ignore You](/content/so-good-they-cant-ignore-you). Just as with those books, Cal does a great job of taking obvious and non-obvious areas of work and expanding on them in a way that can help you be better at whatever you do.
 
 ## Hyperactive Hive Mind
 

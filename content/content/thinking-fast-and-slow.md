@@ -15,7 +15,7 @@ bookAuthor: 'Daniel Kahneman'
 author: josh
 ---
 
-This is a book which largely doesn't need an introduction or summary from me. It is well known, well respected, and well worth the read. Daniel Kahneman is a Nobel laureate and a psychologist who has spent his life studying how we think and make decisions. This book is a almost a culmination of his life's work and is a must-read for anyone who is interested in decision-making and thought leadership.
+This is a book which largely doesn't need an introduction or summary from me. It is well known, well respected, and well worth the read. [Daniel Kahneman](/search?q=Daniel+Kahneman) is a Nobel laureate and a psychologist who has spent his life studying how we think and make decisions. This book is a almost a culmination of his life's work and is a must-read for anyone who is interested in decision-making and thought leadership.
 
 For those four people who haven't read it yet, the book discusses two decision making systems within our minds.
 

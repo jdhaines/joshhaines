@@ -1,31 +1,38 @@
 <script setup lang="ts">
-import type { PostsCollectionItem } from '@nuxt/content'
-import type { ContentSurroundLink } from '@nuxt/ui'
-import { getRuntimeLabel } from '~/utils/reading-time'
-import { getImageDimensions } from '~/utils/social-image'
+import type { PostsCollectionItem } from "@nuxt/content"
+import type { ContentSurroundLink } from "@nuxt/ui"
+import { getRuntimeLabel } from "~/utils/reading-time"
+import { getImageDimensions } from "~/utils/social-image"
 
 const route = useRoute()
 
 const { data: page } = await useAsyncData(`content-${route.path}`, () => {
-  return queryCollection('posts').path(route.path).first()
+  return queryCollection("posts").path(route.path).first()
 })
 
 if (!page.value) {
-  throw createError({ statusCode: 404, statusMessage: 'Article not found', fatal: true })
+  throw createError({
+    statusCode: 404,
+    statusMessage: "Article not found",
+    fatal: true,
+  })
 }
 
-const { data: author } = await useAsyncData(`content-author-${page.value.author}`, () => {
-  return queryCollection('authors').path(`/authors/${page.value!.author}`).first()
-})
+const { data: author } = await useAsyncData(
+  `content-author-${page.value.author}`,
+  () => {
+    return queryCollection("authors").path(`/authors/${page.value!.author}`).first()
+  }
+)
 
-const { data: bookShelf } = await useAsyncData('content-book-shelf', () => {
-  return queryCollection('bookShelf').first()
+const { data: bookShelf } = await useAsyncData("content-book-shelf", () => {
+  return queryCollection("bookShelf").first()
 })
 
 const bookShelfRank = computed(() => {
-  if (page.value?.contentType !== 'bookReview') return undefined
-  const slug = page.value.path.split('/').pop()
-  const index = bookShelf.value?.order.indexOf(slug ?? '') ?? -1
+  if (page.value?.contentType !== "bookReview") return undefined
+  const slug = page.value.path.split("/").pop()
+  const index = bookShelf.value?.order.indexOf(slug ?? "") ?? -1
   return index === -1 ? undefined : index + 1
 })
 
@@ -33,27 +40,34 @@ const bookShelfRank = computed(() => {
 // neighbors and tag-overlap "On This Topic" suggestions in-memory. The
 // collection is small enough that this is simpler and more flexible than
 // `queryCollectionItemSurroundings` (which doesn't support custom ordering).
-const { data: allPosts } = await useAsyncData('content-all', () => {
-  return queryCollection('posts')
-    .where('draft', '=', false)
-    .order('publishedAt', 'DESC')
+const { data: allPosts } = await useAsyncData("content-all", () => {
+  return queryCollection("posts")
+    .where("draft", "=", false)
+    .order("publishedAt", "DESC")
     .all()
 })
 
 const runtimeLabel = computed(() => getRuntimeLabel(page.value!))
 
-const currentIndex = computed(() => allPosts.value?.findIndex(post => post.path === page.value!.path) ?? -1)
+const currentIndex = computed(
+  () => allPosts.value?.findIndex((post) => post.path === page.value!.path) ?? -1
+)
 
 const surround = computed(() => {
   const posts = allPosts.value
   if (!posts || currentIndex.value === -1) return []
 
   const next = currentIndex.value > 0 ? posts[currentIndex.value - 1] : undefined
-  const prev = currentIndex.value < posts.length - 1 ? posts[currentIndex.value + 1] : undefined
+  const prev =
+    currentIndex.value < posts.length - 1 ? posts[currentIndex.value + 1] : undefined
 
   return [
-    prev ? { path: prev.path, title: prev.title, description: prev.description } : undefined,
-    next ? { path: next.path, title: next.title, description: next.description } : undefined,
+    prev
+      ? { path: prev.path, title: prev.title, description: prev.description }
+      : undefined,
+    next
+      ? { path: next.path, title: next.title, description: next.description }
+      : undefined,
   ] as (ContentSurroundLink | undefined)[]
 })
 
@@ -63,22 +77,28 @@ const onThisTopic = computed<PostsCollectionItem[]>(() => {
   if (!posts || !tags?.length) return []
 
   return posts
-    .filter(post => post.path !== page.value!.path)
-    .map(post => ({ post, score: post.tags?.filter(tag => tags.includes(tag)).length ?? 0 }))
+    .filter((post) => post.path !== page.value!.path)
+    .map((post) => ({
+      post,
+      score: post.tags?.filter((tag) => tags.includes(tag)).length ?? 0,
+    }))
     .filter(({ score }) => score > 0)
     .sort((a, b) => b.score - a.score)
     .slice(0, 3)
     .map(({ post }) => post)
 })
 
-const { data: relatedWriting } = await useAsyncData(`content-related-${page.value.path}`, () => {
-  const slugs = page.value?.relatedWriting ?? []
-  if (!slugs.length) return Promise.resolve([])
+const { data: relatedWriting } = await useAsyncData(
+  `content-related-${page.value.path}`,
+  () => {
+    const slugs = page.value?.relatedWriting ?? []
+    if (!slugs.length) return Promise.resolve([])
 
-  return Promise.all(
-    slugs.map(slug => queryCollection('posts').path(`/content/${slug}`).first()),
-  ).then(results => results.filter((post): post is PostsCollectionItem => !!post))
-})
+    return Promise.all(
+      slugs.map((slug) => queryCollection("posts").path(`/content/${slug}`).first())
+    ).then((results) => results.filter((post): post is PostsCollectionItem => !!post))
+  }
+)
 
 // Resolved once, eagerly, during setup while the Nuxt app context is still
 // active -- calling useSiteUrl() (and therefore useRuntimeConfig()) lazily
@@ -97,10 +117,13 @@ const socialImageUrl = computed(() => {
 // page here overrides `og:image` with its own `socialImage`, which is a
 // different size, so the dimensions must be looked up per-image rather
 // than inheriting the global (wrong) values.
-const { data: socialImageDimensions } = await useAsyncData(`content-image-size-${route.path}`, () => {
-  const imagePath = socialImagePath.value
-  return imagePath ? getImageDimensions(imagePath) : Promise.resolve(undefined)
-})
+const { data: socialImageDimensions } = await useAsyncData(
+  `content-image-size-${route.path}`,
+  () => {
+    const imagePath = socialImagePath.value
+    return imagePath ? getImageDimensions(imagePath) : Promise.resolve(undefined)
+  }
+)
 
 useSeoMeta({
   title: () => page.value?.title,
@@ -113,18 +136,22 @@ useSeoMeta({
   ogImageWidth: () => socialImageDimensions.value?.width,
   ogImageHeight: () => socialImageDimensions.value?.height,
   ogUrl: canonicalUrl,
-  ogType: 'article',
-  articlePublishedTime: () => page.value?.publishedAt ? new Date(page.value.publishedAt).toISOString() : undefined,
-  articleModifiedTime: () => page.value?.updatedAt ? new Date(page.value.updatedAt).toISOString() : undefined,
-  articleAuthor: () => author.value?.linkedin ? [author.value.linkedin] : undefined,
-  twitterCard: 'summary_large_image',
+  ogType: "article",
+  articlePublishedTime: () =>
+    page.value?.publishedAt
+      ? new Date(page.value.publishedAt).toISOString()
+      : undefined,
+  articleModifiedTime: () =>
+    page.value?.updatedAt ? new Date(page.value.updatedAt).toISOString() : undefined,
+  articleAuthor: () => (author.value?.linkedin ? [author.value.linkedin] : undefined),
+  twitterCard: "summary_large_image",
   twitterImage: socialImageUrl,
   // Draft posts are deliberately still built and reachable at their real
   // URL (so a direct link can be privately shared), but must stay out of
   // search results/social crawlers -- they're already excluded from every
   // listing page, so this is the only thing keeping them from surfacing if
   // ever discovered externally.
-  robots: () => page.value?.draft ? 'noindex, nofollow' : undefined,
+  robots: () => (page.value?.draft ? "noindex, nofollow" : undefined),
 })
 
 // Article structured data for search engines/link previews. `Article` is
@@ -136,24 +163,30 @@ const articleSchema = computed(() => {
   if (!page.value) return undefined
 
   return {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
+    "@context": "https://schema.org",
+    "@type": "Article",
     headline: page.value.title,
     description: page.value.description,
     image: socialImageUrl.value,
-    datePublished: page.value.publishedAt ? new Date(page.value.publishedAt).toISOString() : undefined,
-    dateModified: page.value.updatedAt ? new Date(page.value.updatedAt).toISOString() : (page.value.publishedAt ? new Date(page.value.publishedAt).toISOString() : undefined),
-    mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl },
+    datePublished: page.value.publishedAt
+      ? new Date(page.value.publishedAt).toISOString()
+      : undefined,
+    dateModified: page.value.updatedAt
+      ? new Date(page.value.updatedAt).toISOString()
+      : page.value.publishedAt
+        ? new Date(page.value.publishedAt).toISOString()
+        : undefined,
+    mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
     author: {
-      '@type': 'Person',
-      name: author.value?.name ?? 'Josh Haines',
+      "@type": "Person",
+      name: author.value?.name ?? "Josh Haines",
       url: author.value?.linkedin,
     },
     publisher: {
-      '@type': 'Organization',
-      name: 'Josh Haines',
+      "@type": "Organization",
+      name: "Josh Haines",
       logo: {
-        '@type': 'ImageObject',
+        "@type": "ImageObject",
         url: `${siteUrl}/favicons/android-chrome-512x512.png`,
       },
     },
@@ -161,21 +194,19 @@ const articleSchema = computed(() => {
 })
 
 useHead({
-  link: [{ rel: 'canonical', href: canonicalUrl }],
+  link: [{ rel: "canonical", href: canonicalUrl }],
   script: [
     {
-      type: 'application/ld+json',
-      innerHTML: () => articleSchema.value ? JSON.stringify(articleSchema.value) : undefined,
+      type: "application/ld+json",
+      innerHTML: () =>
+        articleSchema.value ? JSON.stringify(articleSchema.value) : undefined,
     },
   ],
 })
 </script>
 
 <template>
-  <UContainer
-    v-if="page"
-    class="py-12"
-  >
+  <UContainer v-if="page" class="py-12">
     <div class="grid grid-cols-1 gap-12 lg:grid-cols-[minmax(0,1fr)_18rem]">
       <article class="min-w-0">
         <ArticleHeader
@@ -192,7 +223,7 @@ useHead({
 
         <UContentSurround
           v-if="surround.some(Boolean)"
-          :surround="(surround as ContentSurroundLink[])"
+          :surround="surround as ContentSurroundLink[]"
           class="mt-12"
         />
 
@@ -214,15 +245,9 @@ useHead({
             :portrait="page.contentType === 'bookReview'"
           />
 
-          <RelatedList
-            title="On This Topic"
-            :posts="onThisTopic"
-          />
+          <RelatedList title="On This Topic" :posts="onThisTopic" />
 
-          <RelatedList
-            title="You Might Also Like"
-            :posts="relatedWriting ?? []"
-          />
+          <RelatedList title="You Might Also Like" :posts="relatedWriting ?? []" />
         </div>
       </aside>
     </div>

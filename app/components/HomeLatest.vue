@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { PostsCollectionItem } from '@nuxt/content'
+import type { PostsCollectionItem } from "@nuxt/content"
 
 const props = defineProps<{
   posts: PostsCollectionItem[]
@@ -17,7 +17,11 @@ const heroImage = computed(() => heroPost?.socialImage ?? heroPost?.image)
 
 function formatDate(date?: Date | string) {
   if (!date) return undefined
-  return new Date(date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })
+  return new Date(date).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  })
 }
 </script>
 
@@ -44,21 +48,22 @@ function formatDate(date?: Date | string) {
         >
           {{ getContentTypeBadge(heroPost.contentType).label }}
         </UBadge>
-        <h3 class="mb-2 font-serif text-2xl font-bold text-balance group-hover:text-primary">
+        <h3
+          class="mb-2 font-serif text-2xl font-bold text-balance group-hover:text-primary"
+        >
           {{ heroPost.title }}
         </h3>
         <p class="line-clamp-2 text-muted">
           {{ heroPost.description }}
         </p>
-        <p
-          v-if="heroPost.publishedAt"
-          class="mt-2 text-sm text-muted"
-        >
+        <p v-if="heroPost.publishedAt" class="mt-2 text-sm text-muted">
           {{ formatDate(heroPost.publishedAt) }}
         </p>
       </NuxtLink>
 
-      <ul class="flex flex-col divide-y divide-default border-t border-default lg:border-t-0">
+      <ul
+        class="flex flex-col divide-y divide-default border-t border-default lg:border-t-0"
+      >
         <li v-for="post in restPosts" :key="post.path">
           <NuxtLink
             :to="post.path"
@@ -75,7 +80,9 @@ function formatDate(date?: Date | string) {
               </UBadge>
               <p class="text-lg font-semibold text-balance group-hover:text-primary">
                 {{ post.title }}
-                <span v-if="post.bookAuthor" class="font-normal text-muted">({{ post.bookAuthor }})</span>
+                <span v-if="post.bookAuthor" class="font-normal text-muted"
+                  >({{ post.bookAuthor }})</span
+                >
               </p>
               <p class="mt-1 line-clamp-2 text-sm text-muted">
                 {{ post.description }}

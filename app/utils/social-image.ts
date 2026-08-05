@@ -18,17 +18,16 @@ export async function getImageDimensions(publicPath: string) {
   if (!import.meta.server) return undefined
 
   try {
-    const { readFile } = await import('node:fs/promises')
-    const { resolve } = await import('node:path')
-    const { imageSize } = await import('image-size')
+    const { readFile } = await import("node:fs/promises")
+    const { resolve } = await import("node:path")
+    const { imageSize } = await import("image-size")
 
-    const filePath = resolve(process.cwd(), 'public', publicPath.replace(/^\/+/, ''))
+    const filePath = resolve(process.cwd(), "public", publicPath.replace(/^\/+/, ""))
     const buffer = await readFile(filePath)
     const { width, height } = imageSize(buffer)
 
     return { width, height }
-  }
-  catch {
+  } catch {
     // If the file can't be read/decoded, omit width/height rather than
     // emitting a wrong-but-present value -- crawlers treat a missing
     // dimension as "detect from the fetched image" rather than a mismatch.

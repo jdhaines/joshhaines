@@ -1,10 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import { fileURLToPath } from 'node:url'
-import { readdirSync, readFileSync } from 'node:fs'
-import tailwindcss from '@tailwindcss/vite'
-import { legacyRedirects } from './server/utils/legacy-redirects'
+import { fileURLToPath } from "node:url"
+import { readdirSync, readFileSync } from "node:fs"
+import tailwindcss from "@tailwindcss/vite"
+import { legacyRedirects } from "./server/utils/legacy-redirects"
 
-const remarkGithubAlertPath = fileURLToPath(new URL('./mdc-remark-github-alert.mjs', import.meta.url))
+const remarkGithubAlertPath = fileURLToPath(
+  new URL("./mdc-remark-github-alert.mjs", import.meta.url)
+)
 
 // The site is now live at joshhaines.com. `NUXT_PUBLIC_SITE_URL` is set in
 // the Cloudflare Pages build environment variables and should always take
@@ -14,7 +16,7 @@ const remarkGithubAlertPath = fileURLToPath(new URL('./mdc-remark-github-alert.m
 // still produce a real, resolvable domain in absolute URLs (og:image,
 // twitter:image, etc.) instead of a broken/decommissioned one -- it must
 // NOT be relied on for production builds.
-const siteUrl = process.env.NUXT_PUBLIC_SITE_URL ?? 'https://www.joshhaines.com'
+const siteUrl = process.env.NUXT_PUBLIC_SITE_URL ?? "https://www.joshhaines.com"
 
 // Nitro's static-site crawler only prerenders a page if it discovers a link
 // to it somewhere in the already-generated HTML. The legacy `/blog/*`,
@@ -29,18 +31,19 @@ const siteUrl = process.env.NUXT_PUBLIC_SITE_URL ?? 'https://www.joshhaines.com'
 // legacy site used both schemes at different points and it's cheap/harmless
 // to redirect from both.
 function legacyContentRoutes() {
-  const contentDir = fileURLToPath(new URL('./content/content', import.meta.url))
+  const contentDir = fileURLToPath(new URL("./content/content", import.meta.url))
   const routes: string[] = []
 
   for (const file of readdirSync(contentDir)) {
-    if (!file.endsWith('.md')) continue
-    const slug = file.slice(0, -'.md'.length)
-    const isBookReview = /contentType:\s*bookReview/.test(readFileSync(`${contentDir}/${file}`, 'utf-8'))
+    if (!file.endsWith(".md")) continue
+    const slug = file.slice(0, -".md".length)
+    const isBookReview = /contentType:\s*bookReview/.test(
+      readFileSync(`${contentDir}/${file}`, "utf-8")
+    )
 
     if (isBookReview) {
       routes.push(`/blog/book-shelf/${slug}`)
-    }
-    else {
+    } else {
       routes.push(`/blog/${slug}`, `/writing/${slug}`)
     }
   }
@@ -57,13 +60,15 @@ function legacyContentRoutes() {
 // `/blog/*`/`/writing/*` redirect stubs above still point at it). Listing
 // draft posts' `/content/<slug>` routes here explicitly is the fix.
 function draftContentRoutes() {
-  const contentDir = fileURLToPath(new URL('./content/content', import.meta.url))
+  const contentDir = fileURLToPath(new URL("./content/content", import.meta.url))
   const routes: string[] = []
 
   for (const file of readdirSync(contentDir)) {
-    if (!file.endsWith('.md')) continue
-    const isDraft = /^draft:\s*true\s*$/m.test(readFileSync(`${contentDir}/${file}`, 'utf-8'))
-    if (isDraft) routes.push(`/content/${file.slice(0, -'.md'.length)}`)
+    if (!file.endsWith(".md")) continue
+    const isDraft = /^draft:\s*true\s*$/m.test(
+      readFileSync(`${contentDir}/${file}`, "utf-8")
+    )
+    if (isDraft) routes.push(`/content/${file.slice(0, -".md".length)}`)
   }
 
   return routes
@@ -79,19 +84,20 @@ export default defineNuxtConfig({
       // `NUXT_PUBLIC_TURNSTILE_SITE_KEY` at build time if the widget is
       // ever recreated. See DEVELOPER.md's "Comments" section for the
       // full setup.
-      turnstileSiteKey: process.env.NUXT_PUBLIC_TURNSTILE_SITE_KEY ?? '0x4AAAAAAEB-DwiZPqoOmPiE',
+      turnstileSiteKey:
+        process.env.NUXT_PUBLIC_TURNSTILE_SITE_KEY ?? "0x4AAAAAAEB-DwiZPqoOmPiE",
     },
   },
   colorMode: {
-    preference: 'dark',
-    fallback: 'dark',
+    preference: "dark",
+    fallback: "dark",
   },
   modules: [
-    '@nuxt/content',
-    '@nuxt/image',
-    '@nuxt/ui',
-    '@nuxtjs/google-fonts',
-    '@nuxt/eslint',
+    "@nuxt/content",
+    "@nuxt/image",
+    "@nuxt/ui",
+    "@nuxtjs/google-fonts",
+    "@nuxt/eslint",
   ],
   image: {
     // This site is deployed as a static export (`nuxt generate`) with no
@@ -101,9 +107,9 @@ export default defineNuxtConfig({
     // (e.g. `/_ipx/s_480x720/...`) that were never generated, which 404s
     // on static hosting. `none` renders plain `<img>` tags pointing
     // directly at the original file in `public/`, which always resolves.
-    provider: 'none',
+    provider: "none",
   },
-  css: ['~/assets/css/main.css'],
+  css: ["~/assets/css/main.css"],
   vite: {
     plugins: [tailwindcss()],
   },
@@ -119,9 +125,9 @@ export default defineNuxtConfig({
             // over once the page hydrates and `<html>` gets the `light`
             // color-mode class -- `default` alone is only the pre-hydration/
             // SSR fallback. See https://content.nuxt.com/docs/getting-started/configuration#highlight.
-            default: 'one-light',
-            light: 'one-light',
-            dark: 'catppuccin-macchiato',
+            default: "one-light",
+            light: "one-light",
+            dark: "catppuccin-macchiato",
           },
         },
         // Renders GitHub-style `> [!NOTE]` blockquote alerts, matching the
@@ -138,11 +144,11 @@ export default defineNuxtConfig({
   },
   googleFonts: {
     families: {
-      'IBM Plex Sans': [400, 500, 600, 700],
-      'IBM Plex Serif': [400, 600, 700],
-      'IBM Plex Mono': [400, 500],
+      "IBM Plex Sans": [400, 500, 600, 700],
+      "IBM Plex Serif": [400, 600, 700],
+      "IBM Plex Mono": [400, 500],
     },
-    display: 'swap',
+    display: "swap",
     download: true,
   },
   app: {
@@ -150,63 +156,98 @@ export default defineNuxtConfig({
       // WCAG/SEO requirement -- without this, validators (and screen
       // readers) can't determine the page's language.
       htmlAttrs: {
-        lang: 'en',
+        lang: "en",
       },
       link: [
         // Vector favicon first so browsers that support it (most modern
         // ones) prefer it over the raster fallbacks below.
-        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
-        { rel: 'apple-touch-icon', sizes: '76x76', href: '/favicons/apple-touch-icon.png' },
-        { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicons/favicon-32x32.png' },
-        { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicons/favicon-16x16.png' },
-        { rel: 'icon', href: '/favicons/favicon.ico' },
-        { rel: 'manifest', href: '/favicons/site.webmanifest' },
-        { rel: 'mask-icon', href: '/favicons/safari-pinned-tab.svg', color: '#25b3e9' },
+        { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+        {
+          rel: "apple-touch-icon",
+          sizes: "76x76",
+          href: "/favicons/apple-touch-icon.png",
+        },
+        {
+          rel: "icon",
+          type: "image/png",
+          sizes: "32x32",
+          href: "/favicons/favicon-32x32.png",
+        },
+        {
+          rel: "icon",
+          type: "image/png",
+          sizes: "16x16",
+          href: "/favicons/favicon-16x16.png",
+        },
+        { rel: "icon", href: "/favicons/favicon.ico" },
+        { rel: "manifest", href: "/favicons/site.webmanifest" },
+        { rel: "mask-icon", href: "/favicons/safari-pinned-tab.svg", color: "#25b3e9" },
       ],
       meta: [
-        { name: 'msapplication-TileColor', content: '#ffffff' },
-        { name: 'theme-color', media: '(prefers-color-scheme: light)', content: '#faf7f2' },
-        { name: 'theme-color', media: '(prefers-color-scheme: dark)', content: '#060b14' },
-        { property: 'og:site_name', content: 'Josh Haines' },
-        { property: 'og:locale', content: 'en_US' },
-        { property: 'og:logo', content: `${siteUrl}/favicons/android-chrome-512x512.png` },
-        { property: 'og:image', content: `${siteUrl}/static/images/josh-haines-social.png` },
-        { property: 'og:image:width', content: '1200' },
-        { property: 'og:image:height', content: '600' },
+        { name: "msapplication-TileColor", content: "#ffffff" },
+        {
+          name: "theme-color",
+          media: "(prefers-color-scheme: light)",
+          content: "#faf7f2",
+        },
+        {
+          name: "theme-color",
+          media: "(prefers-color-scheme: dark)",
+          content: "#060b14",
+        },
+        { property: "og:site_name", content: "Josh Haines" },
+        { property: "og:locale", content: "en_US" },
+        {
+          property: "og:logo",
+          content: `${siteUrl}/favicons/android-chrome-512x512.png`,
+        },
+        {
+          property: "og:image",
+          content: `${siteUrl}/static/images/josh-haines-social.png`,
+        },
+        { property: "og:image:width", content: "1200" },
+        { property: "og:image:height", content: "600" },
         // Default alt text for the site-wide banner image (name + logo on
         // a dark background). Article pages override this with their own
         // og:image:alt in app/pages/content/[slug].vue.
-        { property: 'og:image:alt', content: 'Josh Haines logo: a paper plane mark above the name "Josh Haines"' },
-        { name: 'twitter:card', content: 'summary_large_image' },
+        {
+          property: "og:image:alt",
+          content: 'Josh Haines logo: a paper plane mark above the name "Josh Haines"',
+        },
+        { name: "twitter:card", content: "summary_large_image" },
         // twitter:site identifies the site/brand's account; twitter:creator
         // (below) identifies the content author's account. They're
         // intentionally different tags and can hold different handles.
-        { name: 'twitter:site', content: '@jdhaines' },
-        { name: 'twitter:creator', content: '@joshhaines' },
-        { name: 'twitter:image', content: `${siteUrl}/static/images/josh-haines-social.png` },
+        { name: "twitter:site", content: "@jdhaines" },
+        { name: "twitter:creator", content: "@joshhaines" },
+        {
+          name: "twitter:image",
+          content: `${siteUrl}/static/images/josh-haines-social.png`,
+        },
       ],
       script: [
         {
-          type: 'application/ld+json',
+          type: "application/ld+json",
           innerHTML: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebSite',
-            name: 'Josh Haines',
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            name: "Josh Haines",
             url: `${siteUrl}/`,
-            description: 'Leadership, software and platform engineering, innovation, book reviews, and speaking from Josh Haines.',
+            description:
+              "Leadership, software and platform engineering, innovation, book reviews, and speaking from Josh Haines.",
           }),
         },
         {
-          type: 'application/ld+json',
+          type: "application/ld+json",
           innerHTML: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Person',
-            name: 'Josh Haines',
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: "Josh Haines",
             url: `${siteUrl}/about`,
             sameAs: [
-              'https://x.com/joshhaines',
-              'https://www.linkedin.com/in/JoshuaHaines',
-              'https://github.com/jdhaines',
+              "https://x.com/joshhaines",
+              "https://www.linkedin.com/in/JoshuaHaines",
+              "https://github.com/jdhaines",
             ],
           }),
         },
@@ -214,7 +255,7 @@ export default defineNuxtConfig({
     },
   },
   devtools: { enabled: true },
-  compatibilityDate: '2024-04-03',
+  compatibilityDate: "2024-04-03",
   nitro: {
     // Pin the Nitro preset explicitly. Without this, Nitro auto-detects the
     // `cloudflare_module` preset from the `WORKERS_CI` env var that
@@ -227,13 +268,17 @@ export default defineNuxtConfig({
     // `static` keeps content on its normal bundled-SQLite-dump storage
     // (see https://content.nuxt.com/docs/advanced/database) regardless of
     // which CI/hosting environment the build happens to run in.
-    preset: 'static',
+    preset: "static",
     prerender: {
       // A few migrated posts link to legacy `/blog/book-shelf/*` reviews
       // that haven't been brought over yet. Don't fail the whole static
       // build over known-future content links.
       failOnError: false,
-      routes: [...legacyContentRoutes(), ...draftContentRoutes(), ...Object.keys(legacyRedirects)],
+      routes: [
+        ...legacyContentRoutes(),
+        ...draftContentRoutes(),
+        ...Object.keys(legacyRedirects),
+      ],
     },
   },
 })

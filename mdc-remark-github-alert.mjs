@@ -22,37 +22,34 @@
 // Bun, and plain Node cannot `import()` a `.ts` file directly -- it throws
 // `ERR_UNKNOWN_FILE_EXTENSION`. Keeping this file as `.mjs` means any JS
 // runtime can load it with no transpilation step required.
-import { remarkAlert } from 'remark-github-blockquote-alert'
-import { visit } from 'unist-util-visit'
+import { remarkAlert } from "remark-github-blockquote-alert"
+import { visit } from "unist-util-visit"
 
-const ALERT_TYPES = ['NOTE', 'TIP', 'IMPORTANT', 'WARNING', 'CAUTION']
+const ALERT_TYPES = ["NOTE", "TIP", "IMPORTANT", "WARNING", "CAUTION"]
 
 function isAlertSpan(node) {
   return (
-    !!node
-    && typeof node === 'object'
-    && node.type === 'textComponent'
-    && node.name === 'span'
+    !!node &&
+    typeof node === "object" &&
+    node.type === "textComponent" &&
+    node.name === "span"
   )
 }
 
 function normalizeMdcAlertMarkers(tree) {
-  visit(tree, 'blockquote', (node) => {
+  visit(tree, "blockquote", (node) => {
     const paragraph = node.children[0]
-    if (!paragraph || paragraph.type !== 'paragraph')
-      return
+    if (!paragraph || paragraph.type !== "paragraph") return
 
     const first = paragraph.children[0]
-    if (!isAlertSpan(first))
-      return
+    if (!isAlertSpan(first)) return
 
     const value = first.children?.[0]?.value?.trim()
     const match = value ? /^!(\w+)$/.exec(value) : null
     const alertType = match?.[1]?.toUpperCase()
-    if (!alertType || !ALERT_TYPES.includes(alertType))
-      return
+    if (!alertType || !ALERT_TYPES.includes(alertType)) return
 
-    const marker = { type: 'text', value: `[!${alertType}]` }
+    const marker = { type: "text", value: `[!${alertType}]` }
     paragraph.children.splice(0, 1, marker)
   })
 }

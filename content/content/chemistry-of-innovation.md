@@ -59,7 +59,7 @@ The first section is really setting the conditions for our people. We, as leader
   <img src="/static/images/chemistryBrain.jpg" class="w-1/3" alt="chemistry of innovation - brain slide" />
 </div>
 
-Innovation requires friction. Most organizations optimize for comfort and compliance rather than innovation. In order for people to feel safe enough to create friction and conflict the environment must be psychologically safe. Daniel Coyle in his book [The Culture Code](/blog/book-shelf/culture-code) explains how psychological safety is the single most important predictor of team performance. I've seen this throughout teams I've led and managed. When people feel safe to put their hand up and disagree with any idea despite the originator, teams begin seeing things that no individual could have seen alone.
+Innovation requires friction. Most organizations optimize for comfort and compliance rather than innovation. In order for people to feel safe enough to create friction and conflict the environment must be psychologically safe. [Daniel Coyle](/search?q=Daniel+Coyle) in his book [The Culture Code](/content/culture-code) explains how psychological safety is the single most important predictor of team performance. I've seen this throughout teams I've led and managed. When people feel safe to put their hand up and disagree with any idea despite the originator, teams begin seeing things that no individual could have seen alone.
 
 If a manager has a team of 8 people and doesn't ensure a psychologically safe environment, the team operates on about 1 brain - the manager's. If you can convince people they are free to challenge ideas, disagree, dispute, and push back then all of a sudden you have 9 brains all pulling together.
 
@@ -105,15 +105,15 @@ If this section resonated with you, these are the books that most shaped my thin
   <img src="/static/images/chemistryBooks1.png" class="w-full" alt="chemistry of innovation - books slide 1" />
 </div>
 
-- Daniel Coyle - [The Culture Code](/blog/book-shelf/culture-code): This book really taught and convinced me of the importance of psychological safety and how it's the foundation of a high-performing team.
-- Amy Edmondson
-  - [The Fearless Organization](/blog/book-shelf/fearless-organization) : This book is a deep dive into how to implement psychological safety in your team or organization. I've leveraged many of the practices in this book and have seen great results.
-  - [The Right Kind of Wrong](/blog/book-shelf/right-kind-of-wrong): This book acts as a manual for teams and leaders to understand the key role of failure in an organization and how to do it in the right way to learn, grow, and deliver at pace.
-- Brené Brown
-  - [Daring Greatly](/blog/book-shelf/daring-greatly): A solid book which introduces concepts around vulnerability as power, humility, working through shame, removing your armor, and being brave.
-  - [Dare to Lead](/blog/book-shelf/dare-to-lead): In this book Brené expands on the previous work and applies it to leadership. She introduces the concept of _Rumbling_ with hard topics, daring vs. armored leadership, and how vulnerability tolerance predicts leadership capability.
-  - [Strong Ground](/blog/book-shelf/strong-ground): In her newest book Brené builds on her work on bringing the _Dare to Lead_ topics to large organizations.  She expands, refines, and sheds new light on implementations and how leaders can be even more impactful while remaining curious and daring.
-- Kim Scott - [Radical Candor](/blog/book-shelf/radical-candor): This book teaches you to be open, caring, honest, and rigorous in how you have all types of conversations
+- [Daniel Coyle](/search?q=Daniel+Coyle) - [The Culture Code](/content/culture-code): This book really taught and convinced me of the importance of psychological safety and how it's the foundation of a high-performing team.
+- [Amy Edmondson](/search?q=Amy+Edmondson)
+  - [The Fearless Organization](/content/fearless-organization) : This book is a deep dive into how to implement psychological safety in your team or organization. I've leveraged many of the practices in this book and have seen great results.
+  - [The Right Kind of Wrong](/content/right-kind-of-wrong): This book acts as a manual for teams and leaders to understand the key role of failure in an organization and how to do it in the right way to learn, grow, and deliver at pace.
+- [Brené Brown](/search?q=Bren%C3%A9+Brown)
+  - [Daring Greatly](/content/daring-greatly): A solid book which introduces concepts around vulnerability as power, humility, working through shame, removing your armor, and being brave.
+  - [Dare to Lead](/content/dare-to-lead): In this book Brené expands on the previous work and applies it to leadership. She introduces the concept of _Rumbling_ with hard topics, daring vs. armored leadership, and how vulnerability tolerance predicts leadership capability.
+  - [Strong Ground](/content/strong-ground): In her newest book Brené builds on her work on bringing the _Dare to Lead_ topics to large organizations.  She expands, refines, and sheds new light on implementations and how leaders can be even more impactful while remaining curious and daring.
+- [Kim Scott](/search?q=Kim+Scott) - [Radical Candor](/content/radical-candor): This book teaches you to be open, caring, honest, and rigorous in how you have all types of conversations
 
 As we look towards the next section there is one key question and it's answer to have in mind:
 
@@ -171,9 +171,9 @@ problem and relieve the discomfort, but it also cuts the learning process short.
 
 Struggle tolerance and resilience leads to better outcomes. Successful people tend to be those who allow themselves to remain confused the longest. Some people have a natural struggle tolerance of 15-20 minutes, others are happy to grind for 8 hours. Both groups can be successful if they practice the habit. A key point: you want to escape before it turns stressful and hurtful. We've found you should go to the limit where solving the problem still feels good. If solving the problem makes you want to cry, you've struggled too long.
 
-Productive struggle does not always look like grinding harder.  Some problems respond to concentration, others respond to distance and time. Cal Newport is famous for his book [_Deep
-Work_](/blog/book-shelf/deep-work) that describes methods for solving hard problems with direct thought and activity in a deeply focused way. This works well and is an invaluable method for
-some problems. Chris Bailey takes this further in [_Hyperfocus_](/blog/book-shelf/hyperfocus) and also talks about the flip side of the coin: scatterfocus. Some problems can't be solved with
+Productive struggle does not always look like grinding harder.  Some problems respond to concentration, others respond to distance and time. [Cal Newport](/search?q=Cal+Newport) is famous for his book [_Deep
+Work_](/content/deep-work) that describes methods for solving hard problems with direct thought and activity in a deeply focused way. This works well and is an invaluable method for
+some problems. [Chris Bailey](/search?q=Chris+Bailey) takes this further in [_Hyperfocus_](/content/hyperfocus) and also talks about the flip side of the coin: scatterfocus. Some problems can't be solved with
 directed, focused attention. Using scatterfocus to support your brain in its non-linear efforts can also be powerful. Everyone reading this has likely had a "Eureka!" moment in the shower,
 on a walk, or on a commute home. Learning to harness this non-linear problem solving tool really fills out the problem-solving toolkit. Knowing when you should grind and when to wander is a
 critical part of learning to solve hard problems.
@@ -184,11 +184,11 @@ critical part of learning to solve hard problems.
   <img src="/static/images/chemistryBooks2.png" class="w-full" alt="chemistry of innovation - books slide 2" />
 </div>
 
-- Carol Dweck - [Mindset](/blog/book-shelf/mindset): Carol lays out the concepts around a growth vs. fixed mindset and how empowering belief in your own growth can be.
-- Cal Newport - [Deep Work](/blog/book-shelf/deep-work): Learn how to go deep on problems and focus for impressive results.
-- Chris Bailey - [Hyperfocus](/blog/book-shelf/hyperfocus): Go further on your struggle journey and learn the non-linear problem solving tools with scatterfocus.
-- Daniel Kahneman - [Thinking Fast and Slow](/blog/book-shelf/thinking-fast-and-slow): A classic and well referenced book on the two ways our minds make decisions and think through problems.
-- Adam Grant - [Think Again](/blog/book-shelf/think-again): Adam teaches how to rethink previous decisions and opinions to make your opinions more loosely held.
+- [Carol Dweck](/search?q=Carol+Dweck) - [Mindset](/content/mindset): Carol lays out the concepts around a growth vs. fixed mindset and how empowering belief in your own growth can be.
+- Cal Newport - [Deep Work](/content/deep-work): Learn how to go deep on problems and focus for impressive results.
+- Chris Bailey - [Hyperfocus](/content/hyperfocus): Go further on your struggle journey and learn the non-linear problem solving tools with scatterfocus.
+- [Daniel Kahneman](/search?q=Daniel+Kahneman) - [Thinking Fast and Slow](/content/thinking-fast-and-slow): A classic and well referenced book on the two ways our minds make decisions and think through problems.
+- [Adam Grant](/search?q=Adam+Grant) - [Think Again](/content/think-again): Adam teaches how to rethink previous decisions and opinions to make your opinions more loosely held.
 
 We now have people who feel safe enough to think, and who know how to learn. The next step is to expose them to new ideas and situations that can release their potential.
 
@@ -204,7 +204,7 @@ Safety lets people contribute. Productive discomfort helps them grow. Innovation
   <img src="/static/images/chemistryPotential.jpg" class="w-1/3" alt="chemistry of innovation - potential slide" />
 </div>
 
-One of the books for this section, [Range](/blog/book-shelf/range) by David Epstein, discusses the paths to greatness by two contrasting athletes: Tiger Woods and Roger Federer. Most of us
+One of the books for this section, [Range](/content/range) by [David Epstein](/search?q=David+Epstein), discusses the paths to greatness by two contrasting athletes: Tiger Woods and Roger Federer. Most of us
 have seen videos of Tiger Woods hitting a golf ball when he was just a toddler. He has been passionate about golf from the time he was little and eventually became the best in the world.
 Roger Federer had a different path and played many different kinds of sports until picking up a tennis racket relatively late. He is an athlete who built a general athletic
 background and later applied it to tennis. Tiger's path is memorable, but Federer's broader path is a far more common path of success across complex domains.
@@ -237,11 +237,11 @@ By moving to an area where you don't have the baggage of norms, historical solut
   <img src="/static/images/chemistryBooks3.png" class="w-full" alt="chemistry of innovation - books slide 3" />
 </div>
 
-- Mark Schwartz - [Delicate Art of Bureaucracy](/blog/book-shelf/delicate-art-of-bureaucracy): Navigating bureaucracy is a critical skill so people can better act as change agents.
-- Annie Duke - [Quit](/blog/book-shelf/quit): Learn how changing paths can create room for new ones. 
-- David Epstein - [Range](/blog/book-shelf/range): Scientific backing that generalists succeed more often than specialists, and how to leverage this in your career.
-- Colin Bryar - [Working Backwards](/blog/book-shelf/working-backwards): Learn how to transfer principles from Amazon's context to your organization.
-- Reed Hastings - [No Rules Rules](/blog/book-shelf/no-rules-rules): How to challenge accepted organizational assumptions.
+- [Mark Schwartz](/search?q=Mark+Schwartz) - [Delicate Art of Bureaucracy](/content/delicate-art-of-bureaucracy): Navigating bureaucracy is a critical skill so people can better act as change agents.
+- [Annie Duke](/search?q=Annie+Duke) - [Quit](/content/quit): Learn how changing paths can create room for new ones. 
+- [David Epstein](/search?q=David+Epstein) - [Range](/content/range): Scientific backing that generalists succeed more often than specialists, and how to leverage this in your career.
+- [Colin Bryar](/search?q=Colin+Bryar) - [Working Backwards](/content/working-backwards): Learn how to transfer principles from Amazon's context to your organization.
+- [Reed Hastings](/search?q=Reed+Hastings) - [No Rules Rules](/content/no-rules-rules): How to challenge accepted organizational assumptions.
 
 If we can support our people this way, Indiana is unusually well positioned to put the framework into practice.
 
@@ -284,7 +284,7 @@ Indiana already has enormous potential energy. Now we need leaders willing to cr
 
 In the talk, I linked to this long-form version so people could go deeper and continue the conversation. I'll keep this updated with links, discussions, and support for people wanting to continue this good work. Feel free to reach out to me at the links on the [About Me](/about) page.
 
-You can find my entire [book shelf](/blog/book-shelf) to see my list ordered from most useful to least useful (according to my gut-feel ranking system.)
+You can find my entire [book shelf](/books) to see my list ordered from most useful to least useful (according to my gut-feel ranking system.)
 
 If you use any of the content in this blog post, slides, or book write-ups, I'd love to hear about it as I'm passionate about this work and it would be great to hear how people are using it.
 

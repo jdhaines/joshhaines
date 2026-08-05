@@ -15,7 +15,7 @@ bookAuthor: 'Gene Kim, Steven Spear'
 author: josh
 ---
 
-I had been wanting to read this book for some time. As with many other people in this industry, I'm a big fan of Gene Kim and his other books including [Accelerate](/content/accelerate), [The Phoenix Project](/content/phoenix-project), [The Unicorn Project](/content/unicorn-project) and [The DevOps Handbook](/content/devops-handbook). In this new book Gene and Steven Spear discuss a novel concept around thinking and acting to create a winning organization.
+I had been wanting to read this book for some time. As with many other people in this industry, I'm a big fan of [Gene Kim](/search?q=Gene+Kim) and his other books including [Accelerate](/content/accelerate), [The Phoenix Project](/content/phoenix-project), [The Unicorn Project](/content/unicorn-project) and [The DevOps Handbook](/content/devops-handbook). In this new book Gene and [Steven Spear](/search?q=Steven+Spear) discuss a novel concept around thinking and acting to create a winning organization.
 
 The book primarily revolves around three areas: Slowification, Simplification, and Amplification. Briefly:
 

@@ -1,4 +1,4 @@
-import { legacyRedirects } from '../utils/legacy-redirects'
+import { legacyRedirects } from "../utils/legacy-redirects"
 
 export default defineEventHandler((event) => {
   const target = legacyRedirects[event.path]

@@ -8,7 +8,7 @@ export default defineEventHandler((event) => {
 
   // `/blog/book-shelf` (no further segment) is the old Book Shelf index page
   // itself, not a single post -- handled by `book-shelf-redirects.ts`.
-  if (match && match[1] !== 'book-shelf') {
+  if (match && match[1] !== "book-shelf") {
     return sendRedirect(event, `/content/${match[1]}`, 301)
   }
 })

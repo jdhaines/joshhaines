@@ -15,7 +15,7 @@ bookAuthor: 'Mark Schwartz'
 author: josh
 ---
 
-I thoroughly enjoyed this book. As evidenced by my reading list, I find Mark Schwartz's insights into this field to be quite valuable, and his latest work is no exception.
+I thoroughly enjoyed this book. As evidenced by my reading list, I find [Mark Schwartz](/search?q=Mark+Schwartz)'s insights into this field to be quite valuable, and his latest work is no exception.
 
 Schwartz recounts his experience as CTO for a large government agency. His anecdotes about the crippling bureaucracy are enough to make even the most ardent defender of complex procedures shudder. The sheer size of some documents he navigated is astounding. This experience informs his discussion of three "ways" to manage bureaucracy:
 

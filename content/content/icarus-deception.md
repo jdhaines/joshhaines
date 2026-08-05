@@ -17,7 +17,7 @@ author: josh
 
 ## Original Review
 
-In true Seth Godin fashion, this is a short book about one powerful concept:
+In true [Seth Godin](/search?q=Seth+Godin) fashion, this is a short book about one powerful concept:
 
 > The Icarus fable about not flying too close to the sun is not the best message anymore.
 

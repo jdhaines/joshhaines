@@ -19,9 +19,9 @@ author: josh
 
 As an overall, I'd rate this book as a _Skip_. I saw the author and the tagline and grabbed it. It's a short book that essentially feels like Peter just rambling through some thoughts on random topics for a few hours.
 
-In general, Peter Thiel is a pretty amazing person to hear ramble for a couple hours. But I didn't find most of it super useful. The pitch for the book is essentially _ramblings on startups_ which I guess fits to the book.
+In general, [Peter Thiel](/search?q=Peter+Thiel) is a pretty amazing person to hear ramble for a couple hours. But I didn't find most of it super useful. The pitch for the book is essentially _ramblings on startups_ which I guess fits to the book.
 
-I feel like if you want to read through a book of a super successful person waxing philosophical on useful topics, I'd recommend [Build](/content/build) by Tony Fadell. That one was amazing and was structured in a way of him talking to people at his level as he progressed through his career.
+I feel like if you want to read through a book of a super successful person waxing philosophical on useful topics, I'd recommend [Build](/content/build) by [Tony Fadell](/search?q=Tony+Fadell). That one was amazing and was structured in a way of him talking to people at his level as he progressed through his career.
 
 ## 7 Questions
 

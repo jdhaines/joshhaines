@@ -21,4 +21,4 @@ I really enjoyed this book. As a strong believer in the power of psychological s
 
 Later, she provides a valuable set of questions and discusses a well-known survey for measuring psychological safety. Our Software Factory team has adapted this survey for quantitative insights into our own team dynamics.
 
-This is the best book I've found on the topic. Any leader committed to the principles of psychological safety would benefit greatly from reading it and applying its lessons. I often pair it with [The Culture Code](/content/culture-code) by Daniel Coyle. Both books provide a solid foundation for understanding the importance of psychological safety in high-performing teams.
+This is the best book I've found on the topic. Any leader committed to the principles of psychological safety would benefit greatly from reading it and applying its lessons. I often pair it with [The Culture Code](/content/culture-code) by [Daniel Coyle](/search?q=Daniel+Coyle). Both books provide a solid foundation for understanding the importance of psychological safety in high-performing teams.

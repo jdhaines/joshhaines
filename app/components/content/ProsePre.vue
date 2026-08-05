@@ -1,12 +1,12 @@
 <script lang="ts">
-import theme from '#build/ui/prose/pre'
+import theme from "#build/ui/prose/pre"
 </script>
 
 <script setup lang="ts">
-import { computed, useTemplateRef } from 'vue'
-import { useClipboard } from '@vueuse/core'
-import { useAppConfig } from '#imports'
-import { tv } from '@nuxt/ui/utils/tv'
+import { computed, useTemplateRef } from "vue"
+import { useClipboard } from "@vueuse/core"
+import { useAppConfig } from "#imports"
+import { tv } from "@nuxt/ui/utils/tv"
 
 /**
  * Override of Nuxt UI's `ProsePre` that always shows the code block header
@@ -31,9 +31,11 @@ defineSlots<{ default(): unknown }>()
 
 const appConfig = useAppConfig()
 const { copy: copyToClipboard, copied } = useClipboard()
-const baseRef = useTemplateRef<HTMLPreElement>('baseRef')
+const baseRef = useTemplateRef<HTMLPreElement>("baseRef")
 
-const themeUi = computed(() => tv({ extend: theme, ...(appConfig.ui?.prose?.pre || {}) })())
+const themeUi = computed(() =>
+  tv({ extend: theme, ...(appConfig.ui?.prose?.pre || {}) })()
+)
 
 // Show the language moniker exactly as typed after the code fence's
 // triple-backticks (e.g. ```bash -> "bash"), not a prettified label.
@@ -45,11 +47,13 @@ const codeIcon = computed(() => {
   const codeIcons = (appConfig.ui?.prose?.codeIcon ?? {}) as Record<string, string>
 
   if (props.filename) {
-    const cleanFilename = props.filename.replace(/\s*\(.*\)\s*$/, '')
-    const extension = cleanFilename.includes('.') && cleanFilename.split('.').pop()
-    const name = cleanFilename.split('/').pop()
-    return (name && codeIcons[name.toLowerCase()])
-      ?? (extension && (codeIcons[extension] ?? `i-vscode-icons-file-type-${extension}`))
+    const cleanFilename = props.filename.replace(/\s*\(.*\)\s*$/, "")
+    const extension = cleanFilename.includes(".") && cleanFilename.split(".").pop()
+    const name = cleanFilename.split("/").pop()
+    return (
+      (name && codeIcons[name.toLowerCase()]) ??
+      (extension && (codeIcons[extension] ?? `i-vscode-icons-file-type-${extension}`))
+    )
   }
 
   if (props.language) {
@@ -61,17 +65,26 @@ const codeIcon = computed(() => {
 })
 
 function copyCode() {
-  const code = props.code ?? baseRef.value?.textContent ?? ''
+  const code = props.code ?? baseRef.value?.textContent ?? ""
   copyToClipboard(code)
 }
 </script>
 
 <template>
   <div :class="themeUi.root({ class: [props.ui?.root], filename: !!headerLabel })">
-    <div v-if="headerLabel && !hideHeader" :class="themeUi.header({ class: props.ui?.header })">
-      <UIcon v-if="codeIcon" :name="codeIcon" :class="themeUi.icon({ class: props.ui?.icon })" />
+    <div
+      v-if="headerLabel && !hideHeader"
+      :class="themeUi.header({ class: props.ui?.header })"
+    >
+      <UIcon
+        v-if="codeIcon"
+        :name="codeIcon"
+        :class="themeUi.icon({ class: props.ui?.icon })"
+      />
 
-      <span :class="themeUi.filename({ class: props.ui?.filename })">{{ headerLabel }}</span>
+      <span :class="themeUi.filename({ class: props.ui?.filename })">{{
+        headerLabel
+      }}</span>
     </div>
 
     <UButton
@@ -86,6 +99,10 @@ function copyCode() {
       @click="copyCode"
     />
 
-    <pre ref="baseRef" :class="themeUi.base({ class: [props.ui?.base, props.class] })" v-bind="$attrs"><slot /></pre>
+    <pre
+      ref="baseRef"
+      :class="themeUi.base({ class: [props.ui?.base, props.class] })"
+      v-bind="$attrs"
+    ><slot /></pre>
   </div>
 </template>

@@ -1,4 +1,4 @@
-import type { BookShelfCollectionItem, PostsCollectionItem } from '@nuxt/content'
+import type { BookShelfCollectionItem, PostsCollectionItem } from "@nuxt/content"
 
 /** A book review enriched with its position in Josh's ranked order. */
 export interface RankedBook {
@@ -7,17 +7,17 @@ export interface RankedBook {
   rank?: number
 }
 
-export type BookShelfSort = 'rank' | 'title' | 'author' | 'date'
-export type BookShelfSortDirection = 'asc' | 'desc'
+export type BookShelfSort = "rank" | "title" | "author" | "date"
+export type BookShelfSortDirection = "asc" | "desc"
 
-export const BOOK_SHELF_SORT_OPTIONS: { label: string, value: BookShelfSort }[] = [
-  { label: 'Josh\'s Order', value: 'rank' },
-  { label: 'Title', value: 'title' },
-  { label: 'Author', value: 'author' },
-  { label: 'Review Date', value: 'date' },
+export const BOOK_SHELF_SORT_OPTIONS: { label: string; value: BookShelfSort }[] = [
+  { label: "Josh's Order", value: "rank" },
+  { label: "Title", value: "title" },
+  { label: "Author", value: "author" },
+  { label: "Review Date", value: "date" },
 ]
 
-export type BookShelfView = 'list' | 'grid'
+export type BookShelfView = "list" | "grid"
 
 /**
  * Combines the ranked order + honorable mentions from `book-shelf.yml` with
@@ -28,9 +28,14 @@ export type BookShelfView = 'list' | 'grid'
  * warning, since forgetting to add a newly migrated review to the shelf
  * would otherwise fail silently.
  */
-export function buildBookShelf(shelf: BookShelfCollectionItem | null | undefined, posts: PostsCollectionItem[]) {
-  const bookReviews = posts.filter(post => post.contentType === 'bookReview')
-  const postBySlug = new Map(bookReviews.map(post => [post.path.split('/').pop(), post]))
+export function buildBookShelf(
+  shelf: BookShelfCollectionItem | null | undefined,
+  posts: PostsCollectionItem[]
+) {
+  const bookReviews = posts.filter((post) => post.contentType === "bookReview")
+  const postBySlug = new Map(
+    bookReviews.map((post) => [post.path.split("/").pop(), post])
+  )
 
   const order = shelf?.order ?? []
   const honorableMentions = shelf?.honorableMentions ?? []
@@ -54,9 +59,11 @@ export function buildBookShelf(shelf: BookShelfCollectionItem | null | undefined
 
   if (import.meta.dev) {
     for (const post of bookReviews) {
-      const slug = post.path.split('/').pop()
+      const slug = post.path.split("/").pop()
       if (slug && !seenSlugs.has(slug)) {
-        console.warn(`[book-shelf] Published bookReview "${slug}" is missing from book-shelf.yml.`)
+        console.warn(
+          `[book-shelf] Published bookReview "${slug}" is missing from book-shelf.yml.`
+        )
       }
     }
   }
@@ -65,31 +72,41 @@ export function buildBookShelf(shelf: BookShelfCollectionItem | null | undefined
 }
 
 /** Returns a new, sorted copy of `books`. Rank order requires every entry to have a `rank`. */
-export function sortBooks(books: RankedBook[], sort: BookShelfSort, direction: BookShelfSortDirection = 'asc'): RankedBook[] {
+export function sortBooks(
+  books: RankedBook[],
+  sort: BookShelfSort,
+  direction: BookShelfSortDirection = "asc"
+): RankedBook[] {
   const sorted = [...books]
 
   switch (sort) {
-    case 'title':
+    case "title":
       sorted.sort((a, b) => a.post.title.localeCompare(b.post.title))
       break
-    case 'author':
-      sorted.sort((a, b) => (a.post.bookAuthor ?? '').localeCompare(b.post.bookAuthor ?? ''))
+    case "author":
+      sorted.sort((a, b) =>
+        (a.post.bookAuthor ?? "").localeCompare(b.post.bookAuthor ?? "")
+      )
       break
-    case 'date':
-      sorted.sort((a, b) => new Date(a.post.publishedAt).getTime() - new Date(b.post.publishedAt).getTime())
+    case "date":
+      sorted.sort(
+        (a, b) =>
+          new Date(a.post.publishedAt).getTime() -
+          new Date(b.post.publishedAt).getTime()
+      )
       break
-    case 'rank':
+    case "rank":
     default:
       sorted.sort((a, b) => (a.rank ?? Infinity) - (b.rank ?? Infinity))
       break
   }
 
-  return direction === 'desc' ? sorted.reverse() : sorted
+  return direction === "desc" ? sorted.reverse() : sorted
 }
 
 /** "Oct 2022" style formatting used both for display and for making dates searchable. */
 export function formatBookDate(date: Date | string) {
-  return new Date(date).toLocaleDateString('en-US', { year: 'numeric', month: 'short' })
+  return new Date(date).toLocaleDateString("en-US", { year: "numeric", month: "short" })
 }
 
 /** Basic case-insensitive substring match across title, book author, description, and review date. */
@@ -98,9 +115,11 @@ export function searchBooks(books: RankedBook[], query: string): RankedBook[] {
   if (!q) return books
 
   return books.filter(({ post }) => {
-    return post.title.toLowerCase().includes(q)
-      || post.bookAuthor?.toLowerCase().includes(q)
-      || post.description?.toLowerCase().includes(q)
-      || formatBookDate(post.publishedAt).toLowerCase().includes(q)
+    return (
+      post.title.toLowerCase().includes(q) ||
+      post.bookAuthor?.toLowerCase().includes(q) ||
+      post.description?.toLowerCase().includes(q) ||
+      formatBookDate(post.publishedAt).toLowerCase().includes(q)
+    )
   })
 }

@@ -16,6 +16,6 @@
 // paths anymore, they'd otherwise silently produce no redirect page in the
 // static build even though they work fine in dev.
 export const legacyRedirects: Record<string, string> = {
-  '/subs': '/content/submarines-keynote',
-  '/techpoint': '/content/chemistry-of-innovation',
+  "/subs": "/content/submarines-keynote",
+  "/techpoint": "/content/chemistry-of-innovation",
 }

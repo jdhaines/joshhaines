@@ -22,6 +22,6 @@ This is a wonderful book that is hard to describe. Essentially, the book is laid
 
 ![dump truck](/static/images/build.jpg)
 
-Tony Fadell has a long and storied resume, but his biggest claim to fame is being the leader of the team who created the iPod. This book is chock-full of great pieces of advice on how to build great products and teams and be your best throughout your career.
+[Tony Fadell](/search?q=Tony+Fadell) has a long and storied resume, but his biggest claim to fame is being the leader of the team who created the iPod. This book is chock-full of great pieces of advice on how to build great products and teams and be your best throughout your career.
 
 It's a fantastic book, I highly recommend it.

@@ -1,33 +1,31 @@
 <script setup lang="ts">
-const { data: posts } = await useAsyncData('writing-index', () => {
-  return queryCollection('posts')
-    .where('draft', '=', false)
-    .where('contentType', '=', 'article')
-    .order('publishedAt', 'DESC')
+const { data: posts } = await useAsyncData("writing-index", () => {
+  return queryCollection("posts")
+    .where("draft", "=", false)
+    .where("contentType", "=", "article")
+    .order("publishedAt", "DESC")
     .all()
 })
 
-const canonicalUrl = new URL('/writing', useSiteUrl()).toString()
+const canonicalUrl = new URL("/writing", useSiteUrl()).toString()
 
 useSeoMeta({
-  title: 'Writing',
-  description: 'Articles from Josh Haines.',
-  ogTitle: 'Writing',
-  ogDescription: 'Articles from Josh Haines.',
+  title: "Writing",
+  description: "Articles from Josh Haines.",
+  ogTitle: "Writing",
+  ogDescription: "Articles from Josh Haines.",
   ogUrl: canonicalUrl,
-  ogType: 'website',
+  ogType: "website",
 })
 
 useHead({
-  link: [{ rel: 'canonical', href: canonicalUrl }],
+  link: [{ rel: "canonical", href: canonicalUrl }],
 })
 </script>
 
 <template>
   <UContainer class="py-12">
-    <h1 class="mb-8 text-3xl font-bold">
-      Writing
-    </h1>
+    <h1 class="mb-8 text-3xl font-bold">Writing</h1>
 
     <UBlogPosts>
       <UBlogPost

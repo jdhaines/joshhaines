@@ -1,11 +1,11 @@
-import { defineContentConfig, defineCollection, z } from '@nuxt/content'
+import { defineContentConfig, defineCollection, z } from "@nuxt/content"
 
 export default defineContentConfig({
   collections: {
     // Static pages (home, about, etc.) living at the content root.
     content: defineCollection({
-      type: 'page',
-      source: '*.md',
+      type: "page",
+      source: "*.md",
     }),
     // Long-form articles, talks, and podcast write-ups. All entries share a
     // single flat `/content/<slug>` URL namespace regardless of `contentType`
@@ -14,8 +14,8 @@ export default defineContentConfig({
     // "Talks", and "Podcasts" are purely presentational: filtered listing
     // pages over this one collection, not separate URL trees.
     posts: defineCollection({
-      type: 'page',
-      source: 'content/**',
+      type: "page",
+      source: "content/**",
       schema: z.object({
         description: z.string(),
         publishedAt: z.date(),
@@ -39,13 +39,15 @@ export default defineContentConfig({
         // Drives category badges/colors and which filtered listing page
         // (/writing, /talks, /podcasts, /books) an entry shows up on. Add
         // new values here as new content types are introduced.
-        contentType: z.enum(['article', 'talk', 'podcast', 'bookReview']).default('article'),
+        contentType: z
+          .enum(["article", "talk", "podcast", "bookReview"])
+          .default("article"),
         // Author of the book being reviewed (only meaningful when
         // contentType is `bookReview`; distinct from the `author` field
         // below, which is the reviewer/site author).
         bookAuthor: z.string().optional(),
         // Slug of an entry in the `authors` collection.
-        author: z.string().default('josh'),
+        author: z.string().default("josh"),
         // Manual override for the "X min read"/"X min listen" badge.
         // Required in practice for podcasts (no body text to estimate from);
         // optional elsewhere to override the auto-calculated reading time.
@@ -63,8 +65,8 @@ export default defineContentConfig({
     // review's frontmatter. See app/utils/book-shelf.ts for how this gets
     // combined with the actual `bookReview` posts at render time.
     bookShelf: defineCollection({
-      type: 'data',
-      source: 'book-shelf.yml',
+      type: "data",
+      source: "book-shelf.yml",
       schema: z.object({
         order: z.array(z.string()),
         honorableMentions: z.array(z.string()).default([]),
@@ -72,8 +74,8 @@ export default defineContentConfig({
     }),
     // Author profiles referenced by `writing` posts' `author` field.
     authors: defineCollection({
-      type: 'page',
-      source: 'authors/**',
+      type: "page",
+      source: "authors/**",
       schema: z.object({
         name: z.string(),
         avatar: z.string(),
@@ -87,4 +89,3 @@ export default defineContentConfig({
     }),
   },
 })
-
