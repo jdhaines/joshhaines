@@ -216,7 +216,7 @@ that were specific.
 The door was buried near the bottom of the box of cedar and I was a
 little worried they forgot to include it.  It was nicely protected and
 in great shape when I opened it though.  I had to cut the rough opening
-a little larger as forgot to consider the height of the underlayment,
+a little larger as I forgot to consider the height of the underlayment,
 mortar, and tile in the rough opening (oops!).  I put it in, shimmed it,
 and screwed it in place.  It opens and closes really smoothly and even
 has a nice magnetic latch to keep it closed.
