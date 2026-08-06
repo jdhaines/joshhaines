@@ -4,7 +4,7 @@ description: >
   Redefining the Architect's Role in the Digital Enterprise.
 publishedAt: 2023-08-24
 updatedAt: 2024-05-16
-tags: ['book-shelf', 'architecture', 'thought leadership']
+tags: ['book shelf', 'architecture', 'thought leadership']
 featured: false
 draft: false
 image: '/static/images/software-architect-elevator-cover.jpg'

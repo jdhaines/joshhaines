@@ -4,7 +4,7 @@ description: >
   The Lessons of Daring Leadership, the Tenacity of Paradox, and the Wisdom of the Human Spirit.
 publishedAt: 2026-07-13
 updatedAt: 2026-07-13
-tags: ['book-shelf', 'leadership', 'culture', 'vulnerability']
+tags: ['book shelf', 'leadership', 'culture', 'vulnerability']
 featured: false
 draft: false
 image: '/static/images/strong-ground-cover.jpg'

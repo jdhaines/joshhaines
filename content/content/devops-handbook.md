@@ -4,7 +4,7 @@ description: >
   How to Create World-Class Agility, Reliability, & Security in Technology Organizations.
 publishedAt: 2022-09-16
 updatedAt: 2024-05-10
-tags: ['book-shelf', 'productivity', 'devops']
+tags: ['book shelf', 'productivity', 'devops']
 featured: false
 draft: false
 image: '/static/images/devops-handbook-cover.jpg'

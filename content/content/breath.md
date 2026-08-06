@@ -4,7 +4,7 @@ description: >
   The New Science of a Lost Art.
 publishedAt: 2023-06-19
 updatedAt: 2024-05-20
-tags: ['book-shelf', 'health']
+tags: ['book shelf', 'health']
 featured: false
 draft: false
 image: '/static/images/breath-cover.jpg'

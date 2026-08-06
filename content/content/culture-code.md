@@ -4,7 +4,7 @@ description: >
   The Secrets of Highly Successful Groups.
 publishedAt: 2023-08-21
 updatedAt: 2024-05-10
-tags: ['book-shelf', 'psychological safety', 'leadership', 'culture']
+tags: ['book shelf', 'psychological safety', 'leadership', 'culture']
 featured: false
 draft: false
 image: '/static/images/culture-code-cover.jpg'

@@ -4,7 +4,7 @@ description: >
   How Modern Companies Use Entrepreneurial Management to Transform Culture and Drive Long-Term Growth.
 publishedAt: 2022-10-28
 updatedAt: 2024-05-22
-tags: ['book-shelf', 'thought leadership', 'strategy']
+tags: ['book shelf', 'thought leadership', 'strategy']
 featured: false
 draft: false
 image: '/static/images/startup-way-cover.jpg'

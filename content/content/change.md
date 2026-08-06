@@ -4,7 +4,7 @@ description: >
   How Organizations Achieve Hard-to-Imagine Results in Uncertain and Volatile Times.
 publishedAt: 2023-09-04
 updatedAt: 2024-05-16
-tags: ['book-shelf', 'thought leadership', 'change']
+tags: ['book shelf', 'thought leadership', 'change']
 featured: false
 draft: false
 image: '/static/images/change-cover.jpg'

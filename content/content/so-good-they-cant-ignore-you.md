@@ -4,7 +4,7 @@ description: >
   Why Skills Trump Passion in the Quest for Work You Love.
 publishedAt: 2025-06-05
 updatedAt: 2025-06-05
-tags: ['book-shelf', 'productivity', 'change']
+tags: ['book shelf', 'productivity', 'change']
 featured: false
 draft: false
 image: '/static/images/so-good-they-cant-ignore-you-cover.jpg'

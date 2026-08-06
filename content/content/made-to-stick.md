@@ -4,7 +4,7 @@ description: >
   Why Some Ideas Survive and Others Die.
 publishedAt: 2024-03-15
 updatedAt: 2024-05-10
-tags: ['book-shelf', 'communication', 'marketing', 'strategy', 'leadership']
+tags: ['book shelf', 'communication', 'marketing', 'strategy', 'leadership']
 featured: false
 draft: false
 image: '/static/images/made-to-stick-cover.jpg'

@@ -4,7 +4,7 @@ description: >
   Rules for Focused Success in a Distracted World.
 publishedAt: 2022-10-21
 updatedAt: 2024-04-17
-tags: ['book-shelf', 'productivity']
+tags: ['book shelf', 'productivity']
 featured: false
 draft: false
 image: '/static/images/deep-work-cover.jpg'

@@ -4,7 +4,7 @@ description: >
   A Handbook of Agile Software Craftsmanship.
 publishedAt: 2022-08-16
 updatedAt: 2024-04-18
-tags: ['book-shelf', 'productivity', 'software']
+tags: ['book shelf', 'productivity', 'software']
 featured: false
 draft: false
 image: '/static/images/clean-code-cover.jpg'

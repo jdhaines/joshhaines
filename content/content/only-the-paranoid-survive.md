@@ -4,7 +4,7 @@ description: >
   How to Exploit the Crisis Points That Challenge Every Company.
 publishedAt: 2023-12-13
 updatedAt: 2024-05-17
-tags: ['book-shelf', 'leadership', 'strategy']
+tags: ['book shelf', 'leadership', 'strategy']
 featured: false
 draft: false
 image: '/static/images/only-the-paranoid-survive-cover.jpg'

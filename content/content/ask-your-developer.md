@@ -4,7 +4,7 @@ description: >
   How to Harness the Power of Software Developers and Win in the 21st Century.
 publishedAt: 2022-10-06
 updatedAt: 2024-03-11
-tags: ['book-shelf']
+tags: ['book shelf']
 featured: false
 draft: false
 image: '/static/images/ask-your-developer-cover.jpg'

@@ -4,7 +4,7 @@ description: >
   Business Leadership, Technology, and Success in the Digital Age.
 publishedAt: 2022-07-08
 updatedAt: 2024-05-10
-tags: ['book-shelf', 'it', 'bureaucracy']
+tags: ['book shelf', 'it', 'bureaucracy']
 featured: false
 draft: false
 image: '/static/images/war-peace-it-cover.jpg'

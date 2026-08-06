@@ -4,7 +4,7 @@ description: >
   Digital Transformation with the Monkey, the Razor, and the Sumo Wrestler.
 publishedAt: 2022-10-09
 updatedAt: 2024-03-12
-tags: ['book-shelf', 'bureaucracy', 'culture']
+tags: ['book shelf', 'bureaucracy', 'culture']
 featured: false
 draft: false
 image: '/static/images/delicate-art-of-bureaucracy-cover.jpg'

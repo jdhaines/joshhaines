@@ -4,7 +4,7 @@ description: >
   How the Best Leaders Make Everyone Smarter.
 publishedAt: 2023-08-11
 updatedAt: 2024-04-17
-tags: ['book-shelf', 'leadership']
+tags: ['book shelf', 'leadership']
 featured: false
 draft: false
 image: '/static/images/multipliers-cover.jpg'

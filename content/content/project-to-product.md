@@ -4,7 +4,7 @@ description: >
   How to Survive and Thrive in the Age of Digital Disruption with the Flow Framework.
 publishedAt: 2022-08-08
 updatedAt: 2024-03-19
-tags: ['book-shelf', 'product management']
+tags: ['book shelf', 'product management']
 featured: false
 draft: false
 image: '/static/images/project-to-product-cover.jpg'

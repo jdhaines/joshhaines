@@ -4,7 +4,7 @@ description: >
   How the Great Rewiring of Childhood Is Causing an Epidemic of Mental Illness.
 publishedAt: 2024-05-29
 updatedAt: 2024-06-12
-tags: ['book-shelf', 'mental health', 'health']
+tags: ['book shelf', 'mental health', 'health']
 featured: false
 draft: false
 image: '/static/images/anxious-generation-cover.jpg'

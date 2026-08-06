@@ -4,7 +4,7 @@ description: >
   The Power of Knowing What You Don't Know.
 publishedAt: 2023-08-07
 updatedAt: 2024-05-17
-tags: ['book-shelf', 'decision making', 'thought leadership']
+tags: ['book shelf', 'decision making', 'thought leadership']
 featured: false
 draft: false
 image: '/static/images/think-again-cover.jpg'

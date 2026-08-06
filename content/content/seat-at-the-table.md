@@ -4,7 +4,7 @@ description: >
   IT Leadership in the Age of Agility.
 publishedAt: 2022-10-09
 updatedAt: 2024-03-13
-tags: ['book-shelf', 'it', 'bureaucracy']
+tags: ['book shelf', 'it', 'bureaucracy']
 featured: false
 draft: false
 image: '/static/images/seat-at-the-table-cover.jpg'

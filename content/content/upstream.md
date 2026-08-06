@@ -4,7 +4,7 @@ description: >
   The Quest to Solve Problems Before They Happen.
 publishedAt: 2023-08-03
 updatedAt: 2024-05-10
-tags: ['book-shelf', 'thought leadership', 'productivity']
+tags: ['book shelf', 'thought leadership', 'productivity']
 featured: false
 draft: false
 image: '/static/images/upstream-cover.jpg'

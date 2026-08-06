@@ -4,7 +4,7 @@ description: >
   How High Will You Fly?
 publishedAt: 2023-11-19
 updatedAt: 2024-05-19
-tags: ['book-shelf', 'strategy', 'growth']
+tags: ['book shelf', 'strategy', 'growth']
 featured: false
 draft: false
 image: '/static/images/icarus-deception-cover.jpg'

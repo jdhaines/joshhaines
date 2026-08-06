@@ -4,7 +4,7 @@ description: >
   Building a Business When There Are No Easy Answers - Straight Talk on the Challenges of Entrepreneurship.
 publishedAt: 2026-03-28
 updatedAt: 2026-03-28
-tags: ['book-shelf', 'leadership', 'entrepreneurship']
+tags: ['book shelf', 'leadership', 'entrepreneurship']
 featured: false
 draft: false
 image: '/static/images/hard-thing-about-hard-things-cover.jpg'

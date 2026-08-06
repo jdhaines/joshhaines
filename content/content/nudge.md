@@ -4,7 +4,7 @@ description: >
   Small nudges, big changes: Improving decisions about health, wealth, and happiness.
 publishedAt: 2024-05-03
 updatedAt: 2024-05-20
-tags: ['book-shelf', 'decision making', 'marketing']
+tags: ['book shelf', 'decision making', 'marketing']
 featured: false
 draft: false
 image: '/static/images/nudge-cover.jpg'

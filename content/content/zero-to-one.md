@@ -4,7 +4,7 @@ description: >
   Notes on Startups, or How to Build the Future.
 publishedAt: 2024-07-30
 updatedAt: 2025-05-06
-tags: ['book-shelf', 'tech-talk', 'innovation']
+tags: ['book shelf', 'tech talk', 'innovation']
 featured: false
 draft: false
 image: '/static/images/zero-to-one-cover.jpg'

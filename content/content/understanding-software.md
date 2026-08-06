@@ -4,7 +4,7 @@ description: >
   Max Kanat-Alexander on simplicity, coding, and how to suck less as a programmer.
 publishedAt: 2023-04-14
 updatedAt: 2024-05-17
-tags: ['book-shelf', 'software', 'architecture']
+tags: ['book shelf', 'software', 'architecture']
 featured: false
 draft: false
 image: '/static/images/understanding-software-cover.jpg'

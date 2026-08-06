@@ -4,7 +4,7 @@ description: >
   What It Really Takes to Thrive in the Age of Data, Algorithms, and AI.
 publishedAt: 2023-08-21
 updatedAt: 2024-05-10
-tags: ['book-shelf', 'productivity', 'mental health']
+tags: ['book shelf', 'productivity', 'mental health']
 featured: false
 draft: false
 image: '/static/images/digital-mindset-cover.jpg'

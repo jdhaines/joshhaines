@@ -4,7 +4,7 @@ description: >
   Organizing Business and Technology Teams for Fast Flow.
 publishedAt: 2022-10-02
 updatedAt: 2024-05-15
-tags: ['book-shelf', 'leadership', 'teams']
+tags: ['book shelf', 'leadership', 'teams']
 featured: false
 draft: false
 image: '/static/images/team-topologies-cover.jpg'

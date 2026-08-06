@@ -78,15 +78,20 @@ function formatDate(date?: Date | string) {
       </NuxtLink>
 
       <div v-if="page.tags?.length" class="flex flex-wrap gap-2">
-        <UBadge
+        <NuxtLink
           v-for="tag in page.tags"
           :key="tag"
-          variant="soft"
-          color="neutral"
-          size="md"
+          :to="`/tags?tag=${encodeURIComponent(tag)}`"
         >
-          {{ tag }}
-        </UBadge>
+          <UBadge
+            variant="subtle"
+            color="neutral"
+            size="md"
+            class="shadow-sm hover:bg-elevated"
+          >
+            {{ tag }}
+          </UBadge>
+        </NuxtLink>
       </div>
     </div>
   </header>

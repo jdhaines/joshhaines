@@ -4,7 +4,7 @@ description: >
   Are You Indispensable?
 publishedAt: 2022-10-06
 updatedAt: 2024-05-17
-tags: ['book-shelf', 'thought leadership', 'growth']
+tags: ['book shelf', 'thought leadership', 'growth']
 featured: false
 draft: false
 image: '/static/images/linchpin-cover.jpg'

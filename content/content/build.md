@@ -4,7 +4,7 @@ description: >
   An Unorthodox Guide to Making Things Worth Making.
 publishedAt: 2023-04-19
 updatedAt: 2024-05-09
-tags: ['book-shelf', 'product management']
+tags: ['book shelf', 'product management']
 featured: false
 draft: false
 image: '/static/images/build-cover.jpg'

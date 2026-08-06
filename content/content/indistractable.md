@@ -4,7 +4,7 @@ description: >
   How to Control Your Attention and Choose Your Life.
 publishedAt: 2022-11-15
 updatedAt: 2024-05-17
-tags: ['book-shelf', 'productivity', 'focus']
+tags: ['book shelf', 'productivity', 'focus']
 featured: false
 draft: false
 image: '/static/images/indistractable-cover.jpg'

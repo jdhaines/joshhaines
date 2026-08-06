@@ -4,7 +4,7 @@ description: >
   A Simple Story About the True Essence of Leadership.
 publishedAt: 2023-04-21
 updatedAt: 2024-05-19
-tags: ['book-shelf', 'leadership', 'psychological safety', 'culture']
+tags: ['book shelf', 'leadership', 'psychological safety', 'culture']
 featured: false
 draft: false
 image: '/static/images/servant-cover.jpg'

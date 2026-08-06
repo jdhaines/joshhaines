@@ -2,7 +2,13 @@ import type { PostsCollectionItem } from "@nuxt/content"
 
 export type PublishedPostSummary = Pick<
   PostsCollectionItem,
-  "path" | "title" | "description" | "publishedAt" | "contentType" | "bookAuthor"
+  | "path"
+  | "title"
+  | "description"
+  | "publishedAt"
+  | "contentType"
+  | "bookAuthor"
+  | "tags"
 >
 
 /**
@@ -24,7 +30,8 @@ export function usePublishedPosts() {
         "description",
         "publishedAt",
         "contentType",
-        "bookAuthor"
+        "bookAuthor",
+        "tags"
       )
       .all()
   })
@@ -55,4 +62,21 @@ export function matchesBookAuthor(
   if (post.contentType !== "bookReview" || !author) return false
   const terms = foldAccents(query.trim().toLowerCase()).split(/\s+/).filter(Boolean)
   return terms.length > 0 && terms.every((term) => author.includes(term))
+}
+
+/**
+ * Case/whitespace/accent-insensitive check for whether any of a post's
+ * `tags` matches every word of `query` -- tags aren't part of a page's
+ * body/description, so Nuxt Content's full-text search index (which only
+ * covers title/description/body) never sees them on its own. Removing a
+ * tag's word from the article body (but leaving the tag itself in
+ * frontmatter) would otherwise silently drop it from search results.
+ */
+export function matchesTag(post: Pick<PublishedPostSummary, "tags">, query: string) {
+  const terms = foldAccents(query.trim().toLowerCase()).split(/\s+/).filter(Boolean)
+  if (!terms.length) return false
+  return (post.tags ?? []).some((tag) => {
+    const normalized = foldAccents(tag.toLowerCase())
+    return terms.every((term) => normalized.includes(term))
+  })
 }

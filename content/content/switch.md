@@ -4,7 +4,7 @@ description: >
   How to Change Things When Change Is Hard.
 publishedAt: 2024-06-21
 updatedAt: 2024-06-21
-tags: ['book-shelf', 'change', 'decision making']
+tags: ['book shelf', 'change', 'decision making']
 featured: false
 draft: false
 image: '/static/images/switch-cover.jpg'

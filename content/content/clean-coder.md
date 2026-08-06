@@ -4,7 +4,7 @@ description: >
   A Code of Conduct for Professional Programmers.
 publishedAt: 2023-08-08
 updatedAt: 2024-05-09
-tags: ['book-shelf', 'productivity', 'software']
+tags: ['book shelf', 'productivity', 'software']
 featured: false
 draft: false
 image: '/static/images/clean-coder-cover.jpg'

@@ -41,6 +41,9 @@ async function runSearch(query: string) {
   const authorMatches = (publishedPosts.value ?? []).filter((post) =>
     matchesBookAuthor(post, trimmed)
   )
+  const tagMatches = (publishedPosts.value ?? []).filter((post) =>
+    matchesTag(post, trimmed)
+  )
 
   const orderedPaths: string[] = []
   const seenPaths = new Set<string>()
@@ -52,6 +55,7 @@ async function runSearch(query: string) {
   }
 
   for (const post of authorMatches) addPath(post.path)
+  for (const post of tagMatches) addPath(post.path)
   for (const result of fullTextResults) addPath(result.id.split("#")[0] ?? result.id)
 
   results.value = orderedPaths

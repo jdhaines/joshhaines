@@ -4,7 +4,7 @@ description: >
   We Need You to Lead Us.
 publishedAt: 2023-09-09
 updatedAt: 2024-05-17
-tags: ['book-shelf', 'leadership', 'bureaucracy']
+tags: ['book shelf', 'leadership', 'bureaucracy']
 featured: false
 draft: false
 image: '/static/images/tribes-cover.jpg'

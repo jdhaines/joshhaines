@@ -4,7 +4,7 @@ description: >
   Netflix and the Culture of Reinvention.
 publishedAt: 2024-07-02
 updatedAt: 2024-07-02
-tags: ['book-shelf', 'culture', 'productivity']
+tags: ['book shelf', 'culture', 'productivity']
 featured: false
 draft: false
 image: '/static/images/no-rules-rules-cover.jpg'

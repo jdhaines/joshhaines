@@ -4,7 +4,7 @@ description: >
   The Science of Failing Well.
 publishedAt: 2024-11-20
 updatedAt: 2024-11-20
-tags: ['book-shelf', 'failure', 'psychological safety', 'thought leadership', 'team building']
+tags: ['book shelf', 'failure', 'psychological safety', 'thought leadership', 'team building']
 featured: false
 draft: false
 image: '/static/images/right-kind-of-wrong-cover.jpg'

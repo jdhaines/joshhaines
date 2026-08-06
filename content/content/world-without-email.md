@@ -4,7 +4,7 @@ description: >
   Reimagining Work in an Age of Communication Overload.
 publishedAt: 2024-08-19
 updatedAt: 2025-06-08
-tags: ['book-shelf', 'productivity', 'communication', 'culture']
+tags: ['book shelf', 'productivity', 'communication', 'culture']
 featured: false
 draft: false
 image: '/static/images/world-without-email-cover.jpg'

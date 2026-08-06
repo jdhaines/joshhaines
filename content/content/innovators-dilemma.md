@@ -4,7 +4,7 @@ description: >
   When New Technologies Cause Great Firms to Fail (Management of Innovation and Change).
 publishedAt: 2022-09-15
 updatedAt: 2024-05-22
-tags: ['book-shelf', 'innovation', 'thought leadership', 'culture']
+tags: ['book shelf', 'innovation', 'thought leadership', 'culture']
 featured: false
 draft: false
 image: '/static/images/innovators-dilemma-cover.jpg'

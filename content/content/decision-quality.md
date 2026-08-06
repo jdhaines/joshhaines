@@ -4,7 +4,7 @@ description: >
   Value Creation from Better Business Decisions.
 publishedAt: 2023-08-21
 updatedAt: 2024-05-10
-tags: ['book-shelf', 'leadership', 'decision making']
+tags: ['book shelf', 'leadership', 'decision making']
 featured: false
 draft: false
 image: '/static/images/decision-quality-cover.jpg'

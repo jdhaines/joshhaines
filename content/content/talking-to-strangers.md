@@ -4,7 +4,7 @@ description: >
   What We Should Know about the People We Don't Know.
 publishedAt: 2023-07-14
 updatedAt: 2024-05-17
-tags: ['book-shelf', 'productivity', 'communication']
+tags: ['book shelf', 'productivity', 'communication']
 featured: false
 draft: false
 image: '/static/images/talking-to-strangers-cover.jpg'

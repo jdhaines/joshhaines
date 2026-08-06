@@ -4,7 +4,7 @@ description: >
   Clarify Your Message So Customers Will Listen.
 publishedAt: 2024-06-17
 updatedAt: 2024-06-17
-tags: ['book-shelf', 'marketing', 'communication']
+tags: ['book shelf', 'marketing', 'communication']
 featured: false
 draft: false
 image: '/static/images/building-a-storybrand-cover.jpg'

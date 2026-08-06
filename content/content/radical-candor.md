@@ -4,7 +4,7 @@ description: >
   Be a Kick-Ass Boss Without Losing Your Humanity.
 publishedAt: 2020-05-10
 updatedAt: 2024-06-12
-tags: ['book-shelf', 'team building', 'communication', 'psychological safety']
+tags: ['book shelf', 'team building', 'communication', 'psychological safety']
 featured: false
 draft: false
 image: '/static/images/radical-candor-cover.jpg'

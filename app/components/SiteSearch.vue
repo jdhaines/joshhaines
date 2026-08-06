@@ -83,9 +83,25 @@ async function searchPublishedPosts(
       rank: Number.NEGATIVE_INFINITY,
     }))
 
+  const tagResults = (publishedPosts.value ?? [])
+    .filter((post) => matchesTag(post, query))
+    .map((post) => ({
+      collection: "posts",
+      id: post.path,
+      title: post.title,
+      titles: [],
+      level: 1,
+      content: `Tags: ${post.tags?.join(", ")}`,
+      rank: Number.NEGATIVE_INFINITY,
+    }))
+
   const resultsById = new Map<string, SearchResults[number]>()
 
   for (const result of authorResults) {
+    resultsById.set(result.id, result)
+  }
+
+  for (const result of tagResults) {
     resultsById.set(result.id, result)
   }
 

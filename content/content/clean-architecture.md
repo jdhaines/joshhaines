@@ -4,7 +4,7 @@ description: >
   A Craftsman's Guide to Software Structure and Design.
 publishedAt: 2023-08-04
 updatedAt: 2024-05-09
-tags: ['book-shelf', 'productivity', 'software', 'architecture']
+tags: ['book shelf', 'productivity', 'software', 'architecture']
 featured: false
 draft: false
 image: '/static/images/clean-architecture-cover.jpg'

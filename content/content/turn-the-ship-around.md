@@ -4,7 +4,7 @@ description: >
   A True Story of Turning Followers into Leaders.
 publishedAt: 2024-08-12
 updatedAt: 2024-08-12
-tags: ['book-shelf', 'leadership', 'decision making']
+tags: ['book shelf', 'leadership', 'decision making']
 featured: false
 draft: false
 image: '/static/images/turn-the-ship-around-cover.jpg'

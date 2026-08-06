@@ -4,7 +4,7 @@ description: >
   A Vision of Life As Play and Possibility.
 publishedAt: 2023-09-06
 updatedAt: 2024-05-21
-tags: ['book-shelf', 'thought leadership', 'productivity']
+tags: ['book shelf', 'thought leadership', 'productivity']
 featured: false
 draft: false
 image: '/static/images/finite-and-infinite-games-cover.jpg'

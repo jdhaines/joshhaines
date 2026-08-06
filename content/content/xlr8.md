@@ -4,7 +4,7 @@ description: >
   Building Strategic Agility for a Faster-Moving World.
 publishedAt: 2023-08-03
 updatedAt: 2024-05-16
-tags: ['book-shelf', 'leadership', 'bureaucracy', 'change']
+tags: ['book shelf', 'leadership', 'bureaucracy', 'change']
 featured: false
 draft: false
 image: '/static/images/xlr8-cover.jpg'

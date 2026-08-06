@@ -4,7 +4,7 @@ description: >
   How to Unlock the Secret Language of Connection.
 publishedAt: 2024-06-03
 updatedAt: 2024-06-06
-tags: ['book-shelf', 'communication', 'teams', 'psychological safety']
+tags: ['book shelf', 'communication', 'teams', 'psychological safety']
 featured: false
 draft: false
 image: '/static/images/supercommunicators-cover.jpg'

@@ -4,7 +4,7 @@ description: >
   Winning Practices to Transform Legacy IT Organizations.
 publishedAt: 2023-04-09
 updatedAt: 2024-05-17
-tags: ['book-shelf', 'productivity', 'devops']
+tags: ['book shelf', 'productivity', 'devops']
 featured: false
 draft: false
 image: '/static/images/devops-for-the-modern-enterprise-cover.jpg'

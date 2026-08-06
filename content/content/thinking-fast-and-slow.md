@@ -4,7 +4,7 @@ description: >
   Daniel Kahneman takes us on a groundbreaking tour of the mind and explains the two systems that drive the way we think.
 publishedAt: 2024-01-08
 updatedAt: 2024-05-17
-tags: ['book-shelf', 'decision making', 'leadership']
+tags: ['book shelf', 'decision making', 'leadership']
 featured: false
 draft: false
 image: '/static/images/thinking-fast-and-slow-cover.jpg'

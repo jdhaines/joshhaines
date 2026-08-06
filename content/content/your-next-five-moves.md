@@ -4,7 +4,7 @@ description: >
   Master the Art of Business Strategy.
 publishedAt: 2024-04-21
 updatedAt: 2024-04-21
-tags: ['book-shelf', 'strategy']
+tags: ['book shelf', 'strategy']
 featured: false
 draft: false
 image: '/static/images/your-next-five-moves-cover.jpg'

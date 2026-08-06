@@ -4,7 +4,7 @@ description: >
   Fundamental Technology Concepts that Protect Containerized Applications.
 publishedAt: 2023-06-01
 updatedAt: 2024-05-22
-tags: ['book-shelf', 'tech', 'security', 'docker']
+tags: ['book shelf', 'tech', 'security', 'docker']
 featured: false
 draft: false
 image: '/static/images/container-security-cover.jpg'

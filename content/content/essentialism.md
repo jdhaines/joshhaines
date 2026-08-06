@@ -4,7 +4,7 @@ description: >
   The Disciplined Pursuit of Less.
 publishedAt: 2023-08-21
 updatedAt: 2024-05-10
-tags: ['book-shelf', 'productivity', 'mental health']
+tags: ['book shelf', 'productivity', 'mental health']
 featured: false
 draft: false
 image: '/static/images/essentialism-cover.jpg'

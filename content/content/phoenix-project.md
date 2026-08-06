@@ -4,7 +4,7 @@ description: >
   A Novel about IT, DevOps, and Helping Your Business Win.
 publishedAt: 2020-09-09
 updatedAt: 2024-03-20
-tags: ['book-shelf', 'devops', 'productivity']
+tags: ['book shelf', 'devops', 'productivity']
 featured: false
 draft: false
 image: '/static/images/phoenix-project-cover.jpg'

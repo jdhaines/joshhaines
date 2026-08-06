@@ -4,7 +4,7 @@ description: >
   Practical Decision-Making in a World of Overwhelming Choice.
 publishedAt: 2023-09-20
 updatedAt: 2024-05-09
-tags: ['book-shelf', 'psychological safety', 'mental health']
+tags: ['book shelf', 'psychological safety', 'mental health']
 featured: false
 draft: false
 image: '/static/images/fear-of-missing-out-cover.jpg'

@@ -4,7 +4,7 @@ description: >
   How Today's Entrepreneurs Use Continuous Innovation to Create Radically Successful Businesses.
 publishedAt: 2022-10-12
 updatedAt: 2024-05-22
-tags: ['book-shelf', 'strategy', 'thought leadership']
+tags: ['book shelf', 'strategy', 'thought leadership']
 featured: false
 draft: false
 image: '/static/images/lean-startup-cover.jpg'

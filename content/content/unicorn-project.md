@@ -4,7 +4,7 @@ description: >
   A Novel about Developers, Digital Disruption, and Thriving in the Age of Data.
 publishedAt: 2021-03-09
 updatedAt: 2024-03-20
-tags: ['book-shelf', 'devops', 'productivity']
+tags: ['book shelf', 'devops', 'productivity']
 featured: false
 draft: false
 image: '/static/images/unicorn-project-cover.jpg'

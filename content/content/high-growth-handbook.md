@@ -4,7 +4,7 @@ description: >
   The playbook for growing your startup into a global brand.
 publishedAt: 2026-04-21
 updatedAt: 2026-04-21
-tags: ['book-shelf', 'entrepreneurship', 'executive']
+tags: ['book shelf', 'entrepreneurship', 'executive']
 featured: false
 draft: false
 image: '/static/images/high-growth-handbook-cover.jpg'

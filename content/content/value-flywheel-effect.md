@@ -4,7 +4,7 @@ description: >
   Power the Future and Accelerate Your Organization to the Modern Cloud.
 publishedAt: 2023-08-03
 updatedAt: 2024-03-12
-tags: ['book-shelf', 'value']
+tags: ['book shelf', 'value']
 featured: false
 draft: false
 image: '/static/images/value-flywheel-effect-cover.jpg'

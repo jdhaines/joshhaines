@@ -4,7 +4,7 @@ description: >
   Exposing Time Theft to Optimize Work & Flow.
 publishedAt: 2023-09-08
 updatedAt: 2024-05-16
-tags: ['book-shelf', 'productivity', 'visualization']
+tags: ['book shelf', 'productivity', 'visualization']
 featured: false
 draft: false
 image: '/static/images/making-work-visible-cover.jpg'

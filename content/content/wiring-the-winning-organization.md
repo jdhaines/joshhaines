@@ -4,7 +4,7 @@ description: >
   Liberating Our Collective Greatness through Slowification, Simplification, and Amplification.
 publishedAt: 2024-04-10
 updatedAt: 2024-04-16
-tags: ['book-shelf', 'bureaucracy', 'productivity']
+tags: ['book shelf', 'bureaucracy', 'productivity']
 featured: false
 draft: false
 image: '/static/images/wiring-the-winning-organization-cover.jpg'

@@ -4,7 +4,7 @@ description: >
   How to Create Truly Secure Software.
 publishedAt: 2023-08-09
 updatedAt: 2024-05-17
-tags: ['book-shelf', 'security', 'thought leadership']
+tags: ['book shelf', 'security', 'thought leadership']
 featured: false
 draft: false
 image: '/static/images/sharks-in-the-moat-cover.jpg'

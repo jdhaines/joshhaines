@@ -4,7 +4,7 @@ description: >
   Brave Work. Tough Conversations. Whole Hearts.
 publishedAt: 2026-07-14
 updatedAt: 2026-07-14
-tags: ['book-shelf', 'leadership', 'vulnerability']
+tags: ['book shelf', 'leadership', 'vulnerability']
 featured: false
 draft: false
 image: '/static/images/dare-to-lead-cover.jpg'

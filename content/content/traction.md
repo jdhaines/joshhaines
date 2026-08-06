@@ -4,7 +4,7 @@ description: >
   Get a Grip on Your Business.
 publishedAt: 2026-07-15
 updatedAt: 2026-07-15
-tags: ['book-shelf', 'entrepreneurship', 'productivity']
+tags: ['book shelf', 'entrepreneurship', 'productivity']
 featured: false
 draft: false
 image: '/static/images/traction-cover.jpg'

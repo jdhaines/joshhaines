@@ -4,7 +4,7 @@ description: >
   The Power of Knowing When to Walk Away.
 publishedAt: 2024-04-11
 updatedAt: 2024-04-11
-tags: ['book-shelf', 'mental health', 'decision making']
+tags: ['book shelf', 'mental health', 'decision making']
 featured: false
 draft: false
 image: '/static/images/quit-cover.jpg'

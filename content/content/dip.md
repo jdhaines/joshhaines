@@ -4,7 +4,7 @@ description: >
   A Little Book That Teaches You When to Quit (and When to Stick).
 publishedAt: 2023-08-04
 updatedAt: 2024-05-19
-tags: ['book-shelf', 'decision making', 'strategy']
+tags: ['book shelf', 'decision making', 'strategy']
 featured: false
 draft: false
 image: '/static/images/dip-cover.jpg'

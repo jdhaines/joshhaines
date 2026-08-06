@@ -4,7 +4,7 @@ description: >
   Antipatterns and Patterns for Business Agility.
 publishedAt: 2022-08-13
 updatedAt: 2024-03-13
-tags: ['book-shelf', 'productivity', 'devops']
+tags: ['book shelf', 'productivity', 'devops']
 featured: false
 draft: false
 image: '/static/images/sooner-safer-happier-cover.jpg'

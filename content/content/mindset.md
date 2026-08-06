@@ -4,7 +4,7 @@ description: >
   The New Psychology of Success.
 publishedAt: 2023-06-15
 updatedAt: 2024-05-19
-tags: ['book-shelf', 'thought leadership', 'growth', 'productivity']
+tags: ['book shelf', 'thought leadership', 'growth', 'productivity']
 featured: false
 draft: false
 image: '/static/images/mindset-cover.jpg'

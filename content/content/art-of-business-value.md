@@ -4,7 +4,7 @@ description: >
   This book explores what business value means, why it matters, and how it should affect your software development and delivery practices.
 publishedAt: 2023-03-21
 updatedAt: 2024-04-17
-tags: ['book-shelf', 'value']
+tags: ['book shelf', 'value']
 featured: false
 draft: false
 image: '/static/images/art-of-business-value-cover.jpg'

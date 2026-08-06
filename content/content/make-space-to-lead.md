@@ -4,7 +4,7 @@ description: >
   Break Patterns to Find Flow and Focus on What Matters.
 publishedAt: 2023-12-12
 updatedAt: 2024-05-17
-tags: ['book-shelf', 'leadership', 'productivity']
+tags: ['book shelf', 'leadership', 'productivity']
 featured: false
 draft: false
 image: '/static/images/make-space-to-lead-cover.jpg'

@@ -4,7 +4,7 @@ description: >
   A Language of Life: Life-Changing Tools for Healthy Relationships.
 publishedAt: 2024-04-15
 updatedAt: 2024-05-08
-tags: ['book-shelf', 'psychological safety', 'communication', 'mental health']
+tags: ['book shelf', 'psychological safety', 'communication', 'mental health']
 featured: false
 draft: false
 image: '/static/images/nonviolent-communication-cover.jpg'

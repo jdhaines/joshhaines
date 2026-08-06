@@ -4,7 +4,7 @@ description: >
   Creating Psychological Safety in the Workplace for Learning, Innovation, and Growth.
 publishedAt: 2022-10-22
 updatedAt: 2024-04-18
-tags: ['book-shelf', 'psychological safety', 'productivity', 'culture']
+tags: ['book shelf', 'psychological safety', 'productivity', 'culture']
 featured: false
 draft: false
 image: '/static/images/fearless-organization-cover.jpg'

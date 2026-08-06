@@ -4,7 +4,7 @@ description: >
   How Effective Product Management Creates Real Value.
 publishedAt: 2024-08-23
 updatedAt: 2024-08-23
-tags: ['book-shelf', 'product management', 'strategy']
+tags: ['book shelf', 'product management', 'strategy']
 featured: false
 draft: false
 image: '/static/images/escaping-the-build-trap-cover.jpg'

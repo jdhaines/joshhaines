@@ -4,7 +4,7 @@ description: >
   How to Change What's Not Working.
 publishedAt: 2026-03-28
 updatedAt: 2026-03-28
-tags: ['book-shelf', 'leadership', 'strategy']
+tags: ['book shelf', 'leadership', 'strategy']
 featured: false
 draft: false
 image: '/static/images/reset-cover.jpg'

@@ -4,7 +4,7 @@ description: >
   Why Generalists Triumph in a Specialized World.
 publishedAt: 2024-03-11
 updatedAt: 2024-03-11
-tags: ['book-shelf', 'growth', 'learning']
+tags: ['book shelf', 'growth', 'learning']
 featured: false
 draft: false
 image: '/static/images/range-cover.jpg'

@@ -4,7 +4,7 @@ description: >
   How to Be More Productive in a World of Distraction.
 publishedAt: 2022-10-22
 updatedAt: 2024-04-18
-tags: ['book-shelf', 'productivity']
+tags: ['book shelf', 'productivity']
 featured: false
 draft: false
 image: '/static/images/hyperfocus-cover.jpg'

@@ -4,7 +4,7 @@ description: >
   How the Courage to Be Vulnerable Transforms the Way We Live, Love, Parent, and Lead.
 publishedAt: 2026-07-15
 updatedAt: 2026-07-15
-tags: ['book-shelf', 'shame', 'vulnerability', 'courage']
+tags: ['book shelf', 'shame', 'vulnerability', 'courage']
 featured: false
 draft: false
 image: '/static/images/daring-greatly-cover.jpg'

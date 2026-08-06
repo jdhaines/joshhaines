@@ -4,7 +4,7 @@ description: >
   The Turf Battles That Undermine Careers and Companies - And How to Overcome Them.
 publishedAt: 2023-09-22
 updatedAt: 2024-05-17
-tags: ['book-shelf', 'teams', 'bureaucracy', 'culture']
+tags: ['book shelf', 'teams', 'bureaucracy', 'culture']
 featured: false
 draft: false
 image: '/static/images/fiefdom-syndrome-cover.jpg'

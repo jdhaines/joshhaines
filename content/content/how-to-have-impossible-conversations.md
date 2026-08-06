@@ -4,7 +4,7 @@ description: >
   A Very Practical Guide.
 publishedAt: 2023-04-16
 updatedAt: 2024-05-20
-tags: ['book-shelf', 'communication', 'psychological safety']
+tags: ['book shelf', 'communication', 'psychological safety']
 featured: false
 draft: false
 image: '/static/images/how-to-have-impossible-conversations-cover.jpg'

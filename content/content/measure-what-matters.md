@@ -4,7 +4,7 @@ description: >
   How Google, Bono, and the Gates Foundation Rock the World with OKRs.
 publishedAt: 2022-10-06
 updatedAt: 2024-05-10
-tags: ['book-shelf', 'productivity', 'strategy']
+tags: ['book shelf', 'productivity', 'strategy']
 featured: false
 draft: false
 image: '/static/images/measure-what-matters-cover.jpg'

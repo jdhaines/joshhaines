@@ -4,7 +4,7 @@ description: >
   The Science of Lean Software and DevOps: Building and Scaling High Performing Technology Organizations.
 publishedAt: 2022-10-19
 updatedAt: 2024-05-16
-tags: ['book-shelf', 'productivity', 'devops']
+tags: ['book shelf', 'productivity', 'devops']
 featured: false
 draft: false
 image: '/static/images/accelerate-cover.jpg'
@@ -16,7 +16,7 @@ author: josh
 ---
 
 > [!NOTE]
-> This was the first book I ever added to my book shelf. I was expecting to write a table for each book detailing important points and actions I'd take for our internal Software Factory team. I've removed a bit of that, but decided to leave this formatting as-is to remind myself of the initial plans and how much they have changed.
+> This was the first book I ever added to my [book shelf](/books). I was expecting to write a table for each book detailing important points and actions I'd take for our internal Software Factory team. I've removed a bit of that, but decided to leave this formatting as-is to remind myself of the initial plans and how much they have changed.
 
 ## Notes
 

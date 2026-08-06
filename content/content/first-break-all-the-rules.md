@@ -4,7 +4,7 @@ description: >
   What the World's Greatest Managers Do Differently.
 publishedAt: 2024-09-05
 updatedAt: 2024-09-05
-tags: ['book-shelf', 'leadership', 'management', 'people']
+tags: ['book shelf', 'leadership', 'management', 'people']
 featured: false
 draft: false
 image: '/static/images/first-break-all-the-rules-cover.jpg'

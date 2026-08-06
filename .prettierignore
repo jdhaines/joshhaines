@@ -17,4 +17,7 @@ bun.lock
 # markdown printer can subtly reflow prose/list-continuation indentation in
 # ways that change rendered structure, so it's excluded repo-wide.
 *.md
-content/
+# Leading slash anchors this to the repo-root `content/` directory only --
+# without it, this would also match `app/pages/content/` and
+# `app/components/content/`, which are Vue code, not editorial content.
+/content/

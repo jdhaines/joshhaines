@@ -3,7 +3,7 @@ title: "Apparently I'm a Maven"
 description: I'm a Maven per Malcom Gladwell's book "Tipping Point".
 publishedAt: 2008-09-22
 updatedAt: 2021-11-14
-tags: ['me', 'book-shelf']
+tags: ['me', 'book shelf']
 featured: false
 startHere: false
 draft: true

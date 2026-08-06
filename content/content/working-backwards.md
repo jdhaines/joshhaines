@@ -4,7 +4,7 @@ description: >
   Insights, Stories, and Secrets from Inside Amazon.
 publishedAt: 2023-05-17
 updatedAt: 2024-04-16
-tags: ['book-shelf', 'thought leadership', 'productivity']
+tags: ['book shelf', 'thought leadership', 'productivity']
 featured: false
 draft: false
 image: '/static/images/working-backwards-cover.jpg'
