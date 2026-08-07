@@ -9,9 +9,8 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "lint": "eslint .",
-    "format": "prettier --write .",
-    "format:check": "prettier --check .",
+    "lint": "echo '==> Prettier (check)' && prettier --check . && echo '==> ESLint' && eslint . && echo '==> markdownlint-cli2' && markdownlint-cli2 && echo '==> Prose spacing (check)' && node scripts/normalize-prose-spacing.mjs --check",
+    "lint:fix": "echo '==> Prettier (write)' && prettier --write . && echo '==> ESLint --fix' && eslint . --fix && echo '==> markdownlint-cli2 --fix' && markdownlint-cli2 --fix && echo '==> Prose spacing (fix)' && node scripts/normalize-prose-spacing.mjs",
     "typecheck": "nuxt typecheck",
     "test": "vitest run",
     "test:e2e": "bun run generate && playwright test",
@@ -64,12 +63,18 @@
     "@types/mdast": "^4.0.4",
     "eslint": "^10.8.0",
     "eslint-config-prettier": "^10.1.8",
+    "fast-glob": "^3.3.3",
     "happy-dom": "^20.11.1",
     "husky": "^9.1.7",
     "lint-staged": "^17.3.0",
+    "markdownlint-cli2": "^0.23.2",
     "prettier": "^3.9.6",
+    "remark-gfm": "^4.0.1",
+    "remark-parse": "^11.0.0",
     "serve": "^14.2.6",
     "sharp": "^0.35.3",
+    "unified": "^11.0.5",
+    "unist-util-visit": "^5.1.0",
     "vitest": "^4.1.10",
     "vue-tsc": "^3.3.8",
     "wrangler": "^4.114.0"
@@ -88,6 +93,10 @@
     ],
     "*.{json,yml,yaml,css}": [
       "prettier --write"
+    ],
+    "*.{md,mdx}": [
+      "node scripts/normalize-prose-spacing.mjs",
+      "markdownlint-cli2 --fix"
     ]
   }
 }

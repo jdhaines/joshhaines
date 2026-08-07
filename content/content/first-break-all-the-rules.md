@@ -11,7 +11,7 @@ image: '/static/images/first-break-all-the-rules-cover.jpg'
 imageAlt: 'First, Break All the Rules book cover'
 socialImage: '/static/images/keys.jpg'
 contentType: bookReview
-bookAuthor: 'Marcus Buckingham, Curt Coffman'
+bookAuthor: ['Marcus Buckingham', 'Curt Coffman']
 author: josh
 ---
 

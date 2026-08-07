@@ -47,21 +47,25 @@ function foldAccents(value: string) {
 }
 
 /**
- * Case/whitespace/accent-insensitive check for whether a book review's
- * `bookAuthor` field matches every word of `query` -- surfaces a book even
- * when its review body doesn't happen to repeat the author's full name
- * verbatim (full-text search alone can miss that).
+ * Case/whitespace/accent-insensitive check for whether any of a book
+ * review's `bookAuthor` name(s) matches every word of `query` -- surfaces a
+ * book even when its review body doesn't happen to repeat the author's full
+ * name verbatim (full-text search alone can miss that). Matches against
+ * each co-author individually when `bookAuthor` is an array, so searching
+ * one name of a multi-author book (e.g. "Lazier") still finds it.
  */
 export function matchesBookAuthor(
   post: Pick<PublishedPostSummary, "contentType" | "bookAuthor">,
   query: string
 ) {
-  const author = post.bookAuthor
-    ? foldAccents(post.bookAuthor.toLowerCase())
-    : undefined
-  if (post.contentType !== "bookReview" || !author) return false
+  if (post.contentType !== "bookReview") return false
+  const authors = getBookAuthors(post.bookAuthor).map((author) =>
+    foldAccents(author.toLowerCase())
+  )
+  if (!authors.length) return false
   const terms = foldAccents(query.trim().toLowerCase()).split(/\s+/).filter(Boolean)
-  return terms.length > 0 && terms.every((term) => author.includes(term))
+  if (!terms.length) return false
+  return authors.some((author) => terms.every((term) => author.includes(term)))
 }
 
 /**

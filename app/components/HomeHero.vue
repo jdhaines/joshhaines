@@ -16,15 +16,6 @@ const badge = computed(
 const heroImage = computed(
   () => props.featuredPost?.socialImage ?? props.featuredPost?.image
 )
-
-function formatDate(date?: Date | string) {
-  if (!date) return undefined
-  return new Date(date).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-  })
-}
 </script>
 
 <template>
@@ -87,7 +78,13 @@ function formatDate(date?: Date | string) {
             {{ badge.label }}
           </UBadge>
           <span v-if="featuredPost.publishedAt">
-            {{ formatDate(featuredPost.publishedAt) }}
+            {{
+              formatDate(featuredPost.publishedAt, {
+                year: "numeric",
+                month: "short",
+                day: "numeric",
+              })
+            }}
           </span>
         </div>
 

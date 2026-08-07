@@ -18,8 +18,18 @@ export default defineContentConfig({
       source: "content/**",
       schema: z.object({
         description: z.string(),
-        publishedAt: z.date(),
-        updatedAt: z.date().optional(),
+        // Stored as a plain `YYYY-MM-DD` string, not `z.date()`. Nuxt
+        // Content's SQLite storage layer re-serializes `z.date()` fields
+        // using local-timezone `Date` getters (getFullYear/getMonth/getDate),
+        // which silently rolls a date-only value back a day whenever the
+        // build/dev machine's local time is behind UTC (e.g. "2026-08-07"
+        // becomes "2026-08-06" in storage). Keeping it a string sidesteps
+        // that round-trip entirely -- the app already parses/formats these
+        // values with `new Date(...)` (in UTC) wherever it needs a Date, and
+        // ISO-format strings sort chronologically as plain text, so
+        // `.order("publishedAt", ...)` is unaffected.
+        publishedAt: z.string(),
+        updatedAt: z.string().optional(),
         image: z.string().optional(),
         imageAlt: z.string().optional(),
         // Overrides the Open Graph / social-share preview image when it
@@ -42,10 +52,15 @@ export default defineContentConfig({
         contentType: z
           .enum(["article", "talk", "podcast", "bookReview"])
           .default("article"),
-        // Author of the book being reviewed (only meaningful when
+        // Author(s) of the book being reviewed (only meaningful when
         // contentType is `bookReview`; distinct from the `author` field
-        // below, which is the reviewer/site author).
-        bookAuthor: z.string().optional(),
+        // below, which is the reviewer/site author). Use an array for
+        // co-authored books (e.g. `['Jim Collins', 'William Lazier']`) so
+        // each author is unambiguous and individually searchable/linkable --
+        // a single string is still fine for single-author books. See
+        // `app/utils/book-author.ts` for the shared normalize/format/search
+        // helpers that read this field.
+        bookAuthor: z.union([z.string(), z.array(z.string())]).optional(),
         // Slug of an entry in the `authors` collection.
         author: z.string().default("josh"),
         // Manual override for the "X min read"/"X min listen" badge.

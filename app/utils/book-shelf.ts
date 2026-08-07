@@ -85,7 +85,9 @@ export function sortBooks(
       break
     case "author":
       sorted.sort((a, b) =>
-        (a.post.bookAuthor ?? "").localeCompare(b.post.bookAuthor ?? "")
+        (formatBookAuthors(a.post.bookAuthor) ?? "").localeCompare(
+          formatBookAuthors(b.post.bookAuthor) ?? ""
+        )
       )
       break
     case "date":
@@ -106,10 +108,14 @@ export function sortBooks(
 
 /** "Oct 2022" style formatting used both for display and for making dates searchable. */
 export function formatBookDate(date: Date | string) {
-  return new Date(date).toLocaleDateString("en-US", { year: "numeric", month: "short" })
+  return new Date(date).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    timeZone: "UTC",
+  })
 }
 
-/** Basic case-insensitive substring match across title, book author, description, and review date. */
+/** Basic case-insensitive substring match across title, book author(s), tags, description, and review date. */
 export function searchBooks(books: RankedBook[], query: string): RankedBook[] {
   const q = query.trim().toLowerCase()
   if (!q) return books
@@ -117,7 +123,10 @@ export function searchBooks(books: RankedBook[], query: string): RankedBook[] {
   return books.filter(({ post }) => {
     return (
       post.title.toLowerCase().includes(q) ||
-      post.bookAuthor?.toLowerCase().includes(q) ||
+      getBookAuthors(post.bookAuthor).some((author) =>
+        author.toLowerCase().includes(q)
+      ) ||
+      (post.tags ?? []).some((tag) => tag.toLowerCase().includes(q)) ||
       post.description?.toLowerCase().includes(q) ||
       formatBookDate(post.publishedAt).toLowerCase().includes(q)
     )

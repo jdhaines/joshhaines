@@ -11,7 +11,7 @@ image: '/static/images/wiring-the-winning-organization-cover.jpg'
 imageAlt: 'Wiring the Winning Organization book cover'
 socialImage: '/static/images/wiring.jpg'
 contentType: bookReview
-bookAuthor: 'Gene Kim, Steven Spear'
+bookAuthor: ['Gene Kim', 'Steven Spear']
 author: josh
 ---
 

@@ -11,7 +11,7 @@ image: '/static/images/switch-cover.jpg'
 imageAlt: 'Switch book cover'
 socialImage: '/static/images/switch.jpg'
 contentType: bookReview
-bookAuthor: 'Chip Heath, Dan Heath'
+bookAuthor: ['Chip Heath', 'Dan Heath']
 author: josh
 ---
 

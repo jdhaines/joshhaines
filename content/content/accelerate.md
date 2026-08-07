@@ -11,7 +11,7 @@ image: '/static/images/accelerate-cover.jpg'
 imageAlt: 'Accelerate book cover'
 socialImage: '/static/images/accelerate.jpg'
 contentType: bookReview
-bookAuthor: 'Nicole Forsgren, Jez Humble, Gene Kim'
+bookAuthor: ['Nicole Forsgren', 'Jez Humble', 'Gene Kim']
 author: josh
 ---
 

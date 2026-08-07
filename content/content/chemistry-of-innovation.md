@@ -15,12 +15,12 @@ relatedWriting: ['submarines-keynote']
 ---
 Innovation is one of those concepts that everyone wants and almost nobody can define. You can't command innovation. You can only create the conditions where it becomes possible. That realization became the foundation of this article and keynote speech.
 
-
 ## Introduction & Theme
 
 > [!NOTE]
+>
 > 1. A big Thank You! to [Justin Johnson](https://www.linkedin.com/in/jwjohnson-/) for his help with the slide deck. He's an awesome designer and [Figma](https://www.figma.com/) wizard and this talk wouldn't have turned out nearly as well without his help.
-> 2. I used AI to generate these awesome chalk & blackboard images.  I used it for bouncing ideas off of and help getting the organization and the structure/outline correct. The writing is
+> 2. I used AI to generate these awesome chalk & blackboard images. I used it for bouncing ideas off of and help getting the organization and the structure/outline correct. The writing is
 my own. I write and edit in [essay.app](https://essay.app/) and highly recommend it.
 
 <div class="flex flex-row justify-center">
@@ -31,7 +31,7 @@ I was asked to give a keynote speech at the 2026 TechPoint Community Connect eve
 
 1. I knew I wanted to touch on **psychological safety** and how it is the foundation of a high-performing team.
 2. I've felt for a while that the **ability to learn** is perhaps the single most important skill in this rapidly changing world.
-3. I've had this tiny sliver of an idea that has been growing for awhile around the concept of **crossing boundaries**.  It happened to me in my career, although I didn't understand the importance at the time.
+3. I've had this tiny sliver of an idea that has been growing for awhile around the concept of **crossing boundaries**. It happened to me in my career, although I didn't understand the importance at the time.
 
 I was searching for ways to tie these thoughts together and kept falling back to a recipe. Innovation initially seemed like the result of a baking recipe. If you can put it together in the right way, you'll get a repeatable result.
 
@@ -88,8 +88,8 @@ During a time of such fragility, it's often leaders and managers who decide what
 Every person who joins one of my teams hears some version of the this conversation:
 
 1. "I know you're new around here, and I know you're feeling at least some impostor syndrome. That's normal, just sit in it and don't try to escape it."
-2. "I expect you may think everyone here is smarter than you. You think they may be more experienced, older, and have more reps at the job you're here to do. That may or may not be true, but you're here for a reason.  We want you, we need you, and we value you for your input and experience all the same."
-3. "I _need you to have a brain_. I need you to challenge ideas no matter who puts them forward. I need you to be brave and ask questions if you are confused, because without that you can't fully judge what you're hearing. I need you to disagree openly if you hear information or ideas you disagree with despite your fear. If you don't, we might miss something.  This is not the classic top-down hierarchical team you may have heard about or seen before."
+2. "I expect you may think everyone here is smarter than you. You think they may be more experienced, older, and have more reps at the job you're here to do. That may or may not be true, but you're here for a reason. We want you, we need you, and we value you for your input and experience all the same."
+3. "I _need you to have a brain_. I need you to challenge ideas no matter who puts them forward. I need you to be brave and ask questions if you are confused, because without that you can't fully judge what you're hearing. I need you to disagree openly if you hear information or ideas you disagree with despite your fear. If you don't, we might miss something. This is not the classic top-down hierarchical team you may have heard about or seen before."
 4. "Finally, _don't let me make you do something dumb_. I need you to hold the line and challenge me if I ask you to do something that is dumb or doesn't make sense. I'm one person on a large team and I'm not smart enough to get it right all the time."
 
 The final point comes from a time early in my time of being a manager. I asked one of our grads to make a small change to some python variables in an application. In my mind I was asking him to do a 5-10 minute job to simply align better to our normal standards. It ended up taking him more than 8 hours because of a mixture of him not understanding find/replace, and me not understanding the depth of the correction. He did it without pushing back, and I still feel bad on a normal basis about wasting 8 hours of his time.
@@ -112,7 +112,7 @@ If this section resonated with you, these are the books that most shaped my thin
 - [Brené Brown](/search?q=Bren%C3%A9+Brown)
   - [Daring Greatly](/content/daring-greatly): A solid book which introduces concepts around vulnerability as power, humility, working through shame, removing your armor, and being brave.
   - [Dare to Lead](/content/dare-to-lead): In this book Brené expands on the previous work and applies it to leadership. She introduces the concept of _Rumbling_ with hard topics, daring vs. armored leadership, and how vulnerability tolerance predicts leadership capability.
-  - [Strong Ground](/content/strong-ground): In her newest book Brené builds on her work on bringing the _Dare to Lead_ topics to large organizations.  She expands, refines, and sheds new light on implementations and how leaders can be even more impactful while remaining curious and daring.
+  - [Strong Ground](/content/strong-ground): In her newest book Brené builds on her work on bringing the _Dare to Lead_ topics to large organizations. She expands, refines, and sheds new light on implementations and how leaders can be even more impactful while remaining curious and daring.
 - [Kim Scott](/search?q=Kim+Scott) - [Radical Candor](/content/radical-candor): This book teaches you to be open, caring, honest, and rigorous in how you have all types of conversations
 
 As we look towards the next section there is one key question and it's answer to have in mind:
@@ -123,7 +123,7 @@ A: Turn up the heat!
 
 ## Add Heat
 
-In many chemical reactions adding heat increases the reaction rate.  For people, the equivalent idea is discomfort. Challenge, uncertainty, and struggle while avoiding anxiety, exhaustion,
+In many chemical reactions adding heat increases the reaction rate. For people, the equivalent idea is discomfort. Challenge, uncertainty, and struggle while avoiding anxiety, exhaustion,
 and fear will accelerate learning.
 
 ### Escalator Moving Backwards
@@ -165,13 +165,13 @@ Keeping pace requires continuous learning, but learning only happens when we mov
   <img src="/static/images/chemistryBlacksmith.jpg" class="w-1/3" alt="chemistry of innovation - blacksmith slide" />
 </div>
 
-After working with nearly 150 early-career professionals across our teams, I have seen repeatedly  that _learning happens in the struggle_. Some people become uncomfortable after only a few
+After working with nearly 150 early-career professionals across our teams, I have seen repeatedly that _learning happens in the struggle_. Some people become uncomfortable after only a few
 minutes and immediately reach for an exit. They ask a senior colleague, ask AI for the answer, hand the task to someone else, or simply give up. Each of those escapes may solve the immediate
 problem and relieve the discomfort, but it also cuts the learning process short.
 
 Struggle tolerance and resilience leads to better outcomes. Successful people tend to be those who allow themselves to remain confused the longest. Some people have a natural struggle tolerance of 15-20 minutes, others are happy to grind for 8 hours. Both groups can be successful if they practice the habit. A key point: you want to escape before it turns stressful and hurtful. We've found you should go to the limit where solving the problem still feels good. If solving the problem makes you want to cry, you've struggled too long.
 
-Productive struggle does not always look like grinding harder.  Some problems respond to concentration, others respond to distance and time. [Cal Newport](/search?q=Cal+Newport) is famous for his book [_Deep
+Productive struggle does not always look like grinding harder. Some problems respond to concentration, others respond to distance and time. [Cal Newport](/search?q=Cal+Newport) is famous for his book [_Deep
 Work_](/content/deep-work) that describes methods for solving hard problems with direct thought and activity in a deeply focused way. This works well and is an invaluable method for
 some problems. [Chris Bailey](/search?q=Chris+Bailey) takes this further in [_Hyperfocus_](/content/hyperfocus) and also talks about the flip side of the coin: scatterfocus. Some problems can't be solved with
 directed, focused attention. Using scatterfocus to support your brain in its non-linear efforts can also be powerful. Everyone reading this has likely had a "Eureka!" moment in the shower,
@@ -238,7 +238,7 @@ By moving to an area where you don't have the baggage of norms, historical solut
 </div>
 
 - [Mark Schwartz](/search?q=Mark+Schwartz) - [Delicate Art of Bureaucracy](/content/delicate-art-of-bureaucracy): Navigating bureaucracy is a critical skill so people can better act as change agents.
-- [Annie Duke](/search?q=Annie+Duke) - [Quit](/content/quit): Learn how changing paths can create room for new ones. 
+- [Annie Duke](/search?q=Annie+Duke) - [Quit](/content/quit): Learn how changing paths can create room for new ones.
 - [David Epstein](/search?q=David+Epstein) - [Range](/content/range): Scientific backing that generalists succeed more often than specialists, and how to leverage this in your career.
 - [Colin Bryar](/search?q=Colin+Bryar) - [Working Backwards](/content/working-backwards): Learn how to transfer principles from Amazon's context to your organization.
 - [Reed Hastings](/search?q=Reed+Hastings) - [No Rules Rules](/content/no-rules-rules): How to challenge accepted organizational assumptions.

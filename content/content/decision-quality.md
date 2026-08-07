@@ -11,7 +11,7 @@ image: '/static/images/decision-quality-cover.jpg'
 imageAlt: 'Decision Quality book cover'
 socialImage: '/static/images/decision.jpg'
 contentType: bookReview
-bookAuthor: 'Carl Spetzler, Hannah Winter, Jennifer Meyer'
+bookAuthor: ['Carl Spetzler', 'Hannah Winter', 'Jennifer Meyer']
 author: josh
 ---
 

@@ -9,15 +9,7 @@ const props = defineProps<{
 }>()
 
 const contentTypeBadge = computed(() => getContentTypeBadge(props.page.contentType))
-
-function formatDate(date?: Date | string) {
-  if (!date) return undefined
-  return new Date(date).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  })
-}
+const bookAuthors = computed(() => getBookAuthors(props.page.bookAuthor))
 </script>
 
 <template>
@@ -42,8 +34,16 @@ function formatDate(date?: Date | string) {
       {{ page.title }}
     </h1>
 
-    <p v-if="page.bookAuthor" class="mb-2 font-mono text-sm text-muted">
-      by {{ page.bookAuthor }}
+    <p v-if="bookAuthors.length" class="mb-2 font-mono text-sm text-muted">
+      by
+      <template v-for="(name, index) in bookAuthors" :key="name">
+        <NuxtLink
+          :to="`/search?q=${encodeURIComponent(name)}`"
+          class="text-jblue-600 hover:underline dark:text-primary"
+        >
+          {{ name }} </NuxtLink
+        ><template v-if="index < bookAuthors.length - 1">, </template>
+      </template>
     </p>
 
     <p v-if="bookShelfRank" class="mb-2 text-sm text-secondary">

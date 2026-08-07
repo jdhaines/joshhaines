@@ -11,7 +11,7 @@ image: '/static/images/made-to-stick-cover.jpg'
 imageAlt: 'Made to Stick book cover'
 socialImage: '/static/images/glue.jpg'
 contentType: bookReview
-bookAuthor: 'Chip Heath, Dan Heath'
+bookAuthor: ['Chip Heath', 'Dan Heath']
 author: josh
 ---
 

@@ -11,7 +11,7 @@ image: '/static/images/team-topologies-cover.jpg'
 imageAlt: 'Team Topologies book cover'
 socialImage: '/static/images/teams.png'
 contentType: bookReview
-bookAuthor: 'Matthew Skelton, Manuel Pais'
+bookAuthor: ['Matthew Skelton', 'Manuel Pais']
 author: josh
 ---
 

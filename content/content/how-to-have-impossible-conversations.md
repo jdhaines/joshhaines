@@ -11,7 +11,7 @@ image: '/static/images/how-to-have-impossible-conversations-cover.jpg'
 imageAlt: 'How to Have Impossible Conversations book cover'
 socialImage: '/static/images/impossibleConversations.jpg'
 contentType: bookReview
-bookAuthor: 'Peter Boghossian, James Lindsay'
+bookAuthor: ['Peter Boghossian', 'James Lindsay']
 author: josh
 ---
 

@@ -11,7 +11,7 @@ image: '/static/images/digital-mindset-cover.jpg'
 imageAlt: 'The Digital Mindset book cover'
 socialImage: '/static/images/digitalMindset.jpg'
 contentType: bookReview
-bookAuthor: 'Paul Leonardi, Tsedal Neeley'
+bookAuthor: ['Paul Leonardi', 'Tsedal Neeley']
 author: josh
 ---
 

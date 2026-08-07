@@ -15,7 +15,11 @@ bun.lock
 
 # Markdown is hand-authored editorial content and documentation; Prettier's
 # markdown printer can subtly reflow prose/list-continuation indentation in
-# ways that change rendered structure, so it's excluded repo-wide.
+# ways that change rendered structure, so it's excluded repo-wide. Markdown
+# structure is instead linted with markdownlint-cli2 (.markdownlint-cli2.jsonc)
+# and prose double-spacing is normalized with
+# scripts/normalize-prose-spacing.mjs -- both are AST-aware and safe for
+# Markdown/MDX (see `bun run lint`/`bun run format`).
 *.md
 # Leading slash anchors this to the repo-root `content/` directory only --
 # without it, this would also match `app/pages/content/` and

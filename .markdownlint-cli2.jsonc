@@ -1,0 +1,41 @@
+{
+  // Tuned for long-form, hand-authored editorial prose (book reviews,
+  // articles, talk/podcast writeups) rather than typical developer docs --
+  // structural/correctness rules stay on, purely stylistic/prose-opinion
+  // rules that would otherwise create large-scale churn across ~100
+  // existing articles are turned off. See DEVELOPER.md if this list needs
+  // to grow.
+  "config": {
+    "default": true,
+    // Prose is meant to wrap naturally; there's no fixed line-length
+    // convention in this repo's articles.
+    "MD013": false,
+    // Several articles use real inline HTML (image/caption wrappers, embeds)
+    // -- see e.g. content/content/chemistry-of-innovation.md.
+    "MD033": false,
+    // Nuxt Content pages get their `<h1>` from frontmatter `title`, not a
+    // leading `# Heading` in the body -- most articles intentionally have
+    // no H1 at all.
+    "MD041": false,
+    // A handful of legacy articles use more than one top-level heading;
+    // not worth a rewrite pass to "fix".
+    "MD025": false,
+    // Bold text used as a pseudo-heading (e.g. an author byline, a "Note:"
+    // callout) is an intentional editorial style choice, not an error.
+    "MD036": false,
+    // "click here"/"here" style links appear in older articles -- rewriting
+    // link text repo-wide is an editorial pass, not a structural lint fix.
+    "MD059": false,
+    // Default flags *any* two identical headings anywhere in a document;
+    // siblings_only only flags true duplicates under the same parent, which
+    // is the actually-confusing case (e.g. two "Books" H2s at top level are
+    // fine, two "Books" H3s under the same H2 are not).
+    "MD024": { "siblings_only": true },
+    // Some articles use restart-at-1 list markers across interrupted
+    // multi-part lists (e.g. steps split up by a code block) -- this is
+    // valid CommonMark and not worth restructuring existing articles over.
+    "MD029": false,
+  },
+  "globs": ["content/**/*.md", "content/**/*.mdx", "**/*.mdx"],
+  "ignores": ["node_modules", ".nuxt", ".output", "CHANGELOG.md"],
+}

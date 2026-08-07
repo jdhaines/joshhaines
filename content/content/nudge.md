@@ -11,7 +11,7 @@ image: '/static/images/nudge-cover.jpg'
 imageAlt: 'Nudge book cover'
 socialImage: '/static/images/nudge.jpg'
 contentType: bookReview
-bookAuthor: 'Richard H. Thaler, Cass R. Sunstein'
+bookAuthor: ['Richard H. Thaler', 'Cass R. Sunstein']
 author: josh
 ---
 

@@ -116,7 +116,11 @@ useSeoMeta({
         v-for="post in results"
         :key="post.path"
         :to="post.path"
-        :title="post.bookAuthor ? `${post.title} (${post.bookAuthor})` : post.title"
+        :title="
+          formatBookAuthors(post.bookAuthor)
+            ? `${post.title} (${formatBookAuthors(post.bookAuthor)})`
+            : post.title
+        "
         :description="post.description"
         :date="post.publishedAt"
         :badge="getContentTypeBadge(post.contentType)"

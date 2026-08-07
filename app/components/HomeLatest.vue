@@ -14,15 +14,6 @@ const [heroPost, ...restPosts] = props.posts
 // (`image`) looks badly cropped there, so prefer the wide `socialImage` art
 // when present -- same fallback used for the OG/social preview image.
 const heroImage = computed(() => heroPost?.socialImage ?? heroPost?.image)
-
-function formatDate(date?: Date | string) {
-  if (!date) return undefined
-  return new Date(date).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-  })
-}
 </script>
 
 <template>
@@ -57,7 +48,13 @@ function formatDate(date?: Date | string) {
           {{ heroPost.description }}
         </p>
         <p v-if="heroPost.publishedAt" class="mt-2 text-sm text-muted">
-          {{ formatDate(heroPost.publishedAt) }}
+          {{
+            formatDate(heroPost.publishedAt, {
+              year: "numeric",
+              month: "short",
+              day: "numeric",
+            })
+          }}
         </p>
       </NuxtLink>
 
@@ -80,8 +77,10 @@ function formatDate(date?: Date | string) {
               </UBadge>
               <p class="text-lg font-semibold text-balance group-hover:text-primary">
                 {{ post.title }}
-                <span v-if="post.bookAuthor" class="font-normal text-muted"
-                  >({{ post.bookAuthor }})</span
+                <span
+                  v-if="formatBookAuthors(post.bookAuthor)"
+                  class="font-normal text-muted"
+                  >({{ formatBookAuthors(post.bookAuthor) }})</span
                 >
               </p>
               <p class="mt-1 line-clamp-2 text-sm text-muted">
@@ -92,7 +91,13 @@ function formatDate(date?: Date | string) {
               v-if="post.publishedAt"
               class="shrink-0 pt-1 text-sm whitespace-nowrap text-muted"
             >
-              {{ formatDate(post.publishedAt) }}
+              {{
+                formatDate(post.publishedAt, {
+                  year: "numeric",
+                  month: "short",
+                  day: "numeric",
+                })
+              }}
             </time>
           </NuxtLink>
         </li>

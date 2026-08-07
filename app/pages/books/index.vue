@@ -141,8 +141,11 @@ useHead({
             <p class="text-lg font-medium text-balance group-hover:text-primary">
               {{ book.post.title }}
             </p>
-            <p v-if="book.post.bookAuthor" class="text-sm text-muted">
-              {{ book.post.bookAuthor }}
+            <p
+              v-if="formatBookAuthors(book.post.bookAuthor)"
+              class="text-sm text-muted"
+            >
+              {{ formatBookAuthors(book.post.bookAuthor) }}
             </p>
             <p
               v-if="book.post.description"
@@ -191,8 +194,8 @@ useHead({
           <p class="mt-3 text-lg font-medium text-balance group-hover:text-primary">
             {{ book.post.title }}
           </p>
-          <p v-if="book.post.bookAuthor" class="text-sm text-muted">
-            {{ book.post.bookAuthor }}
+          <p v-if="formatBookAuthors(book.post.bookAuthor)" class="text-sm text-muted">
+            {{ formatBookAuthors(book.post.bookAuthor) }}
           </p>
           <p
             v-if="book.post.description"
@@ -235,8 +238,11 @@ useHead({
               <p class="font-medium group-hover:text-primary">
                 {{ book.post.title }}
               </p>
-              <p v-if="book.post.bookAuthor" class="text-sm text-muted">
-                {{ book.post.bookAuthor }}
+              <p
+                v-if="formatBookAuthors(book.post.bookAuthor)"
+                class="text-sm text-muted"
+              >
+                {{ formatBookAuthors(book.post.bookAuthor) }}
               </p>
             </div>
           </NuxtLink>

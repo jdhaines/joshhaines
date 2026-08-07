@@ -11,7 +11,7 @@ image: '/static/images/zero-to-one-cover.jpg'
 imageAlt: 'Zero to One book cover'
 socialImage: '/static/images/theFuture.jpg'
 contentType: bookReview
-bookAuthor: 'Peter Thiel, Blake Masters'
+bookAuthor: ['Peter Thiel', 'Blake Masters']
 author: josh
 ---
 

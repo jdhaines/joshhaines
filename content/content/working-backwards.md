@@ -11,7 +11,7 @@ image: '/static/images/working-backwards-cover.jpg'
 imageAlt: 'Working Backwards book cover'
 socialImage: '/static/images/backwards.jpg'
 contentType: bookReview
-bookAuthor: 'Colin Bryar, Bill Carr'
+bookAuthor: ['Colin Bryar', 'Bill Carr']
 author: josh
 ---
 

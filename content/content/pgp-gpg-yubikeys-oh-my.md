@@ -284,7 +284,7 @@ keytocard
 
 ```
 
-If you press save at this point it will MOVE the private key (i.e. delete locally) to yubi. Do a backup of the private key before. you can then restore private from backup and move again the same key to another yubi. Or just type quit and exit without saving. It will still have uplodaded the key onto the Yubikey. See [this link ](https://lists.gnupg.org/pipermail/gnupg-users/2016-July/056353.html) for more details.
+If you press save at this point it will MOVE the private key (i.e. delete locally) to yubi. Do a backup of the private key before. you can then restore private from backup and move again the same key to another yubi. Or just type quit and exit without saving. It will still have uplodaded the key onto the Yubikey. See [this link](https://lists.gnupg.org/pipermail/gnupg-users/2016-July/056353.html) for more details.
 
 At this stage if the private keys (listed via `gpg -K`) have any symbol next to them like `#` or `>`, e.g. `ssb>` they are unusable and need reimporting.
 

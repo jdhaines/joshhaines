@@ -5,15 +5,6 @@ defineProps<{
   title: string
   posts: PostsCollectionItem[]
 }>()
-
-function formatDate(date?: Date | string) {
-  if (!date) return undefined
-  return new Date(date).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-  })
-}
 </script>
 
 <template>
@@ -31,7 +22,13 @@ function formatDate(date?: Date | string) {
             {{ post.title }}
           </p>
           <p v-if="post.publishedAt" class="mt-1 text-xs text-muted">
-            {{ formatDate(post.publishedAt) }}
+            {{
+              formatDate(post.publishedAt, {
+                year: "numeric",
+                month: "short",
+                day: "numeric",
+              })
+            }}
           </p>
         </NuxtLink>
       </li>

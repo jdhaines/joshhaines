@@ -35,8 +35,11 @@ defineProps<{
           <p class="font-medium text-balance group-hover:text-primary">
             {{ post.title }}
           </p>
-          <p v-if="post.bookAuthor" class="mt-0.5 text-sm text-muted">
-            {{ post.bookAuthor }}
+          <p
+            v-if="formatBookAuthors(post.bookAuthor)"
+            class="mt-0.5 text-sm text-muted"
+          >
+            {{ formatBookAuthors(post.bookAuthor) }}
           </p>
         </NuxtLink>
       </li>

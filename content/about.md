@@ -31,4 +31,3 @@ I've been on a writing journey and write here mostly about engineering leadershi
 - [GitHub](https://github.com/jdhaines)
 - [Discord](https://discord.com/users/611912877707886612)
 - [Josh@JoshHaines.com](mailto:Josh@JoshHaines.com)
-

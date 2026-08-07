@@ -79,7 +79,7 @@ async function searchPublishedPosts(
       title: post.title,
       titles: [],
       level: 1,
-      content: `Book author: ${post.bookAuthor}`,
+      content: `Book author: ${formatBookAuthors(post.bookAuthor)}`,
       rank: Number.NEGATIVE_INFINITY,
     }))
 

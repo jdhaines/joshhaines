@@ -11,7 +11,7 @@ image: '/static/images/phoenix-project-cover.jpg'
 imageAlt: 'The Phoenix Project book cover'
 socialImage: '/static/images/autoParts.jpg'
 contentType: bookReview
-bookAuthor: 'Gene Kim, Kevin Behr, George Spafford'
+bookAuthor: ['Gene Kim', 'Kevin Behr', 'George Spafford']
 author: josh
 ---
 
