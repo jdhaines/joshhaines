@@ -51,31 +51,32 @@ order:
   - linchpin
   - upstream
   - thinking-fast-and-slow
-  - world-without-email
+  - range
   - daring-greatly
   - indistractable
   - reset
+  - lean-startup
   - high-growth-handbook
   - first-break-all-the-rules
+  - world-without-email
   - hard-thing-about-hard-things
   - supercommunicators
   - software-architect-elevator
   - icarus-deception
   - change
   - switch
-  - range
+  - tribes
   - nudge
   - clean-code
   - clean-architecture
   - clean-coder
   - sharks-in-the-moat
   - decision-quality
-  - tribes
   - zero-to-one
   - think-again
-  - only-the-paranoid-survive
   - make-space-to-lead
   - understanding-software
+  - only-the-paranoid-survive
   - talking-to-strangers
   - fiefdom-syndrome
   - devops-for-the-modern-enterprise
@@ -85,7 +86,6 @@ order:
   - how-to-have-impossible-conversations
   - finite-and-infinite-games
   - container-security
-  - lean-startup
   - startup-way
   - innovators-dilemma
   - your-next-five-moves
