@@ -238,5 +238,52 @@ The first image was the ChatGPT render and the rest are real.
   <img src="https://img.joshhaines.com/building-a-sauna/23.webp" alt="chatgpt render mockup" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
   <img src="https://img.joshhaines.com/building-a-sauna/24.webp" alt="ceiling completed" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
   <img src="https://img.joshhaines.com/building-a-sauna/25.webp" alt="plank walls started" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
-  <img src="" alt="" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+  <img src="https://img.joshhaines.com/building-a-sauna/32.webp" alt="" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+</div>
+
+## Chimney and Stove
+
+For the chimney I ordered everything from Home Depot online. My plan
+ended up being:
+
+1. Up from the stove into a damper
+2. From the damper into double wall chimney pipe which was telescoping to
+   get the height right
+3. Into the attic support box which was tight against the upper roof from
+   the inside
+4. Triple wall Class A stainless pipe out of the attic support box and
+   through the metal roof
+5. A rubber boot with silicone sealant and screws to seal the roof penetration with silicone at the top of the rubber boot
+6. A storm collar over the rubber boot which also has silicone sealant
+   around the top
+7. A chimney cap on top of the triple wall pipe to finish things off.
+
+I had a friend come over to help do the chimney work as we first needed
+to get the stove inside the sauna room so we could use a plumb bob to get
+the position right.
+
+I had measured the rough opening for the sauna door
+and the stove fit through. Then later I decided to install the door and
+totally forgot to re-measure. We ended up having to disassemble the stove
+to get it in the room which you can see in the image below.
+
+We used a jigsaw with metal blade to cut the opening on the roof. We
+then measured, framed a place for the attic support box, and cut it to
+size to match the angle of the roof. This part was really hard with the angles, and measuring, etc. I feel like this was
+an area where a professional carpenter would have done it really fast. They'd say something like "no, no... just use the
+square here, measure that height, and cut it like x." To use my buddy's words: "we snuck up on it" and eventually
+figured it out.
+
+The rubber boot sealing method seems solid and sealed enough, I used a lot of silicone to try and make
+sure it was water tight. I also sealed the seam in the triple wall pipe like the instructions said, although it seems
+really tight.
+
+All the pieces of chimney, including the attic support box, were about $700. I got a pipe adapter with the stove from bsaunas that helps
+convert the stove's European 4" outlet into the American 6" pipe standard.
+
+<div class="my-8 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
+  <img src="https://img.joshhaines.com/building-a-sauna/33.webp" alt="Describe this photo" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+  <img src="https://img.joshhaines.com/building-a-sauna/34.webp" alt="Describe this photo" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+  <img src="https://img.joshhaines.com/building-a-sauna/35.webp" alt="Describe this photo" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+  <img src="https://img.joshhaines.com/building-a-sauna/36.webp" alt="Describe this photo" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
 </div>
