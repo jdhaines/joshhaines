@@ -10,12 +10,16 @@ type ContentType = NonNullable<PostsCollectionItem["contentType"]>
  */
 const CONTENT_TYPE_BADGES: Record<
   ContentType,
-  { label: string; color: "primary" | "warning" | "success" | "secondary" }
+  {
+    label: string
+    color: "primary" | "warning" | "success" | "secondary"
+    icon: string
+  }
 > = {
-  article: { label: "Article", color: "primary" },
-  talk: { label: "Talk", color: "warning" },
-  podcast: { label: "Podcast", color: "success" },
-  bookReview: { label: "Book", color: "secondary" },
+  article: { label: "Article", color: "primary", icon: "i-lucide-file-text" },
+  talk: { label: "Talk", color: "warning", icon: "i-lucide-presentation" },
+  podcast: { label: "Podcast", color: "success", icon: "i-lucide-headphones" },
+  bookReview: { label: "Book", color: "secondary", icon: "i-lucide-book-open" },
 }
 
 export function getContentTypeBadge(contentType?: ContentType) {

@@ -15,7 +15,12 @@ const bookAuthors = computed(() => getBookAuthors(props.page.bookAuthor))
 <template>
   <header class="mb-12">
     <div class="mb-4 flex flex-wrap items-center gap-2 text-sm text-muted">
-      <UBadge variant="subtle" :color="contentTypeBadge.color" size="lg">
+      <UBadge
+        variant="subtle"
+        :color="contentTypeBadge.color"
+        :icon="contentTypeBadge.icon"
+        size="lg"
+      >
         {{ contentTypeBadge.label }}
       </UBadge>
       <span>·</span>

@@ -28,7 +28,7 @@ const year = new Date().getFullYear()
 </script>
 
 <template>
-  <footer class="border-t border-default">
+  <footer class="border-t border-default bg-muted">
     <UContainer class="flex flex-col items-center gap-6 py-12 text-center">
       <div>
         <h2 class="font-serif text-2xl font-semibold">

@@ -16,15 +16,21 @@ const badge = computed(
 const heroImage = computed(
   () => props.featuredPost?.socialImage ?? props.featuredPost?.image
 )
+
+const runtimeLabel = computed(
+  () => props.featuredPost && getRuntimeLabel(props.featuredPost)
+)
 </script>
 
 <template>
   <UPageHero
     orientation="horizontal"
     :ui="{
-      container: 'lg:grid-cols-6',
-      wrapper: 'lg:col-span-4',
+      root: 'border-b border-default bg-muted',
+      container: 'lg:items-stretch py-16 sm:py-20 lg:py-28',
+      wrapper: 'flex flex-col lg:h-full',
       description: 'max-w-xl',
+      footer: 'mt-8 lg:mt-auto',
     }"
   >
     <template #title>
@@ -58,23 +64,30 @@ const heroImage = computed(
       </UButton>
     </template>
 
-    <div
-      v-if="featuredPost"
-      class="lg:col-span-2 lg:border-l lg:border-default lg:pl-10"
-    >
-      <NuxtLink :to="featuredPost.path" class="group block" aria-label="Featured">
+    <div v-if="featuredPost" class="flex">
+      <NuxtLink
+        :to="featuredPost.path"
+        class="group flex w-full flex-col overflow-hidden rounded-2xl border border-default bg-elevated/40 p-6 transition-colors hover:border-primary/50 sm:p-8"
+        aria-label="Featured"
+      >
         <NuxtImg
           v-if="heroImage"
           :src="heroImage"
           :alt="featuredPost.imageAlt ?? featuredPost.title"
-          class="mb-4 aspect-video w-full rounded-lg object-cover transition-opacity group-hover:opacity-90"
-          width="480"
-          height="270"
-          sizes="480px"
+          class="mb-6 aspect-video w-full rounded-lg object-cover transition-opacity group-hover:opacity-90"
+          width="640"
+          height="360"
+          sizes="(min-width: 1024px) 480px, 100vw"
         />
 
-        <div class="mb-2 flex flex-wrap items-center gap-2 text-sm text-muted">
-          <UBadge v-if="badge" variant="subtle" :color="badge.color" size="lg">
+        <div class="mb-3 flex flex-wrap items-center gap-2 text-sm text-muted">
+          <UBadge
+            v-if="badge"
+            variant="subtle"
+            :color="badge.color"
+            :icon="badge.icon"
+            size="lg"
+          >
             {{ badge.label }}
           </UBadge>
           <span v-if="featuredPost.publishedAt">
@@ -86,19 +99,20 @@ const heroImage = computed(
               })
             }}
           </span>
+          <span v-if="runtimeLabel">· {{ runtimeLabel }}</span>
         </div>
 
         <h2
-          class="mb-2 font-serif text-xl font-bold text-balance group-hover:text-primary"
+          class="mb-3 font-serif text-2xl font-bold text-balance group-hover:text-primary"
         >
           {{ featuredPost.title }}
         </h2>
 
-        <p class="mb-3 line-clamp-2 text-muted">
+        <p class="mb-5 line-clamp-3 text-muted">
           {{ featuredPost.description }}
         </p>
 
-        <span class="inline-flex items-center gap-1 font-semibold text-primary">
+        <span class="mt-auto inline-flex items-center gap-1 font-semibold text-primary">
           Read the feature
           <UIcon
             name="i-lucide-arrow-right"

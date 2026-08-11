@@ -100,9 +100,7 @@ useHead({
   <div>
     <HomeHero :latest-post-path="latestPostPath" :featured-post="featuredPost" />
 
-    <UContainer class="space-y-24 pb-20">
-      <HomeExplore />
-
+    <UContainer class="space-y-24 pt-20 pb-20 sm:pt-24">
       <HomeStartHere v-if="startHerePosts?.length" :posts="startHerePosts" />
 
       <HomeBookshelf v-if="bookshelfPosts?.length" :posts="bookshelfPosts" />

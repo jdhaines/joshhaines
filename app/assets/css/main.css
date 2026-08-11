@@ -54,15 +54,16 @@
 
 /*
  * Editorial surface overrides layered on top of Nuxt UI's default neutral-based
- * surfaces (see @nuxt/ui's --ui-bg-* tokens), per the brand direction of warm
- * off-white light surfaces and deep blue-black dark surfaces.
+ * surfaces (see @nuxt/ui's --ui-bg-* tokens), per the brand direction of
+ * pure-white/light-gray light surfaces (matching the Lettra Pearl stationery
+ * -- a true white/gray paper, not cream) and deep blue-black dark surfaces.
  */
 .light,
 :root {
-  --ui-bg: #faf7f2;
-  --ui-bg-muted: #f3eee4;
+  --ui-bg: #ffffff;
+  --ui-bg-muted: #f1f5f9;
   --ui-bg-elevated: #ffffff;
-  --ui-bg-accented: #ece5d8;
+  --ui-bg-accented: #e2e8f0;
   /*
    * Nuxt UI's default `warning` shade (used for the "Talk" content-type
    * badge) is too light for good text contrast against the cream `--ui-bg`

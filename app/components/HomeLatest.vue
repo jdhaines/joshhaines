@@ -34,6 +34,7 @@ const heroImage = computed(() => heroPost?.socialImage ?? heroPost?.image)
         <UBadge
           variant="subtle"
           :color="getContentTypeBadge(heroPost.contentType).color"
+          :icon="getContentTypeBadge(heroPost.contentType).icon"
           size="lg"
           class="mb-2"
         >
@@ -70,6 +71,7 @@ const heroImage = computed(() => heroPost?.socialImage ?? heroPost?.image)
               <UBadge
                 variant="subtle"
                 :color="getContentTypeBadge(post.contentType).color"
+                :icon="getContentTypeBadge(post.contentType).icon"
                 size="md"
                 class="mb-1.5"
               >
