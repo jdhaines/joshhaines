@@ -22,22 +22,22 @@ const heroImage = computed(
   <UPageHero
     orientation="horizontal"
     :ui="{
-      container: 'lg:grid-cols-5',
-      wrapper: 'lg:col-span-3',
+      container: 'lg:grid-cols-6',
+      wrapper: 'lg:col-span-4',
       description: 'max-w-xl',
     }"
   >
     <template #title>
-      <span class="block">Building Stronger Teams.</span>
-      <span class="block">Engineering Better Systems.</span>
+      <span class="block mb-2">better products</span>
+      <span class="block mb-2">better teams</span>
+      <span class="block">better leaders</span>
     </template>
 
     <template #description>
-      I lead engineering and platform teams at the intersection of people, process, and
-      technology. I write about leadership, technology, productivity, and the journey of
-      building awesome products.
-    </template>
-
+      I lead engineering and platform teams at the intersection of people and
+      technology. This is where I write about what's working and what I'm learning along
+      the way.</template
+    >
     <template #links>
       <UButton
         v-if="latestPostPath"
@@ -45,7 +45,7 @@ const heroImage = computed(
         icon="i-lucide-file-text"
         size="lg"
       >
-        Read Latest Post
+        Read the Latest Post
       </UButton>
       <UButton
         to="/content/behind-the-product-podcast"
