@@ -5,7 +5,7 @@ description: >
   from building my sauna. I also include photos of the journey and process as
   well as the final product.
 publishedAt: 2026-08-03
-updatedAt: 2026-08-03
+updatedAt: 2026-08-12
 tags: ['sauna', 'construction', 'health']
 image: '/static/images/sauna/outside.png'
 featured: false
@@ -97,10 +97,11 @@ staple gun to staple the twine to the ceiling joists in a zig-zag pattern, then 
 In the second picture you can see the metal rods holding the fiberglass (barely). In the second and third picture below you can see the
 twine holding the mineral wool perfectly (at the top). All-in, the insulation was around $650.
 
-<div class="my-8 grid grid-cols-3 gap-3 sm:gap-4">
+<div class="my-8 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
   <img src="https://img.joshhaines.com/building-a-sauna/10.webp" alt="fiberglass insulation in the walls" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
   <img src="https://img.joshhaines.com/building-a-sauna/8.webp" alt="more insulation visibility" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
   <img src="https://img.joshhaines.com/building-a-sauna/9.webp" alt="two ceilings insulated" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+  <img src="https://img.joshhaines.com/building-a-sauna/37.webp" alt="divider wall insulated" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
 </div>
 
 ## Electrical
@@ -287,3 +288,12 @@ convert the stove's European 4" outlet into the American 6" pipe standard.
   <img src="https://img.joshhaines.com/building-a-sauna/35.webp" alt="Describe this photo" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
   <img src="https://img.joshhaines.com/building-a-sauna/36.webp" alt="Describe this photo" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
 </div>
+
+## Foil Vapor Barrier
+
+Once the chimney was in place and the stove was
+ready to go, I finished adding insulation to the divider wall and installed the foil vapor barrier. This was a product sent in the sauna kit that has foil on one side and something like kraft paper on the other side. I used staples to attach it to the studs and then used metallic duct tape to tape any seams I needed. I made sure the foil was slightly longer than the tile so any moisture dripping down the foil would run inside the tile and into the "bathtub" waterproof floor to be evaporated or mopped up.
+
+I also added some nailing supports near the floor. The tile around the inner wall stuck out from the studs about 1/2" so I needed to slope walls at the bottom to make sure the cedar would sit a little proud from the tile.
+
+![starting vapor barrier](https://img.joshhaines.com/building-a-sauna/38.webp)
