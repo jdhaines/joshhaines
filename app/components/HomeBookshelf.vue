@@ -20,12 +20,12 @@ defineProps<{
       <li v-for="post in posts" :key="post.path" class="w-32 shrink-0 sm:w-40">
         <NuxtLink :to="post.path" class="group block">
           <div
-            v-if="post.image"
+            v-if="post.coverImage"
             class="mb-3 aspect-[2/3] w-full overflow-hidden rounded-md bg-elevated p-2 transition-transform group-hover:-translate-y-1"
           >
             <NuxtImg
-              :src="post.image"
-              :alt="post.imageAlt ?? post.title"
+              :src="post.coverImage"
+              :alt="post.coverImageAlt ?? post.title"
               class="size-full object-contain drop-shadow-lg"
               width="200"
               height="300"

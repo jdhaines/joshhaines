@@ -7,8 +7,8 @@ updatedAt: 2024-09-05
 tags: ['book shelf', 'leadership', 'management', 'people']
 featured: false
 draft: false
-image: '/static/images/first-break-all-the-rules-cover.jpg'
-imageAlt: 'First, Break All the Rules book cover'
+coverImage: '/static/images/first-break-all-the-rules-cover.jpg'
+coverImageAlt: 'First, Break All the Rules book cover'
 socialImage: '/static/images/keys.jpg'
 contentType: bookReview
 bookAuthor: ['Marcus Buckingham', 'Curt Coffman']

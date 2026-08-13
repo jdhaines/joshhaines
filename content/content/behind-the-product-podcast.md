@@ -8,7 +8,7 @@ tags: ['me', 'podcast', 'digital transformation', 'software factory']
 featured: false
 startHere: true
 draft: false
-image: '/static/images/podcast.png'
+coverImage: '/static/images/podcast.png'
 contentType: podcast
 author: josh
 runtime: '45 min listen'

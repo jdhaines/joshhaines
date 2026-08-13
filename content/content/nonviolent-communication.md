@@ -7,8 +7,8 @@ updatedAt: 2024-05-08
 tags: ['book shelf', 'psychological safety', 'communication', 'mental health']
 featured: false
 draft: false
-image: '/static/images/nonviolent-communication-cover.jpg'
-imageAlt: 'Nonviolent Communication book cover'
+coverImage: '/static/images/nonviolent-communication-cover.jpg'
+coverImageAlt: 'Nonviolent Communication book cover'
 socialImage: '/static/images/calmSunset.jpg'
 contentType: bookReview
 bookAuthor: 'Marshall B. Rosenberg'

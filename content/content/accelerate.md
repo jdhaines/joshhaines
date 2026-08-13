@@ -7,8 +7,8 @@ updatedAt: 2024-05-16
 tags: ['book shelf', 'productivity', 'devops']
 featured: false
 draft: false
-image: '/static/images/accelerate-cover.jpg'
-imageAlt: 'Accelerate book cover'
+coverImage: '/static/images/accelerate-cover.jpg'
+coverImageAlt: 'Accelerate book cover'
 socialImage: '/static/images/accelerate.jpg'
 contentType: bookReview
 bookAuthor: ['Nicole Forsgren', 'Jez Humble', 'Gene Kim']

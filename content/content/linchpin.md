@@ -7,8 +7,8 @@ updatedAt: 2024-05-17
 tags: ['book shelf', 'thought leadership', 'growth']
 featured: false
 draft: false
-image: '/static/images/linchpin-cover.jpg'
-imageAlt: 'Linchpin book cover'
+coverImage: '/static/images/linchpin-cover.jpg'
+coverImageAlt: 'Linchpin book cover'
 socialImage: '/static/images/linchpin.jpg'
 contentType: bookReview
 bookAuthor: 'Seth Godin'

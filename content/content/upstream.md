@@ -7,8 +7,8 @@ updatedAt: 2024-05-10
 tags: ['book shelf', 'thought leadership', 'productivity']
 featured: false
 draft: false
-image: '/static/images/upstream-cover.jpg'
-imageAlt: 'Upstream book cover'
+coverImage: '/static/images/upstream-cover.jpg'
+coverImageAlt: 'Upstream book cover'
 socialImage: '/static/images/river.jpg'
 contentType: bookReview
 bookAuthor: 'Dan Heath'

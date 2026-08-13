@@ -7,8 +7,8 @@ updatedAt: 2024-05-16
 tags: ['book shelf', 'leadership', 'bureaucracy', 'change']
 featured: false
 draft: false
-image: '/static/images/xlr8-cover.jpg'
-imageAlt: 'XLR8 book cover'
+coverImage: '/static/images/xlr8-cover.jpg'
+coverImageAlt: 'XLR8 book cover'
 socialImage: '/static/images/xlr8.jpg'
 contentType: bookReview
 bookAuthor: 'John P. Kotter'

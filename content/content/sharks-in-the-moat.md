@@ -7,8 +7,8 @@ updatedAt: 2024-05-17
 tags: ['book shelf', 'security', 'thought leadership']
 featured: false
 draft: false
-image: '/static/images/sharks-in-the-moat-cover.jpg'
-imageAlt: 'Sharks in the Moat book cover'
+coverImage: '/static/images/sharks-in-the-moat-cover.jpg'
+coverImageAlt: 'Sharks in the Moat book cover'
 socialImage: '/static/images/sharks.jpg'
 contentType: bookReview
 bookAuthor: 'Phil Martin'

@@ -7,8 +7,8 @@ updatedAt: 2024-03-20
 tags: ['book shelf', 'devops', 'productivity']
 featured: false
 draft: false
-image: '/static/images/unicorn-project-cover.jpg'
-imageAlt: 'The Unicorn Project book cover'
+coverImage: '/static/images/unicorn-project-cover.jpg'
+coverImageAlt: 'The Unicorn Project book cover'
 socialImage: '/static/images/horn.jpg'
 contentType: bookReview
 bookAuthor: 'Gene Kim'

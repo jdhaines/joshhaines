@@ -9,8 +9,8 @@ startHere: false
 draft: false
 contentType: article
 author: josh
-image: '/static/images/redInk.jpg'
-imageAlt: 'document with red ink'
+coverImage: '/static/images/redInk.jpg'
+coverImageAlt: 'document with red ink'
 ---
 ## Learning to Write via Red Ink
 

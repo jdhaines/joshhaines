@@ -8,7 +8,7 @@ tags: ['me', 'tech talk', 'innovation', 'psychological safety', 'learning', 'lea
 featured: true
 startHere: true
 draft: false
-image: '/static/images/chemistryTitle.jpg'
+coverImage: '/static/images/chemistryTitle.jpg'
 contentType: talk
 author: josh
 relatedWriting: ['submarines-keynote']

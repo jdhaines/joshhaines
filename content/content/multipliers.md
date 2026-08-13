@@ -7,8 +7,8 @@ updatedAt: 2024-04-17
 tags: ['book shelf', 'leadership']
 featured: false
 draft: false
-image: '/static/images/multipliers-cover.jpg'
-imageAlt: 'Multipliers book cover'
+coverImage: '/static/images/multipliers-cover.jpg'
+coverImageAlt: 'Multipliers book cover'
 socialImage: '/static/images/lighthouse.jpg'
 contentType: bookReview
 bookAuthor: 'Liz Wiseman'

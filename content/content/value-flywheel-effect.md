@@ -7,8 +7,8 @@ updatedAt: 2024-03-12
 tags: ['book shelf', 'value']
 featured: false
 draft: false
-image: '/static/images/value-flywheel-effect-cover.jpg'
-imageAlt: 'The Value Flywheel Effect book cover'
+coverImage: '/static/images/value-flywheel-effect-cover.jpg'
+coverImageAlt: 'The Value Flywheel Effect book cover'
 socialImage: '/static/images/flywheel.jpg'
 contentType: bookReview
 bookAuthor: 'David Anderson'

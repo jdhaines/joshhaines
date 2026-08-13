@@ -7,8 +7,8 @@ updatedAt: 2024-11-20
 tags: ['book shelf', 'failure', 'psychological safety', 'thought leadership', 'team building']
 featured: false
 draft: false
-image: '/static/images/right-kind-of-wrong-cover.jpg'
-imageAlt: 'Right Kind of Wrong book cover'
+coverImage: '/static/images/right-kind-of-wrong-cover.jpg'
+coverImageAlt: 'Right Kind of Wrong book cover'
 socialImage: '/static/images/eraser.jpg'
 contentType: bookReview
 bookAuthor: 'Amy C. Edmondson'

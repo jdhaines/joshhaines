@@ -7,8 +7,8 @@ updatedAt: 2024-05-15
 tags: ['book shelf', 'leadership', 'teams']
 featured: false
 draft: false
-image: '/static/images/team-topologies-cover.jpg'
-imageAlt: 'Team Topologies book cover'
+coverImage: '/static/images/team-topologies-cover.jpg'
+coverImageAlt: 'Team Topologies book cover'
 socialImage: '/static/images/teams.png'
 contentType: bookReview
 bookAuthor: ['Matthew Skelton', 'Manuel Pais']

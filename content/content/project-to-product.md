@@ -7,8 +7,8 @@ updatedAt: 2024-03-19
 tags: ['book shelf', 'product management']
 featured: false
 draft: false
-image: '/static/images/project-to-product-cover.jpg'
-imageAlt: 'Project to Product book cover'
+coverImage: '/static/images/project-to-product-cover.jpg'
+coverImageAlt: 'Project to Product book cover'
 socialImage: '/static/images/flow.jpg'
 contentType: bookReview
 bookAuthor: 'Mik Kersten'

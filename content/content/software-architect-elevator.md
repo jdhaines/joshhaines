@@ -7,8 +7,8 @@ updatedAt: 2024-05-16
 tags: ['book shelf', 'architecture', 'thought leadership']
 featured: false
 draft: false
-image: '/static/images/software-architect-elevator-cover.jpg'
-imageAlt: 'Software Architect Elevator book cover'
+coverImage: '/static/images/software-architect-elevator-cover.jpg'
+coverImageAlt: 'Software Architect Elevator book cover'
 socialImage: '/static/images/elevator.jpg'
 contentType: bookReview
 bookAuthor: 'Gregor Hohpe'

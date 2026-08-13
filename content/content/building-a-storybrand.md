@@ -7,8 +7,8 @@ updatedAt: 2024-06-17
 tags: ['book shelf', 'marketing', 'communication']
 featured: false
 draft: false
-image: '/static/images/building-a-storybrand-cover.jpg'
-imageAlt: 'Building a Storybrand book cover'
+coverImage: '/static/images/building-a-storybrand-cover.jpg'
+coverImageAlt: 'Building a Storybrand book cover'
 socialImage: '/static/images/marketing.jpg'
 contentType: bookReview
 bookAuthor: 'Donald Miller'

@@ -7,8 +7,8 @@ updatedAt: 2024-05-17
 tags: ['book shelf', 'leadership', 'strategy']
 featured: false
 draft: false
-image: '/static/images/only-the-paranoid-survive-cover.jpg'
-imageAlt: 'Only the Paranoid Survive book cover'
+coverImage: '/static/images/only-the-paranoid-survive-cover.jpg'
+coverImageAlt: 'Only the Paranoid Survive book cover'
 socialImage: '/static/images/inflection.jpg'
 contentType: bookReview
 bookAuthor: 'Andrew S. Grove'

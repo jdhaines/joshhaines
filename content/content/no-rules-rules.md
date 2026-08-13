@@ -7,8 +7,8 @@ updatedAt: 2024-07-02
 tags: ['book shelf', 'culture', 'productivity']
 featured: false
 draft: false
-image: '/static/images/no-rules-rules-cover.jpg'
-imageAlt: 'No Rules Rules book cover'
+coverImage: '/static/images/no-rules-rules-cover.jpg'
+coverImageAlt: 'No Rules Rules book cover'
 socialImage: '/static/images/netflix1.jpg'
 contentType: bookReview
 bookAuthor: ['Reed Hastings', 'Erin Meyer']

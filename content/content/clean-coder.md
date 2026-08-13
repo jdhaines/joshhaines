@@ -7,8 +7,8 @@ updatedAt: 2024-05-09
 tags: ['book shelf', 'productivity', 'software']
 featured: false
 draft: false
-image: '/static/images/clean-coder-cover.jpg'
-imageAlt: 'The Clean Coder book cover'
+coverImage: '/static/images/clean-coder-cover.jpg'
+coverImageAlt: 'The Clean Coder book cover'
 socialImage: '/static/images/cleanCode.jpg'
 contentType: bookReview
 bookAuthor: 'Robert C. Martin'

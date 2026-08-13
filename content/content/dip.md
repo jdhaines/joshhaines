@@ -7,8 +7,8 @@ updatedAt: 2024-05-19
 tags: ['book shelf', 'decision making', 'strategy']
 featured: false
 draft: false
-image: '/static/images/dip-cover.jpg'
-imageAlt: 'The Dip book cover'
+coverImage: '/static/images/dip-cover.jpg'
+coverImageAlt: 'The Dip book cover'
 socialImage: '/static/images/dip.jpg'
 contentType: bookReview
 bookAuthor: 'Seth Godin'

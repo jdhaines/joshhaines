@@ -7,8 +7,8 @@ updatedAt: 2024-05-16
 tags: ['book shelf', 'thought leadership', 'change']
 featured: false
 draft: false
-image: '/static/images/change-cover.jpg'
-imageAlt: 'Change book cover'
+coverImage: '/static/images/change-cover.jpg'
+coverImageAlt: 'Change book cover'
 socialImage: '/static/images/tree.jpg'
 contentType: bookReview
 bookAuthor: 'John P. Kotter'

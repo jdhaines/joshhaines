@@ -7,8 +7,8 @@ updatedAt: 2026-07-15
 tags: ['book shelf', 'entrepreneurship', 'productivity']
 featured: false
 draft: false
-image: '/static/images/traction-cover.jpg'
-imageAlt: 'Traction book cover'
+coverImage: '/static/images/traction-cover.jpg'
+coverImageAlt: 'Traction book cover'
 socialImage: '/static/images/traction.jpg'
 contentType: bookReview
 bookAuthor: 'Gino Wickman'

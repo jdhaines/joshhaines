@@ -7,8 +7,8 @@ updatedAt: 2024-05-10
 tags: ['book shelf', 'productivity', 'mental health']
 featured: false
 draft: false
-image: '/static/images/digital-mindset-cover.jpg'
-imageAlt: 'The Digital Mindset book cover'
+coverImage: '/static/images/digital-mindset-cover.jpg'
+coverImageAlt: 'The Digital Mindset book cover'
 socialImage: '/static/images/digitalMindset.jpg'
 contentType: bookReview
 bookAuthor: ['Paul Leonardi', 'Tsedal Neeley']

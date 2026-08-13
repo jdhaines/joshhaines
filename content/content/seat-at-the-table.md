@@ -7,8 +7,8 @@ updatedAt: 2024-03-13
 tags: ['book shelf', 'it', 'bureaucracy']
 featured: false
 draft: false
-image: '/static/images/seat-at-the-table-cover.jpg'
-imageAlt: 'A Seat at the Table book cover'
+coverImage: '/static/images/seat-at-the-table-cover.jpg'
+coverImageAlt: 'A Seat at the Table book cover'
 socialImage: '/static/images/chairs.jpg'
 contentType: bookReview
 bookAuthor: 'Mark Schwartz'

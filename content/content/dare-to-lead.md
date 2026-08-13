@@ -7,8 +7,8 @@ updatedAt: 2026-07-14
 tags: ['book shelf', 'leadership', 'vulnerability']
 featured: false
 draft: false
-image: '/static/images/dare-to-lead-cover.jpg'
-imageAlt: 'Dare to Lead book cover'
+coverImage: '/static/images/dare-to-lead-cover.jpg'
+coverImageAlt: 'Dare to Lead book cover'
 socialImage: '/static/images/dareToLead.jpg'
 contentType: bookReview
 bookAuthor: 'Brené Brown'

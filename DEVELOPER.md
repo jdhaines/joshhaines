@@ -37,9 +37,9 @@ Applies to every file in `content/content/*.md`.
 | `description` | string | **Yes** | -- | Used for card excerpts, `<meta description>`, and OG description. |
 | `publishedAt` | date (`YYYY-MM-DD`) | **Yes** | -- | Drives all "latest"/ordering queries and the byline date. |
 | `updatedAt` | date | No | -- | Shown as "Updated \<date\>" in the article header when present. |
-| `image` | string (path) | No | -- | Hero/thumbnail image, e.g. `/static/images/foo.jpg`. Used for homepage card art and as the social image only when `socialImage` is absent. Omit for text-only posts (e.g. the PGP article). |
-| `imageAlt` | string | No | -- | Alt text for `image`. Provide this whenever `image` is set. |
-| `socialImage` | string (path) | No | -- | Overrides the social-sharing preview image for LinkedIn, X, etc. Use this for the existing 600×314 AI-generated cards when the on-page `image` is a book cover. If omitted, falls back to `image`, then the site-wide Josh Haines card. |
+| `coverImage` | string (path) | No | -- | Primary display image, e.g. `/static/images/foo.jpg` -- the book cover for `bookReview`s, or a featured/thumbnail image for everything else. Used for homepage card art and as the social image only when `socialImage` is absent. Omit for text-only posts (e.g. the PGP article). |
+| `coverImageAlt` | string | No | -- | Alt text for `coverImage`. Provide this whenever `coverImage` is set. |
+| `socialImage` | string (path) | No | -- | Overrides the social-sharing preview image for LinkedIn, X, etc. Use this for the existing 600×314 AI-generated cards when the on-page `coverImage` is a book cover. If omitted, falls back to `coverImage`, then the site-wide Josh Haines card. |
 | `topics` | string[] | No | `[]` | Reserved for future topic taxonomy. Not currently populated or rendered anywhere -- prefer `tags` today. |
 | `tags` | string[] | No | `[]` | Rendered as badges on the article page and drives the tag-overlap "On This Topic" related list. |
 | `featured` | boolean | No | `false` | Marks the single post shown in the homepage **Featured** section. See [Homepage sections](#homepage-sections--how-content-is-selected) below -- only set this on **one** post at a time. |
@@ -263,6 +263,7 @@ rules.
    `joshhaines-comments` already exists and `wrangler.jsonc`'s
    `d1_databases[0].database_id` is set. Only needed again if the database
    is ever recreated:
+
    ```sh
    npx wrangler login
    npx wrangler d1 create joshhaines-comments
@@ -270,9 +271,11 @@ rules.
 
 2. **Apply the schema** - **done** (applied with `--remote` against the
    live database). Re-run this any time `workers/schema.sql` changes:
+
    ```sh
    npx wrangler d1 execute joshhaines-comments --remote --file=workers/schema.sql
    ```
+
    (Drop `--remote` to also/instead apply it to the local dev database used
    by `wrangler dev`.) Note: `workers/schema.sql` uses `CREATE TABLE IF NOT
    EXISTS`, so it's safe to re-run on an existing database, but it won't
@@ -290,6 +293,7 @@ rules.
 
 4. **Set the Worker secrets** (never committed, never in `wrangler.jsonc`)
    - **still needed**:
+
    ```sh
    npx wrangler secret put TURNSTILE_SECRET
    npx wrangler secret put COMMENTS_ADMIN_TOKEN     # any long random string you generate yourself
@@ -298,9 +302,11 @@ rules.
 
 5. **Onboard `joshhaines.com` to Cloudflare Email Sending** (one-time,
    needed for the moderation-notification email described below):
+
    ```sh
    npx wrangler email sending enable joshhaines.com
    ```
+
    (Or via the Dashboard: Email → Email Sending.) `wrangler.jsonc`'s
    `send_email` binding restricts the Worker to sending from
    `comments@joshhaines.com` -- no separate mailbox is needed, it's just a

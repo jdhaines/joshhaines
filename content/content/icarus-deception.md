@@ -7,8 +7,8 @@ updatedAt: 2024-05-19
 tags: ['book shelf', 'strategy', 'growth']
 featured: false
 draft: false
-image: '/static/images/icarus-deception-cover.jpg'
-imageAlt: 'The Icarus Deception book cover'
+coverImage: '/static/images/icarus-deception-cover.jpg'
+coverImageAlt: 'The Icarus Deception book cover'
 socialImage: '/static/images/icarus.jpg'
 contentType: bookReview
 bookAuthor: 'Seth Godin'

@@ -7,8 +7,8 @@ updatedAt: 2024-04-18
 tags: ['book shelf', 'psychological safety', 'productivity', 'culture']
 featured: false
 draft: false
-image: '/static/images/fearless-organization-cover.jpg'
-imageAlt: 'The Fearless Organization book cover'
+coverImage: '/static/images/fearless-organization-cover.jpg'
+coverImageAlt: 'The Fearless Organization book cover'
 socialImage: '/static/images/safety.jpg'
 contentType: bookReview
 bookAuthor: 'Amy C. Edmondson'

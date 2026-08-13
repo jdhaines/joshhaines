@@ -7,8 +7,8 @@ updatedAt: 2024-05-17
 tags: ['book shelf', 'productivity', 'focus']
 featured: false
 draft: false
-image: '/static/images/indistractable-cover.jpg'
-imageAlt: 'Indistractable book cover'
+coverImage: '/static/images/indistractable-cover.jpg'
+coverImageAlt: 'Indistractable book cover'
 socialImage: '/static/images/distraction.jpg'
 contentType: bookReview
 bookAuthor: 'Nir Eyal'

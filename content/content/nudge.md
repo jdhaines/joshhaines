@@ -7,8 +7,8 @@ updatedAt: 2024-05-20
 tags: ['book shelf', 'decision making', 'marketing']
 featured: false
 draft: false
-image: '/static/images/nudge-cover.jpg'
-imageAlt: 'Nudge book cover'
+coverImage: '/static/images/nudge-cover.jpg'
+coverImageAlt: 'Nudge book cover'
 socialImage: '/static/images/nudge.jpg'
 contentType: bookReview
 bookAuthor: ['Richard H. Thaler', 'Cass R. Sunstein']

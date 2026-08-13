@@ -7,8 +7,8 @@ updatedAt: 2025-06-08
 tags: ['book shelf', 'productivity', 'communication', 'culture']
 featured: false
 draft: false
-image: '/static/images/world-without-email-cover.jpg'
-imageAlt: 'A World Without Email book cover'
+coverImage: '/static/images/world-without-email-cover.jpg'
+coverImageAlt: 'A World Without Email book cover'
 socialImage: '/static/images/hivemind.jpg'
 contentType: bookReview
 bookAuthor: 'Cal Newport'

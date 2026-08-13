@@ -7,8 +7,8 @@ updatedAt: 2024-04-17
 tags: ['book shelf', 'value']
 featured: false
 draft: false
-image: '/static/images/art-of-business-value-cover.jpg'
-imageAlt: 'The Art of Business Value book cover'
+coverImage: '/static/images/art-of-business-value-cover.jpg'
+coverImageAlt: 'The Art of Business Value book cover'
 socialImage: '/static/images/value.jpg'
 contentType: bookReview
 bookAuthor: 'Mark Schwartz'

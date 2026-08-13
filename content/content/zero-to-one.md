@@ -7,8 +7,8 @@ updatedAt: 2025-05-06
 tags: ['book shelf', 'tech talk', 'innovation']
 featured: false
 draft: false
-image: '/static/images/zero-to-one-cover.jpg'
-imageAlt: 'Zero to One book cover'
+coverImage: '/static/images/zero-to-one-cover.jpg'
+coverImageAlt: 'Zero to One book cover'
 socialImage: '/static/images/theFuture.jpg'
 contentType: bookReview
 bookAuthor: ['Peter Thiel', 'Blake Masters']

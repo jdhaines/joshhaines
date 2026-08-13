@@ -7,8 +7,8 @@ updatedAt: 2024-05-10
 tags: ['book shelf', 'psychological safety', 'leadership', 'culture']
 featured: false
 draft: false
-image: '/static/images/culture-code-cover.jpg'
-imageAlt: 'The Culture Code book cover'
+coverImage: '/static/images/culture-code-cover.jpg'
+coverImageAlt: 'The Culture Code book cover'
 socialImage: '/static/images/rocket.jpg'
 contentType: bookReview
 bookAuthor: 'Daniel Coyle'

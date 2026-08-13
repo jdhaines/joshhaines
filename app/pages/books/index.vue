@@ -124,12 +124,12 @@ useHead({
           </span>
 
           <div
-            v-if="book.post.image"
+            v-if="book.post.coverImage"
             class="aspect-[2/3] w-14 shrink-0 overflow-hidden rounded bg-elevated p-1"
           >
             <NuxtImg
-              :src="book.post.image"
-              :alt="book.post.imageAlt ?? book.post.title"
+              :src="book.post.coverImage"
+              :alt="book.post.coverImageAlt ?? book.post.title"
               class="size-full object-contain"
               width="80"
               height="120"
@@ -172,12 +172,12 @@ useHead({
         <NuxtLink :to="book.post.path" class="group block">
           <div class="relative">
             <div
-              v-if="book.post.image"
+              v-if="book.post.coverImage"
               class="aspect-[2/3] w-full overflow-hidden rounded-md bg-elevated p-3 transition-transform group-hover:-translate-y-1"
             >
               <NuxtImg
-                :src="book.post.image"
-                :alt="book.post.imageAlt ?? book.post.title"
+                :src="book.post.coverImage"
+                :alt="book.post.coverImageAlt ?? book.post.title"
                 class="size-full object-contain drop-shadow-lg"
                 width="200"
                 height="300"
@@ -222,12 +222,12 @@ useHead({
         <li v-for="book in filteredMentions" :key="book.post.path">
           <NuxtLink :to="book.post.path" class="group flex items-center gap-4">
             <div
-              v-if="book.post.image"
+              v-if="book.post.coverImage"
               class="aspect-[2/3] w-10 shrink-0 overflow-hidden rounded bg-elevated p-1"
             >
               <NuxtImg
-                :src="book.post.image"
-                :alt="book.post.imageAlt ?? book.post.title"
+                :src="book.post.coverImage"
+                :alt="book.post.coverImageAlt ?? book.post.title"
                 class="size-full object-contain"
                 width="80"
                 height="120"

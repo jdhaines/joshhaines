@@ -7,8 +7,8 @@ updatedAt: 2026-07-13
 tags: ['book shelf', 'leadership', 'culture', 'vulnerability']
 featured: false
 draft: false
-image: '/static/images/strong-ground-cover.jpg'
-imageAlt: 'Strong Ground book cover'
+coverImage: '/static/images/strong-ground-cover.jpg'
+coverImageAlt: 'Strong Ground book cover'
 socialImage: '/static/images/ground.jpg'
 contentType: bookReview
 bookAuthor: 'Brené Brown'

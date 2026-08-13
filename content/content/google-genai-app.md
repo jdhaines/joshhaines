@@ -9,8 +9,8 @@ startHere: false
 draft: false
 contentType: article
 author: josh
-image: '/static/images/genai.jpg'
-imageAlt: 'prompt injection attack in google colors'
+coverImage: '/static/images/genai.jpg'
+coverImageAlt: 'prompt injection attack in google colors'
 ---
 ## Workshop
 

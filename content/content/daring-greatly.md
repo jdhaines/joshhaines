@@ -7,8 +7,8 @@ updatedAt: 2026-07-15
 tags: ['book shelf', 'shame', 'vulnerability', 'courage']
 featured: false
 draft: false
-image: '/static/images/daring-greatly-cover.jpg'
-imageAlt: 'Daring Greatly book cover'
+coverImage: '/static/images/daring-greatly-cover.jpg'
+coverImageAlt: 'Daring Greatly book cover'
 socialImage: '/static/images/daring.jpg'
 contentType: bookReview
 bookAuthor: 'Brené Brown'

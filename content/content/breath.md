@@ -7,8 +7,8 @@ updatedAt: 2024-05-20
 tags: ['book shelf', 'health']
 featured: false
 draft: false
-image: '/static/images/breath-cover.jpg'
-imageAlt: 'Breath book cover'
+coverImage: '/static/images/breath-cover.jpg'
+coverImageAlt: 'Breath book cover'
 socialImage: '/static/images/breath.jpg'
 contentType: bookReview
 bookAuthor: 'James Nestor'

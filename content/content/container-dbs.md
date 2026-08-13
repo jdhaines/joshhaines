@@ -4,7 +4,7 @@ description: Cheatsheet for interacting with a postgres database inside a docker
 publishedAt: 2019-10-18
 updatedAt: 2021-11-29
 tags: ['docker', 'databases']
-image: '/static/images/docker.jpg'
+coverImage: '/static/images/docker.jpg'
 featured: false
 startHere: false
 draft: false

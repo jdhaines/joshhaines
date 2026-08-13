@@ -8,7 +8,7 @@ tags: ['me', 'tech talk', 'psychological safety', 'leadership', 'innovation']
 featured: false
 startHere: true
 draft: false
-image: '/static/images/subsTalk.png'
+coverImage: '/static/images/subsTalk.png'
 contentType: talk
 author: josh
 relatedWriting: ['chemistry-of-innovation']

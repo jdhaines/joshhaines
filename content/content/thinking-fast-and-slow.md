@@ -7,8 +7,8 @@ updatedAt: 2024-05-17
 tags: ['book shelf', 'decision making', 'leadership']
 featured: false
 draft: false
-image: '/static/images/thinking-fast-and-slow-cover.jpg'
-imageAlt: 'Thinking Fast and Slow book cover'
+coverImage: '/static/images/thinking-fast-and-slow-cover.jpg'
+coverImageAlt: 'Thinking Fast and Slow book cover'
 socialImage: '/static/images/thinking.jpg'
 contentType: bookReview
 bookAuthor: 'Daniel Kahneman'

@@ -7,8 +7,8 @@ updatedAt: 2024-05-22
 tags: ['book shelf', 'strategy', 'thought leadership']
 featured: false
 draft: false
-image: '/static/images/lean-startup-cover.jpg'
-imageAlt: 'The Lean Startup book cover'
+coverImage: '/static/images/lean-startup-cover.jpg'
+coverImageAlt: 'The Lean Startup book cover'
 socialImage: '/static/images/thinTree.jpg'
 contentType: bookReview
 bookAuthor: 'Eric Ries'

@@ -7,8 +7,8 @@ updatedAt: 2024-03-11
 tags: ['book shelf']
 featured: false
 draft: false
-image: '/static/images/ask-your-developer-cover.jpg'
-imageAlt: 'Ask Your Developer book cover'
+coverImage: '/static/images/ask-your-developer-cover.jpg'
+coverImageAlt: 'Ask Your Developer book cover'
 socialImage: '/static/images/paths.jpg'
 contentType: bookReview
 bookAuthor: 'Jeff Lawson'

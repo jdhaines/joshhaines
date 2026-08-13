@@ -7,8 +7,8 @@ updatedAt: 2024-04-16
 tags: ['book shelf', 'thought leadership', 'productivity']
 featured: false
 draft: false
-image: '/static/images/working-backwards-cover.jpg'
-imageAlt: 'Working Backwards book cover'
+coverImage: '/static/images/working-backwards-cover.jpg'
+coverImageAlt: 'Working Backwards book cover'
 socialImage: '/static/images/backwards.jpg'
 contentType: bookReview
 bookAuthor: ['Colin Bryar', 'Bill Carr']

@@ -7,8 +7,8 @@ updatedAt: 2024-05-17
 tags: ['book shelf', 'teams', 'bureaucracy', 'culture']
 featured: false
 draft: false
-image: '/static/images/fiefdom-syndrome-cover.jpg'
-imageAlt: 'The Fiefdom Syndrome book cover'
+coverImage: '/static/images/fiefdom-syndrome-cover.jpg'
+coverImageAlt: 'The Fiefdom Syndrome book cover'
 socialImage: '/static/images/fiefdom.jpg'
 contentType: bookReview
 bookAuthor: 'Robert Herbold'

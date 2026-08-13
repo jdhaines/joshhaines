@@ -7,8 +7,8 @@ updatedAt: 2024-05-19
 tags: ['book shelf', 'thought leadership', 'growth', 'productivity']
 featured: false
 draft: false
-image: '/static/images/mindset-cover.jpg'
-imageAlt: 'Mindset book cover'
+coverImage: '/static/images/mindset-cover.jpg'
+coverImageAlt: 'Mindset book cover'
 socialImage: '/static/images/longBook.jpg'
 contentType: bookReview
 bookAuthor: 'Carol S. Dweck'

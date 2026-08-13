@@ -7,8 +7,8 @@ updatedAt: 2024-05-10
 tags: ['book shelf', 'communication', 'marketing', 'strategy', 'leadership']
 featured: false
 draft: false
-image: '/static/images/made-to-stick-cover.jpg'
-imageAlt: 'Made to Stick book cover'
+coverImage: '/static/images/made-to-stick-cover.jpg'
+coverImageAlt: 'Made to Stick book cover'
 socialImage: '/static/images/glue.jpg'
 contentType: bookReview
 bookAuthor: ['Chip Heath', 'Dan Heath']

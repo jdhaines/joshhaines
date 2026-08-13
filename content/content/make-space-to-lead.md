@@ -7,8 +7,8 @@ updatedAt: 2024-05-17
 tags: ['book shelf', 'leadership', 'productivity']
 featured: false
 draft: false
-image: '/static/images/make-space-to-lead-cover.jpg'
-imageAlt: 'Make Space to Lead book cover'
+coverImage: '/static/images/make-space-to-lead-cover.jpg'
+coverImageAlt: 'Make Space to Lead book cover'
 socialImage: '/static/images/lead.jpg'
 contentType: bookReview
 bookAuthor: 'Tutti Taygerly'

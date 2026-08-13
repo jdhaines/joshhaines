@@ -7,8 +7,8 @@ updatedAt: 2024-05-22
 tags: ['book shelf', 'innovation', 'thought leadership', 'culture']
 featured: false
 draft: false
-image: '/static/images/innovators-dilemma-cover.jpg'
-imageAlt: "The Innovator's Dilemma book cover"
+coverImage: '/static/images/innovators-dilemma-cover.jpg'
+coverImageAlt: "The Innovator's Dilemma book cover"
 socialImage: '/static/images/innovation.jpg'
 contentType: bookReview
 bookAuthor: 'Clayton M. Christensen'

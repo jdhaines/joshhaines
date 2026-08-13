@@ -7,8 +7,8 @@ updatedAt: 2024-06-21
 tags: ['book shelf', 'change', 'decision making']
 featured: false
 draft: false
-image: '/static/images/switch-cover.jpg'
-imageAlt: 'Switch book cover'
+coverImage: '/static/images/switch-cover.jpg'
+coverImageAlt: 'Switch book cover'
 socialImage: '/static/images/switch.jpg'
 contentType: bookReview
 bookAuthor: ['Chip Heath', 'Dan Heath']

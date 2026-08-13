@@ -7,8 +7,8 @@ updatedAt: 2024-03-20
 tags: ['book shelf', 'devops', 'productivity']
 featured: false
 draft: false
-image: '/static/images/phoenix-project-cover.jpg'
-imageAlt: 'The Phoenix Project book cover'
+coverImage: '/static/images/phoenix-project-cover.jpg'
+coverImageAlt: 'The Phoenix Project book cover'
 socialImage: '/static/images/autoParts.jpg'
 contentType: bookReview
 bookAuthor: ['Gene Kim', 'Kevin Behr', 'George Spafford']

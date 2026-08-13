@@ -7,8 +7,8 @@ updatedAt: 2024-04-11
 tags: ['book shelf', 'mental health', 'decision making']
 featured: false
 draft: false
-image: '/static/images/quit-cover.jpg'
-imageAlt: 'Quit book cover'
+coverImage: '/static/images/quit-cover.jpg'
+coverImageAlt: 'Quit book cover'
 socialImage: '/static/images/monkey.jpg'
 contentType: bookReview
 bookAuthor: 'Annie Duke'

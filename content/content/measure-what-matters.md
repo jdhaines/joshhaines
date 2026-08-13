@@ -7,8 +7,8 @@ updatedAt: 2024-05-10
 tags: ['book shelf', 'productivity', 'strategy']
 featured: false
 draft: false
-image: '/static/images/measure-what-matters-cover.jpg'
-imageAlt: 'Measure What Matters book cover'
+coverImage: '/static/images/measure-what-matters-cover.jpg'
+coverImageAlt: 'Measure What Matters book cover'
 socialImage: '/static/images/scales.jpg'
 contentType: bookReview
 bookAuthor: 'John Doerr'

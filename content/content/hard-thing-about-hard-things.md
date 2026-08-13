@@ -7,8 +7,8 @@ updatedAt: 2026-03-28
 tags: ['book shelf', 'leadership', 'entrepreneurship']
 featured: false
 draft: false
-image: '/static/images/hard-thing-about-hard-things-cover.jpg'
-imageAlt: 'The Hard Thing About Hard Things book cover'
+coverImage: '/static/images/hard-thing-about-hard-things-cover.jpg'
+coverImageAlt: 'The Hard Thing About Hard Things book cover'
 socialImage: '/static/images/hardThings.jpg'
 contentType: bookReview
 bookAuthor: 'Ben Horowitz'

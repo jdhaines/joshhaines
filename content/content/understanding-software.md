@@ -7,8 +7,8 @@ updatedAt: 2024-05-17
 tags: ['book shelf', 'software', 'architecture']
 featured: false
 draft: false
-image: '/static/images/understanding-software-cover.jpg'
-imageAlt: 'Understanding Software book cover'
+coverImage: '/static/images/understanding-software-cover.jpg'
+coverImageAlt: 'Understanding Software book cover'
 socialImage: '/static/images/understanding.jpg'
 contentType: bookReview
 bookAuthor: 'Max Kanat-Alexander'

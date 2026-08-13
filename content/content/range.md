@@ -7,8 +7,8 @@ updatedAt: 2024-03-11
 tags: ['book shelf', 'growth', 'learning']
 featured: false
 draft: false
-image: '/static/images/range-cover.jpg'
-imageAlt: 'Range book cover'
+coverImage: '/static/images/range-cover.jpg'
+coverImageAlt: 'Range book cover'
 socialImage: '/static/images/range1.jpg'
 contentType: bookReview
 bookAuthor: 'David Epstein'

@@ -7,8 +7,8 @@ updatedAt: 2024-08-12
 tags: ['book shelf', 'leadership', 'decision making']
 featured: false
 draft: false
-image: '/static/images/turn-the-ship-around-cover.jpg'
-imageAlt: 'Turn the Ship Around book cover'
+coverImage: '/static/images/turn-the-ship-around-cover.jpg'
+coverImageAlt: 'Turn the Ship Around book cover'
 socialImage: '/static/images/submarine.jpg'
 contentType: bookReview
 bookAuthor: 'L. David Marquet'

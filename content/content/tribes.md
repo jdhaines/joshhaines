@@ -7,8 +7,8 @@ updatedAt: 2024-05-17
 tags: ['book shelf', 'leadership', 'bureaucracy']
 featured: false
 draft: false
-image: '/static/images/tribes-cover.jpg'
-imageAlt: 'Tribes book cover'
+coverImage: '/static/images/tribes-cover.jpg'
+coverImageAlt: 'Tribes book cover'
 socialImage: '/static/images/refusal.jpg'
 contentType: bookReview
 bookAuthor: 'Seth Godin'

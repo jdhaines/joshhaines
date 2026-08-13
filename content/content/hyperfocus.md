@@ -7,8 +7,8 @@ updatedAt: 2024-04-18
 tags: ['book shelf', 'productivity']
 featured: false
 draft: false
-image: '/static/images/hyperfocus-cover.jpg'
-imageAlt: 'Hyperfocus book cover'
+coverImage: '/static/images/hyperfocus-cover.jpg'
+coverImageAlt: 'Hyperfocus book cover'
 socialImage: '/static/images/focus.jpg'
 contentType: bookReview
 bookAuthor: 'Chris Bailey'

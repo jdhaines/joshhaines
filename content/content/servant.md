@@ -7,8 +7,8 @@ updatedAt: 2024-05-19
 tags: ['book shelf', 'leadership', 'psychological safety', 'culture']
 featured: false
 draft: false
-image: '/static/images/servant-cover.jpg'
-imageAlt: 'The Servant book cover'
+coverImage: '/static/images/servant-cover.jpg'
+coverImageAlt: 'The Servant book cover'
 socialImage: '/static/images/servant.jpg'
 contentType: bookReview
 bookAuthor: 'James C. Hunter'

@@ -7,8 +7,8 @@ updatedAt: 2024-05-10
 tags: ['book shelf', 'productivity', 'devops']
 featured: false
 draft: false
-image: '/static/images/devops-handbook-cover.jpg'
-imageAlt: 'The DevOps Handbook book cover'
+coverImage: '/static/images/devops-handbook-cover.jpg'
+coverImageAlt: 'The DevOps Handbook book cover'
 socialImage: '/static/images/book.jpg'
 contentType: bookReview
 bookAuthor: ['Gene Kim', 'Jez Humble', 'Patrick Debois', 'John Willis']

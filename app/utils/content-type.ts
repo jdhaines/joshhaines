@@ -29,16 +29,19 @@ export function getContentTypeBadge(contentType?: ContentType) {
 /**
  * Image prop for a `UBlogPost` card on the `/writing`, `/talks`, and
  * `/podcasts` listing pages. Cards render at a fixed 16:9 crop, so a wide
- * `socialImage` (if set) is preferred over a portrait/square `image` --
+ * `socialImage` (if set) is preferred over a portrait/square `coverImage` --
  * same fallback used for the homepage "Latest" hero and the OG/social
  * preview image. Returns `undefined` (hiding the card's image slot
  * entirely) when the post has neither.
  */
 export function getPostCardImage(
-  post: Pick<PostsCollectionItem, "image" | "socialImage" | "imageAlt" | "title">
+  post: Pick<
+    PostsCollectionItem,
+    "coverImage" | "socialImage" | "coverImageAlt" | "title"
+  >
 ) {
-  const src = post.socialImage ?? post.image
+  const src = post.socialImage ?? post.coverImage
   if (!src) return undefined
 
-  return { src, alt: post.imageAlt ?? post.title }
+  return { src, alt: post.coverImageAlt ?? post.title }
 }

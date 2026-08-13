@@ -7,8 +7,8 @@ updatedAt: 2025-06-05
 tags: ['book shelf', 'productivity', 'change']
 featured: false
 draft: false
-image: '/static/images/so-good-they-cant-ignore-you-cover.jpg'
-imageAlt: "So Good They Can't Ignore You book cover"
+coverImage: '/static/images/so-good-they-cant-ignore-you-cover.jpg'
+coverImageAlt: "So Good They Can't Ignore You book cover"
 socialImage: '/static/images/careerHobby.jpg'
 contentType: bookReview
 bookAuthor: 'Cal Newport'

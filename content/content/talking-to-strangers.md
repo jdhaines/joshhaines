@@ -7,8 +7,8 @@ updatedAt: 2024-05-17
 tags: ['book shelf', 'productivity', 'communication']
 featured: false
 draft: false
-image: '/static/images/talking-to-strangers-cover.jpg'
-imageAlt: 'Talking to Strangers book cover'
+coverImage: '/static/images/talking-to-strangers-cover.jpg'
+coverImageAlt: 'Talking to Strangers book cover'
 socialImage: '/static/images/strangers.jpg'
 contentType: bookReview
 bookAuthor: 'Malcolm Gladwell'

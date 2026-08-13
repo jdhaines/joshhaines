@@ -7,8 +7,8 @@ updatedAt: 2024-03-12
 tags: ['book shelf', 'bureaucracy', 'culture']
 featured: false
 draft: false
-image: '/static/images/delicate-art-of-bureaucracy-cover.jpg'
-imageAlt: 'The Delicate Art of Bureaucracy book cover'
+coverImage: '/static/images/delicate-art-of-bureaucracy-cover.jpg'
+coverImageAlt: 'The Delicate Art of Bureaucracy book cover'
 socialImage: '/static/images/bureaucracy.jpg'
 contentType: bookReview
 bookAuthor: 'Mark Schwartz'

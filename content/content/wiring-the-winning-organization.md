@@ -7,8 +7,8 @@ updatedAt: 2024-04-16
 tags: ['book shelf', 'bureaucracy', 'productivity']
 featured: false
 draft: false
-image: '/static/images/wiring-the-winning-organization-cover.jpg'
-imageAlt: 'Wiring the Winning Organization book cover'
+coverImage: '/static/images/wiring-the-winning-organization-cover.jpg'
+coverImageAlt: 'Wiring the Winning Organization book cover'
 socialImage: '/static/images/wiring.jpg'
 contentType: bookReview
 bookAuthor: ['Gene Kim', 'Steven Spear']

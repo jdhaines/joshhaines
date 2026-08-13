@@ -7,8 +7,8 @@ updatedAt: 2026-04-21
 tags: ['book shelf', 'entrepreneurship', 'executive']
 featured: false
 draft: false
-image: '/static/images/high-growth-handbook-cover.jpg'
-imageAlt: 'High Growth Handbook book cover'
+coverImage: '/static/images/high-growth-handbook-cover.jpg'
+coverImageAlt: 'High Growth Handbook book cover'
 socialImage: '/static/images/highGrowth.jpg'
 contentType: bookReview
 bookAuthor: 'Elad Gil'

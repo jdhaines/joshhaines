@@ -7,8 +7,8 @@ updatedAt: 2024-05-22
 tags: ['book shelf', 'tech', 'security', 'docker']
 featured: false
 draft: false
-image: '/static/images/container-security-cover.jpg'
-imageAlt: 'Container Security book cover'
+coverImage: '/static/images/container-security-cover.jpg'
+coverImageAlt: 'Container Security book cover'
 socialImage: '/static/images/container.jpg'
 contentType: bookReview
 bookAuthor: 'Liz Rice'

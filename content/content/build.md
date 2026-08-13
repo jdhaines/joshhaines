@@ -7,8 +7,8 @@ updatedAt: 2024-05-09
 tags: ['book shelf', 'product management']
 featured: false
 draft: false
-image: '/static/images/build-cover.jpg'
-imageAlt: 'Build book cover'
+coverImage: '/static/images/build-cover.jpg'
+coverImageAlt: 'Build book cover'
 socialImage: '/static/images/build.jpg'
 contentType: bookReview
 bookAuthor: 'Tony Fadell'

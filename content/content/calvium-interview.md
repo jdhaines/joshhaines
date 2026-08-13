@@ -9,8 +9,8 @@ startHere: false
 draft: false
 contentType: article
 author: josh
-image: '/static/images/calvium.jpg'
-imageAlt: 'calvium interview'
+coverImage: '/static/images/calvium.jpg'
+coverImageAlt: 'calvium interview'
 ---
 ![calvium interview](/static/images/calvium.jpg)
 

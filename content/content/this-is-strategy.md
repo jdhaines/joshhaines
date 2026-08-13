@@ -8,8 +8,8 @@ tags: ['book shelf', 'strategy', 'business', 'leadership']
 featured: false
 startHere: false
 draft: false
-image: '/static/images/this-is-strategy-cover.jpg'
-imageAlt: 'This is Strategy Cover'
+coverImage: '/static/images/this-is-strategy-cover.jpg'
+coverImageAlt: 'This is Strategy Cover'
 socialImage: '/static/images/strategy.jpg'
 contentType: bookReview
 bookAuthor: ['Seth Godin']

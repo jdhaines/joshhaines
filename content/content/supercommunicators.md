@@ -7,8 +7,8 @@ updatedAt: 2024-06-06
 tags: ['book shelf', 'communication', 'teams', 'psychological safety']
 featured: false
 draft: false
-image: '/static/images/supercommunicators-cover.jpg'
-imageAlt: 'Supercommunicators book cover'
+coverImage: '/static/images/supercommunicators-cover.jpg'
+coverImageAlt: 'Supercommunicators book cover'
 socialImage: '/static/images/communication.jpg'
 contentType: bookReview
 bookAuthor: 'Charles Duhigg'

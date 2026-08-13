@@ -106,7 +106,9 @@ const { data: relatedWriting } = await useAsyncData(
 // where the getter can re-run outside of an active Nuxt app instance.
 const siteUrl = useSiteUrl()
 const canonicalUrl = page.value.canonicalUrl ?? new URL(route.path, siteUrl).toString()
-const socialImagePath = computed(() => page.value?.socialImage ?? page.value?.image)
+const socialImagePath = computed(
+  () => page.value?.socialImage ?? page.value?.coverImage
+)
 const socialImageUrl = computed(() => {
   const socialImage = socialImagePath.value
   return socialImage ? new URL(socialImage, siteUrl).toString() : undefined
@@ -132,7 +134,7 @@ useSeoMeta({
   ogTitle: () => page.value?.title,
   ogDescription: () => page.value?.description,
   ogImage: socialImageUrl,
-  ogImageAlt: () => page.value?.imageAlt ?? page.value?.title,
+  ogImageAlt: () => page.value?.coverImageAlt ?? page.value?.title,
   ogImageWidth: () => socialImageDimensions.value?.width,
   ogImageHeight: () => socialImageDimensions.value?.height,
   ogUrl: canonicalUrl,
@@ -239,9 +241,9 @@ useHead({
           />
 
           <ArticleHeroThumb
-            v-if="page.image"
-            :src="page.image"
-            :alt="page.imageAlt ?? page.title"
+            v-if="page.coverImage"
+            :src="page.coverImage"
+            :alt="page.coverImageAlt ?? page.title"
             :portrait="page.contentType === 'bookReview'"
           />
 

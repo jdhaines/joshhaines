@@ -7,8 +7,8 @@ updatedAt: 2026-03-28
 tags: ['book shelf', 'leadership', 'strategy']
 featured: false
 draft: false
-image: '/static/images/reset-cover.jpg'
-imageAlt: 'Reset book cover'
+coverImage: '/static/images/reset-cover.jpg'
+coverImageAlt: 'Reset book cover'
 socialImage: '/static/images/reset.jpg'
 contentType: bookReview
 bookAuthor: 'Dan Heath'

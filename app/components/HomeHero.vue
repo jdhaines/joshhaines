@@ -11,10 +11,10 @@ const badge = computed(
 )
 
 // This slot is rendered at a wide 16:9 aspect ratio. A portrait book cover
-// (`image`) looks badly cropped there, so prefer the wide `socialImage` art
-// when present -- same fallback used for the OG/social preview image.
+// (`coverImage`) looks badly cropped there, so prefer the wide `socialImage`
+// art when present -- same fallback used for the OG/social preview image.
 const heroImage = computed(
-  () => props.featuredPost?.socialImage ?? props.featuredPost?.image
+  () => props.featuredPost?.socialImage ?? props.featuredPost?.coverImage
 )
 
 const runtimeLabel = computed(
@@ -73,7 +73,7 @@ const runtimeLabel = computed(
         <NuxtImg
           v-if="heroImage"
           :src="heroImage"
-          :alt="featuredPost.imageAlt ?? featuredPost.title"
+          :alt="featuredPost.coverImageAlt ?? featuredPost.title"
           class="mb-6 aspect-video w-full rounded-lg object-cover transition-opacity group-hover:opacity-90"
           width="640"
           height="360"

@@ -7,8 +7,8 @@ updatedAt: 2024-05-10
 tags: ['book shelf', 'productivity', 'mental health']
 featured: false
 draft: false
-image: '/static/images/essentialism-cover.jpg'
-imageAlt: 'Essentialism book cover'
+coverImage: '/static/images/essentialism-cover.jpg'
+coverImageAlt: 'Essentialism book cover'
 socialImage: '/static/images/chair.jpg'
 contentType: bookReview
 bookAuthor: 'Greg McKeown'

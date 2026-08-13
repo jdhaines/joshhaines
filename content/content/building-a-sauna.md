@@ -7,7 +7,7 @@ description: >
 publishedAt: 2026-08-03
 updatedAt: 2026-08-12
 tags: ['sauna', 'construction', 'health']
-image: '/static/images/sauna/outside.png'
+coverImage: '/static/images/sauna/outside.png'
 featured: false
 startHere: false
 draft: true

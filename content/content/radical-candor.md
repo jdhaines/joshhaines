@@ -7,8 +7,8 @@ updatedAt: 2024-06-12
 tags: ['book shelf', 'team building', 'communication', 'psychological safety']
 featured: false
 draft: false
-image: '/static/images/radical-candor-cover.jpg'
-imageAlt: 'Radical Candor book cover'
+coverImage: '/static/images/radical-candor-cover.jpg'
+coverImageAlt: 'Radical Candor book cover'
 socialImage: '/static/images/candor.jpg'
 contentType: bookReview
 bookAuthor: 'Kim Scott'

@@ -8,8 +8,8 @@ tags: ['book shelf', 'business', 'leadership', 'teams', 'psychological safety', 
 featured: false
 startHere: false
 draft: false
-image: '/static/images/five-dysfunctions-cover.jpg'
-imageAlt: 'Five Dysfunctions of a Team Book review image'
+coverImage: '/static/images/five-dysfunctions-cover.jpg'
+coverImageAlt: 'Five Dysfunctions of a Team Book review image'
 socialImage: '/static/images/dysfunctions.jpg'
 contentType: bookReview
 bookAuthor: ['Patrick Lencioni']

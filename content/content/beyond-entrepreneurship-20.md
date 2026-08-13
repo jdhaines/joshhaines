@@ -8,8 +8,8 @@ tags: ['book shelf', 'entrepreneurship', 'business', 'leadership', 'scaling']
 featured: false
 startHere: false
 draft: false
-image: '/static/images/beyond-entrepreneurship-cover.jpg'
-imageAlt: 'Beyond Entrepreneurship 2.0 book cover'
+coverImage: '/static/images/beyond-entrepreneurship-cover.jpg'
+coverImageAlt: 'Beyond Entrepreneurship 2.0 book cover'
 socialImage: '/static/images/beyond.jpg'
 contentType: bookReview
 bookAuthor: ['Jim Collins', 'William Lazier']

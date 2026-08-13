@@ -11,9 +11,9 @@ const props = defineProps<{
 const [heroPost, ...restPosts] = props.posts
 
 // This slot is rendered at a wide 16:9 aspect ratio. A portrait book cover
-// (`image`) looks badly cropped there, so prefer the wide `socialImage` art
-// when present -- same fallback used for the OG/social preview image.
-const heroImage = computed(() => heroPost?.socialImage ?? heroPost?.image)
+// (`coverImage`) looks badly cropped there, so prefer the wide `socialImage`
+// art when present -- same fallback used for the OG/social preview image.
+const heroImage = computed(() => heroPost?.socialImage ?? heroPost?.coverImage)
 </script>
 
 <template>
@@ -25,7 +25,7 @@ const heroImage = computed(() => heroPost?.socialImage ?? heroPost?.image)
         <NuxtImg
           v-if="heroImage"
           :src="heroImage"
-          :alt="heroPost.imageAlt ?? heroPost.title"
+          :alt="heroPost.coverImageAlt ?? heroPost.title"
           class="mb-4 aspect-video w-full rounded-lg object-cover transition-opacity group-hover:opacity-90"
           width="560"
           height="315"

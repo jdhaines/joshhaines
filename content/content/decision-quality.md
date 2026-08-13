@@ -7,8 +7,8 @@ updatedAt: 2024-05-10
 tags: ['book shelf', 'leadership', 'decision making']
 featured: false
 draft: false
-image: '/static/images/decision-quality-cover.jpg'
-imageAlt: 'Decision Quality book cover'
+coverImage: '/static/images/decision-quality-cover.jpg'
+coverImageAlt: 'Decision Quality book cover'
 socialImage: '/static/images/decision.jpg'
 contentType: bookReview
 bookAuthor: ['Carl Spetzler', 'Hannah Winter', 'Jennifer Meyer']

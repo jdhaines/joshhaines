@@ -7,8 +7,8 @@ updatedAt: 2024-05-10
 tags: ['book shelf', 'it', 'bureaucracy']
 featured: false
 draft: false
-image: '/static/images/war-peace-it-cover.jpg'
-imageAlt: 'War and Peace and IT book cover'
+coverImage: '/static/images/war-peace-it-cover.jpg'
+coverImageAlt: 'War and Peace and IT book cover'
 socialImage: '/static/images/battle.jpg'
 contentType: bookReview
 bookAuthor: 'Mark Schwartz'

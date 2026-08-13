@@ -7,8 +7,8 @@ updatedAt: 2024-04-17
 tags: ['book shelf', 'productivity']
 featured: false
 draft: false
-image: '/static/images/deep-work-cover.jpg'
-imageAlt: 'Deep Work book cover'
+coverImage: '/static/images/deep-work-cover.jpg'
+coverImageAlt: 'Deep Work book cover'
 socialImage: '/static/images/deepWork.jpg'
 contentType: bookReview
 bookAuthor: 'Cal Newport'

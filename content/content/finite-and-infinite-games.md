@@ -7,8 +7,8 @@ updatedAt: 2024-05-21
 tags: ['book shelf', 'thought leadership', 'productivity']
 featured: false
 draft: false
-image: '/static/images/finite-and-infinite-games-cover.jpg'
-imageAlt: 'Finite and Infinite Games book cover'
+coverImage: '/static/images/finite-and-infinite-games-cover.jpg'
+coverImageAlt: 'Finite and Infinite Games book cover'
 socialImage: '/static/images/infiniteGames.jpg'
 contentType: bookReview
 bookAuthor: 'James P. Carse'

@@ -7,8 +7,8 @@ updatedAt: 2024-05-22
 tags: ['book shelf', 'thought leadership', 'strategy']
 featured: false
 draft: false
-image: '/static/images/startup-way-cover.jpg'
-imageAlt: 'The Startup Way book cover'
+coverImage: '/static/images/startup-way-cover.jpg'
+coverImageAlt: 'The Startup Way book cover'
 socialImage: '/static/images/startup.jpg'
 contentType: bookReview
 bookAuthor: 'Eric Ries'

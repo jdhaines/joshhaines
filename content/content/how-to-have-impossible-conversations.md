@@ -7,8 +7,8 @@ updatedAt: 2024-05-20
 tags: ['book shelf', 'communication', 'psychological safety']
 featured: false
 draft: false
-image: '/static/images/how-to-have-impossible-conversations-cover.jpg'
-imageAlt: 'How to Have Impossible Conversations book cover'
+coverImage: '/static/images/how-to-have-impossible-conversations-cover.jpg'
+coverImageAlt: 'How to Have Impossible Conversations book cover'
 socialImage: '/static/images/impossibleConversations.jpg'
 contentType: bookReview
 bookAuthor: ['Peter Boghossian', 'James Lindsay']

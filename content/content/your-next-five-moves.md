@@ -7,8 +7,8 @@ updatedAt: 2024-04-21
 tags: ['book shelf', 'strategy']
 featured: false
 draft: false
-image: '/static/images/your-next-five-moves-cover.jpg'
-imageAlt: 'Your Next Five Moves book cover'
+coverImage: '/static/images/your-next-five-moves-cover.jpg'
+coverImageAlt: 'Your Next Five Moves book cover'
 socialImage: '/static/images/badChess.jpg'
 contentType: bookReview
 bookAuthor: 'Patrick Bet-David'

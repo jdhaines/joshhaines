@@ -7,8 +7,8 @@ updatedAt: 2024-03-13
 tags: ['book shelf', 'productivity', 'devops']
 featured: false
 draft: false
-image: '/static/images/sooner-safer-happier-cover.jpg'
-imageAlt: 'Sooner Safer Happier book cover'
+coverImage: '/static/images/sooner-safer-happier-cover.jpg'
+coverImageAlt: 'Sooner Safer Happier book cover'
 socialImage: '/static/images/sooner.jpg'
 contentType: bookReview
 bookAuthor: 'Jonathan Smart'

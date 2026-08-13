@@ -7,8 +7,8 @@ updatedAt: 2024-05-17
 tags: ['book shelf', 'productivity', 'devops']
 featured: false
 draft: false
-image: '/static/images/devops-for-the-modern-enterprise-cover.jpg'
-imageAlt: 'DevOps for the Modern Enterprise book cover'
+coverImage: '/static/images/devops-for-the-modern-enterprise-cover.jpg'
+coverImageAlt: 'DevOps for the Modern Enterprise book cover'
 socialImage: '/static/images/modernEnterprise.jpg'
 contentType: bookReview
 bookAuthor: 'Mirco Hering'

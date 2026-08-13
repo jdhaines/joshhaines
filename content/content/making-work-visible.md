@@ -7,8 +7,8 @@ updatedAt: 2024-05-16
 tags: ['book shelf', 'productivity', 'visualization']
 featured: false
 draft: false
-image: '/static/images/making-work-visible-cover.jpg'
-imageAlt: 'Making Work Visible book cover'
+coverImage: '/static/images/making-work-visible-cover.jpg'
+coverImageAlt: 'Making Work Visible book cover'
 socialImage: '/static/images/visibleWork.jpg'
 contentType: bookReview
 bookAuthor: 'Dominica DeGrandis'

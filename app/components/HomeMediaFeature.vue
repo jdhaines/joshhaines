@@ -40,9 +40,9 @@ const runtimeLabel = computed(() => getRuntimeLabel(props.post))
       </div>
 
       <NuxtImg
-        v-if="post.image"
-        :src="post.image"
-        :alt="post.imageAlt ?? post.title"
+        v-if="post.coverImage"
+        :src="post.coverImage"
+        :alt="post.coverImageAlt ?? post.title"
         class="order-1 aspect-video w-full rounded-lg object-cover sm:order-2"
         width="480"
         height="270"

@@ -7,8 +7,8 @@ updatedAt: 2024-06-12
 tags: ['book shelf', 'mental health', 'health']
 featured: false
 draft: false
-image: '/static/images/anxious-generation-cover.jpg'
-imageAlt: 'Anxious Generation book cover'
+coverImage: '/static/images/anxious-generation-cover.jpg'
+coverImageAlt: 'Anxious Generation book cover'
 socialImage: '/static/images/anxious.jpg'
 contentType: bookReview
 bookAuthor: 'Jonathan Haidt'

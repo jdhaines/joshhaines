@@ -7,8 +7,8 @@ updatedAt: 2024-08-23
 tags: ['book shelf', 'product management', 'strategy']
 featured: false
 draft: false
-image: '/static/images/escaping-the-build-trap-cover.jpg'
-imageAlt: 'Escaping the Build Trap book cover'
+coverImage: '/static/images/escaping-the-build-trap-cover.jpg'
+coverImageAlt: 'Escaping the Build Trap book cover'
 socialImage: '/static/images/trap.jpg'
 contentType: bookReview
 bookAuthor: 'Melissa Perri'

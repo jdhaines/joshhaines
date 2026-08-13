@@ -30,13 +30,17 @@ export default defineContentConfig({
         // `.order("publishedAt", ...)` is unaffected.
         publishedAt: z.string(),
         updatedAt: z.string().optional(),
-        image: z.string().optional(),
-        imageAlt: z.string().optional(),
+        // The primary on-page display image -- the book cover for
+        // `bookReview`s, or a featured/thumbnail image for everything else.
+        // Shown in listing cards, the homepage sections, and the article
+        // header/sidebar.
+        coverImage: z.string().optional(),
+        coverImageAlt: z.string().optional(),
         // Overrides the Open Graph / social-share preview image when it
-        // should differ from the on-page hero `image` -- e.g. book reviews
-        // show the real book cover as `image`, but keep a purpose-made
+        // should differ from the on-page `coverImage` -- e.g. book reviews
+        // show the real book cover as `coverImage`, but keep a purpose-made
         // 1200x630-ish social card (`socialImage`) for link previews on
-        // LinkedIn, X, etc. Falls back to `image` when not set.
+        // LinkedIn, X, etc. Falls back to `coverImage` when not set.
         socialImage: z.string().optional(),
         topics: z.array(z.string()).default([]),
         tags: z.array(z.string()).default([]),

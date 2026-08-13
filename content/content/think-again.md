@@ -7,8 +7,8 @@ updatedAt: 2024-05-17
 tags: ['book shelf', 'decision making', 'thought leadership']
 featured: false
 draft: false
-image: '/static/images/think-again-cover.jpg'
-imageAlt: 'Think Again book cover'
+coverImage: '/static/images/think-again-cover.jpg'
+coverImageAlt: 'Think Again book cover'
 socialImage: '/static/images/thinkAgain.jpg'
 contentType: bookReview
 bookAuthor: 'Adam Grant'

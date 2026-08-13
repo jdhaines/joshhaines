@@ -7,8 +7,8 @@ updatedAt: 2024-05-09
 tags: ['book shelf', 'psychological safety', 'mental health']
 featured: false
 draft: false
-image: '/static/images/fear-of-missing-out-cover.jpg'
-imageAlt: 'Fear of Missing Out book cover'
+coverImage: '/static/images/fear-of-missing-out-cover.jpg'
+coverImageAlt: 'Fear of Missing Out book cover'
 socialImage: '/static/images/brokenPhone.jpg'
 contentType: bookReview
 bookAuthor: 'Patrick J. McGinnis'

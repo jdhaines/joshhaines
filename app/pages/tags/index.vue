@@ -12,8 +12,8 @@ const { data: posts } = await useAsyncData("tags-index-posts", () => {
       "publishedAt",
       "contentType",
       "bookAuthor",
-      "image",
-      "imageAlt",
+      "coverImage",
+      "coverImageAlt",
       "socialImage",
       "tags"
     )
