@@ -70,6 +70,7 @@ order:
   - switch
   - tribes
   - nudge
+  - this-is-strategy
   - clean-code
   - clean-architecture
   - clean-coder

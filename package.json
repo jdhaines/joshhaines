@@ -77,7 +77,7 @@
     "unist-util-visit": "^5.1.0",
     "vitest": "^4.1.10",
     "vue-tsc": "^3.3.8",
-    "wrangler": "^4.114.0"
+    "wrangler": "^4.122.0"
   },
   "trustedDependencies": [
     "unrs-resolver"
