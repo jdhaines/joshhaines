@@ -9,6 +9,7 @@ startHere: false
 draft: false
 contentType: article
 author: josh
+draftTool: essay
 coverImage: '/static/images/calvium.jpg'
 coverImageAlt: 'calvium interview'
 ---

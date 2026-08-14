@@ -13,6 +13,7 @@ socialImage: '/static/images/nudge.jpg'
 contentType: bookReview
 bookAuthor: ['Richard H. Thaler', 'Cass R. Sunstein']
 author: josh
+draftTool: essay
 ---
 
 ## Overview

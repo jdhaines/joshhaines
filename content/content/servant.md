@@ -13,6 +13,7 @@ socialImage: '/static/images/servant.jpg'
 contentType: bookReview
 bookAuthor: 'James C. Hunter'
 author: josh
+draftTool: essay
 ---
 
 ## Overall

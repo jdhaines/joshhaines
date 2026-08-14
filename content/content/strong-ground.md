@@ -13,6 +13,7 @@ socialImage: '/static/images/ground.jpg'
 contentType: bookReview
 bookAuthor: 'Brené Brown'
 author: josh
+draftTool: essay
 ---
 
 I recently finished _Strong Ground_ after seeing it in the University of Toronto book store during a short trip to Toronto. I almost bought it on the spot because of how much I loved [Dare to Lead](/content/dare-to-lead) and [Daring Greatly](/content/daring-greatly). Instead, I held off until I was home and could get it on Audible. I have about 2 hours of mowing a week and that's often a great time to make a lot of progress on books I'm working through.

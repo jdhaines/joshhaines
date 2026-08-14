@@ -13,6 +13,7 @@ socialImage: '/static/images/fiefdom.jpg'
 contentType: bookReview
 bookAuthor: 'Robert Herbold'
 author: josh
+draftTool: essay
 ---
 
 [John](https://www.linkedin.com/in/john-matlik-b261601/) recommended this book because it feels like we suffer from Fiefdom Syndrome at times. Through sometimes innocent (and sometimes not!) means, people in certain positions end up consolidating power and control over processes which stymie our ability to get new and novel ways of working integrated into the business. Overall, I'd say you don't need to read it. It's a solid 3/5 with a few good points, most of which I've summarized below.

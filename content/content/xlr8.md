@@ -13,6 +13,7 @@ socialImage: '/static/images/xlr8.jpg'
 contentType: bookReview
 bookAuthor: 'John P. Kotter'
 author: josh
+draftTool: essay
 ---
 
 ## Notes

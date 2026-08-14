@@ -11,6 +11,7 @@ draft: false
 coverImage: '/static/images/podcast.png'
 contentType: podcast
 author: josh
+draftTool: essay
 runtime: '45 min listen'
 ---
 

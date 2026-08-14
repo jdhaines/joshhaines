@@ -13,6 +13,7 @@ socialImage: '/static/images/reset.jpg'
 contentType: bookReview
 bookAuthor: 'Dan Heath'
 author: josh
+draftTool: essay
 ---
 
 ## Introduction

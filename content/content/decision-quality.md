@@ -13,6 +13,7 @@ socialImage: '/static/images/decision.jpg'
 contentType: bookReview
 bookAuthor: ['Carl Spetzler', 'Hannah Winter', 'Jennifer Meyer']
 author: josh
+draftTool: essay
 ---
 
 This book is a great introduction to the field of _Decision Analysis_. I was unfamiliar with this field prior to reading the book. It also provides a solid framework for using decision quality to increase the quality of decisions across multiple domains. The book is a bit dry, and may work better as a reference. It was valuable if for no other reason than to introduce me to the field of Decision Analysis as a whole.

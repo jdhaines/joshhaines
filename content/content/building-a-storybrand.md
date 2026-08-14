@@ -13,6 +13,7 @@ socialImage: '/static/images/marketing.jpg'
 contentType: bookReview
 bookAuthor: 'Donald Miller'
 author: josh
+draftTool: essay
 ---
 
 I grabbed this book on a whim, and it ended up being one of the best books I've ever read on marketing. On the one hand, the concept is simple: Use stories to communicate your message. But it had one concept that I had never heard before:

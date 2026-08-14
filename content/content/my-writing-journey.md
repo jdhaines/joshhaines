@@ -9,6 +9,7 @@ startHere: false
 draft: false
 contentType: article
 author: josh
+draftTool: essay
 coverImage: '/static/images/redInk.jpg'
 coverImageAlt: 'document with red ink'
 ---

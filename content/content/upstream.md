@@ -13,6 +13,7 @@ socialImage: '/static/images/river.jpg'
 contentType: bookReview
 bookAuthor: 'Dan Heath'
 author: josh
+draftTool: essay
 ---
 
 This was essentially a book expanding on a simple idea. I'm going to put the idea below to save you reading the book (although if you find the story profound, I highly recommend you read the book!)

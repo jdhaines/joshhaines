@@ -13,6 +13,7 @@ socialImage: '/static/images/tree.jpg'
 contentType: bookReview
 bookAuthor: 'John P. Kotter'
 author: josh
+draftTool: essay
 ---
 
 This was a short book that had a significant portion dedicated to a sales pitch for the change management company John Kotter runs. This book was simply an update to the newest research they've done specifically on how modern brain science can be used to help deal with change. To that end, there was one strong key idea throughout that I found useful.

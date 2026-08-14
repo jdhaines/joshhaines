@@ -14,6 +14,8 @@ socialImage: '/static/images/strategy.jpg'
 contentType: bookReview
 bookAuthor: ['Seth Godin']
 author: josh
+draftTool: olympia-sm3
+typedPageImages: ['https://img.joshhaines.com/this-is-strategy/typed1.webp', 'https://img.joshhaines.com/this-is-strategy/typed2.webp']
 ---
 
 ## Introduction

@@ -13,6 +13,7 @@ socialImage: '/static/images/highGrowth.jpg'
 contentType: bookReview
 bookAuthor: 'Elad Gil'
 author: josh
+draftTool: essay
 ---
 
 ## Introduction

@@ -13,6 +13,7 @@ socialImage: '/static/images/calmSunset.jpg'
 contentType: bookReview
 bookAuthor: 'Marshall B. Rosenberg'
 author: josh
+draftTool: essay
 ---
 
 ## Introduction

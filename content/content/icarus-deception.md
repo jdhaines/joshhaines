@@ -13,6 +13,7 @@ socialImage: '/static/images/icarus.jpg'
 contentType: bookReview
 bookAuthor: 'Seth Godin'
 author: josh
+draftTool: essay
 ---
 
 ## Original Review

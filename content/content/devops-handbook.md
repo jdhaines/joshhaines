@@ -13,6 +13,7 @@ socialImage: '/static/images/book.jpg'
 contentType: bookReview
 bookAuthor: ['Gene Kim', 'Jez Humble', 'Patrick Debois', 'John Willis']
 author: josh
+draftTool: essay
 ---
 
 The DevOps Handbook is in many ways the seminal book that has helped to launch the entire world of DevOps and DevSecOps. It wasn't the first book written on the topic, but it is certainly one of the most popular and often cited.

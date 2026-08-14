@@ -5,5 +5,6 @@
     <NuxtPage />
     <SiteFooter />
     <SiteSearch />
+    <ImageLightbox />
   </UApp>
 </template>

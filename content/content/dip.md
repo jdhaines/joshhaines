@@ -13,6 +13,7 @@ socialImage: '/static/images/dip.jpg'
 contentType: bookReview
 bookAuthor: 'Seth Godin'
 author: josh
+draftTool: essay
 ---
 
 This is a nice short book with one core concept:

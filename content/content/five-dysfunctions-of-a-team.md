@@ -14,11 +14,13 @@ socialImage: '/static/images/dysfunctions.jpg'
 contentType: bookReview
 bookAuthor: ['Patrick Lencioni']
 author: josh
+draftTool: olympia-sm3
+typedPageImages: ['https://img.joshhaines.com/five-dysfunctions-of-a-team/typed1.webp', 'https://img.joshhaines.com/five-dysfunctions-of-a-team/typed2.webp']
 ---
 
 ## Introduction
 
-This was an extremely short book. I think the Audible runtime was around 2–3 hours. It began as a narrative story like [The Phoenix Project](/content/phoenix-project) and [The Unicorn Project](/content/unicorn-project). In the narrative a new CEO takes over a struggling company and has to work through an ineffective and broken executive team. She uses the five dysfunctions to diagnose and correct the ship.
+This was an extremely short book. I think the Audible runtime was around 2-3 hours. It began as a narrative story like [The Phoenix Project](/content/phoenix-project) and [The Unicorn Project](/content/unicorn-project). In the narrative a new CEO takes over a struggling company and has to work through an ineffective and broken executive team. She uses the five dysfunctions to diagnose and correct the ship.
 
 The narrative takes you through a bit of the company before the new CEO Katherine joins, how she works with the team initially, through a phase where the team memberships changes, and essentially stops fairly abruptly. The writing felt a bit juvenile and simplistic, but it was effective at making the points which needed to be made. The book centered on five team dysfunctions and I'll go through each below.
 

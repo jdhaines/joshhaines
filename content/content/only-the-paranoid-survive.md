@@ -13,6 +13,7 @@ socialImage: '/static/images/inflection.jpg'
 contentType: bookReview
 bookAuthor: 'Andrew S. Grove'
 author: josh
+draftTool: essay
 ---
 
 > [!NOTE]

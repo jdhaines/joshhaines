@@ -13,6 +13,7 @@ socialImage: '/static/images/build.jpg'
 contentType: bookReview
 bookAuthor: 'Tony Fadell'
 author: josh
+draftTool: essay
 ---
 
 This is a wonderful book that is hard to describe. Essentially, the book is laid out from early career to late career. Tony goes through each stage of someone's career and describes two things:

@@ -13,6 +13,7 @@ socialImage: '/static/images/longBook.jpg'
 contentType: bookReview
 bookAuthor: 'Carol S. Dweck'
 author: josh
+draftTool: essay
 ---
 
 This book was recommended by [William Belcher](https://www.linkedin.com/in/william-b-656b18108/) after talking about similar topics during our review process. I hadn't heard of this book before, but the concept seemed powerful and the reviews were good. Unfortunately, it didn't turn out that way. This book, similar to others in the book club list, is a great paragraph or essay that has been filled out to book length. The concept is powerful and worth understanding. I'll do my best to summarize to save you the read.

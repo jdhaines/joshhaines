@@ -13,6 +13,7 @@ socialImage: '/static/images/thinkAgain.jpg'
 contentType: bookReview
 bookAuthor: 'Adam Grant'
 author: josh
+draftTool: essay
 ---
 
 This was a good book, although a bit longer than it needed to be. [Adam Grant](/search?q=Adam+Grant) (the author) has a huge amount of experience on changing people's minds as an organizational psychologist. He slowly weaves together a rich view of why the ability to re-think past positions and decisions is critical to being successful in this day and age. People have a tendency to make a decision about a belief or value and then let them become entrenched over time. Those people who are able to re-think their positions will have an enormous advantage over others whose views become stagnant.

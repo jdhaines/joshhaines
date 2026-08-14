@@ -13,6 +13,7 @@ socialImage: '/static/images/cleanCode.jpg'
 contentType: bookReview
 bookAuthor: 'Robert C. Martin'
 author: josh
+draftTool: essay
 ---
 
 The third book in the series is just as strong as the [first](/content/clean-code) [two](/content/clean-architecture) books in the series. In this book, Uncle Bob covers the various tools and techniques that software engineers and developers should take advantage of to do their job well. He talks about estimating timelines, proper attitude for success, and the honesty required to be a true _craftsman_ in this industry.

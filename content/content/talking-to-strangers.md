@@ -13,6 +13,7 @@ socialImage: '/static/images/strangers.jpg'
 contentType: bookReview
 bookAuthor: 'Malcolm Gladwell'
 author: josh
+draftTool: essay
 ---
 
 Overall, this was a good book, although I'm not sure how useful it would be to the teams around our company. The book spends a lot of time looking at various scandals and cases where people have had significant failures in understanding and trusting strangers. People have many tendencies that lead to poor decision making and trust with people who they don't know. The author gives many reasons for this and pulls in research from a large number of different communities, industries, and studies. The book is in the same style with most of Malcolm's previous books, and if you like his previous work, you'll enjoy this book as well.

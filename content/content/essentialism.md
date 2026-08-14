@@ -13,6 +13,7 @@ socialImage: '/static/images/chair.jpg'
 contentType: bookReview
 bookAuthor: 'Greg McKeown'
 author: josh
+draftTool: essay
 ---
 
 This book was recommended to me by a coworker (h/t [Chelsea Bowen](https://www.linkedin.com/in/chelsea-bowen-53903b31/)!) and I'm glad I read it. It wasn't a super long book, but it had an important message: **Do Less, Better**. The author talks about how we're all pulled in so many directions and how we need to focus on the things that are most important. He discusses the importance of saying _no_ to things and how doing that won't lead to the negative consequences that you expect it might. In fact, he argues that it will open a whole new world of possibilities and improvements.

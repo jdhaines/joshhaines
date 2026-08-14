@@ -13,6 +13,7 @@ socialImage: '/static/images/communication.jpg'
 contentType: bookReview
 bookAuthor: 'Charles Duhigg'
 author: josh
+draftTool: essay
 ---
 
 This was a book I randomly saw on Audible and decided to give it a try. I remember the cover was really interesting and the advertisement blurb made it sound pretty great. The author begins by discussing how certain people are _supercommunicators_. These people tend to be able to connect with others in a way that is both deep and meaningful. They can make people feel heard and understood. They can make people feel like they are the most important person in the room. The author then goes on to discuss how these supercommunicators are able to do this across three main core ideas.

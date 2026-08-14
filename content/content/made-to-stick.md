@@ -13,6 +13,7 @@ socialImage: '/static/images/glue.jpg'
 contentType: bookReview
 bookAuthor: ['Chip Heath', 'Dan Heath']
 author: josh
+draftTool: essay
 ---
 
 ## Introduction

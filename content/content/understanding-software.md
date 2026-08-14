@@ -13,6 +13,7 @@ socialImage: '/static/images/understanding.jpg'
 contentType: bookReview
 bookAuthor: 'Max Kanat-Alexander'
 author: josh
+draftTool: essay
 ---
 
 Understanding Software by [Max Kanat-Alexander](/search?q=Max+Kanat-Alexander) was an interesting book. The first thing that is clear as you start to read is the technical capability of the author. Max is/was the technical director of code health at Google. His title and the fact that he is doing this work for Google should tell you he knows his stuff. The second is reading a book made from a bunch of disparate blog posts isn't that fun.

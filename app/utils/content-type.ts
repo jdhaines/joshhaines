@@ -45,3 +45,15 @@ export function getPostCardImage(
 
   return { src, alt: post.coverImageAlt ?? post.title }
 }
+
+/**
+ * Badge shown on the `/tools` listing card. All tools share one label/icon
+ * regardless of `kind` -- there are only ever a couple of kinds and they
+ * don't need their own visual distinction, just a shared "this is a tool"
+ * signal like the `contentType` badges give posts.
+ */
+const TOOL_BADGE = { label: "Tool", color: "primary", icon: "i-lucide-wrench" } as const
+
+export function getToolBadge() {
+  return TOOL_BADGE
+}

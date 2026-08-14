@@ -13,6 +13,7 @@ socialImage: '/static/images/distraction.jpg'
 contentType: bookReview
 bookAuthor: 'Nir Eyal'
 author: josh
+draftTool: essay
 ---
 
 This was a useful short book about the most up-to-date science of distraction and how to combat its place in our lives. There were a number of differences the author brings up related to the newest research and how it differs from some long-held beliefs about distraction.

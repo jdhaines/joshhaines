@@ -15,6 +15,7 @@ const NAV_PAGES = [
   { path: "/podcasts", label: "Podcasts" },
   { path: "/talks", label: "Talks" },
   { path: "/writing", label: "Writing" },
+  { path: "/tools", label: "Tools" },
   { path: "/about", label: "About" },
 ]
 
@@ -184,6 +185,53 @@ test.describe("content article", () => {
     expect(response?.status()).toBe(200)
     await expect(page).toHaveTitle(/.+/)
     await expect(page.locator("h1").first()).toBeVisible()
+  })
+
+  test('a post with a draftTool shows the "How This Was Drafted" sidebar widget, and its /tools/<slug> profile page renders', async ({
+    page,
+  }) => {
+    // "accelerate" is one of the ~70 posts backfilled with `draftTool:
+    // essay` -- this only cares that the opt-in mechanism works end to end,
+    // not that this specific post always uses this specific tool.
+    await page.goto("/content/accelerate")
+    await expect(page.getByText("How This Was Drafted")).toBeVisible()
+    await expect(page.getByRole("link", { name: "Essay", exact: true })).toBeVisible()
+
+    const response = await page.goto("/tools/essay")
+    expect(response?.status()).toBe(200)
+    await expect(page).toHaveTitle(/.+/)
+    await expect(page.getByRole("heading", { name: "Accelerate" })).toBeVisible()
+  })
+
+  test("the /tools and /authors index pages render cards", async ({ page }) => {
+    const toolsResponse = await page.goto("/tools")
+    expect(toolsResponse?.status()).toBe(200)
+    await expect(page.getByRole("link", { name: /Essay/ })).toBeVisible()
+
+    const authorsResponse = await page.goto("/authors")
+    expect(authorsResponse?.status()).toBe(200)
+    await expect(
+      page.getByRole("link", { name: "Josh Haines", exact: true })
+    ).toBeVisible()
+  })
+
+  test("typed-page images in the draft-process sidebar open a lightbox on click and close on Escape", async ({
+    page,
+  }) => {
+    // embla-carousel's drag handling swallows the click before the browser's
+    // native "view image at actual size" zoom can fire, so this widget needs
+    // its own lightbox -- unlike plain prose images elsewhere in the article.
+    await page.goto("/content/five-dysfunctions-of-a-team")
+    const carouselImage = page.getByRole("img", { name: /typed draft page/i }).first()
+    await expect(carouselImage).toBeVisible()
+
+    await carouselImage.click()
+    const dialog = page.getByRole("dialog")
+    await expect(dialog).toBeVisible()
+    await expect(dialog.getByRole("img", { name: /typed draft page/i })).toBeVisible()
+
+    await page.keyboard.press("Escape")
+    await expect(dialog).not.toBeVisible()
   })
 
   test("the comments section renders with a submission form (Turnstile is configured)", async ({

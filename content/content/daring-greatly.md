@@ -13,6 +13,7 @@ socialImage: '/static/images/daring.jpg'
 contentType: bookReview
 bookAuthor: 'Brené Brown'
 author: josh
+draftTool: essay
 ---
 
 ## Introduction

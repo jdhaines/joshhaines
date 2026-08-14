@@ -13,6 +13,7 @@ socialImage: '/static/images/rocket.jpg'
 contentType: bookReview
 bookAuthor: 'Daniel Coyle'
 author: josh
+draftTool: essay
 ---
 
 _The Culture Code_ is a solid book on the topic of high-performance cultures. I found it very valuable to hear the accounts of high-performance teams and what types of behaviors can drive that performance. They found the results are largely not based on experience, but rather on the culture of the team. This is a solid book on how you can adjust your behaviors and implement certain strategies to help your teams perform more efficiently and effectively.

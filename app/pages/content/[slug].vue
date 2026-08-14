@@ -25,6 +25,14 @@ const { data: author } = await useAsyncData(
   }
 )
 
+const { data: draftTool } = await useAsyncData(
+  `content-draft-tool-${page.value.draftTool}`,
+  () => {
+    if (!page.value?.draftTool) return Promise.resolve(null)
+    return queryCollection("tools").path(`/tools/${page.value.draftTool}`).first()
+  }
+)
+
 const { data: bookShelf } = await useAsyncData("content-book-shelf", () => {
   return queryCollection("bookShelf").first()
 })
@@ -233,11 +241,17 @@ useHead({
       </article>
 
       <aside class="hidden lg:block">
-        <div class="sticky top-24 flex flex-col gap-8">
+        <div
+          class="sticky top-24 flex max-h-[calc(100vh-7rem)] w-full min-w-0 flex-col gap-8 overflow-x-hidden overflow-y-auto overscroll-contain pb-4"
+        >
           <UContentToc
             v-if="page.body?.toc?.links?.length"
             :links="page.body.toc.links"
             title="On this page"
+            :ui="{
+              root: 'static mx-0 sm:mx-0 px-0 sm:px-0 ms-0 bg-transparent lg:bg-transparent backdrop-blur-none overflow-visible lg:overflow-visible max-h-none flex flex-col min-w-0 shrink-0',
+              content: 'lg:overflow-visible',
+            }"
           />
 
           <ArticleHeroThumb
@@ -245,11 +259,24 @@ useHead({
             :src="page.coverImage"
             :alt="page.coverImageAlt ?? page.title"
             :portrait="page.contentType === 'bookReview'"
+            class="shrink-0"
           />
 
-          <RelatedList title="On This Topic" :posts="onThisTopic" />
+          <RelatedList title="On This Topic" :posts="onThisTopic" class="shrink-0" />
 
-          <RelatedList title="You Might Also Like" :posts="relatedWriting ?? []" />
+          <RelatedList
+            title="You Might Also Like"
+            :posts="relatedWriting ?? []"
+            class="shrink-0"
+          />
+
+          <DraftProcess
+            v-if="draftTool"
+            :tool="draftTool"
+            :post-title="page.title"
+            :typed-page-images="page.typedPageImages"
+            class="shrink-0"
+          />
         </div>
       </aside>
     </div>

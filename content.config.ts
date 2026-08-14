@@ -75,6 +75,16 @@ export default defineContentConfig({
         // "You Might Also Like" sidebar, independent of the automatic
         // tag-based "On This Topic" list.
         relatedWriting: z.array(z.string()).max(3).default([]),
+        // Slug of an entry in the `tools` collection -- shows a "how
+        // this was drafted" sidebar block when set. Deliberately optional
+        // with no default: this is a fully opt-in feature (added May 2024
+        // when Josh started drafting in Essay), not a retroactive claim
+        // about how older posts were actually written.
+        draftTool: z.string().optional(),
+        // Photos of the hand-typed rough-draft pages (only populated for
+        // typewriter-drafted posts). Plain remote URLs (img.joshhaines.com),
+        // rendered as a simple prev/next carousel below the draftTool block.
+        typedPageImages: z.array(z.string()).default([]),
       }),
     }),
     // The Book Shelf's ranked order ("most useful" -> "least useful") and its
@@ -104,6 +114,43 @@ export default defineContentConfig({
         linkedin: z.string().optional(),
         github: z.string().optional(),
         discord: z.string().optional(),
+      }),
+    }),
+    // Profiles for whatever Josh actually drafted a post on -- the default
+    // "Essay" writing app, or a specific typewriter once he started typing
+    // rough drafts by hand -- plus any other tool worth a profile page (a
+    // favorite pen, etc.). Referenced by `posts.draftTool`. Each entry gets
+    // its own page (like `authors`), plus a compact "how this was drafted"
+    // widget in the article sidebar when it's a draftTool.
+    tools: defineCollection({
+      type: "page",
+      source: "tools/**",
+      schema: z.object({
+        name: z.string(),
+        kind: z.enum(["app", "typewriter"]),
+        // Typewriters only (e.g. "Green") -- not meaningful for apps.
+        color: z.string().optional(),
+        // App homepage, or a reference/manual link for a typewriter model.
+        link: z.string().optional(),
+        // Primary photo -- used as the small thumbnail in the sidebar
+        // widget and as the profile page's default social/OG image.
+        image: z.string().optional(),
+        imageAlt: z.string().optional(),
+        // Overrides the Open Graph / social-share preview image, and is
+        // preferred over `image` for the /tools index listing card (which
+        // renders a wide 16:9 crop, same convention as `posts.socialImage`).
+        // Falls back to `image` when not set.
+        socialImage: z.string().optional(),
+        // Additional high-res photos (e.g. multiple angles of a
+        // typewriter) rendered as a carousel on the dedicated
+        // /tools/<slug> profile page. Not shown in the compact sidebar
+        // widget -- that only ever uses `image`.
+        images: z.array(z.string()).default([]),
+        // Short one-liner shown in the compact sidebar widget and the
+        // /tools index listing card. The full markdown body (below the
+        // frontmatter) is reserved for the dedicated /tools/<slug> profile
+        // page.
+        tagline: z.string().optional(),
       }),
     }),
   },

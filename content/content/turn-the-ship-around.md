@@ -13,6 +13,7 @@ socialImage: '/static/images/submarine.jpg'
 contentType: bookReview
 bookAuthor: 'L. David Marquet'
 author: josh
+draftTool: essay
 ---
 
 ## A Great Ted Talk

@@ -13,6 +13,7 @@ socialImage: '/static/images/accelerate.jpg'
 contentType: bookReview
 bookAuthor: ['Nicole Forsgren', 'Jez Humble', 'Gene Kim']
 author: josh
+draftTool: essay
 ---
 
 > [!NOTE]

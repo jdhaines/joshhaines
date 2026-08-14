@@ -14,6 +14,7 @@ socialImage: '/static/images/beyond.jpg'
 contentType: bookReview
 bookAuthor: ['Jim Collins', 'William Lazier']
 author: josh
+draftTool: essay
 ---
 
 ## Introduction

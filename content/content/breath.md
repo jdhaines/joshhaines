@@ -13,6 +13,7 @@ socialImage: '/static/images/breath.jpg'
 contentType: bookReview
 bookAuthor: 'James Nestor'
 author: josh
+draftTool: essay
 ---
 
 This book is one of the better health related books I've read in a long time. In it, the author lays out a pretty well-reasoned model that we as modern humans have forgotten how to breathe properly. This failure leads to a number of problems including some surprising ones like crooked teeth, weak jaws, and snoring.

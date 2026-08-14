@@ -13,6 +13,7 @@ socialImage: '/static/images/modernEnterprise.jpg'
 contentType: bookReview
 bookAuthor: 'Mirco Hering'
 author: josh
+draftTool: essay
 ---
 
 This is a decent general overview of agile and how to deploy it into an organization. There wasn't anything wrong with the book, per se, but it didn't have any new ideas for me. I think the book [Sooner Safer Happier](/content/sooner-safer-happier) is a better book on the whole and covers the same topics while including many more.

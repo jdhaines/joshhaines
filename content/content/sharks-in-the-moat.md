@@ -13,6 +13,7 @@ socialImage: '/static/images/sharks.jpg'
 contentType: bookReview
 bookAuthor: 'Phil Martin'
 author: josh
+draftTool: essay
 ---
 
 This was a pretty solid book when it comes to security. It is very long and very in-depth, but it covers all the material you need to have a solid fundamental understanding of security on the internet. I wouldn't recommend that everyone read it, but for anyone interested in cybersecurity, application security (AppSec), or information security (InfoSec) it's a solid read and worth having on the shelf (even as a reference).

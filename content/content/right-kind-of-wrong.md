@@ -13,6 +13,7 @@ socialImage: '/static/images/eraser.jpg'
 contentType: bookReview
 bookAuthor: 'Amy C. Edmondson'
 author: josh
+draftTool: essay
 ---
 
 ## Introduction and Author

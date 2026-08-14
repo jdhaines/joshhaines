@@ -13,6 +13,7 @@ socialImage: '/static/images/hardThings.jpg'
 contentType: bookReview
 bookAuthor: 'Ben Horowitz'
 author: josh
+draftTool: essay
 ---
 
 ## Introduction

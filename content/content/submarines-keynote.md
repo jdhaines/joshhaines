@@ -11,6 +11,7 @@ draft: false
 coverImage: '/static/images/subsTalk.png'
 contentType: talk
 author: josh
+draftTool: essay
 relatedWriting: ['chemistry-of-innovation']
 ---
 

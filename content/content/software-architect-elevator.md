@@ -13,6 +13,7 @@ socialImage: '/static/images/elevator.jpg'
 contentType: bookReview
 bookAuthor: 'Gregor Hohpe'
 author: josh
+draftTool: essay
 ---
 
 The first half to two-thirds of this book was a little dry. I'm not a huge fan of the way Rolls-Royce does architecture and the beginning of this book goes into why architects are important and what types of things they should be trying to accomplish. He has some useful models to describe how architects fit within the business and how they can be effective.

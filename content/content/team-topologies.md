@@ -13,6 +13,7 @@ socialImage: '/static/images/teams.png'
 contentType: bookReview
 bookAuthor: ['Matthew Skelton', 'Manuel Pais']
 author: josh
+draftTool: essay
 ---
 
 ## Introduction

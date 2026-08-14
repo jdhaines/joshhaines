@@ -51,6 +51,8 @@ Applies to every file in `content/content/*.md`.
 | `author` | string (slug) | No | `'josh'` | Must match a slug in `content/authors/**` (e.g. `josh` for `content/authors/josh.md`). |
 | `runtime` | string | Effectively required for `podcast` | -- | Manual override for the "X min read"/"X min listen" badge, e.g. `'45 min listen'`. Podcasts have no body to estimate from, so always set this for podcasts. Optional elsewhere -- omit to auto-calculate reading time from the body. |
 | `relatedWriting` | string[] (max 3) | No | `[]` | Curated slugs (not full paths -- e.g. `'techpoint'`, not `/content/techpoint`) for the "You Might Also Like" sidebar. Independent of the automatic tag-based "On This Topic" list. |
+| `draftTool` | string (slug) | No | -- | Slug of an entry in `content/tools/**` (e.g. `essay`, `olympia-sm3`). Fully opt-in -- shows a "How This Was Drafted" sidebar widget when set; omitted posts show nothing. Not retroactive/defaulted, since it's a factual claim about how a specific piece was actually written. |
+| `typedPageImages` | string[] | No | `[]` | Remote photo URLs (`https://img.joshhaines.com/...`) of hand-typed rough-draft pages, rendered as a prev/next carousel in the "How This Was Drafted" widget. Only meaningful alongside a typewriter `draftTool`. |
 
 ### `contentType` values and badge colors
 
@@ -69,6 +71,9 @@ Add new content types there and to the `contentType` enum in
 
 Applies to files in `content/authors/*.md`, referenced by a post's `author`
 field (matched by filename slug, e.g. `content/authors/josh.md` → `josh`).
+Each entry gets its own `/authors/<slug>` profile page plus a card on the
+`/authors` index page (currently just Josh, but built to support guest
+contributors).
 
 | Field | Type | Required | Notes |
 | --- | --- | --- | --- |
@@ -80,6 +85,29 @@ field (matched by filename slug, e.g. `content/authors/josh.md` → `josh`).
 | `linkedin` | string (URL) | No | Renders a LinkedIn icon link. |
 | `github` | string (URL) | No | Renders a GitHub icon link. |
 | `discord` | string (URL) | No | Renders a Discord icon link. |
+
+## `tools` frontmatter reference
+
+Applies to files in `content/tools/*.md`, referenced by a post's
+`draftTool` field (matched by filename slug, e.g. `content/tools/olympia-sm3.md`
+→ `olympia-sm3`). Each entry gets its own `/tools/<slug>` profile page
+(listing every post drafted with it, newest first), a card on the `/tools`
+index page, and -- when referenced by a post's `draftTool` -- a compact
+widget in that post's article sidebar. Not every tool needs to be a
+draftTool (e.g. a pen worth its own profile page but never referenced by a
+post). Mirrors the `authors` collection/page pattern above.
+
+| Field | Type | Required | Notes |
+| --- | --- | --- | --- |
+| `name` | string | **Yes** | Display name, e.g. `Essay` or `Olympia SM3`. |
+| `kind` | enum (`app`, `typewriter`) | **Yes** | Drives any kind-specific display differences and the `/tools` index card's badge. |
+| `color` | string | No | Typewriters only (e.g. `Green`) -- not meaningful for apps. |
+| `link` | string (URL) | No | App homepage, or a reference/manual link for a typewriter model. |
+| `image` | string (path or URL) | No | Photo shown in the sidebar widget and, absent `socialImage`, the profile page's social/OG image and the `/tools` index card. |
+| `imageAlt` | string | No | Alt text for `image`. Provide this whenever `image` is set. |
+| `socialImage` | string (path or URL) | No | Overrides the Open Graph/social preview image and the `/tools` index card image (which renders a wide 16:9 crop) when it should differ from `image`. Falls back to `image` when not set. |
+| `images` | string[] | No | Additional high-res photos rendered as a carousel on the `/tools/<slug>` profile page only (not the compact sidebar widget). |
+| `tagline` | string | No | Short one-liner shown in the compact sidebar widget and the `/tools` index card. The markdown body below the frontmatter is reserved for the full `/tools/<slug>` profile page. |
 
 ## Static `content` pages
 

@@ -13,6 +13,7 @@ socialImage: '/static/images/keys.jpg'
 contentType: bookReview
 bookAuthor: ['Marcus Buckingham', 'Curt Coffman']
 author: josh
+draftTool: essay
 ---
 
 ## Introduction

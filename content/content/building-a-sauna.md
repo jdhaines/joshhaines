@@ -13,6 +13,7 @@ startHere: false
 draft: true
 contentType: article
 author: josh
+draftTool: essay
 ---
 
 ## Introduction

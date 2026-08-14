@@ -13,6 +13,7 @@ socialImage: '/static/images/digitalMindset.jpg'
 contentType: bookReview
 bookAuthor: ['Paul Leonardi', 'Tsedal Neeley']
 author: josh
+draftTool: essay
 ---
 
 I would recommend skipping this book. I was recommended this book from a few people in the DoD because they were reviewing it at high levels. I found it to be overly simplistic and not very helpful.

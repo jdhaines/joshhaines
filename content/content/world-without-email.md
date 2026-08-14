@@ -13,6 +13,7 @@ socialImage: '/static/images/hivemind.jpg'
 contentType: bookReview
 bookAuthor: 'Cal Newport'
 author: josh
+draftTool: essay
 ---
 
 ## Introduction

@@ -13,6 +13,7 @@ socialImage: '/static/images/theFuture.jpg'
 contentType: bookReview
 bookAuthor: ['Peter Thiel', 'Blake Masters']
 author: josh
+draftTool: essay
 ---
 
 ## Overview

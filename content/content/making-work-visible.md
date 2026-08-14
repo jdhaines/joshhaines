@@ -13,6 +13,7 @@ socialImage: '/static/images/visibleWork.jpg'
 contentType: bookReview
 bookAuthor: 'Dominica DeGrandis'
 author: josh
+draftTool: essay
 ---
 
 Making work visible is a book about exactly what the title suggests. The author does a simply wonderful job of explaining various ways to take the nuances of work and make them visible through various types of tools. Throughout the process, you come to learn and value all the benefits of making your work visible.

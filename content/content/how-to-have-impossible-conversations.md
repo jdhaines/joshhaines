@@ -13,6 +13,7 @@ socialImage: '/static/images/impossibleConversations.jpg'
 contentType: bookReview
 bookAuthor: ['Peter Boghossian', 'James Lindsay']
 author: josh
+draftTool: essay
 ---
 
 I grabbed this book based on a passing ad and brought my own thoughts as to what I hoped to learn from this book. Unfortunately, the ad didn't accurately reflect what the book contained.

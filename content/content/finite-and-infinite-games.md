@@ -13,6 +13,7 @@ socialImage: '/static/images/infiniteGames.jpg'
 contentType: bookReview
 bookAuthor: 'James P. Carse'
 author: josh
+draftTool: essay
 ---
 
 This was a bit of a strange philosophical book that was recommended in another book I was reading. I didn't particularly enjoy the way it was written and didn't glean deep moral understanding from its "_All As are Bs, but not all Bs are As_" style of writing. The general thrust of the book, however, was very useful and one that I'll take with me for the long haul.

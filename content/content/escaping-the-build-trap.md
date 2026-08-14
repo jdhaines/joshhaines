@@ -13,6 +13,7 @@ socialImage: '/static/images/trap.jpg'
 contentType: bookReview
 bookAuthor: 'Melissa Perri'
 author: josh
+draftTool: essay
 ---
 
 I actually read this book quite a while ago, but only recently realized I had never written a review for it. This is a super short book on the topic of modern product management. Before reading this book, I didn't have a great understanding of how _Product Management_ was different from _Project Management_. It was a great introduction to the discipline and how so many companies fall into poor working practices around the creation of products.

@@ -13,6 +13,7 @@ socialImage: '/static/images/dareToLead.jpg'
 contentType: bookReview
 bookAuthor: 'Brené Brown'
 author: josh
+draftTool: essay
 ---
 
 ## Kick-Off

@@ -13,6 +13,7 @@ socialImage: '/static/images/innovation.jpg'
 contentType: bookReview
 bookAuthor: 'Clayton M. Christensen'
 author: josh
+draftTool: essay
 ---
 
 > This is part of a 4-book series on disruptive innovation. You can find the full series [here](https://www.amazon.com/Disruptive-Innovation-Christensen-Collection-Innovators-ebook/dp/B008527PTO/ref=sr_1_3?dchild=1&keywords=Innovator%27s+dilemma&qid=1612454535&s=audible&sr=1-3-catcorr).

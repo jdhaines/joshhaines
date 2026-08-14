@@ -13,6 +13,7 @@ socialImage: '/static/images/careerHobby.jpg'
 contentType: bookReview
 bookAuthor: 'Cal Newport'
 author: josh
+draftTool: essay
 ---
 
 ## Introduction

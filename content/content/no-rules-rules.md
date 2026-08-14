@@ -13,6 +13,7 @@ socialImage: '/static/images/netflix1.jpg'
 contentType: bookReview
 bookAuthor: ['Reed Hastings', 'Erin Meyer']
 author: josh
+draftTool: essay
 ---
 
 I found this book when I was looking to buy [Working Backwards](/content/working-backwards). It seemed like this might provide some of the same benefits as the Amazon book, namely, a description of how Netflix solved problems in a unique way while describing the problem space within the company at the time. I wasn't disappointed! Overall, the book was great. I'll review it by describing some of my favorite parts in detail. Unlike the Amazon book, this one focused primarily on the culture, people, and processes around how Netflix operates.

@@ -13,6 +13,7 @@ socialImage: '/static/images/traction.jpg'
 contentType: bookReview
 bookAuthor: 'Gino Wickman'
 author: josh
+draftTool: essay
 ---
 
 ## Introduction

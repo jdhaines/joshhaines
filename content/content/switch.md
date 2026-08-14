@@ -13,6 +13,7 @@ socialImage: '/static/images/switch.jpg'
 contentType: bookReview
 bookAuthor: ['Chip Heath', 'Dan Heath']
 author: josh
+draftTool: essay
 ---
 
 I picked up _Switch_ because of how much I enjoyed [Made to Stick](/content/made-to-stick). I was not disappointed. This book is all about how to change things when change is hard. The authors, Chip and [Dan Heath](/search?q=Dan+Heath), lay out a simple framework for making change easier. They use the analogy of a rider on an elephant to explain how to make change happen. The rider is the rational part of our brain, and the elephant is the emotional part. The rider can direct the elephant, but the elephant is much stronger and can easily overpower the rider.

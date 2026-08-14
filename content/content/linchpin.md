@@ -13,6 +13,7 @@ socialImage: '/static/images/linchpin.jpg'
 contentType: bookReview
 bookAuthor: 'Seth Godin'
 author: josh
+draftTool: essay
 ---
 
 Linchpin, at its core, is a book about how to become indispensable in your job. The author draws parallels between "factory workers" (not meant in a derogatory way) and "linchpins." This book describes how to grow yourself into a linchpin.

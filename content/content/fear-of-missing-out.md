@@ -13,6 +13,7 @@ socialImage: '/static/images/brokenPhone.jpg'
 contentType: bookReview
 bookAuthor: 'Patrick J. McGinnis'
 author: josh
+draftTool: essay
 ---
 
 This book was recommended by [William Belcher](https://www.linkedin.com/in/william-b-656b18108/) after he read it and found it really great. I also really liked this book. It took a couple concepts that many of us experience at different points in our lives and gave them terminology and explanations. Books like that are some of the best.
