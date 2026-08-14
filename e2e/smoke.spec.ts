@@ -192,10 +192,12 @@ test.describe("content article", () => {
   }) => {
     // "accelerate" is one of the ~70 posts backfilled with `draftTool:
     // essay` -- this only cares that the opt-in mechanism works end to end,
-    // not that this specific post always uses this specific tool.
+    // not that this specific post always uses this specific tool. Matched
+    // by href (not display text) since `tools/essay.md`'s `name` is content
+    // Josh edits freely (e.g. "Essay" -> "Essay App").
     await page.goto("/content/accelerate")
     await expect(page.getByText("How This Was Drafted")).toBeVisible()
-    await expect(page.getByRole("link", { name: "Essay", exact: true })).toBeVisible()
+    await expect(page.locator('a[href="/tools/essay"]').first()).toBeVisible()
 
     const response = await page.goto("/tools/essay")
     expect(response?.status()).toBe(200)
@@ -206,7 +208,7 @@ test.describe("content article", () => {
   test("the /tools and /authors index pages render cards", async ({ page }) => {
     const toolsResponse = await page.goto("/tools")
     expect(toolsResponse?.status()).toBe(200)
-    await expect(page.getByRole("link", { name: /Essay/ })).toBeVisible()
+    await expect(page.locator('a[href="/tools/essay"]').first()).toBeVisible()
 
     const authorsResponse = await page.goto("/authors")
     expect(authorsResponse?.status()).toBe(200)
