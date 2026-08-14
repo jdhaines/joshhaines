@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { getImageDimensions } from "~/utils/social-image"
+
 const route = useRoute()
 
 const { data: tool } = await useAsyncData(`tool-${route.path}`, () => {
@@ -21,7 +23,24 @@ const { data: posts } = await useAsyncData(`tool-posts-${route.path}`, () => {
     .all()
 })
 
-const canonicalUrl = new URL(route.path, useSiteUrl()).toString()
+const siteUrl = useSiteUrl()
+const canonicalUrl = new URL(route.path, siteUrl).toString()
+const socialImagePath = computed(() => tool.value?.socialImage ?? tool.value?.image)
+const socialImageUrl = computed(() => {
+  const socialImage = socialImagePath.value
+  return socialImage ? new URL(socialImage, siteUrl).toString() : undefined
+})
+
+// Same reasoning as the article page's social image: the site-wide default
+// og:image:width/height in nuxt.config.ts only matches the default banner,
+// so a per-image lookup is needed whenever a tool overrides og:image.
+const { data: socialImageDimensions } = await useAsyncData(
+  `tool-image-size-${route.path}`,
+  () => {
+    const imagePath = socialImagePath.value
+    return imagePath ? getImageDimensions(imagePath) : Promise.resolve(undefined)
+  }
+)
 
 const { open: openLightbox } = useImageLightbox()
 
@@ -30,8 +49,14 @@ useSeoMeta({
   description: () => tool.value?.tagline,
   ogTitle: () => tool.value?.name,
   ogDescription: () => tool.value?.tagline,
+  ogImage: socialImageUrl,
+  ogImageAlt: () => tool.value?.imageAlt ?? tool.value?.name,
+  ogImageWidth: () => socialImageDimensions.value?.width,
+  ogImageHeight: () => socialImageDimensions.value?.height,
   ogUrl: canonicalUrl,
   ogType: "profile",
+  twitterCard: "summary_large_image",
+  twitterImage: socialImageUrl,
 })
 
 useHead({

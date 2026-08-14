@@ -145,6 +145,22 @@ test.describe("SEO metadata", () => {
       .getAttribute("content")
     expect(articleAuthor).toMatch(/^https:\/\//)
   })
+
+  test("a /tools/<slug> profile page's og:image uses its own socialImage, not the site-wide default banner", async ({
+    page,
+  }) => {
+    // Regression guard: the /tools/<slug> page previously didn't set
+    // og:image/twitter:image at all, so link previews silently fell back
+    // to the site-wide default banner (Josh's logo) instead of the tool's
+    // own socialImage (e.g. an actual photo of the typewriter).
+    await page.goto("/tools/olympia-sm3")
+
+    const ogImage = await page
+      .locator('meta[property="og:image"]')
+      .getAttribute("content")
+    expect(ogImage).toContain("olympia-sm3")
+    expect(ogImage).not.toContain("josh-haines-social")
+  })
 })
 
 test.describe("book shelf", () => {
