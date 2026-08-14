@@ -19,6 +19,14 @@ const sortDirection = ref<BookShelfSortDirection>("asc")
 const view = ref<BookShelfView>("list")
 const query = ref("")
 
+// Each sort field has its own natural default direction (e.g. review date
+// should read newest-first, not oldest-first) -- reset to that default
+// whenever the field itself changes, while still letting the direction
+// toggle button override it for the current field.
+watch(sort, (value) => {
+  sortDirection.value = DEFAULT_SORT_DIRECTIONS[value]
+})
+
 const filteredRanked = computed(() =>
   sortBooks(searchBooks(ranked, query.value), sort.value, sortDirection.value)
 )

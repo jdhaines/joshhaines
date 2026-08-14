@@ -17,6 +17,20 @@ export const BOOK_SHELF_SORT_OPTIONS: { label: string; value: BookShelfSort }[] 
   { label: "Review Date", value: "date" },
 ]
 
+/**
+ * Sensible initial direction per sort field, applied whenever the sort
+ * field itself changes (not on every render, so a manual direction toggle
+ * still sticks until the field changes again). Rank/title/author read
+ * naturally ascending (#1 first, A -> Z); review date reads naturally
+ * newest-first.
+ */
+export const DEFAULT_SORT_DIRECTIONS: Record<BookShelfSort, BookShelfSortDirection> = {
+  rank: "asc",
+  title: "asc",
+  author: "asc",
+  date: "desc",
+}
+
 export type BookShelfView = "list" | "grid"
 
 /**
