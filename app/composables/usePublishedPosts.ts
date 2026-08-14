@@ -9,6 +9,9 @@ export type PublishedPostSummary = Pick<
   | "contentType"
   | "bookAuthor"
   | "tags"
+  | "coverImage"
+  | "socialImage"
+  | "coverImageAlt"
 >
 
 /**
@@ -18,7 +21,9 @@ export type PublishedPostSummary = Pick<
  * command-palette search (SiteSearch.vue) and the `/search` results page.
  * Both need the same "book author mentioned" boost on top of full-text
  * search (see `matchesBookAuthor` below), and both need to exclude draft/
- * ghost posts that the FTS index doesn't know to skip on its own.
+ * ghost posts that the FTS index doesn't know to skip on its own. The image
+ * fields are included so the `/search` results page can render the same
+ * card image as the other listing pages (see `getPostCardImage`).
  */
 export function usePublishedPosts() {
   return useAsyncData("published-posts-summary", () => {
@@ -31,7 +36,10 @@ export function usePublishedPosts() {
         "publishedAt",
         "contentType",
         "bookAuthor",
-        "tags"
+        "tags",
+        "coverImage",
+        "socialImage",
+        "coverImageAlt"
       )
       .all()
   })

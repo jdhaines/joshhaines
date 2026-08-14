@@ -13,6 +13,58 @@ type SearchOptions = Parameters<typeof search>[1]
 type SearchResults = Awaited<ReturnType<typeof search>>
 
 const { open } = useContentSearch()
+const router = useRouter()
+
+// The command palette auto-highlights the first result as you type, so a
+// bare Enter press would silently jump to whatever happens to be on top.
+// Track whether the user has explicitly moved the highlight with the arrow
+// keys; if not, Enter should submit the typed query to the full search page
+// instead of selecting the auto-highlighted item.
+const searchTerm = ref("")
+const hasNavigated = ref(false)
+
+watch(searchTerm, () => {
+  hasNavigated.value = false
+})
+
+watch(open, (isOpen) => {
+  if (!isOpen) {
+    hasNavigated.value = false
+  }
+})
+
+function goToFullSearch() {
+  const query = searchTerm.value.trim()
+  if (!query) return
+  open.value = false
+  router.push({ path: "/search", query: { q: query } })
+}
+
+// UContentSearch teleports its dialog content to <body>, so a listener bound
+// via a template attribute (which Vue would attach to the modal's own root)
+// never sees keydown events dispatched inside the teleported content. A
+// document-level capture listener runs before Reka UI's own Enter handler
+// regardless of where the DOM node ends up, so it can safely intercept.
+function onDocumentKeydown(event: KeyboardEvent) {
+  if (!open.value) return
+  if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+    hasNavigated.value = true
+    return
+  }
+  if (event.key === "Enter" && !hasNavigated.value) {
+    event.preventDefault()
+    event.stopImmediatePropagation()
+    goToFullSearch()
+  }
+}
+
+onMounted(() => {
+  document.addEventListener("keydown", onDocumentKeydown, true)
+})
+
+onUnmounted(() => {
+  document.removeEventListener("keydown", onDocumentKeydown, true)
+})
 
 const links = [
   {
@@ -117,6 +169,7 @@ async function searchPublishedPosts(
 
 <template>
   <UContentSearch
+    v-model:search-term="searchTerm"
     :links="links"
     :search="searchPublishedPosts"
     :search-status="status"

@@ -76,6 +76,62 @@ test.describe("navigation", () => {
   })
 })
 
+test.describe("site search", () => {
+  test("pressing Enter without arrow-navigating submits the typed query to the full search page", async ({
+    page,
+  }) => {
+    // The command palette auto-highlights the top result as you type, which
+    // used to mean a bare Enter silently opened whatever was highlighted.
+    // Guard the fix: with no arrow-key navigation, Enter should submit the
+    // query to /search instead.
+    await page.goto("/")
+    await page.locator('button[aria-label^="Search"]').first().click()
+
+    const dialog = page.getByRole("dialog")
+    await expect(dialog).toBeVisible()
+    const input = dialog.locator("input").first()
+    await input.fill("Brene Brown")
+    await expect(dialog.getByText("Dare to Lead").first()).toBeVisible()
+
+    await page.keyboard.press("Enter")
+    await page.waitForURL("**/search?q=**")
+    expect(new URL(page.url()).pathname).toBe("/search")
+  })
+
+  test("arrow-navigating to a result before pressing Enter still opens that result", async ({
+    page,
+  }) => {
+    await page.goto("/")
+    await page.locator('button[aria-label^="Search"]').first().click()
+
+    const dialog = page.getByRole("dialog")
+    await expect(dialog).toBeVisible()
+    const input = dialog.locator("input").first()
+    await input.fill("Brene Brown")
+    await expect(dialog.getByText("Dare to Lead").first()).toBeVisible()
+
+    await page.keyboard.press("ArrowDown")
+    await page.keyboard.press("Enter")
+    await page.waitForURL("**/content/**")
+    expect(new URL(page.url()).pathname).not.toBe("/search")
+  })
+
+  test("the /search results page renders cards matching the /writing index page's card style", async ({
+    page,
+  }) => {
+    // The search results page used to render a plain UBlogPost with no
+    // image, so its cards looked different from every other listing page.
+    await page.goto("/search?q=Brene%20Brown")
+    await expect(page.getByText("Dare to Lead")).toBeVisible()
+
+    const searchCard = page
+      .locator("article")
+      .filter({ has: page.getByRole("link", { name: /Dare to Lead/ }) })
+      .first()
+    await expect(searchCard.locator("img").first()).toBeVisible()
+  })
+})
+
 test.describe("SEO metadata", () => {
   test("homepage has a real canonical/OG URL, not a build-time localhost or stale-domain artifact", async ({
     page,
