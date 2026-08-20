@@ -6,7 +6,7 @@ publishedAt: 2025-02-04
 updatedAt: 2025-02-04
 tags: ['me', 'tech talk', 'psychological safety', 'leadership', 'innovation']
 featured: false
-startHere: true
+startHere: false
 draft: false
 coverImage: '/static/images/subsTalk.png'
 contentType: talk

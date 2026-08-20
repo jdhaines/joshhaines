@@ -5,7 +5,7 @@ publishedAt: 2024-05-24
 updatedAt: 2024-05-24
 tags: ['writing', 'learning', 'productivity', 'growth']
 featured: false
-startHere: false
+startHere: true
 draft: false
 contentType: article
 author: josh

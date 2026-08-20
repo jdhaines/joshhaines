@@ -4,7 +4,7 @@
   // project before the first deploy -- if this doesn't match, `wrangler
   // deploy` will create a brand new Worker instead of updating the one
   // already connected via Git.
-  "name": "joshhainesnext",
+  "name": "joshhaines",
   "compatibility_date": "2026-07-27",
   // Recipient for moderation-notification emails, and the site origin used
   // to build absolute one-click moderation links in that email (see
@@ -25,7 +25,9 @@
     "binding": "ASSETS",
     "not_found_handling": "404-page",
     "html_handling": "auto-trailing-slash",
-    "run_worker_first": ["/api/*"],
+    "run_worker_first": [
+      "/api/*"
+    ],
   },
   // Update "database_id" with the ID printed by `wrangler d1 create` (see
   // DEVELOPER.md's "Comments" section for the full one-time setup).
@@ -43,7 +45,9 @@
   "send_email": [
     {
       "name": "EMAIL",
-      "allowed_sender_addresses": ["comments@joshhaines.com"],
+      "allowed_sender_addresses": [
+        "comments@joshhaines.com"
+      ],
     },
   ],
 }
