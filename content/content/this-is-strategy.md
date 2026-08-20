@@ -3,7 +3,7 @@ title: 'This is Strategy'
 description: >
   Make Better Plans (Create a Strategy to Elevate Your Career, Community & Life)
 publishedAt: 2026-08-13
-updatedAt: 2026-08-13
+updatedAt: 2026-08-20
 tags: ['book shelf', 'strategy', 'business', 'leadership']
 featured: false
 startHere: false
@@ -21,6 +21,9 @@ typedPageImages: ['https://img.joshhaines.com/this-is-strategy/typed1.webp', 'ht
 ## Introduction
 
 This is a bit of a strange book. This is the fifth book by [Seth Godin](/search?q=Seth%20Godin) that I have reviewed, and they tend to not fit in a neat mold. This one is essentially made up of 297 different short lessons or observations which make up the book. Each lesson is between a few sentences and a few pages in length. Some are essentially just sayings while others are proper lessons and experiences the author has learned through his time as a professional "business thinker."
+
+> [!NOTE]
+> For another book that has a similar structure see [Rework](/content/rework). It also contains many _mini-chapters_ although the topic of the book is different.
 
 In general I liked the book, but the book's structure made it hard to decide how to write this review.
 
