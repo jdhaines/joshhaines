@@ -284,10 +284,10 @@ All the pieces of chimney, including the attic support box, were about $700. I g
 convert the stove's European 4" outlet into the American 6" pipe standard.
 
 <div class="my-8 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
-  <img src="https://img.joshhaines.com/building-a-sauna/33.webp" alt="Describe this photo" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
-  <img src="https://img.joshhaines.com/building-a-sauna/34.webp" alt="Describe this photo" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
-  <img src="https://img.joshhaines.com/building-a-sauna/35.webp" alt="Describe this photo" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
-  <img src="https://img.joshhaines.com/building-a-sauna/36.webp" alt="Describe this photo" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+  <img src="https://img.joshhaines.com/building-a-sauna/33.webp" alt="stove put in place temporarily" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+  <img src="https://img.joshhaines.com/building-a-sauna/34.webp" alt="hole cut in ceiling and roof" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+  <img src="https://img.joshhaines.com/building-a-sauna/35.webp" alt="attic support box in place" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+  <img src="https://img.joshhaines.com/building-a-sauna/36.webp" alt="chimney complete" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
 </div>
 
 ## Foil Vapor Barrier
@@ -295,6 +295,68 @@ convert the stove's European 4" outlet into the American 6" pipe standard.
 Once the chimney was in place and the stove was
 ready to go, I finished adding insulation to the divider wall and installed the foil vapor barrier. This was a product sent in the sauna kit that has foil on one side and something like kraft paper on the other side. I used staples to attach it to the studs and then used metallic duct tape to tape any seams I needed. I made sure the foil was slightly longer than the tile so any moisture dripping down the foil would run inside the tile and into the "bathtub" waterproof floor to be evaporated or mopped up.
 
-I also added some nailing supports near the floor. The tile around the inner wall stuck out from the studs about 1/2" so I needed to slope walls at the bottom to make sure the cedar would sit a little proud from the tile.
+I added some nailing supports near the floor. The tile around the inner wall stuck out from the studs about 1/2" so I needed to slope walls at the bottom to make sure the cedar would sit a little proud from the tile. I forgot I was going to add 1x2" furring strips to the studs after the foil so I may not have needed these floor nailing extensions, but it didn't hurt too much.
 
-![starting vapor barrier](https://img.joshhaines.com/building-a-sauna/38.webp)
+Once the furring strips were added, I was ready to start the cedar installation.
+
+<div class="my-8 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
+  <img src="https://img.joshhaines.com/building-a-sauna/38.webp" alt="starting foil vapor barrier" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+  <img src="https://img.joshhaines.com/building-a-sauna/39.webp" alt="more foil stapled on" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+  <img src="https://img.joshhaines.com/building-a-sauna/40.webp" alt="foil complete" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+  <img src="https://img.joshhaines.com/building-a-sauna/41.webp" alt="furring strips added to studs" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+</div>
+
+## Cedar Tongue and Groove
+
+The next step is one I had been looking forward to for a long time; adding the
+cedar tongue and groove boards to the sauna room walls and ceiling. I started with
+the ceiling and went across making cuts to go around the attic support box for the
+chimney. After the cedar was in place it became obvious that the attic support box
+was a little crooked. You can see it in the photos below, but adding the decorative trim ring helped quite a bit. It's not the end of the world.
+
+After the ceiling was done I moved to the walls. I started with two rows around the entire room getting the height right as well as ensuring they were level. The foil had been run to overlap the tile about 1/2". I ran the first cedar board about 1/2" below that so you didn't see any foil. With the extensions at the bottom of the walls plus the furring strips there was clear daylight behind the cedar boards all the way down to the floor. This should ensure any moisture behind the cedar hits the foil, drips down, and into the waterproof bathtub of the tile. I'll also add that seeing the cedar hanging down in front of the tile makes it look really professional and classy!
+
+With the room all done the smell is amazing and it looks kind of like a space ship.
+One mistake I made was I totally underestimated how far forward I needed to mount
+my electrical boxes (1 outlet, 1 ceiling light box). Luckily I found extensions on
+Amazon for just such a boneheaded installation mistake.
+
+I need to put up some trim around the walls and doors and then get going on the benches.
+
+<div class="my-8 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
+  <img src="https://img.joshhaines.com/building-a-sauna/42.webp" alt="starting the cedar on the ceiling" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+  <img src="https://img.joshhaines.com/building-a-sauna/43.webp" alt="starting up the small walls" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+  <img src="https://img.joshhaines.com/building-a-sauna/44.webp" alt="starting rows complete" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+  <img src="https://img.joshhaines.com/building-a-sauna/45.webp" alt="walls rising higher" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+</div>
+
+<div class="my-8 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
+  <img src="https://img.joshhaines.com/building-a-sauna/46.webp" alt="nearly done" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+  <img src="https://img.joshhaines.com/building-a-sauna/47.webp" alt="walls and ceiling complete" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+  <img src="https://img.joshhaines.com/building-a-sauna/48.webp" alt="attic box is a bit crooked" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+  <img src="https://img.joshhaines.com/building-a-sauna/49.webp" alt="attic box is better with trim ring" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+</div>
+
+## Furniture
+
+During this I found the furniture for the changing room. I had been watching
+Facebook marketplace for a bench or seat that would work. I ended up finding a
+church pew that was almost exactly the right width with zero extra room. The
+height and depth were perfect as well. When I picked it up the guy who sold it to
+me also had a perfect narrow table for the other wall. You can see them loaded up
+below as well as sitting in the changing room. I think they're perfect and fit the
+all-wood aesthetic perfectly.
+
+> [!NOTE]
+> I did one little mistake here. I saw that the bench was in Colfax, IN which is
+> only about 15 minutes from me. When the morning came around to meet I got his
+> address and it was actually in Colfax, IL which was about 2.5 hours away. I
+> refused to be part of the flakiness that plagues Facebook marketplace, so I drove
+> the 2.5 hours each way to pick it up. It was a nice pretty drive through central
+> Indiana and Illinois farm country and now it's a [_Type 2 Fun_](https://www.outwardbound.org/blog/what-is-type-2-fun/) memory.
+
+<div class="my-8 grid grid-cols-3 gap-3 sm:gap-4">
+  <img src="https://img.joshhaines.com/building-a-sauna/50.webp" alt="Describe this photo" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+  <img src="https://img.joshhaines.com/building-a-sauna/51.webp" alt="Describe this photo" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+  <img src="https://img.joshhaines.com/building-a-sauna/52.webp" alt="Describe this photo" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+</div>
