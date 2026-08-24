@@ -53,7 +53,7 @@
     "vue-router": "^5.2.0"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^5.20260820.1",
+    "@cloudflare/workers-types": "^5.20260821.1",
     "@iconify-json/lucide": "^1.2.124",
     "@iconify-json/vscode-icons": "^1.2.74",
     "@nuxt/eslint": "^1.17.0",
@@ -76,8 +76,8 @@
     "unified": "^11.0.5",
     "unist-util-visit": "^5.1.0",
     "vitest": "^4.1.11",
-    "vue-tsc": "^3.3.10",
-    "wrangler": "^4.124.0"
+    "vue-tsc": "^3.3.11",
+    "wrangler": "^4.125.0"
   },
   "trustedDependencies": [
     "unrs-resolver"
