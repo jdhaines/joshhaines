@@ -360,3 +360,226 @@ all-wood aesthetic perfectly.
   <img src="https://img.joshhaines.com/building-a-sauna/51.webp" alt="Describe this photo" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
   <img src="https://img.joshhaines.com/building-a-sauna/52.webp" alt="Describe this photo" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
 </div>
+
+## Benches
+
+After the furniture was in place I was started on the benches. This was another
+tough part of the build as I wasn't exactly sure how the benches needed to be
+built, how they would be supported, and if I had enough wood. I had decided before
+I ever bought the shed to get it extra high and have 3 benches on the back wall
+with 2 on the side. I did that design to balance use of space as well as to meet
+the two key points that are famous in the sauna community:
+
+1. Your feet should be above the stones on the heater. This ensures you don't get
+   cold feet.
+2. The top bench should be around 47" from the ceiling for the best heating and
+   sauna experience.
+
+> [!NOTE]
+> These ideas and others come from a resource referred to simply as _Trumpkin_.
+> This name belongs to the author of a document on sauna design that the whole
+> online community tends to swear by. [This link](https://localmile.org/saunadynamics/) is generally the one included when referring to the "Laws of Trumpkin".
+
+I actually made use of ChatGPT here pretty heavily. I gave it the original .pdf
+document with the bench plans, a list of all my materials, and then had it come up
+with a plan for the build and to ensure I didn't run out of wood. It got a lot
+wrong, but it also ended up catching a few mistakes that saved me extra time and
+effort later.
+
+The whole room is about 3" short of being 9 feet tall. I ended up
+settling on a bench design that had the first bench 18" off the
+floor. The second bench was another 18" putting the seat at 36"
+high. The top of the stones on my Iki classic are around 33" to 34"
+checking box #1 above. The top bench sits right at 58" from the
+floor. An 18" step is doable, but is a little bit high. A 22" step
+doesn't really work, but it's a great sitting height and you'll
+likely never step up on the top step, only lay on it. The top bench
+to the ceiling is right at 47" which checks box #2 above. The
+back-top bench is 24" wide and the side-top bench is 18" wide. The
+back-middle and back-bottom are both 16" wide while the side-bottom
+is only 12" wide to not obstruct the door. This makes the
+side-bottom useful to walk on, put your feet on, or sit on with your
+feet dangling. I'm very happy with this bench layout now that I can
+see it and use it. I think it really maximizes the space and
+usability of this size of sauna. I think we could fit 8-10 people in
+here without too much trouble which wouldn't be true of other 8x8
+designs I saw.
+
+### First Bench & Final Design
+
+In these first pictures you can see the wood
+laid out in the final bench format as
+recommended by bsaunas. The close-ups show the
+details on how closely the measurements work
+out. This is for a 24" wide bench. It used 6
+top 2x4s of clear cedar as well as one
+additional for the front facia. There were
+then 5 22.5" _girths_ made from cedar 2x4s used
+to hold them together. I made two small 9/16"
+spacers to hold them at the recommended
+distance apart.
+
+<div class="my-8 grid grid-cols-3 gap-3 sm:gap-4">
+  <img src="https://img.joshhaines.com/building-a-sauna/53.webp" alt="bench wood laid out" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+  <img src="https://img.joshhaines.com/building-a-sauna/54.webp" alt="detail of front facia" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+  <img src="https://img.joshhaines.com/building-a-sauna/55.webp" alt="detail of girths" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+</div>
+
+For fasteners on the bench I used 2.5"
+stainless steel torx head screws. These were
+the right length to screw through the girths
+and into the seat boards without coming through
+the other side. I used one screw per intersection.
+
+I needed a solid way to attach the facia boards
+with hidden fasteners and I ended up finding a
+great solution. I used a [Kreg XL Pocket Hole Jig](https://www.kregtool.com/shop/pocket-hole-joinery/pocket-hole-jigs/kreg-pocket-hole-jig-xl/KPHJ920.html) with [2.5" course thread XL pocket hole screws](https://www.amazon.com/dp/B008FC64O6?ref=clp_hp_h_pc&th=1). These were great. This jig was specifically designed to support 2 holes in a 2x4 and the screws were long enough to hold but not go through the facia. I ended up using these in more places (cleats, supports, etc.) than I originally planned and they worked great.
+
+In the next two pictures you can see the
+stainless screws in the girths and the pocket
+holes holding on the facia. Once finished the
+bench was extremely solid and no fasteners were
+visible from the top or front. I built all 5
+benches like this.
+
+<div class="my-8 grid grid-cols-2 gap-3 sm:gap-4">
+  <img src="https://img.joshhaines.com/building-a-sauna/56.webp" alt="finished bench with fasteners" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+  <img src="https://img.joshhaines.com/building-a-sauna/57.webp" alt="finished first bench" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+</div>
+
+### Cleats and the Top Row
+
+After the back-top bench was built I needed to
+figure out how to support them. I made a
+mistake here as I should have put bracing with
+2x4s between the studs at the height of the
+benches. This would have let me get heavy
+screws into the walls anywhere rather than only
+at the studs. I didn't do this so I needed to
+get creative.
+
+I ended up doing a unified cleat around the
+room running from the left side of the back-top
+bench around to the front side of the side-top.
+This let me maximize how many heavy screws went
+into the studs as well as supporting the two
+top benches primarily from the walls.
+
+<div class="my-8 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
+  <img src="https://img.joshhaines.com/building-a-sauna/58.webp" alt="right cleat detail" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+  <img src="https://img.joshhaines.com/building-a-sauna/59.webp" alt="left cleat detail" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+  <img src="https://img.joshhaines.com/building-a-sauna/60.webp" alt="corner cleat detail" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+  <img src="https://img.joshhaines.com/building-a-sauna/61.webp" alt="rss structural screws" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+</div>
+
+You can see I used the pocket holes to join
+from the ends as well as some super thick and
+strong RSS structural screws. I had to get 5"
+in length to get through the cleat itself, the
+cedar tongue and groove, the furring strips,
+and into the studs.
+
+After the cleats were in place I added the
+back-top bench and the side-top bench. I
+connected them in the corner with stainless
+screws from the back-top bench's facia board
+into the end girth board on the side-top bench.
+At this point I could get up there and sit/walk
+around with very little deflection even though
+the inner corner was fully unsupported.
+
+<div class="my-8 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
+  <img src="https://img.joshhaines.com/building-a-sauna/62.webp" alt="first bench installed" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+  <img src="https://img.joshhaines.com/building-a-sauna/63.webp" alt="corner cleat detail" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+  <img src="https://img.joshhaines.com/building-a-sauna/64.webp" alt="second bench installed" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+  <img src="https://img.joshhaines.com/building-a-sauna/65.webp" alt="under bench corner detail" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+</div>
+
+### Remaining Benches
+
+Once the back row was done, it was time to
+repeat for the back-middle and the side-top.
+Remember, the left side only has a top and
+middle bench, no bottom bench due to space
+constraints.
+
+On the middle benches, I wasn't able to use a
+continuous wall cleat. I could only use cleats
+on the ends. It also happened that within the
+width of the benches I could only hit a single
+stud. I ended up extending the cleats to hit a
+second stud with RSS screws to help with the
+load. Also, the back-middle bench went the full
+width despite not all of it being useful
+because it will go underneath the side-top bench.
+
+I once again tied the benches together in the
+corner and they essentially shared 3 wall
+cleats with two stud connections each. I could
+sit/walk on these benches safely, but I did
+feel a bit of deflection.
+
+I moved on to install the back-bottom bench
+using the same extended-cleat design as before.
+
+<div class="my-8 grid grid-cols-3 gap-3 sm:gap-4">
+  <img src="https://img.joshhaines.com/building-a-sauna/66.webp" alt="middle cleat" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+  <img src="https://img.joshhaines.com/building-a-sauna/67.webp" alt="back-middle bench installed" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+  <img src="https://img.joshhaines.com/building-a-sauna/68.webp" alt="all benches installed" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+</div>
+
+Once all the benches were in I added some
+structural supports. These supports were to add additional rigidity
+to the structure as well as bring in some floor supports in addition
+to the wall cleats.
+
+In a couple places I was able to run a board from the top bench to
+the floor while tying in the middle benches. On the lowest bench,
+for example, I added a couple short legs on the front and back as
+people jumping down would have a lot of shock loading. After these
+supports were added the entire structure was solid, creak free, and I
+felt no movement when moving, jumping, bouncing, etc. I'll note that
+the pocket jigs came in handy as I braced underneath the facia boards
+and have pocket screws on the back side in a few places which made
+everything extremely solid.
+
+<div class="my-8 grid grid-cols-2 gap-3 sm:gap-4">
+  <img src="https://img.joshhaines.com/building-a-sauna/69.webp" alt="Describe this photo" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+  <img src="https://img.joshhaines.com/building-a-sauna/70.webp" alt="Describe this photo" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+</div>
+
+## Bits and Bobs
+
+With the benches done, it was really down to a few small items I
+needed to do in order to wrap everything up. I needed to install the
+actual sealed sauna light in the hot room. I needed to cut and add
+the main vent by the heater and the adjustable vent near the opposite
+ceiling. I also finished the simple trim in the hot room which is
+visible in the picture with the adjustable vent.
+
+<div class="my-8 grid grid-cols-3 gap-3 sm:gap-4">
+  <img src="https://img.joshhaines.com/building-a-sauna/71.webp" alt="Describe this photo" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+  <img src="https://img.joshhaines.com/building-a-sauna/72.webp" alt="Describe this photo" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+  <img src="https://img.joshhaines.com/building-a-sauna/73.webp" alt="Describe this photo" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+</div>
+
+<!--I still needed to add trim to the sauna door.  The sauna company gave
+me trim for this, but I wasn't sure how to actually add it.  On the
+changing room side, the door handle went all the way to the edge of
+the frame making it hard to trim.  On the inside, the thickness
+varied and was deeper down near the floor tile as the wall needed to
+slop in to cover the tile.  I eventually figured it out.
+
+I added some trim to the walls, floor, and ceiling in the changing
+room.  I also added a couple hanging hooks, a Sonos speaker for
+music.
+
+I also added a few small accessories like a thermometer and
+hygrometer, a 15 minute hour glass, and some pillows my wife got me
+as a present.
+
+I also needed to reconnect the chimney, add the sauna stones, and do
+the first firing without anyone there to burn off any assembly oils.
+I made sure to only do about a half-power burn on the first to and to
+double check for any leaks, smoking in the room, temperature of the
+surrounding cedar, and any other safety considerations. -->
