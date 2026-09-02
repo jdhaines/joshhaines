@@ -563,15 +563,21 @@ visible in the picture with the adjustable vent.
   <img src="https://img.joshhaines.com/building-a-sauna/73.webp" alt="Describe this photo" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
 </div>
 
-<!--I still needed to add trim to the sauna door.  The sauna company gave
-me trim for this, but I wasn't sure how to actually add it.  On the
+I still needed to add trim to the sauna door. The sauna company gave
+me trim for this, but I wasn't sure how to actually add it. On the
 changing room side, the door handle went all the way to the edge of
-the frame making it hard to trim.  On the inside, the thickness
+the frame making it hard to trim. On the inside, the thickness
 varied and was deeper down near the floor tile as the wall needed to
-slop in to cover the tile.  I eventually figured it out.
+slop in to cover the tile. I eventually figured it out. I added the backrests too. The walls have knots which can get hot and burn you, so the clear-cedar boards as backrests are nice here.
 
-I added some trim to the walls, floor, and ceiling in the changing
-room.  I also added a couple hanging hooks, a Sonos speaker for
+<div class="my-8 grid grid-cols-3 gap-3 sm:gap-4">
+  <img src="https://img.joshhaines.com/building-a-sauna/74.webp" alt="Describe this photo" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+  <img src="https://img.joshhaines.com/building-a-sauna/75.webp" alt="Describe this photo" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+  <img src="https://img.joshhaines.com/building-a-sauna/76.webp" alt="Describe this photo" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+</div>
+
+<!-- I added some trim to the walls, floor, and ceiling in the changing
+room.  I also added a couple hanging hooks and Sonos speaker for
 music.
 
 I also added a few small accessories like a thermometer and
