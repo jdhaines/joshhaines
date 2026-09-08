@@ -308,6 +308,31 @@ test.describe("content article", () => {
     await expect(dialog).not.toBeVisible()
   })
 
+  test("the sauna video grid opens a YouTube Short and stops it when closed", async ({
+    page,
+  }) => {
+    await page.goto("/content/building-a-sauna")
+
+    const videos = page.getByRole("button", { name: /Play YouTube Short/ })
+    await expect(videos).toHaveCount(4)
+    await expect(
+      page.locator('iframe[title="YouTube Short video player"]')
+    ).toHaveCount(0)
+
+    await videos.first().click()
+    const dialog = page.getByRole("dialog")
+    await expect(dialog).toBeVisible()
+    await expect(
+      dialog.locator('iframe[title="YouTube Short video player"]')
+    ).toHaveAttribute("src", /youtube-nocookie\.com\/embed\/vSjA5bwfWRA\?autoplay=1/)
+
+    await page.keyboard.press("Escape")
+    await expect(dialog).not.toBeVisible()
+    await expect(
+      page.locator('iframe[title="YouTube Short video player"]')
+    ).toHaveCount(0)
+  })
+
   test("the comments section renders with a submission form (Turnstile is configured)", async ({
     page,
   }) => {

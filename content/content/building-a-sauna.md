@@ -4,13 +4,13 @@ description: >
   In this article I go through all the steps, details, costs, and lessons learned
   from building my sauna. I also include photos of the journey and process as
   well as the final product.
-publishedAt: 2026-08-03
-updatedAt: 2026-08-12
+publishedAt: 2026-09-08
+updatedAt: 2026-09-08
 tags: ['sauna', 'construction', 'health']
 coverImage: '/static/images/sauna/outside.png'
 featured: false
 startHere: false
-draft: true
+draft: false
 contentType: article
 author: josh
 draftTool: essay
@@ -558,9 +558,9 @@ ceiling. I also finished the simple trim in the hot room which is
 visible in the picture with the adjustable vent.
 
 <div class="my-8 grid grid-cols-3 gap-3 sm:gap-4">
-  <img src="https://img.joshhaines.com/building-a-sauna/71.webp" alt="Describe this photo" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
-  <img src="https://img.joshhaines.com/building-a-sauna/72.webp" alt="Describe this photo" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
-  <img src="https://img.joshhaines.com/building-a-sauna/73.webp" alt="Describe this photo" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+  <img src="https://img.joshhaines.com/building-a-sauna/71.webp" alt="sauna light installed" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+  <img src="https://img.joshhaines.com/building-a-sauna/72.webp" alt="stove vent detail" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+  <img src="https://img.joshhaines.com/building-a-sauna/73.webp" alt="adjustable vent detail" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
 </div>
 
 I still needed to add trim to the sauna door. The sauna company gave
@@ -571,21 +571,90 @@ varied and was deeper down near the floor tile as the wall needed to
 slop in to cover the tile. I eventually figured it out. I added the backrests too. The walls have knots which can get hot and burn you, so the clear-cedar boards as backrests are nice here.
 
 <div class="my-8 grid grid-cols-3 gap-3 sm:gap-4">
-  <img src="https://img.joshhaines.com/building-a-sauna/74.webp" alt="Describe this photo" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
-  <img src="https://img.joshhaines.com/building-a-sauna/75.webp" alt="Describe this photo" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
-  <img src="https://img.joshhaines.com/building-a-sauna/76.webp" alt="Describe this photo" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+  <img src="https://img.joshhaines.com/building-a-sauna/74.webp" alt="inner door trim done" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+  <img src="https://img.joshhaines.com/building-a-sauna/75.webp" alt="door trim completed" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+  <img src="https://img.joshhaines.com/building-a-sauna/76.webp" alt="backrests installed" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
 </div>
 
-<!-- I added some trim to the walls, floor, and ceiling in the changing
-room.  I also added a couple hanging hooks and Sonos speaker for
+I added some trim to the walls, floor, and ceiling in the changing
+room. I also added a couple hanging hooks and Sonos speaker for
 music.
+
+<div class="my-8 grid grid-cols-2 gap-3 sm:gap-4">
+  <img src="https://img.joshhaines.com/building-a-sauna/77.webp" alt="interior details" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+  <img src="https://img.joshhaines.com/building-a-sauna/78.webp" alt="interior details" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+</div>
 
 I also added a few small accessories like a thermometer and
 hygrometer, a 15 minute hour glass, and some pillows my wife got me
 as a present.
 
+<div class="my-8 grid grid-cols-2 gap-3 sm:gap-4">
+  <img src="https://img.joshhaines.com/building-a-sauna/79.webp" alt="accessories 1" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+  <img src="https://img.joshhaines.com/building-a-sauna/80.webp" alt="accessories 2" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+</div>
+
 I also needed to reconnect the chimney, add the sauna stones, and do
 the first firing without anyone there to burn off any assembly oils.
 I made sure to only do about a half-power burn on the first to and to
 double check for any leaks, smoking in the room, temperature of the
-surrounding cedar, and any other safety considerations. -->
+surrounding cedar, and any other safety considerations.
+
+<div class="my-8 grid grid-cols-3 gap-3 sm:gap-4">
+  <img src="https://img.joshhaines.com/building-a-sauna/81.webp" alt="starting to fill with rocks" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+  <img src="https://img.joshhaines.com/building-a-sauna/82.webp" alt="main stove almost full" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+  <img src="https://img.joshhaines.com/building-a-sauna/83.webp" alt="first burn" class="aspect-square w-full rounded-lg bg-elevated object-cover shadow-md" />
+</div>
+
+## Performance
+
+As expected, the first burn was pretty smelly.
+I checked on it often, but the off-gassing was
+a sickly chemical smell and it lasted for
+almost 90 minutes from the start of the first
+burn. I tried to spend as little time in there
+as possible other than to double check temps,
+clearances, etc.
+
+The first load was all cedar cut-offs and waste
+so it burned really fast because of how dry it
+was. By 60 minutes from lighting the fire, the
+room was about 140°F (60°C). By 90 minutes it was
+about 165°F (74°C), and by 120 minutes it was about
+180°F (82°C). 180°F (82°C) seems to be the max temp for the sauna with no steam and on soft wood. I'm guessing if I used some good hard wood it would go even higher. 180°F (82°C) is plenty hot enough for now and after pouring some water on the rocks the blast of steam is incredibly hot. About 170°F (77°C) I noticed the wood was pretty hot to the touch.
+
+My thermometer is too slow to react, but I
+think if I added some steam a few times over a
+few minutes the temperature would burst to well
+over 200°F (93°C).
+
+One incredible point was about 3.5 hours after
+the fire had gone completely out the room was
+still at about 150°F (66°C). I think this is a
+testament to the insulation and design as it's
+very fuel efficient and heat efficient.
+
+The first time we used it my whole family was
+over and with 8 people going in and out the
+room never went below 165°F (74°C).
+
+## Videos & Wrap-Up
+
+I just wanted to give a big thank-you to the
+online sauna community as without them my
+research would have gone poorly and my final
+result would have been far worse. Also a
+shout-out to my lovely wife Chris who ran the
+chop-saw on a bunch of evenings to help me move
+faster.
+
+Finally, a couple videos of the finished
+sauna... Enjoy!
+
+<!-- markdownlint-disable MD003 MD022 -->
+::youtube-shorts
+---
+videos: ['https://youtube.com/shorts/vSjA5bwfWRA', 'https://youtube.com/shorts/QCsxcO3j-rU', 'https://youtube.com/shorts/Q7HtbnljAmw', 'https://youtube.com/shorts/dM6t4V0i-qA']
+---
+::
+<!-- markdownlint-enable MD003 MD022 -->
