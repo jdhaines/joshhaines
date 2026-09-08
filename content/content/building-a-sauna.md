@@ -166,7 +166,7 @@ though and I was nervous about it. I watched a lot of YouTube videos and read a 
 ### Underlayment and Preparation
 
 I had decided not to put in a drain. I plan to pour water on the stones, but not bathe or dump buckets in the sauna. I
-wanted some basic water protection in case we ever still the water bucket and for things to stay protected until I could grab
+wanted some basic water protection in case we ever spill the water bucket and for things to stay protected until I could grab
 a mop. I also wanted the floor to be easy to clean and not too slippery.
 
 I put cement board 6" high on the walls in the sauna room so that I could make it almost a waterproof bathtub. To give the tile the best chance of not cracking or coming loose, I decided to use a decoupling membrane. I chose [Schluter Ditra](https://www.schluter.com/schluter-us/en_US/Membranes/Uncoupling-(DITRA)/Schluter%C2%AE-DITRA-&-DITRA-XL/p/DITRA) which is a 1/8" thick membrane that is installed with mortar and then the tile is installed on top of it. Specifically, this is suitable to go right over OSB or plywood so I didn't need to put down cement board. This product allows for some movement in the floor without cracking the tile. I also chose [Schluter All-Set](https://www.schluter.com/schluter-us/en_US/Setting-Materials/Schluter-ALL-SET%C2%AE/p/SET_ALL-SET) which is a modified thinset mortar that is designed to be used with the Ditra membrane. I then used [Schluter Kerdi-Band](https://www.schluter.com/schluter-us/en_US/Membranes/Waterproofing-(KERDI)/Schluter%C2%AE-KERDI-BAND/p/KERDI_BAND) to seal the corners and between pieces on the Ditra seams. I used a Schluter trowel to spread the mortar and a rubber float to press the membrane into the mortar.
