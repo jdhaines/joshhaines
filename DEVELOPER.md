@@ -151,6 +151,25 @@ Available inside any post's markdown body:
   light/dark color mode. Currently hardcoded to the TechPoint keynote's Figma
   file in `app/components/content/FigmaEmbed.vue` -- update the `src` there
   (or extend it with a prop) before reusing for a different talk's deck.
+- **YouTube Shorts grid**: `YoutubeShorts` renders YouTube video IDs or links
+  as a two-column mobile/four-column desktop thumbnail grid. Selecting a
+  thumbnail opens the video in a portrait modal; closing the modal stops
+  playback. Use YAML props so the array remains readable in Markdown:
+
+  ```mdc
+  ::youtube-shorts
+  ---
+  videos:
+    - https://youtube.com/shorts/REPLACE-ME-1
+    - REPLACE-ME-2
+    - https://youtu.be/REPLACE-ME-3
+    - REPLACE-ME-4
+  ---
+  ::
+  ```
+
+  Each ID must be YouTube's 11-character video ID. Full `youtube.com`,
+  `youtu.be`, and `youtube-nocookie.com` links are also accepted.
 - **Image grid rows**: plain HTML/Tailwind (no custom component) for laying
   out several photos side by side. Upload your photos with `bun run
   photos:upload` (see "Photos (Cloudflare R2)" below) -- it prints URLs

@@ -648,6 +648,18 @@ shout-out to my lovely wife Chris who ran the
 chop-saw on a bunch of evenings to help me move
 faster.
 
+Also thanks to [bsaunasUSA](https://bsaunasusa.com/)
+for their great customer service and support.
+The amount of material they sent in one-shot
+while getting it all exactly right was
+incredible. Multiple times I thought I was low
+on stones, or didn't get enough of the right
+boards, etc. only to realize later they sent
+exactly the right amount. They do great work
+and I highly recommend them.
+
+Thanks to [Yoder's Portable Buildings](https://yodersportablebuildings.com/) for building such a solid shed and increasing the height to make for a perfect sauna-size build.
+
 Finally, a couple videos of the finished
 sauna... Enjoy!
 
