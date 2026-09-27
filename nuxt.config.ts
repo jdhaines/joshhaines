@@ -78,6 +78,10 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       siteUrl,
+      googleSheetId:
+        process.env.NUXT_PUBLIC_GOOGLE_SHEET_ID ??
+        "1OaaYGhoXYdhczrEIsj0yfPzKQRkshmUlptsrzyr_zpM",
+      googleSheetsApiKey: process.env.NUXT_PUBLIC_GOOGLE_SHEETS_API_KEY ?? "",
       // Cloudflare Turnstile site key -- public by design (it's meant to be
       // embedded in the page); the matching secret lives only in the
       // Worker, via `wrangler secret put TURNSTILE_SECRET`. Override with
@@ -275,6 +279,8 @@ export default defineNuxtConfig({
       // build over known-future content links.
       failOnError: false,
       routes: [
+        "/health",
+        "/health/habits",
         ...legacyContentRoutes(),
         ...draftContentRoutes(),
         ...Object.keys(legacyRedirects),

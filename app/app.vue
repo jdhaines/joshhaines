@@ -2,7 +2,9 @@
   <NuxtRouteAnnouncer />
   <UApp>
     <SiteHeader />
-    <NuxtPage />
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
     <SiteFooter />
     <SiteSearch />
     <ImageLightbox />

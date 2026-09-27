@@ -279,6 +279,33 @@ From the Bookshelf → Latest → Listen/Speaking → Why I write about this.
   its URL (so you can preview it directly if needed -- consider also removing
   it from `relatedWriting` elsewhere until it's ready).
 
+## Health tracker (Google Sheets)
+
+The private-but-unlocked health pages live under `/health/*`. They are excluded
+from crawler discovery by `public/robots.txt` and emit `noindex, nofollow` plus
+an equivalent Googlebot directive from `app/layouts/health.vue`. Keep every
+future health route on that layout.
+
+The Habits page reads columns A (Date) and C (Activity Tracking) from the `data`
+worksheet through the Google Sheets API. The fetch runs in the browser so new
+sheet entries appear without rebuilding the static site. Any non-empty activity
+cell counts as one completed day; weeks start on Sunday and meet the goal at
+three completed days.
+
+Configure these public build variables locally in `.env` and in the Cloudflare
+build environment:
+
+```dotenv
+NUXT_PUBLIC_GOOGLE_SHEET_ID=1OaaYGhoXYdhczrEIsj0yfPzKQRkshmUlptsrzyr_zpM
+NUXT_PUBLIC_GOOGLE_SHEETS_API_KEY=
+```
+
+The spreadsheet ID is not secret and has a repository fallback. The browser
+must receive the API key, so it is public by design: restrict it in Google Cloud
+to the Google Sheets API and to the production/local HTTP referrers rather than
+treating it as a server secret. `.env.example` contains the same variable names
+without a key.
+
 ## Comments (Cloudflare Worker + D1 + Turnstile)
 
 Every content page (`app/pages/content/[slug].vue`) renders a

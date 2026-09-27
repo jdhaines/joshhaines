@@ -378,6 +378,61 @@ test.describe("content article", () => {
   })
 })
 
+test.describe("health tracker", () => {
+  test("habits loads sheet activity, applies weekly goal colors, and stays unindexed", async ({
+    page,
+  }) => {
+    const year = new Date().getFullYear()
+
+    await page.route("https://sheets.googleapis.com/**", async (route) => {
+      await route.fulfill({
+        contentType: "application/json",
+        body: JSON.stringify({
+          values: [
+            ["Date", "Weight (lbs)", "Activity Tracking"],
+            [`1/4/${year}`, "", "Lift"],
+            [`1/5/${year}`, "", "Walk"],
+            [`1/7/${year}`, "", "Ruck"],
+            [`1/18/${year}`, "", "Row"],
+          ],
+        }),
+      })
+    })
+
+    const response = await page.goto("/health/habits")
+    expect(response?.status()).toBe(200)
+    await expect(page.getByRole("heading", { name: "Activity Tracker" })).toBeVisible()
+
+    const completedGoalDay = page.getByRole("button", {
+      name: new RegExp(`January 4, ${year}: Lift`),
+    })
+    await expect(completedGoalDay).toHaveClass(/bg-primary/)
+    await completedGoalDay.hover()
+    await expect(page.getByText("Lift", { exact: true })).toBeVisible()
+
+    await expect(
+      page.getByRole("button", {
+        name: new RegExp(`January 18, ${year}: Row`),
+      })
+    ).toHaveClass(/bg-secondary/)
+
+    await expect(page.locator('meta[name="robots"]')).toHaveAttribute(
+      "content",
+      "noindex, nofollow"
+    )
+    await expect(page.locator('meta[name="googlebot"]')).toHaveAttribute(
+      "content",
+      "noindex, nofollow"
+    )
+  })
+
+  test("robots.txt disallows the entire health section", async ({ request }) => {
+    const response = await request.get("/robots.txt")
+    expect(response.status()).toBe(200)
+    expect(await response.text()).toContain("Disallow: /health")
+  })
+})
+
 test.describe("color mode", () => {
   test("site defaults to dark mode", async ({ page }) => {
     await page.goto("/")
