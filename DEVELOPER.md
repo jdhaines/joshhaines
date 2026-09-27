@@ -292,6 +292,17 @@ sheet entries appear without rebuilding the static site. Any non-empty activity
 cell counts as one completed day; weeks start on Sunday and meet the goal at
 three completed days.
 
+The Weight page reads columns A (Date) and B (Weight (lbs)) from the same
+worksheet. It uses `lightweight-charts` for a stock-style time-series display
+with crosshair values, drag-to-pan, wheel/pinch zoom, and preset ranges. This
+purpose-built dependency is used instead of a larger general charting framework;
+Nuxt UI does not provide an interactive time-series chart.
+
+The Lifts page reads `lifts!A:G`, where the header row contains Date, Deadlift,
+Low-Bar Squat, Overhead Press, Bench Press, Snatch, and Clean & Jerk. It renders
+each lift as a separately colored line; the legend buttons can hide or restore
+individual lifts.
+
 Configure these public build variables locally in `.env` and in the Cloudflare
 build environment:
 

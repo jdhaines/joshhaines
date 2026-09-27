@@ -2,9 +2,9 @@
 const route = useRoute()
 
 const healthSections = [
-  { label: "Weight", path: "/health/weight", available: false },
+  { label: "Weight", path: "/health/weight", available: true },
   { label: "Habits", path: "/health/habits", available: true },
-  { label: "Lifts", path: "/health/lifts", available: false },
+  { label: "Lifts", path: "/health/lifts", available: true },
 ]
 
 useSeoMeta({

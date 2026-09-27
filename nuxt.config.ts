@@ -281,6 +281,8 @@ export default defineNuxtConfig({
       routes: [
         "/health",
         "/health/habits",
+        "/health/lifts",
+        "/health/weight",
         ...legacyContentRoutes(),
         ...draftContentRoutes(),
         ...Object.keys(legacyRedirects),

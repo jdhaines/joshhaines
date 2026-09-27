@@ -379,6 +379,113 @@ test.describe("content article", () => {
 })
 
 test.describe("health tracker", () => {
+  test("weight loads sheet history and renders stock-style range controls", async ({
+    page,
+  }) => {
+    await page.route("https://sheets.googleapis.com/**", async (route) => {
+      await route.fulfill({
+        contentType: "application/json",
+        body: JSON.stringify({
+          values: [
+            ["Date", "Weight (lbs)"],
+            ["1/1/2009", "275.00"],
+            ["4/22/2026", "258.90"],
+            ["9/27/2026", "265.00"],
+          ],
+        }),
+      })
+    })
+
+    const response = await page.goto("/health/weight")
+    expect(response?.status()).toBe(200)
+    await expect(page.getByRole("heading", { name: "Weight Tracker" })).toBeVisible()
+    await expect(page.getByText("3 recorded weigh-ins")).toBeVisible()
+    await expect(page.getByText("265.00 lbs")).toBeVisible()
+    await expect(
+      page.getByTestId("weight-chart").locator("canvas").first()
+    ).toBeVisible()
+    await expect(page.getByRole("link", { name: "TradingView, Inc." })).toHaveAttribute(
+      "href",
+      "https://www.tradingview.com/"
+    )
+    await expect(
+      page.getByTestId("weight-chart").locator('a[href="https://www.tradingview.com/"]')
+    ).toHaveCount(0)
+
+    const allRange = page.getByRole("button", { name: "All", exact: true })
+    await allRange.click()
+    await expect(allRange).toHaveAttribute("aria-pressed", "true")
+
+    await expect(page.locator('meta[name="robots"]')).toHaveAttribute(
+      "content",
+      "noindex, nofollow"
+    )
+  })
+
+  test("/health redirects to the weight tracker", async ({ page }) => {
+    await page.goto("/health")
+    await page.waitForURL("**/health/weight")
+    expect(new URL(page.url()).pathname).toBe("/health/weight")
+  })
+
+  test("lifts loads its worksheet as six distinct toggleable series", async ({
+    page,
+  }) => {
+    await page.route("https://sheets.googleapis.com/**", async (route) => {
+      await route.fulfill({
+        contentType: "application/json",
+        body: JSON.stringify({
+          values: [
+            [
+              "Date",
+              "Deadlift",
+              "Low-Bar Squat",
+              "Overhead Press",
+              "Bench Press",
+              "Snatch",
+              "Clean & Jerk",
+            ],
+            ["10/14/2011", "207", "140", "105", "172"],
+            ["3/17/2024", "390", "320", "185", "255", "185", "215"],
+          ],
+        }),
+      })
+    })
+
+    const response = await page.goto("/health/lifts")
+    expect(response?.status()).toBe(200)
+    await expect(
+      page.getByRole("heading", { name: "1RM for Major Lifts" })
+    ).toBeVisible()
+    await expect(page.getByText("2 recorded checkpoints")).toBeVisible()
+    await expect(page.getByText("Deadlift: 390.00 lbs")).toBeVisible()
+    await expect(
+      page.getByTestId("lifts-chart").locator("canvas").first()
+    ).toBeVisible()
+
+    const seriesButtons = page.getByLabel("Lift series").getByRole("button")
+    await expect(seriesButtons).toHaveCount(6)
+    const colors = await seriesButtons
+      .locator("span")
+      .evaluateAll((markers) =>
+        markers.map((marker) => getComputedStyle(marker).backgroundColor)
+      )
+    expect(new Set(colors).size).toBe(6)
+
+    const deadlift = page.getByRole("button", { name: "Deadlift", exact: true })
+    await deadlift.click()
+    await expect(deadlift).toHaveAttribute("aria-pressed", "false")
+
+    await expect(page.getByRole("link", { name: "TradingView, Inc." })).toHaveAttribute(
+      "href",
+      "https://www.tradingview.com/"
+    )
+    await expect(page.locator('meta[name="robots"]')).toHaveAttribute(
+      "content",
+      "noindex, nofollow"
+    )
+  })
+
   test("habits loads sheet activity, applies weekly goal colors, and stays unindexed", async ({
     page,
   }) => {

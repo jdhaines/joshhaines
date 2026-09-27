@@ -3,5 +3,5 @@ definePageMeta({
   layout: "health",
 })
 
-await navigateTo("/health/habits", { redirectCode: 302 })
+await navigateTo("/health/weight", { redirectCode: 302 })
 </script>
