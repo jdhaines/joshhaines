@@ -333,6 +333,20 @@ test.describe("content article", () => {
     ).toHaveCount(0)
   })
 
+  test("the sauna model link downloads its JSON file instead of opening a Nuxt route", async ({
+    page,
+  }) => {
+    await page.goto("/content/building-a-sauna")
+
+    const [download] = await Promise.all([
+      page.waitForEvent("download"),
+      page.getByRole("link", { name: "Click Here", exact: true }).click(),
+    ])
+
+    expect(download.suggestedFilename()).toBe("josh-haines.sauna.json")
+    expect(new URL(page.url()).pathname).toBe("/content/building-a-sauna")
+  })
+
   test("the comments section renders with a submission form (Turnstile is configured)", async ({
     page,
   }) => {

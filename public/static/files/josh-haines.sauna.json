@@ -1,0 +1,123 @@
+{
+  "name": "Josh Haines Sauna",
+  "room": {
+    "width": 2.2,
+    "depth": 2.4,
+    "height": 2.65,
+    "raisedFloor": 0
+  },
+  "surfaces": {
+    "wallWood": "red-cedar",
+    "ceilingWood": "red-cedar",
+    "boardWidth": 0.09,
+    "orientation": "horizontal",
+    "floor": "tile-sand",
+    "insulation": 100
+  },
+  "benches": {
+    "runs": [
+      {
+        "id": "rmulc9o4y10",
+        "wall": "back",
+        "start": 0,
+        "end": 2.2,
+        "tiers": [
+          {
+            "height": 0.46,
+            "depth": 0.41
+          },
+          {
+            "height": 0.91,
+            "depth": 0.41
+          },
+          {
+            "height": 1.47,
+            "depth": 0.61
+          }
+        ]
+      },
+      {
+        "id": "rmulc9o4y11",
+        "wall": "right",
+        "start": 0,
+        "end": 1.8,
+        "tiers": [
+          {
+            "height": 0.91,
+            "depth": 0.41
+          },
+          {
+            "height": 1.47,
+            "depth": 0.51
+          }
+        ]
+      }
+    ],
+    "wood": "red-cedar",
+    "slatWidth": 0.09,
+    "slatGap": 0.014,
+    "slatThickness": 0.038,
+    "backrest": true,
+    "duckboard": false
+  },
+  "heater": {
+    "model": "wood-round-17",
+    "wall": "left",
+    "along": 0.36,
+    "offset": 0,
+    "stone": "olivine-diabase",
+    "thermostat": 82,
+    "guard": false,
+    "feed": "inside",
+    "sunk": 0,
+    "stoneLoad": 1
+  },
+  "ventilation": {
+    "mode": "natural",
+    "inlet": {
+      "wall": "left",
+      "along": 0.11,
+      "height": 0.2,
+      "diameter": 125
+    },
+    "outlet": {
+      "wall": "back",
+      "along": 2.02,
+      "height": 2.54,
+      "diameter": 125
+    },
+    "outletEnabled": true,
+    "airChanges": 5,
+    "doorGap": 0
+  },
+  "door": {
+    "wall": "front",
+    "along": 0.975,
+    "width": 0.67,
+    "height": 2.03,
+    "kind": "wood-glass"
+  },
+  "window": {
+    "enabled": false,
+    "wall": "back",
+    "along": 1.9,
+    "sill": 1.32,
+    "width": 0.76,
+    "height": 0.25
+  },
+  "lighting": {
+    "backrestStrip": false,
+    "underBenchStrip": false,
+    "cornerLamp": false,
+    "ceilingLamp": false,
+    "kelvin": 2200,
+    "intensity": 1
+  },
+  "steam": {
+    "kind": "ladle",
+    "ladle": 0.2
+  },
+  "env": {
+    "outsideTemp": 21
+  }
+}

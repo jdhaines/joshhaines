@@ -670,3 +670,14 @@ videos: ['https://youtube.com/shorts/vSjA5bwfWRA', 'https://youtube.com/shorts/Q
 ---
 ::
 <!-- markdownlint-enable MD003 MD022 -->
+
+## Sauna Builder - 3D Model
+
+Dennis sent me a cool tool to build and visualize a sauna in 3D. You can see and rotate the model and even throw a loyly (steam) if you want to. It's very cool. Steps to view my sauna
+in that system:
+
+1. Open <https://sauna.gridsnap.app/> in a browser tab.
+2. <a href="/static/files/josh-haines.sauna.json" download="josh-haines.sauna.json" target="_blank" rel="noopener">Click Here</a> to download `josh-haines.sauna.json` with the data for my sauna.
+3. Go to the top right of the browser tab and click the 2nd to the right button for "Import design".
+4. Select the `josh-haines.sauna.json` and upload it to the site.
+5. You can drag the model to see it from different angles. You can also go to the bottom to see temperatures, or throw water on the stones. So cool!
