@@ -54,7 +54,7 @@
     "vue-router": "^5.4.0"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^5.20261029.1",
+    "@cloudflare/workers-types": "^5.20261030.1",
     "@iconify-json/lucide": "^1.2.149",
     "@iconify-json/vscode-icons": "^1.2.94",
     "@nuxt/eslint": "^1.17.0",
@@ -65,10 +65,10 @@
     "eslint": "^10.13.0",
     "eslint-config-prettier": "^10.1.8",
     "fast-glob": "^3.3.3",
-    "happy-dom": "^20.14.6",
+    "happy-dom": "^21.0.4",
     "husky": "^9.1.7",
     "lint-staged": "^17.6.0",
-    "markdownlint-cli2": "^0.23.3",
+    "markdownlint-cli2": "^0.24.0",
     "prettier": "^3.9.10",
     "remark-gfm": "^4.0.1",
     "remark-parse": "^11.0.0",
@@ -76,7 +76,7 @@
     "sharp": "^0.35.5",
     "unified": "^11.0.5",
     "unist-util-visit": "^5.2.0",
-    "vitest": "^4.1.12",
+    "vitest": "^5.0.5",
     "vue-tsc": "^3.3.14",
     "wrangler": "^4.156.0"
   },
