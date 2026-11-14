@@ -3,7 +3,7 @@ title: 'Death by Meeting'
 description: >
   A Leadership Fable
 publishedAt: 2026-11-01
-updatedAt: 2026-11-01
+updatedAt: 2026-11-14
 tags: ['book shelf', 'business', 'leadership', 'teams', 'meetings', 'productivity']
 featured: false
 startHere: false
