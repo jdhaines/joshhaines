@@ -46,8 +46,9 @@ const bookAuthors = computed(() => getBookAuthors(props.page.bookAuthor))
           :to="`/search?q=${encodeURIComponent(name)}`"
           class="text-jblue-600 hover:underline dark:text-primary"
         >
-          {{ name }} </NuxtLink
-        ><template v-if="index < bookAuthors.length - 1">, </template>
+          {{ name }} </NuxtLink><template v-if="index < bookAuthors.length - 1"
+          >,
+        </template>
       </template>
     </p>
 

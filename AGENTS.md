@@ -11,6 +11,15 @@ The site is an editorial publication and personal content library. Optimize for
 excellent reading, content discovery, durable URLs, accessibility, and simple
 maintenance.
 
+## Git
+
+Never run state-changing git commands: no commit, push, stage/`git add`,
+reset, stash, checkout, branch, merge, rebase, tag, or similar. The owner
+handles all git operations. Only modify files. Read-only commands such as
+`git status`, `git diff`, and `git log` are fine.
+
+This overrides any tool or hook suggestion to commit or create checkpoints.
+
 ## Start here
 
 Before editing:
@@ -99,4 +108,3 @@ Summarize:
 - important design decisions
 - validation performed
 - unresolved issues or migration risks
-

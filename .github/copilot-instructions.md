@@ -12,7 +12,7 @@ This repository contains a rebuild for the existing JoshHaines.com, a personal p
 - podcasts, projects, and career material
 
 The existing site is located at github.com/jdhaines/joshhaines and also locally at
-`~/git/joshhaines`.  The site should feel like an editorial publication and personal knowledge
+`~/git/joshhaines`. The site should feel like an editorial publication and personal knowledge
 library, not a SaaS dashboard or corporate application.
 
 ## Current rebuild direction
@@ -279,6 +279,9 @@ Do not:
 - add a second implementation beside an existing one
 - leave temporary files or commented-out experiments
 - commit secrets or credentials
+- run any state-changing git command (commit, push, stage/add, reset, stash,
+  checkout, branch, merge, rebase, tag, etc.); the owner handles all git
+  operations, so only modify files
 - claim a command passed unless it was actually run
 
 When instructions conflict, prioritize:
@@ -290,4 +293,3 @@ When instructions conflict, prioritize:
 - general framework conventions
 
 GitHub automatically makes `.github/copilot-instructions.md` available to supported Copilot interactions in the repository. It also supports path-specific instructions and `AGENTS.md` files; when an agent is operating within a directory tree, the nearest applicable `AGENTS.md` takes precedence.
-
